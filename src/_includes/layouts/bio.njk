@@ -52,11 +52,10 @@ layout: layouts/base.njk
     </section>
     
     <section id="personal-interests" class="bio-section">
-        <h2>Personal Interests</h2>
+        <h2>Some personal Interests</h2>
         <div class="skills-grid">
             {% for interest in personalInterests %}
             <div class="skill-group">
-                <div class="interest-icon">{{ interest.icon }}</div>
                 <h3>{{ interest.title }}</h3>
                 <div class="interest-text">{{ interest.text | safe }}</div>
             </div>

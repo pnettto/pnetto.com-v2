@@ -371,11 +371,6 @@ p {
   margin-bottom: var(--space-xs);
 }
 
-.interest-icon {
-  font-size: var(--font-size-2xl);
-  margin-bottom: 1rem;
-}
-
 .tags-list {
   display: flex;
   flex-wrap: wrap;

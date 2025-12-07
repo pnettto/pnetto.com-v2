@@ -175,14 +175,12 @@ timeline:
       </p>
 personalInterests:
   - title: Music
-    icon: 🎶
     text: >
       <p>
         I play the guitar since my teenage years and have been looking
         for a band to join lately. Wanna jam? :)
       </p>
   - title: Photography
-    icon: 📸
     text: >
       <p>
         Early in 2020 I bought a Fujifilm X-T20 and have been having a
@@ -196,7 +194,6 @@ personalInterests:
         </a>!
       </p>
   - title: Drawing & Painting
-    icon: 🎨
     text: >
       <p>
         Admitedly, I’m the worse at drawing. To counter this small
@@ -208,7 +205,6 @@ personalInterests:
         digital creation.
       </p>
   - title: Philosophy
-    icon: 🤔
     text: >
       <p>
         The questions with answers can amaze, but the ones without any
