@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/images");
+    eleventyConfig.addPassthroughCopy("src/.nojekyll");
 
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
@@ -83,6 +84,7 @@ module.exports = function (eleventyConfig) {
     });
 
     return {
+        pathPrefix: process.env.PATH_PREFIX || "/",
         dir: {
             input: "src",
             output: "public"
