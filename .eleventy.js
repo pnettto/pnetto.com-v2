@@ -30,6 +30,14 @@ module.exports = function (eleventyConfig) {
         }
         return Array.from(tagSet);
     });
+    
+    eleventyConfig.addCollection("logs", (collectionApi) => {
+        return collectionApi.getFilteredByGlob("src/logs/**/*.md");
+    });
+
+    eleventyConfig.addCollection("work", (collectionApi) => {
+        return collectionApi.getFilteredByGlob("src/work/**/*.md");
+    });
 
     eleventyConfig.addFilter("filterTagList", tags => {
         return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);

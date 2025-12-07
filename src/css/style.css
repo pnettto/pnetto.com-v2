@@ -46,7 +46,7 @@
 /* Reset & Base */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 7rem;
 }
 
 body {
@@ -324,6 +324,16 @@ p {
   margin: 0;
 }
 
+.sticky-tags {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-color);
+  padding: var(--space-sm) 0;
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
 .badge {
   font-size: var(--font-size-xs);
   padding: 0.2em 0.6em;
@@ -340,15 +350,6 @@ p {
   background-color: var(--accent-color);
   color: #000;
   border-color: var(--accent-color);
-}
-
-/* Category cloud on blog index */
-.category-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  padding-bottom: var(--space-lg);
-  border-bottom: 1px solid var(--border-color);
 }
 
 /* Work / Projects */
