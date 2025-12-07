@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+title: Work
+eleventyExcludeFromCollections: true
+---
+<div class="work-container">
+  {% for category in ["Development", "Education", "Entrepreneurship"] %}
+  <section class="project-category">
+    <h1>{{ category }}</h1>
+    <div class="project-grid">
+      {% for project in collections.work | reverse %}
+        {% if category | lower in project.data.categories %}
+          <a href="{{ project.url }}" class="project-card">
+            {% if project.data.coverImage %}
+              <div class="project-card-image-wrapper">
+                <img src="/images/projects/{{ project.data.slug }}/{{ project.data.coverImage }}" alt="{{ project.data.title }}" class="project-card-image">
+              </div>
+            {% endif %}
+            <div class="project-card-content">
+              <h3>{{ project.data.title }}</h3>
+              
+              {% if project.data.client or project.data.role %}
+              <div class="project-card-meta">
+                {% if project.data.client %}
+                  <span class="meta-item"><strong>Client:</strong> {{ project.data.client }}</span>
+                {% endif %}
+                {% if project.data.role %}
+                  <span class="meta-item"><strong>Role:</strong> {{ project.data.role }}</span>
+                {% endif %}
+              </div>
+              {% endif %}
+
+              {% if project.data.nanoDescription %}
+              <p class="project-card-description">{{ project.data.nanoDescription }}</p>
+              {% endif %}
+
+              <span class="project-card-link">See more &rarr;</span>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
