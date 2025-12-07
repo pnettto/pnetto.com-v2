@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: Welcome to My New Site
 date: 2024-05-01
-tags: ['post', 'general']
+tags: ['post', 'general', 'design']
 ---
 
 <p>This is the very first post on my new Eleventy website. I decided to rebuild my site to focus on simplicity and performance.</p>

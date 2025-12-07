@@ -13,4 +13,12 @@ layout: layouts/base.njk
     <div class="post-content">
         {{ content | safe }}
     </div>
+
+    <div class="tags-list" style="margin-bottom: 1rem;">
+        {% for tag in tags %}
+            {% if tag != "post" %}
+            <a href="/tags/{{ tag | slug }}/" class="badge">{{ tag }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
 </article>
