@@ -3,18 +3,21 @@ layout: layouts/base.njk
 ---
 
 <article>
-    <header class="post-header">
+    <p><a href="/blog/">← back</a></p>
+
+    <header class="page-header">
         <h1>{{ title }}</h1>
-        <div class="post-meta">
-            <time datetime="{{ date | postDate }}">{{ date | postDate }}</time>
-        </div>
     </header>
+        
+    <div class="post-meta">
+        <time datetime="{{ date | postDate }}">{{ date | postDate }}</time>
+    </div>
 
     <div class="post-content">
         {{ content | safe }}
     </div>
 
-    <div class="tags-list" style="margin-bottom: 1rem;">
+    <div class="tags-list" style="margin-bottom: 2rem;">
         {% for tag in tags %}
             {% if tag != "post" %}
             <a href="/tags/{{ tag | slug }}/" class="badge">{{ tag }}</a>

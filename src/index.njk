@@ -3,30 +3,23 @@ layout: layouts/base.njk
 title: Home
 ---
 
-<h1>Shipping faster with more confidence</h1>
+<header class="page-header">
+  <h1>Pedro Netto</h1>
+</header>
 
-<p>Welcome to my minimal corner of the web. This is a space where I share my thoughts on software design, coding, and building products.</p>
-
-<p>I believe in simplicity, speed, and user-centric design.</p>
-
-<h2>Latest Posts</h2>
-
-<ul class="post-list">
-{% for post in collections.post | reverse %}
-  {% if loop.index0 < 3 %}
-  <li class="post-item">
-    <div class="post-main">
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
-        <div class="tags-list mini-tags">
-            {% for tag in post.data.tags %}
-                {% if tag != "post" %}
-                <a href="/tags/{{ tag | slug }}/" class="badge">{{ tag }}</a>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    <span class="post-meta">{{ post.date | postDate }}</span>
-  </li>
-  {% endif %}
-{% endfor %}
-</ul>
+<p>
+  I'm a
+  <a href="/work">web developer</a>
+  with a background on 
+  <a href="/work?category=education">teaching</a>
+  and 
+  <a href="/work?category=entrepreneurship">entrepreneurship</a>.
+</p>
+<p>
+  Learn more
+  <a href="/bio">
+    about me
+  </a>
+  and
+  <a href="/work">my work</a>.
+</p>
