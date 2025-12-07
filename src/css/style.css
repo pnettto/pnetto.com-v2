@@ -44,6 +44,11 @@
 }
 
 /* Reset & Base */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -483,6 +488,12 @@ a.project-card:hover {
 
 .project-screens {
   margin: var(--space-2xl) 0;
+}
+
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  
 }
 
 .screen-item {

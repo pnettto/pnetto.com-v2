@@ -84,5 +84,22 @@ layout: layouts/base.njk
 
   {% endif %}
 
-  <p><a href="/work/">← back</a></p>
+
+  <div class="project-nav">
+    {% set previousProject = collections.work | getPreviousCollectionItem(page) %}
+    {% if not previousProject %}
+      {% set previousProject = collections.work | last %}
+    {% endif %}
+    {% if previousProject %}
+      <p>← Previous project: <a href="{{ previousProject.url }}">{{ previousProject.data.title }}</a></p>
+    {% endif %}
+
+    {% set nextProject = collections.work | getNextCollectionItem(page) %}
+    {% if not nextProject %}
+      {% set nextProject = collections.work | first %}
+    {% endif %}
+    {% if nextProject %}
+      <p>Next project: <a href="{{ nextProject.url }}">{{ nextProject.data.title }}</a> →</p>
+    {% endif %}
+  </div>
 </article>

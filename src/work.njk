@@ -3,10 +3,19 @@ layout: layouts/base.njk
 title: Work
 eleventyExcludeFromCollections: true
 ---
+<h1>Work</h1>
+
+<div class="tags-list" style="margin-bottom: 2rem;">
+    {% for category in ['Development', 'Education', 'Entrepreneurship'] %}
+        <a href="#{{ category | slugify  }}" class="badge">{{ category }}</a>
+    {% endfor %}
+</div>
+
 <div class="work-container">
-  {% for category in ["Development", "Education", "Entrepreneurship"] %}
+  {% for category in ['Development', 'Education', 'Entrepreneurship'] %}
   <section class="project-category">
-    <h1>{{ category }}</h1>
+    <a id="{{ category | slugify }}"></a>
+    <h2>{{ category }}</h2>
     <div class="project-grid">
       {% for project in collections.work | reverse %}
         {% if category | lower in project.data.categories %}
