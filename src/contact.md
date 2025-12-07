@@ -9,7 +9,7 @@ title: Contact
 
 <p>
   I'm always up for a conversation about past projects and potential
-  collaborations. Feel free to reach out!.
+  collaborations. Feel free to reach out!
 </p>
 
 <p>Email: <a href="mailto:mailto:pedro@pnetto.com">mailto:pedro@pnetto.com</a></p>

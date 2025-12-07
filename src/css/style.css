@@ -1,8 +1,8 @@
 :root {
   --bg-color: #262626;
   --bg-secondary: #2d2d2d;
-  --text-main: #d3d3d3;
-  --text-heading: #ffffff;
+  --text-main: #e7e7e7;
+  --text-heading: #e7e7e7;
   --text-muted: #b0b0b0;
 
   --accent-color: #e1b65a;
@@ -105,7 +105,6 @@ nav ul {
 }
 
 nav a {
-  font-size: var(--font-size-sm);
   color: var(--text-main);
   border: none;
   opacity: 0.8;
@@ -154,7 +153,7 @@ p {
   align-items: center;
 }
 
-/* Blog List */
+/* Logs List */
 .post-list {
   list-style: none;
   padding: 0;
@@ -171,16 +170,13 @@ p {
 .post-item a {
   border: none;
   font-weight: 500;
+  font-size: var(--font-size-lg);
 }
 
 .post-main {
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
-}
-
-a.post-title {
-  color: var(--accent-color);
 }
 
 .tags-list.mini-tags .badge {
@@ -344,42 +340,4 @@ a.post-title {
   gap: 0.8rem;
   padding-bottom: var(--space-lg);
   border-bottom: 1px solid var(--border-color);
-}
-
-/* Code */
-code {
-  font-family: var(--font-primary);
-  background: var(--bg-secondary);
-  color: var(--text-main);
-  padding: 0.2em 0.4em;
-  border-radius: var(--radius-sm);
-  font-size: var(--font-size-sm);
-  border: 1px solid var(--border-color);
-}
-
-pre {
-  background: var(--bg-secondary);
-  padding: var(--space-md);
-  overflow-x: auto;
-  border-radius: var(--radius-base);
-  border: 1px solid var(--border-color);
-  margin: var(--space-lg) 0;
-}
-
-pre code {
-  background: transparent;
-  border: none;
-  padding: 0;
-  font-size: inherit;
-  color: inherit;
-}
-
-/* Footer */
-footer {
-  margin-top: var(--space-4xl);
-  padding-top: var(--space-lg);
-  border-top: 1px dashed var(--border-color);
-  color: #555;
-  font-size: var(--font-size-sm);
-  text-align: left;
 }
