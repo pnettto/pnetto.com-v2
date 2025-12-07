@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: Photos
+---
+<div class="photos-index">
+    <h1>Photos</h1>
+    <div class="albums-grid">
+        {% for album in collections.photos | reverse %}
+            {% set images = album.inputPath | getAlbumImages %}
+            {% set cover = images[0] %}
+            <a href="{{ album.url }}" class="album-card">
+                {% if cover %}
+                    <div class="album-cover">
+                        <img src="{{ cover.path }}" alt="{{ album.data.title }}" loading="lazy">
+                    </div>
+                {% endif %}
+                <div class="album-info">
+                    <h2>{{ album.data.title }}</h2>
+                    <span class="album-date">{{ album.date | postDate }}</span>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</div>

@@ -8,6 +8,7 @@ module.exports = async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/images");
     eleventyConfig.addPassthroughCopy("src/.nojekyll");
+    eleventyConfig.addPassthroughCopy("src/photos/**/*.{jpg,jpeg,png,webp}");
 
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
@@ -63,6 +64,31 @@ module.exports = async function (eleventyConfig) {
         return dateObj.toISOString();
     });
 
+    eleventyConfig.addFilter("getAlbumImages", (inputPath) => {
+        const path = require("path");
+        const fs = require("fs");
+        
+        let dir = path.dirname(inputPath);
+        if (!dir.startsWith(".")) {
+            dir = "./" + dir;
+        }
+
+        const files = fs.readdirSync(dir);
+        let images = [];
+
+        files.forEach(file => {
+            if (file.match(/\.(jpg|jpeg|png|webp)$/i)) {
+                let urlPath = path.join(dir, file).replace(/^src/, "").replace(/^\\src/, "");
+                images.push({
+                    name: file,
+                    path: urlPath,
+                });
+            }
+        });
+        
+        return images;
+    });
+
     // Data extensions
     eleventyConfig.addFilter("getAllTags", collection => {
         let tagSet = new Set();
@@ -78,6 +104,10 @@ module.exports = async function (eleventyConfig) {
 
     eleventyConfig.addCollection("work", (collectionApi) => {
         return collectionApi.getFilteredByGlob("src/work/**/*.md");
+    });
+
+    eleventyConfig.addCollection("photos", (collectionApi) => {
+        return collectionApi.getFilteredByGlob("src/photos/*/index.md");
     });
 
     eleventyConfig.addFilter("filterTagList", tags => {

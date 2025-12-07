@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+---
+<div class="album-page">
+    <div class="album-header">
+        <h1>{{ title }}</h1>
+        <p class="album-date">{{ date | postDate }}</p>
+    </div>
+
+    {% set images = page.inputPath | getAlbumImages %}
+    
+    <div class="gallery-grid">
+        {% for image in images %}
+            <button class="gallery-item" aria-label="View photo {{ loop.index }}">
+                <img src="{{ image.path }}" alt="{{ title }} - Photo {{ loop.index }}" loading="lazy">
+            </button>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
+    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous photo">&lsaquo;</button>
+    <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+    <button class="lightbox-next" aria-label="Next photo">&rsaquo;</button>
+</div>
+
+<script src="/assets/js/gallery.js"></script>
