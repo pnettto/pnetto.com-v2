@@ -1,5 +1,6 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const Image = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/css");
@@ -8,6 +9,44 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+
+    eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt, sizes = "100vw", className = "") {
+        if(alt === undefined) {
+            throw new Error(`Missing \`alt\` on image from: ${src}`);
+        }
+
+        let metadata = await Image(src, {
+            widths: [300, 600, 900, 1200, "auto"],
+            formats: ["webp", "jpeg"],
+            outputDir: "./public/img/",
+            urlPath: "/img/",
+            sharpOptions: {
+                animated: true
+            },
+            jpegOptions: {
+                quality: 90,
+            },
+            webpOptions: {
+                quality: 90,
+            },
+            filenameFormat: function (id, src, width, format, options) {
+                const path = require("path");
+                const extension = path.extname(src);
+                // Use id (hash) to prevent collisions for files with same name
+                return `${id}-${width}w.${format}`;
+            }
+        });
+
+        let imageAttributes = {
+            alt,
+            sizes,
+            class: className,
+            loading: "lazy",
+            decoding: "async",
+        };
+
+        return Image.generateHTML(metadata, imageAttributes);
+    });
 
     // Date filter
     eleventyConfig.addFilter("postDate", (dateObj) => {

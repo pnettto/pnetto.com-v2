@@ -16,36 +16,6 @@ eleventyExcludeFromCollections: true
     {% endfor %}
 </div>
 
-{% macro projectCard(project) %}
-  <a href="{{ project.url }}" class="project-card">
-    {% if project.data.coverImage %}
-      <div class="project-card-image-wrapper">
-        <img src="/images/projects/{{ project.data.slug }}/{{ project.data.coverImage }}" alt="{{ project.data.title }}" class="project-card-image">
-      </div>
-    {% endif %}
-    <div class="project-card-content">
-      <h3>{{ project.data.title }}</h3>
-      
-      {% if project.data.client or project.data.role %}
-      <div class="project-card-meta">
-        {% if project.data.client %}
-          <span class="meta-item"><strong>Client:</strong> {{ project.data.client }}</span>
-        {% endif %}
-        {% if project.data.role %}
-          <span class="meta-item"><strong>Role:</strong> {{ project.data.role }}</span>
-        {% endif %}
-      </div>
-      {% endif %}
-
-      {% if project.data.nanoDescription %}
-      <p class="project-card-description">{{ project.data.nanoDescription }}</p>
-      {% endif %}
-
-      <span class="project-card-link">See more &rarr;</span>
-    </div>
-  </a>
-{% endmacro %}
-
 <div class="work-container">
   {% for category in categories %}
   <section class="project-category">
@@ -56,7 +26,33 @@ eleventyExcludeFromCollections: true
     <div class="project-grid">
       {% for project in collections.work | sort(attribute='data.order') %}
         {% if category | slugify | lower in project.data.categories and project.data.featured %}
-          {{ projectCard(project) }}
+          <a href="{{ project.url }}" class="project-card">
+            {% if project.data.coverImage %}
+              <div class="project-card-image-wrapper">
+                {% image "src/images/projects/" ~ project.data.slug ~ "/" ~ project.data.coverImage, project.data.title, "(min-width: 30em) 50vw, 100vw", "project-card-image" %}
+              </div>
+            {% endif %}
+            <div class="project-card-content">
+              <h3>{{ project.data.title }}</h3>
+              
+              {% if project.data.client or project.data.role %}
+              <div class="project-card-meta">
+                {% if project.data.client %}
+                  <span class="meta-item"><strong>Client:</strong> {{ project.data.client }}</span>
+                {% endif %}
+                {% if project.data.role %}
+                  <span class="meta-item"><strong>Role:</strong> {{ project.data.role }}</span>
+                {% endif %}
+              </div>
+              {% endif %}
+
+              {% if project.data.nanoDescription %}
+              <p class="project-card-description">{{ project.data.nanoDescription }}</p>
+              {% endif %}
+
+              <span class="project-card-link">See more &rarr;</span>
+            </div>
+          </a>
         {% endif %}
       {% endfor %}
     </div>
@@ -65,7 +61,33 @@ eleventyExcludeFromCollections: true
     {% set otherProjects %}
       {% for project in collections.work | sort(attribute='data.order') %}
         {% if category | slugify | lower in project.data.categories and not project.data.featured %}
-          {{ projectCard(project) }}
+          <a href="{{ project.url }}" class="project-card">
+            {% if project.data.coverImage %}
+              <div class="project-card-image-wrapper">
+                {% image "src/images/projects/" ~ project.data.slug ~ "/" ~ project.data.coverImage, project.data.title, "(min-width: 30em) 50vw, 100vw", "project-card-image" %}
+              </div>
+            {% endif %}
+            <div class="project-card-content">
+              <h3>{{ project.data.title }}</h3>
+              
+              {% if project.data.client or project.data.role %}
+              <div class="project-card-meta">
+                {% if project.data.client %}
+                  <span class="meta-item"><strong>Client:</strong> {{ project.data.client }}</span>
+                {% endif %}
+                {% if project.data.role %}
+                  <span class="meta-item"><strong>Role:</strong> {{ project.data.role }}</span>
+                {% endif %}
+              </div>
+              {% endif %}
+
+              {% if project.data.nanoDescription %}
+              <p class="project-card-description">{{ project.data.nanoDescription }}</p>
+              {% endif %}
+
+              <span class="project-card-link">See more &rarr;</span>
+            </div>
+          </a>
         {% endif %}
       {% endfor %}
     {% endset %}

@@ -463,6 +463,12 @@ a.project-card:hover {
   object-fit: cover;
   border-radius: var(--radius-sm);
   display: block;
+  height: auto;
+}
+
+picture {
+  display: block;
+  width: 100%;
 }
 
 .project-card-content {
@@ -545,6 +551,7 @@ a.project-card:hover {
   object-fit: cover;
   border-radius: var(--radius-base);
   margin-bottom: var(--space-xl);
+  height: auto;
 }
 
 .project-intro {
