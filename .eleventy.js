@@ -1,8 +1,9 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const Image = require("@11ty/eleventy-img");
 
-module.exports = function (eleventyConfig) {
+module.exports = async function (eleventyConfig) {
+    const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
+
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/images");
