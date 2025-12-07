@@ -1,4 +1,5 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/css");
@@ -6,6 +7,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/images");
 
     eleventyConfig.addPlugin(syntaxHighlight);
+    eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
     // Date filter
     eleventyConfig.addFilter("postDate", (dateObj) => {
@@ -14,6 +16,10 @@ module.exports = function (eleventyConfig) {
             month: 'long',
             day: 'numeric'
         });
+    });
+
+    eleventyConfig.addFilter("isoDate", (dateObj) => {
+        return dateObj.toISOString();
     });
 
     // Data extensions

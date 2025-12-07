@@ -8,7 +8,7 @@ intro:
     <p>
       I’m a Full Stack Web Developer with over a decade of experience in
       the industry. I have worked as a freelancer, in NGOs, at great creative companies, 
-      ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>) during 4 years, and 
+      ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>) during 4 years, taught and modeled the web development course at <a href="/education/vefskoli">Vefskóli</a> for over 3 years, and 
       I have co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
     </p>
     <p>
@@ -16,11 +16,6 @@ intro:
       <a href="/work/icelandair">Icelandair</a>
       create better publishing tools and kick-start a new website from scratch,
       while being the lead front-end developer in the web team.
-    </p>
-
-    <p>
-      I'm seeking to join a team of talented professionals to create
-      beautiful and useful products with modern web technologies.
     </p>
 
     <p>

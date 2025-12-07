@@ -1,0 +1,11 @@
+{
+  "title": "Pedro Netto",
+  "url": "https://pnetto.com",
+  "language": "en",
+  "description": "I work in web development, teaching, and entrepreneurship.",
+  "author": {
+    "name": "Pedro Netto",
+    "email": "pedro@pnetto.com",
+    "url": "https://pnetto.com/bio/"
+  }
+}
