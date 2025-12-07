@@ -1,14 +1,12 @@
 :root {
   --bg-color: #262626;
-  --bg-secondary: #2d2d2d;
+  --bg-secondary: #353535;
   --text-main: #e7e7e7;
   --text-heading: #e7e7e7;
   --text-muted: #b0b0b0;
 
   --accent-color: #e1b65a;
-  /* Blue */
   --highlight-color: #efefef;
-  /* Green */
 
   --border-color: #333333;
 
@@ -41,6 +39,17 @@
   --leading-tight: 1.1;
   --leading-normal: 1.6;
   --leading-relaxed: 1.7;
+}
+
+[data-theme="light"] {
+  --bg-color: #f2ecda;
+  --bg-secondary: #ece1c0;
+  --text-main: #333333;
+  --text-heading: #111111;
+  --text-muted: #333333;
+  --border-color: #333333 ;
+  --highlight-color: #000000;
+  --accent-color: #bb9036;
 }
 
 /* Reset & Base */
@@ -101,6 +110,58 @@ a:hover {
   height: 80px;
   width: auto;
   display: block;
+}
+
+/* Theme Toggle */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 15px;
+  position: relative;
+  width: 30px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 1px;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  background-color: var(--text-muted);
+  bottom: 1px;
+  content: "";
+  height: 10px;
+  left: 2px;
+  position: absolute;
+  transition: .4s;
+  width: 10px;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(15px);
+  background-color: white;
 }
 
 nav ul {
@@ -340,7 +401,7 @@ p {
   border-radius: var(--radius-full);
   background-color: var(--bg-secondary);
   color: var(--text-heading);
-  border: 1px solid var(--border-color);
+  border: none;
   text-decoration: none;
   transition: all 0.2s;
   font-family: var(--font-primary);

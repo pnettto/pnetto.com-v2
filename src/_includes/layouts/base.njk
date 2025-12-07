@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/prism.css">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="6bee7ceb-6636-4498-9524-5e21d4b48fd2"></script>
+    <script src="/assets/js/theme.js"></script>
 </head>
 <body>
     <div class="container">
@@ -18,15 +19,23 @@
             <a href="/" class="logo" aria-label="Home">
                 <img src="/images/logo.svg" alt="MySite Logo" class="logo-img" height="80">
             </a>
-            <nav>
-                <ul>
-                    <li><a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a></li>
-                    <li><a href="/bio/" {% if page.url == "/bio/" %}aria-current="page"{% endif %}>Bio</a></li>
-                    <li><a href="/work/" {% if page.url == "/work/" %}aria-current="page"{% endif %}>Work</a></li>
-                    <li><a href="/logs/" {% if page.url == "/logs/" %}aria-current="page"{% endif %}>Logs</a></li>
-                    <li><a href="/contact/" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a></li>
-                </ul>
-            </nav>
+            <div style="display: flex; align-items: center; gap: var(--space-md);">
+                <nav>
+                    <ul>
+                        <li><a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a></li>
+                        <li><a href="/bio/" {% if page.url == "/bio/" %}aria-current="page"{% endif %}>Bio</a></li>
+                        <li><a href="/work/" {% if page.url == "/work/" %}aria-current="page"{% endif %}>Work</a></li>
+                        <li><a href="/logs/" {% if page.url == "/logs/" %}aria-current="page"{% endif %}>Logs</a></li>
+                        <li><a href="/contact/" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                        <input type="checkbox" id="theme-toggle" />
+                        <div class="slider"></div>
+                    </label>
+                </div>
+            </div>
         </header>
 
         <main>
