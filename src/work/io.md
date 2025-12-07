@@ -1,6 +1,6 @@
 ---
 order: 2
-featured: true
+featured: false
 categories:
   - development
   - education
