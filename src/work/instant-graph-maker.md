@@ -1,7 +1,8 @@
 ---
+order: 1
 featured: true
 categories:
-  - work
+  - pet-projects
 slug: instant-graph-maker
 title: Instant Graph Maker
 role: Author
