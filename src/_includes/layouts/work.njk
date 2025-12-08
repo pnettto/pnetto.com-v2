@@ -36,7 +36,7 @@ layout: layouts/base.njk
   {% if not hasContent %}
      {# No detailed content: Show Cover and Big Link #}
      {% if coverImage %}
-        {% image "src/images/projects/" ~ slug ~ "/" ~ coverImage, title ~ " Cover", "100vw", "project-hero-image" %}
+        {% image "src/assets/images/projects/" ~ slug ~ "/" ~ coverImage, title ~ " Cover", "100vw", "project-hero-image" %}
      {% endif %}
      
      <p>
@@ -60,7 +60,7 @@ layout: layouts/base.njk
       <section class="project-screens">
         {% for screen in screensSection %}
           <div class="screen-item">
-             {% image "src/images/projects/" ~ slug ~ "/" ~ screen.image, "", "100vw", "screen-image" %}
+             {% image "src/assets/images/projects/" ~ slug ~ "/" ~ screen.image, "", "100vw", "screen-image" %}
              {% if screen.text %}
                <p class="screen-text">{{ screen.text }}</p>
              {% endif %}
