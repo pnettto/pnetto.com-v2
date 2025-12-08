@@ -3,7 +3,6 @@ order: 2
 featured: false
 categories:
   - development
-  - education
 slug: io
 title: IO Tskoli
 client: Tækniskólinn

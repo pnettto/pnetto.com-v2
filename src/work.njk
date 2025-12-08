@@ -21,7 +21,7 @@ eleventyExcludeFromCollections: true
   {% for category in categories %}
   <section class="project-category">
     <a id="{{ category | slugify }}"></a>
-    <h2>{{ category }}</h2>
+    <h2 class="underlined">{{ category }}</h2>
     
     {# Featured Projects #}
     <div class="project-grid">

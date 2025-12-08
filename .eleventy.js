@@ -22,7 +22,7 @@ module.exports = async function (eleventyConfig) {
             widths: [300, 600, 900, 1200, "auto"],
             formats: ["webp", "jpeg"],
             outputDir: "./public/img/",
-            urlPath: "/img/",
+            urlPath: (process.env.PATH_PREFIX || "/") + "img/",
             sharpOptions: {
                 animated: true
             },
@@ -49,7 +49,6 @@ module.exports = async function (eleventyConfig) {
         };
 
         return Image.generateHTML(metadata, imageAttributes);
-        return Image.generateHTML(metadata, imageAttributes);
     });
 
     eleventyConfig.addNunjucksAsyncShortcode("optimizedImageUrl", async function(src, width = "auto") {
@@ -60,7 +59,7 @@ module.exports = async function (eleventyConfig) {
             widths: [width],
             formats: ["jpeg"],
             outputDir: "./public/img/",
-            urlPath: "/img/",
+            urlPath: (process.env.PATH_PREFIX || "/") + "img/",
             sharpOptions: {
                 animated: true
             },
