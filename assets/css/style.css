@@ -1,6 +1,6 @@
 :root {
   --bg-color: #11181d;
-  --bg-secondary: #273642;
+  --bg-secondary: #19232c;
   --text-main: #e7e7e7;
   --text-heading: #e7e7e7;
   --text-muted: #b0b0b0;
@@ -32,7 +32,7 @@
   --space-4xl: 6rem;
 
   /* Layout */
-  --container-width: 900px;
+  --container-width: 1000px;
   --radius-base: 4px;
   --radius-full: 9999px;
 }
@@ -75,6 +75,13 @@ a {
 a:hover {
   color: var(--highlight-color);
   border-bottom-color: var(--highlight-color);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--bg-secondary);
+  margin: 4rem 0;
 }
 
 .container {
@@ -516,22 +523,24 @@ a.project-card {
   color: inherit;
   text-decoration: none;
   border-bottom: none;
+  transition: transform 0.2s ease-out;
 }
 
-a.project-card:hover {
-  color: inherit;
-  background: var(--bg-secondary);
+@media (min-width: 870px) {
+  a.project-card:hover {
+    transform: scale(1.01);
+  }
 }
 
 .project-card-image-wrapper {
-  flex-shrink: 0;
-  width: 25rem;
+    width: 32rem;
 }
 
 .project-card-image {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/9;
   object-fit: cover;
+  object-position: top left;
   border-radius: var(--radius-base);
   display: block;
   height: auto;
@@ -552,6 +561,7 @@ picture {
   .project-card-content {
     padding: var(--space-md);
   }
+  
 }
 
 .project-card-content h3 {
@@ -586,7 +596,7 @@ picture {
   align-self: flex-start;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 870px) {
   .project-card {
     flex-direction: column;
   }
@@ -695,11 +705,13 @@ picture {
   overflow: hidden;
   break-inside: auto;
   margin-bottom: 0;
+  transition: transform 0.2s ease-out;
 }
 
-.album-card:hover {
-  border-bottom: none;
-  color: inherit;
+@media (min-width: 600px) {
+  a.album-card:hover {
+    transform: scale(1.01);
+  }
 }
 
 .album-cover {
