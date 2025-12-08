@@ -11,7 +11,7 @@ layout: layouts/base.njk
     
     <div class="gallery-grid">
         {% for image in images %}
-            <button class="gallery-item" aria-label="View photo {{ loop.index }}" data-full-src="{% optimizedImageUrl image.filePath, 1600 %}">
+            <button class="gallery-item" id="image-{{ image.name | slugify }}" aria-label="View photo {{ loop.index }}" data-full-src="{% optimizedImageUrl image.filePath, 1600 %}">
                 {% image image.filePath, title + " - Photo " + loop.index, "300px" %}
             </button>
         {% endfor %}
