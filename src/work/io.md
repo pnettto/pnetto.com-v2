@@ -1,6 +1,6 @@
 ---
 order: 2
-featured: false
+featured: true
 categories:
   - development
 slug: io

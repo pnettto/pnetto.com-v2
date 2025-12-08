@@ -638,13 +638,27 @@ picture {
   transition: transform 0.5s ease;
 }
 
-.album-info {
-  padding: var(--space-md);
+.album-info h3 {
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .album-date {
   font-size: var(--font-size-sm);
   color: var(--text-muted);
+}
+
+.album-page {
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .album-page {
+    /* 100vw - 4rem (2 * --space-lg) to keep the same margins as the container */
+    width: min(calc(100vw - var(--space-2xl)), 1200px);
+    margin-left: calc(50% - min(calc(50vw - var(--space-lg)), 600px));
+    margin-right: calc(50% - min(calc(50vw - var(--space-lg)), 600px));
+  }
 }
 
 /* Album Page Grid */

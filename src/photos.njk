@@ -19,12 +19,14 @@ title: Photos
                     </div>
                 {% endif %}
                 <div class="album-info">
-                    <h2>{{ album.data.title }}</h2>
+                    <h3>{{ album.data.title }}</h3>
                     <span class="album-date">{{ album.date | albumDate }}</span>
                 </div>
             </a>
         {% endfor %}
     </div>
+
+    <hr />
 
     <h2>Usage note</h2>
     <p>You are welcome to use the images from this site in your projects, both personal and commercial, under the following conditions:</p>
