@@ -59,21 +59,23 @@ layout: layouts/base.njk
                 <div class="carousel-track">
                     {% for ref in collections.references %}
                     <div class="carousel-card {{ ref.data.size }}">
-                        <blockquote class="reference-quote">
-                            {{ ref.content | safe }}
-                        </blockquote>
-                        <cite class="reference-author">
-                            <strong>{{ ref.data.referer }}</strong>
-                            {% if ref.data.companyName %}
-                            <span class="reference-company">
-                                {% if ref.data.companyLink %}
-                                <a href="{{ ref.data.companyLink }}" target="_blank" rel="noopener">{{ ref.data.companyName }}</a>
-                                {% else %}
-                                {{ ref.data.companyName }}
+                        <div class="carousel-scroll-area">
+                            <blockquote class="reference-quote">
+                                {{ ref.content | safe }}
+                            </blockquote>
+                            <cite class="reference-author">
+                                <strong>{{ ref.data.referer }}</strong>
+                                {% if ref.data.companyName %}
+                                <span class="reference-company">
+                                    {% if ref.data.companyLink %}
+                                    <a href="{{ ref.data.companyLink }}" target="_blank" rel="noopener">{{ ref.data.companyName }}</a>
+                                    {% else %}
+                                    {{ ref.data.companyName }}
+                                    {% endif %}
+                                </span>
                                 {% endif %}
-                            </span>
-                            {% endif %}
-                        </cite>
+                            </cite>
+                        </div>
                     </div>
                     {% endfor %}
                 </div>

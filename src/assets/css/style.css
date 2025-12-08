@@ -995,6 +995,36 @@ picture {
   flex-direction: column;
   /* justify-content: space-between; Removed to allow quote to flex grow and center */
   text-align: center; /* Center text horizontally */
+  position: relative;
+  overflow: hidden; /* Clip the gradient corners */
+}
+
+/* Gradient Fade Overlay */
+.carousel-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6rem;
+  background: linear-gradient(to bottom, transparent, var(--bg-secondary));
+  pointer-events: none;
+  z-index: 2;
+}
+
+.carousel-scroll-area {
+  max-height: 20rem;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  padding-bottom: 2rem; /* Space for content to scroll above fade */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.carousel-scroll-area::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
 }
 
 @media (min-width: 600px) {
