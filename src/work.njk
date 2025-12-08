@@ -59,45 +59,48 @@ eleventyExcludeFromCollections: true
     </div>
 
     {# Other Projects (See more) #}
-    {% set otherProjects %}
-      {% for project in collections.work | sort(attribute='data.order') %}
-        {% if category | slugify | lower in project.data.categories and not project.data.featured %}
-          <a href="{{ project.url }}" class="project-card">
-            {% if project.data.coverImage %}
-              <div class="project-card-image-wrapper">
-                {% image "src/images/projects/" ~ project.data.slug ~ "/" ~ project.data.coverImage, project.data.title, "(min-width: 30em) 50vw, 100vw", "project-card-image" %}
-              </div>
-            {% endif %}
-            <div class="project-card-content">
-              <h3>{{ project.data.title }}</h3>
-              
-              {% if project.data.client or project.data.role %}
-              <div class="project-card-meta">
-                {% if project.data.client %}
-                  <span class="meta-item"><strong>Client:</strong> {{ project.data.client }}</span>
-                {% endif %}
-                {% if project.data.role %}
-                  <span class="meta-item"><strong>Role:</strong> {{ project.data.role }}</span>
-                {% endif %}
-              </div>
-              {% endif %}
+    {% set hasOtherProjects = false %}
+    {% for project in collections.work %}
+      {% if category | slugify | lower in project.data.categories and not project.data.featured %}
+        {% set hasOtherProjects = true %}
+      {% endif %}
+    {% endfor %}
 
-              {% if project.data.nanoDescription %}
-              <p class="project-card-description">{{ project.data.nanoDescription }}</p>
-              {% endif %}
-
-              <span class="project-card-link">See more &rarr;</span>
-            </div>
-          </a>
-        {% endif %}
-      {% endfor %}
-    {% endset %}
-
-    {% if otherProjects | trim %}
+    {% if hasOtherProjects %}
       <details class="see-more-container">
         <summary>See more</summary>
         <div class="project-grid">
-          {{ otherProjects | safe }}
+          {% for project in collections.work | sort(attribute='data.order') %}
+            {% if category | slugify | lower in project.data.categories and not project.data.featured %}
+              <a href="{{ project.url }}" class="project-card">
+                {% if project.data.coverImage %}
+                  <div class="project-card-image-wrapper">
+                    {% image "src/images/projects/" ~ project.data.slug ~ "/" ~ project.data.coverImage, project.data.title, "(min-width: 30em) 50vw, 100vw", "project-card-image" %}
+                  </div>
+                {% endif %}
+                <div class="project-card-content">
+                  <h3>{{ project.data.title }}</h3>
+                  
+                  {% if project.data.client or project.data.role %}
+                  <div class="project-card-meta">
+                    {% if project.data.client %}
+                      <span class="meta-item"><strong>Client:</strong> {{ project.data.client }}</span>
+                    {% endif %}
+                    {% if project.data.role %}
+                      <span class="meta-item"><strong>Role:</strong> {{ project.data.role }}</span>
+                    {% endif %}
+                  </div>
+                  {% endif %}
+
+                  {% if project.data.nanoDescription %}
+                  <p class="project-card-description">{{ project.data.nanoDescription }}</p>
+                  {% endif %}
+
+                  <span class="project-card-link">See more &rarr;</span>
+                </div>
+              </a>
+            {% endif %}
+          {% endfor %}
         </div>
       </details>
     {% endif %}
