@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryItems = document.querySelectorAll('.gallery-item img');
     
     let currentIndex = 0;
-    const images = Array.from(galleryItems).map(img => img.src);
+    const images = Array.from(galleryItems).map(img => {
+        // Look for data-full-src on the parent button or use the image src
+        return img.closest('.gallery-item').dataset.fullSrc || img.src;
+    });
 
     function openLightbox(index) {
         currentIndex = index;

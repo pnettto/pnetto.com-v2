@@ -667,10 +667,21 @@ picture {
 
 /* Album Page Grid */
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: var(--space-sm);
+    column-count: 3;
+    column-gap: var(--space-xs);
     margin-top: var(--space-lg);
+}
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        column-count: 1;
+    }
 }
 
 .gallery-item {
@@ -678,22 +689,23 @@ picture {
     border: none;
     padding: 0;
     cursor: pointer;
-    aspect-ratio: 1;
-    overflow: hidden;
+    break-inside: avoid;
+    margin-bottom: var(--space-xs);
+    display: block;
+    width: 100%;
     border-radius: var(--radius-sm);
-    position: relative;
+    overflow: hidden;
+    /* Removed aspect-ratio to let images flow naturally */
 }
 
 .gallery-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    height: auto; /* Natural height */
     display: block;
+    transition: filter 0.3s ease;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.03);
     filter: brightness(1.1);
 }
 

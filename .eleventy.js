@@ -49,6 +49,33 @@ module.exports = async function (eleventyConfig) {
         };
 
         return Image.generateHTML(metadata, imageAttributes);
+        return Image.generateHTML(metadata, imageAttributes);
+    });
+
+    eleventyConfig.addNunjucksAsyncShortcode("optimizedImageUrl", async function(src, width = "auto") {
+        if(src === undefined) {
+             return "";
+        }
+        let metadata = await Image(src, {
+            widths: [width],
+            formats: ["jpeg"],
+            outputDir: "./public/img/",
+            urlPath: "/img/",
+            sharpOptions: {
+                animated: true
+            },
+            jpegOptions: {
+                quality: 90,
+            },
+            filenameFormat: function (id, src, width, format, options) {
+                const path = require("path");
+                const extension = path.extname(src);
+                return `${id}-${width}w.${format}`;
+            }
+        });
+        
+        let data = metadata.jpeg[metadata.jpeg.length - 1];
+        return data.url;
     });
 
     // Date filter
@@ -82,6 +109,7 @@ module.exports = async function (eleventyConfig) {
                 images.push({
                     name: file,
                     path: urlPath,
+                    filePath: path.join(dir, file) // Needed for eleventy-img
                 });
             }
         });

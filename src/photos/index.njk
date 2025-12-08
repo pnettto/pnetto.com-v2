@@ -11,7 +11,7 @@ title: Photos
             <a href="{{ album.url }}" class="album-card">
                 {% if cover %}
                     <div class="album-cover">
-                        <img src="{{ cover.path }}" alt="{{ album.data.title }}" loading="lazy">
+                        {% image cover.filePath, album.data.title, "400px" %}
                     </div>
                 {% endif %}
                 <div class="album-info">

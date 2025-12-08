@@ -11,8 +11,8 @@ layout: layouts/base.njk
     
     <div class="gallery-grid">
         {% for image in images %}
-            <button class="gallery-item" aria-label="View photo {{ loop.index }}">
-                <img src="{{ image.path }}" alt="{{ title }} - Photo {{ loop.index }}" loading="lazy">
+            <button class="gallery-item" aria-label="View photo {{ loop.index }}" data-full-src="{% optimizedImageUrl image.filePath, 1600 %}">
+                {% image image.filePath, title + " - Photo " + loop.index, "300px" %}
             </button>
         {% endfor %}
     </div>
