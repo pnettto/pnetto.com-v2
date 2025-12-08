@@ -7,7 +7,8 @@ title: Photos
         <h1>Photos</h1>
     </header>
 
-    <p>This is a personal collection of pictures I took, mostly featuring a poetic look at daily life events and the natural beauty around me.</p>
+    <p>This is a personal collection of pictures I took adn edited, mostly featuring a poetic look at daily life events and the natural beauty around me. You can also see more of my experiments on <a href="https://unsplash.com/@pnettto">Unsplash</a> and <a href="https://mastodon.art/@pnetto">Mastodon</a>.</p>
+    
     <div class="albums-grid">
         {% for album in collections.photos | reverse %}
             {% set images = album.inputPath | getAlbumImages %}
