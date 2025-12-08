@@ -20,7 +20,7 @@ module.exports = async function (eleventyConfig) {
             widths: [300, 600, 900, 1200, "auto"],
             formats: ["webp", "jpeg"],
             outputDir: "./public/img/",
-            urlPath: (process.env.PATH_PREFIX || "/") + "img/",
+            urlPath: "/img/",
             sharpOptions: {
                 animated: true
             },
