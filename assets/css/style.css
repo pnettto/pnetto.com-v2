@@ -1,6 +1,6 @@
 :root {
-  --bg-color: #232323;
-  --bg-secondary: #353535;
+  --bg-color: #11181d;
+  --bg-secondary: #273642;
   --text-main: #e7e7e7;
   --text-heading: #e7e7e7;
   --text-muted: #b0b0b0;
@@ -178,6 +178,7 @@ nav a {
 nav a:hover,
 nav a[aria-current="page"] {
   opacity: 1;
+  color: var(--accent-color);
 }
 
 /* Burger Menu */
