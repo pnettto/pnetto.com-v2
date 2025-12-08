@@ -10,7 +10,7 @@
 
   --border-color: #333333;
 
-  --font-primary: "Fira Mono", monospace;
+  --font-primary: "Cascadia Code", monospace;
 
   /* Font Sizes */
   --font-size-xs: 0.75rem;
@@ -60,7 +60,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-main);
   font-family: var(--font-primary);
-  line-height: var(--leading-relaxed);
+  line-height: 1.5;
   font-size: var(--font-size-base);
   -webkit-font-smoothing: antialiased;
 }
@@ -200,6 +200,12 @@ h1 {
 h2 {
   font-size: var(--font-size-xl);
   letter-spacing: -0.02em;
+  margin-bottom: var(--space-lg);
+}
+
+h2.underlined {
+  border-bottom: 1px solid var(--accent-color);
+  padding-bottom: var(--space-xs);
 }
 
 h3 {
@@ -297,12 +303,6 @@ p {
 
 .bio-section {
   margin-bottom: var(--space-2xl);
-}
-
-.bio-section h2 {
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: var(--space-xs);
-  margin-bottom: var(--space-lg);
 }
 
 /* Skills Grid */
@@ -407,14 +407,6 @@ p {
 /* Work / Projects */
 .project-category {
   margin-bottom: var(--space-2xl);
-}
-
-.project-category h2 {
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--space-lg);
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: var(--space-xs);
-  display: inline-block;
 }
 
 .project-grid {
@@ -648,12 +640,6 @@ picture {
 
 .album-info {
   padding: var(--space-md);
-}
-
-.album-info h2 {
-  margin: 0 0 var(--space-xs) 0;
-  font-size: var(--font-size-lg);
-  color: var(--text-heading);
 }
 
 .album-date {
