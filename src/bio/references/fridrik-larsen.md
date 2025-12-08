@@ -1,4 +1,5 @@
 ---
+order: 5
 referer: Fridrik Larsen
 companyName: CHARGE Energy Conference
 companyLink: https://charge.events
