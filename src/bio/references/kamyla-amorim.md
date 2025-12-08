@@ -1,0 +1,7 @@
+---
+referer: Kamyla Amorim
+companyName: Recode
+companyLink: https://recode.org.br
+size: medium
+---
+<p>Pedro is a focused, detail-oriented person with great interpersonal skills. He is always willing to learn and teach.</p><p>Working in partnership with him was productive and enriching. His good mood is a remarkable feature.</p>

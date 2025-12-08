@@ -53,4 +53,21 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.toggle('nav-open');
         });
     }
+
+    // References
+    const track = document.querySelector('.carousel-track');
+    const prevBtn = document.querySelector('.carousel-arrow.prev');
+    const nextBtn = document.querySelector('.carousel-arrow.next');
+    
+    if (track && prevBtn && nextBtn) {
+        const scrollAmount = 400; // Approx card width
+
+        prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
 });

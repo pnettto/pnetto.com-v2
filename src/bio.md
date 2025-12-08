@@ -79,6 +79,12 @@ otherSkills:
   - title: Entrepreneur
     text: I co-founded 2 companies. Making ideas become reality is a challenging and exciting concept to me.
 timeline:
+  - title: 2025
+    text: >
+      <ul>
+        <li>Started at Capgemini Sweden as a Data Engineering intern</li>
+        <li>Started agentic AI development studies, as you do :)</li>
+      </ul>
   - title: 2024
     text: >
       <ul>

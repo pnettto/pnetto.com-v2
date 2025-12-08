@@ -51,6 +51,37 @@ layout: layouts/base.njk
         </div>
     </section>
     
+    <section id="references" class="bio-section">
+        <h2 class="underlined">References</h2>
+        <div class="carousel-wrapper">
+            <button class="carousel-arrow nav-arrow prev" aria-label="Previous slide">←</button>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    {% for ref in collections.references %}
+                    <div class="carousel-card {{ ref.data.size }}">
+                        <blockquote class="reference-quote">
+                            {{ ref.content | safe }}
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>{{ ref.data.referer }}</strong>
+                            {% if ref.data.companyName %}
+                            <span class="reference-company">
+                                {% if ref.data.companyLink %}
+                                <a href="{{ ref.data.companyLink }}" target="_blank" rel="noopener">{{ ref.data.companyName }}</a>
+                                {% else %}
+                                {{ ref.data.companyName }}
+                                {% endif %}
+                            </span>
+                            {% endif %}
+                        </cite>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <button class="carousel-arrow nav-arrow next" aria-label="Next slide">→</button>
+        </div>
+    </section>
+
     <section id="personal-interests" class="bio-section">
         <h2 class="underlined">Some personal Interests</h2>
         <div class="skills-grid">

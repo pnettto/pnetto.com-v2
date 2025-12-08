@@ -4,7 +4,6 @@ const Image = require("@11ty/eleventy-img");
 module.exports = async function (eleventyConfig) {
     const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
 
-    eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/images");
     eleventyConfig.addPassthroughCopy("src/.nojekyll");
@@ -143,8 +142,8 @@ module.exports = async function (eleventyConfig) {
         return collectionApi.getFilteredByGlob("src/photos/*/index.md");
     });
 
-    eleventyConfig.addFilter("filterTagList", tags => {
-        return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+    eleventyConfig.addCollection("references", (collectionApi) => {
+        return collectionApi.getFilteredByGlob("src/bio/references/*.md");
     });
 
     return {
