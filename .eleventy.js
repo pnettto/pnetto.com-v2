@@ -78,12 +78,18 @@ module.exports = async function (eleventyConfig) {
         return data.url;
     });
 
-    // Date filter
+    // Date filters
     eleventyConfig.addFilter("postDate", (dateObj) => {
         return dateObj.toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
+        });
+    });
+    eleventyConfig.addFilter("albumDate", (dateObj) => {
+        return dateObj.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
         });
     });
 

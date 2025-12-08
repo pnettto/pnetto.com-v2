@@ -16,7 +16,7 @@ title: Photos
                 {% endif %}
                 <div class="album-info">
                     <h2>{{ album.data.title }}</h2>
-                    <span class="album-date">{{ album.date | postDate }}</span>
+                    <span class="album-date">{{ album.date | albumDate }}</span>
                 </div>
             </a>
         {% endfor %}
