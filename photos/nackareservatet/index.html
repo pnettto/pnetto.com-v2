@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/pnetto.com-v2/css/style.css">
-    <link rel="stylesheet" href="/pnetto.com-v2/css/prism.css">
+    <link rel="stylesheet" href="/pnetto.com-v2/assets/css/style.css">
+    <link rel="stylesheet" href="/pnetto.com-v2/assets/css/prism.css">
     <script src="/pnetto.com-v2/assets/js/theme.js"></script>
     <script defer="" src="https://cloud.umami.is/script.js" data-website-id="6bee7ceb-6636-4498-9524-5e21d4b48fd2"></script>
 </head>
@@ -17,7 +17,7 @@
     <div class="container">
         <header class="site-header">
             <a href="/pnetto.com-v2/" class="logo" aria-label="Home">
-                <img src="/pnetto.com-v2/images/logo.svg" alt="MySite Logo" class="logo-img" height="80">
+                <img src="/pnetto.com-v2/assets/images/logo.svg" alt="MySite Logo" class="logo-img" height="80">
             </a>
             <div style="display: flex; align-items: center; gap: var(--space-md);">
                 <button class="burger-menu" aria-label="Toggle Menu" aria-expanded="false">
@@ -86,12 +86,17 @@
 
 <!-- Lightbox -->
 <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
-    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
-    <button class="lightbox-prev" aria-label="Previous photo">&lsaquo;</button>
+    <button class="lightbox-close" aria-label="Close lightbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+    </button>
+    <button class="lightbox-prev nav-arrow" aria-label="Previous photo">←</button>
     <div class="lightbox-content">
         <img id="lightbox-img" src="." alt="">
     </div>
-    <button class="lightbox-next" aria-label="Next photo">&rsaquo;</button>
+    <button class="lightbox-next nav-arrow" aria-label="Next photo">→</button>
 </div>
 
 <script src="/pnetto.com-v2/assets/js/gallery.js"></script>
