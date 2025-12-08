@@ -20,7 +20,12 @@
                 <img src="/images/logo.svg" alt="MySite Logo" class="logo-img" height="80">
             </a>
             <div style="display: flex; align-items: center; gap: var(--space-md);">
-                <nav>
+                <button class="burger-menu" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                </button>
+                <nav class="main-nav">
                     <ul>
                         <li><a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a></li>
                         <li><a href="/bio/" {% if page.url == "/bio/" %}aria-current="page"{% endif %}>Bio</a></li>
@@ -29,13 +34,13 @@
                         <li><a href="/logs/" {% if page.url == "/logs/" %}aria-current="page"{% endif %}>Logs</a></li>
                         <li><a href="/contact/" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a></li>
                     </ul>
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                            <input type="checkbox" id="theme-toggle" />
+                            <div class="slider"></div>
+                        </label>
+                    </div>
                 </nav>
-                <div class="theme-switch-wrapper">
-                    <label class="theme-switch" for="theme-toggle" aria-label="Toggle Dark/Light Mode">
-                        <input type="checkbox" id="theme-toggle" />
-                        <div class="slider"></div>
-                    </label>
-                </div>
             </div>
         </header>
 
@@ -44,5 +49,6 @@
         </main>
 
     </div>
+
 </body>
 </html>
