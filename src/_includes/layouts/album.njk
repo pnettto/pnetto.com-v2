@@ -3,11 +3,12 @@ layout: layouts/base.njk
 ---
 <p><a href="/photos/">← back</a></p>
 
+<div class="album-header">
+    <h1>{{ title }}</h1>
+    <p class="album-date">{{ date | albumDate }}</p>
+</div>
+
 <div class="album-page">
-    <div class="album-header">
-        <h1>{{ title }}</h1>
-        <p class="album-date">{{ date | albumDate }}</p>
-    </div>
 
     {% set images = page.inputPath | getAlbumImages %}
     
