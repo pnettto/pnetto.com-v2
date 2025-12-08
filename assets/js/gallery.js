@@ -44,15 +44,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showNext() {
-        currentIndex = (currentIndex + 1) % images.length;
-        lightboxImg.src = images[currentIndex].src;
-        updateHash(currentIndex);
+        lightboxImg.classList.add('fade-out');
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            lightboxImg.src = images[currentIndex].src;
+            updateHash(currentIndex);
+            lightboxImg.onload = () => {
+                lightboxImg.classList.remove('fade-out');
+            };
+        }, 200);
     }
 
     function showPrev() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        lightboxImg.src = images[currentIndex].src;
-        updateHash(currentIndex);
+        lightboxImg.classList.add('fade-out');
+        setTimeout(() => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            lightboxImg.src = images[currentIndex].src;
+            updateHash(currentIndex);
+            lightboxImg.onload = () => {
+                lightboxImg.classList.remove('fade-out');
+            };
+        }, 200);
     }
 
     // Event Listeners
