@@ -20,7 +20,12 @@
                 <img src="/pnetto.com-v2/images/logo.svg" alt="MySite Logo" class="logo-img" height="80">
             </a>
             <div style="display: flex; align-items: center; gap: var(--space-md);">
-                <nav>
+                <button class="burger-menu" aria-label="Toggle Menu" aria-expanded="false">
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                </button>
+                <nav class="main-nav">
                     <ul>
                         <li><a href="/pnetto.com-v2/">Home</a></li>
                         <li><a href="/pnetto.com-v2/bio/">Bio</a></li>
@@ -29,13 +34,13 @@
                         <li><a href="/pnetto.com-v2/logs/">Logs</a></li>
                         <li><a href="/pnetto.com-v2/contact/">Contact</a></li>
                     </ul>
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                            <input type="checkbox" id="theme-toggle">
+                            <div class="slider"></div>
+                        </label>
+                    </div>
                 </nav>
-                <div class="theme-switch-wrapper">
-                    <label class="theme-switch" for="theme-toggle" aria-label="Toggle Dark/Light Mode">
-                        <input type="checkbox" id="theme-toggle">
-                        <div class="slider"></div>
-                    </label>
-                </div>
             </div>
         </header>
 
@@ -284,6 +289,34 @@
         
       
         
+          <a href="/pnetto.com-v2/work/io/" class="project-card">
+            
+              <div class="project-card-image-wrapper">
+                <picture><source type="image/webp" srcset="/pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-300w.webp 300w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-600w.webp 600w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-900w.webp 900w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-1200w.webp 1200w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-1500w.webp 1500w" sizes="(min-width: 30em) 50vw, 100vw"><img src="/pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-300w.jpeg" alt="IO Tskoli" class="project-card-image" loading="lazy" decoding="async" width="1500" height="900" srcset="/pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-300w.jpeg 300w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-600w.jpeg 600w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-900w.jpeg 900w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-1200w.jpeg 1200w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-1500w.jpeg 1500w" sizes="(min-width: 30em) 50vw, 100vw"></picture>
+              </div>
+            
+            <div class="project-card-content">
+              <h3>IO Tskoli</h3>
+              
+              
+              <div class="project-card-meta">
+                
+                  <span class="meta-item"><strong>Client:</strong> Tækniskólinn</span>
+                
+                
+                  <span class="meta-item"><strong>Role:</strong> Full stack developer</span>
+                
+              </div>
+              
+
+              
+              <p class="project-card-description">School Management System</p>
+              
+
+              <span class="project-card-link">See more &rarr;</span>
+            </div>
+          </a>
+        
       
         
       
@@ -326,8 +359,6 @@
     
       
     
-      
-        
       
     
       
@@ -382,34 +413,6 @@
           
             
           
-            
-              <a href="/pnetto.com-v2/work/io/" class="project-card">
-                
-                  <div class="project-card-image-wrapper">
-                    <picture><source type="image/webp" srcset="/pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-300w.webp 300w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-600w.webp 600w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-900w.webp 900w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-1200w.webp 1200w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-1500w.webp 1500w" sizes="(min-width: 30em) 50vw, 100vw"><img src="/pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-300w.jpeg" alt="IO Tskoli" class="project-card-image" loading="lazy" decoding="async" width="1500" height="900" srcset="/pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-300w.jpeg 300w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-600w.jpeg 600w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-900w.jpeg 900w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-1200w.jpeg 1200w, /pnetto.com-v2/pnetto.com-v2/img/iYdV4_nzdA-1500w.jpeg 1500w" sizes="(min-width: 30em) 50vw, 100vw"></picture>
-                  </div>
-                
-                <div class="project-card-content">
-                  <h3>IO Tskoli</h3>
-                  
-                  
-                  <div class="project-card-meta">
-                    
-                      <span class="meta-item"><strong>Client:</strong> Tækniskólinn</span>
-                    
-                    
-                      <span class="meta-item"><strong>Role:</strong> Full stack developer</span>
-                    
-                  </div>
-                  
-
-                  
-                  <p class="project-card-description">School Management System</p>
-                  
-
-                  <span class="project-card-link">See more &rarr;</span>
-                </div>
-              </a>
             
           
             
@@ -1002,5 +1005,6 @@
         </main>
 
     </div>
+
 </body>
 </html>

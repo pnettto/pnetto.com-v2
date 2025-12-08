@@ -30,6 +30,7 @@ initTheme();
 
 // Handle toggle click (to be attached after DOM load)
 document.addEventListener('DOMContentLoaded', () => {
+    // Theme Toggle
     const toggle = document.querySelector('#theme-toggle');
     if (toggle) {
         toggle.addEventListener('change', (e) => {
@@ -39,5 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Sync toggle state one more time just in case
         toggle.checked = getPreferredTheme() === 'light';
+    }
+
+    // Burger Menu
+    const burger = document.querySelector('.burger-menu');
+    const body = document.body;
+
+    if (burger) {
+        burger.addEventListener('click', () => {
+            const isExpanded = burger.getAttribute('aria-expanded') === 'true';
+            burger.setAttribute('aria-expanded', !isExpanded);
+            body.classList.toggle('nav-open');
+        });
     }
 });
