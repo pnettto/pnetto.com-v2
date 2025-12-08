@@ -5,10 +5,10 @@ categories:
   - development
 slug: weather-is
 title: Weather.is
-client: Weahter.is
+client: Weather.is
 role: Full stack developer
 year: 2020/2021
-url: https://delinde.dk
+url: https://weather.is
 logo: logo.png
 coverImage: cover.png
 nanoDescription: Next.js Website & Back-end

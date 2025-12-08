@@ -914,11 +914,10 @@ picture {
   transform: translateY(-50%);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .lightbox-prev,
   .lightbox-next {
-    font-size: 3rem;
-    padding: 0.5rem;
+    display: none;
   }
 }
 
