@@ -891,18 +891,25 @@ picture {
 }
 
 .lightbox-close {
-  top: 1rem;
-  right: 1rem;
+  top: 2rem;
+  right: 2rem;
   font-size: 3rem;
   line-height: 1;
 }
 
+.lightbox-close svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke-width: 2;
+}
+
 .lightbox-prev {
+  left: 2rem;
   transform: translateY(-50%);
 }
 
 .lightbox-next {
-  right: 1rem;
+  right: 2rem;
   top: 50%;
   transform: translateY(-50%);
 }
