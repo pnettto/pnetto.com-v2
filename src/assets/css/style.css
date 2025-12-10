@@ -1,7 +1,7 @@
 :root {
-  --bg-color: #11181d;
-  --bg-secondary: #19232c;
-  --text-main: #e7e7e7;
+  --bg-color: #0f161b;
+  --bg-secondary: #19252e;
+  --text-main: #d6d6d6;
   --text-heading: #e7e7e7;
   --text-muted: #b0b0b0;
 
@@ -15,7 +15,7 @@
   /* Font Sizes */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.9rem;
-  --font-size-base: 16px;
+  --font-size-base: 20px;
   --font-size-md: 1.1rem;
   --font-size-lg: 1.3rem;
   --font-size-xl: 1.8rem;
@@ -52,6 +52,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 7rem;
+  font-size: var(--font-size-base);
 }
 
 body {
@@ -61,7 +62,6 @@ body {
   color: var(--text-main);
   font-family: var(--font-primary);
   line-height: 1.5;
-  font-size: var(--font-size-base);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -853,10 +853,10 @@ picture {
   transform: translateY(-50%);
   background: var(--bg-color);
   color: var(--text-heading);
-  width: 3rem;
-  height: 3rem;
+  width: 1.75rem;
+  height: 1.75rem;
   border-radius: 50%;
-  font-size: 1.5rem;
+  font-size: 1rem;
   cursor: pointer;
   z-index: 10;
   display: flex;
@@ -882,8 +882,8 @@ picture {
 /* Lightbox Close specific */
 .lightbox-close {
   position: absolute;
-  width: 3rem;
-  height: 3rem;
+  width: 1.75rem;
+  height: 1.75rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -896,7 +896,8 @@ picture {
 }
 
 .lightbox-close:hover {
-  color: var(--accent-color);
+  background: var(--accent-color);
+  color: var(--bg-color);
 }
 
 .lightbox-close {
@@ -907,8 +908,8 @@ picture {
 }
 
 .lightbox-close svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   stroke-width: 2;
 }
 
