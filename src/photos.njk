@@ -7,7 +7,7 @@ title: Photos
         <h1>Photos</h1>
     </header>
 
-    <p>This is a personal collection of pictures I took adn edited, mostly featuring a poetic look at daily life events and the natural beauty around me. You can also see more of my experiments on <a href="https://unsplash.com/@pnettto">Unsplash</a> and <a href="https://mastodon.art/@pnetto">Mastodon</a>.</p>
+    <p>Here are some pictures I took featuring a quiet look at daily life and natural places I've visited :) You can also see more of my experiments on <a href="https://unsplash.com/@pnettto">Unsplash</a> and <a href="https://mastodon.art/@pnetto">Mastodon</a>.</p>
     
     <div class="albums-grid">
         {% for album in collections.photos | reverse %}
@@ -20,7 +20,7 @@ title: Photos
                     </div>
                 {% endif %}
                 <div class="album-info">
-                    <h3>{{ album.data.title }}</h3>
+                    <h4>{{ album.data.title }}</h4>
                     <span class="album-date">{{ album.date | albumDate }}</span>
                 </div>
             </a>
