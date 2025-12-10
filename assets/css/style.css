@@ -369,7 +369,7 @@ p {
 }
 
 .bio-intro {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -491,7 +491,6 @@ p {
   background: var(--bg-color);
   padding: var(--space-sm) 0;
   margin-bottom: var(--space-lg);
-  border-bottom: 1px solid var(--border-color);
 }
 
 .badge {
