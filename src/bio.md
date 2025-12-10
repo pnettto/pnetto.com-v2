@@ -82,7 +82,7 @@ timeline:
   - title: 2025
     text: >
       <ul>
-        <li>Started at Capgemini Sweden as a Data Engineering intern</li>
+        <li>Started at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> as a Data Engineering intern</li>
         <li>Started agentic AI development studies, as you do :)</li>
       </ul>
   - title: 2024

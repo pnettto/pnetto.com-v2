@@ -437,8 +437,17 @@ p {
 /* Timeline */
 .timeline {
   position: relative;
-  border-left: 2px solid var(--border-color);
   padding-left: var(--space-lg);
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 1rem; 
+  left: 0;
+  width: 2px;
+  height: calc(100% - 1rem);
+  background-color: var(--border-color);
 }
 
 .timeline-item {
