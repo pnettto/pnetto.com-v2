@@ -2,7 +2,7 @@
   --bg-color: #0f161b;
   --bg-secondary: #19252e;
   --text-main: #d6d6d6;
-  --text-heading: #e7e7e7;
+  --text-heading: #d6d6d6;
   --text-muted: #b0b0b0;
 
   --accent-color: #e1b65a;
@@ -32,15 +32,15 @@
   --space-4xl: 6rem;
 
   /* Layout */
-  --container-width: 1000px;
+  --container-width: 900px;
   --radius-base: 4px;
   --radius-full: 9999px;
 }
 
 [data-theme="light"] {
-  --bg-color: #f2ecda;
-  --bg-secondary: #ece1c0;
-  --text-main: #333333;
+  --bg-color: #d7d5cb;
+  --bg-secondary: #cbc6b0;
+  --text-main: #3c3c3c;
   --text-heading: #111111;
   --text-muted: #333333;
   --border-color: #333333;
@@ -82,6 +82,14 @@ hr {
   height: 1px;
   background-color: var(--bg-secondary);
   margin: 4rem 0;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-heading);
+}
+
+p {
+  margin-top: 0;
 }
 
 .container {
@@ -399,7 +407,7 @@ p {
 /* Skills Grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
 }
 
@@ -515,7 +523,8 @@ p {
 .project-card {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-lg);
+  margin-bottom: 3rem;
+  gap: var(--space-md);
   border-radius: var(--radius-base);
 }
 
@@ -533,8 +542,9 @@ a.project-card {
 }
 
 .project-card-image-wrapper {
-    width: 32rem;
+    width: 25rem;
 }
+
 
 .project-card-image {
   width: 100%;
@@ -555,13 +565,6 @@ picture {
   flex: 1;
   display: flex;
   flex-direction: column;
-}
-
-@media (min-width: 600px) {
-  .project-card-content {
-    padding: var(--space-md);
-  }
-  
 }
 
 .project-card-content h3 {
@@ -734,7 +737,7 @@ picture {
   transition: transform 0.5s ease;
 }
 
-.album-info h3 {
+.album-info h4 {
   margin-top: 1rem;
   margin-bottom: 0;
 }
@@ -755,6 +758,10 @@ picture {
     margin-left: calc(50% - min(calc(50vw - var(--space-lg)), 600px));
     margin-right: calc(50% - min(calc(50vw - var(--space-lg)), 600px));
   }
+}
+
+.album-header h1 {
+  margin-bottom: 0.5rem;
 }
 
 /* Album Page Grid */
@@ -853,10 +860,10 @@ picture {
   transform: translateY(-50%);
   background: var(--bg-color);
   color: var(--text-heading);
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   z-index: 10;
   display: flex;
@@ -987,11 +994,11 @@ picture {
   }
 
   .carousel-arrow.prev {
-    left: 0.5rem; /* Move slightly inward */
+    left: -1.5rem; /* Move slightly inward */
   }
 
   .carousel-arrow.next {
-    right: 0.5rem; /* Move slightly inward */
+    right: -1.5rem; /* Move slightly inward */
   }
 }
 
