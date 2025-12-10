@@ -8,11 +8,20 @@ layout: layouts/base.njk
     </header>
 
     <div class="bio-intro">
+        <a id="{{ "Start" | slugify }}"></a>
         <div class="intro-text">{{ intro.text | safe }}</div>
+    </div>
+
+    <div class="tags-list sticky-tags">
+    {% set categories = ['Start', 'Tech Skills', 'Other Skills', 'Timeline', 'References', 'Personal Interests'] %}
+    {% for category in categories %}
+            <a href="#{{ category | slugify  }}" class="badge">{{ category }}</a>
+        {% endfor %}
     </div>
 
     <section id="tech-skills" class="bio-section">
         <h2 class="underlined">Tech Skills</h2>
+        <a id="{{ "Tech Skills" | slugify }}"></a>
         <div class="skills-grid">
             {% for group in techSkills %}
             <div class="skill-group">
@@ -29,6 +38,7 @@ layout: layouts/base.njk
 
     <section id="other-skills" class="bio-section">
         <h2 class="underlined">Other Skills</h2>
+        <a id="{{ "Other Skills" | slugify }}"></a>
         <div class="skills-grid">
             {% for skill in otherSkills %}
             <div class="skill-group">
@@ -41,6 +51,7 @@ layout: layouts/base.njk
 
     <section id="timeline" class="bio-section">
         <h2 class="underlined">Timeline</h2>
+        <a id="{{ "Timeline" | slugify }}"></a>
         <div class="timeline">
             {% for item in timeline %}
             <div class="timeline-item">
@@ -53,6 +64,7 @@ layout: layouts/base.njk
     
     <section id="references" class="bio-section">
         <h2 class="underlined">References</h2>
+        <a id="{{ "References" | slugify }}"></a>
         <div class="carousel-wrapper">
             <button class="carousel-arrow nav-arrow prev" aria-label="Previous slide">←</button>
             <div class="carousel-container">
@@ -85,7 +97,8 @@ layout: layouts/base.njk
     </section>
 
     <section id="personal-interests" class="bio-section">
-        <h2 class="underlined">Some personal Interests</h2>
+        <h2 class="underlined">Some personal interests</h2>
+        <a id="{{ "Personal Interests" | slugify }}"></a>
         <div class="skills-grid">
             {% for interest in personalInterests %}
             <div class="skill-group">
