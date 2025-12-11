@@ -51,6 +51,7 @@ module.exports = async function (eleventyConfig) {
 
     eleventyConfig.addNunjucksAsyncShortcode("optimizedImageUrl", async function(src, width = "auto") {
         if(src === undefined) {
+            console.log(src, width);
              return "";
         }
         let metadata = await Image(src, {

@@ -30,7 +30,7 @@ eleventyExcludeFromCollections: true
           <a href="{{ project.url }}" class="project-card">
             {% if project.data.coverImage %}
               <div class="project-card-image-wrapper">
-                {% image "src/assets/images/projects/" ~ project.data.slug ~ "/" ~ project.data.coverImage, project.data.title, "(min-width: 30em) 50vw, 100vw", "project-card-image" %}
+                {% image "src/work/" ~ project.data.slug ~ "/" ~ project.data.coverImage, project.data.title, "(min-width: 30em) 50vw, 100vw", "project-card-image" %}
               </div>
             {% endif %}
             <div class="project-card-content">
@@ -75,7 +75,7 @@ eleventyExcludeFromCollections: true
               <a href="{{ project.url }}" class="project-card">
                 {% if project.data.coverImage %}
                   <div class="project-card-image-wrapper">
-                    {% image "src/assets/images/projects/" ~ project.data.slug ~ "/" ~ project.data.coverImage, project.data.title, "(min-width: 30em) 50vw, 100vw", "project-card-image" %}
+                    {% image "src/work/" ~ project.data.slug ~ "/" ~ project.data.coverImage, project.data.title, "(min-width: 30em) 50vw, 100vw", "project-card-image" %}
                   </div>
                 {% endif %}
                 <div class="project-card-content">
