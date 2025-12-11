@@ -791,6 +791,10 @@ picture {
   margin-top: var(--space-lg);
 }
 
+.gallery-grid button {
+  margin-bottom: var(--space-xs);
+}
+
 @media (max-width: 900px) {
   .gallery-grid {
     column-count: 2;
@@ -809,11 +813,8 @@ picture {
   padding: 0;
   cursor: pointer;
   break-inside: avoid;
-  margin-bottom: var(--space-xs);
   display: block;
   width: 100%;
-  border-radius: var(--radius-base);
-  overflow: hidden;
 }
 
 .gallery-item img {
@@ -821,10 +822,15 @@ picture {
   height: auto; /* Natural height */
   display: block;
   transition: filter 0.3s ease;
+  border-radius: var(--radius-base);
 }
 
 .gallery-item:hover img {
   filter: brightness(1.1);
+}
+
+.gallery-item:focus {
+  outline: none;
 }
 
 /* Lightbox */
