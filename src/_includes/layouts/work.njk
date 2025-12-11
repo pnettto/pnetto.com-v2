@@ -27,18 +27,21 @@ layout: layouts/base.njk
                     {{ client }}
                 </div>
             {% endif %}
+
             {% if role %}
                 <div class="project-meta-item">
                     <strong>Role:</strong>
                     {{ role }}
                 </div>
             {% endif %}
+
             {% if year %}
                 <div class="project-meta-item">
                     <strong>Year:</strong>
                     {{ year }}
                 </div>
             {% endif %}
+
             {% if url %}
                 <div class="project-meta-item">
                     <strong>URL:</strong>
@@ -47,6 +50,7 @@ layout: layouts/base.njk
             {% endif %}
         </div>
     </header>
+
     <!-- Checks if we have detailed content sections -->
     {% set hasContent = introSection or screensSection or backstorySection %}
     {% if not hasContent %}
@@ -57,24 +61,27 @@ layout: layouts/base.njk
         <p>
             This project does not have a detailed case study yet.
             {% if url %}
-                You can visit the live project at
+                See live project at
                 <a href="{{ url }}">{{ url }}</a>.
             {% endif %}
         </p>
     {% else %}
         {# Existing Content Flow #}
+        
         {% if introSection %}
             <section class="project-intro">
                 <h2>{{ introSection.title }}</h2>
                 <div>{{ introSection.text | safe }}</div>
             </section>
         {% endif %}
+
         {% if screensSection %}
             <section class="project-screens">
                 {% for screen in screensSection %}
+                    {%  set imagePath = "src/work/" ~ slug ~ "/" ~ screen.image %}
                     <div class="screen-item">
-                        <button class="work-image" id="image-{{ image.name | slugify }}" aria-label="View photo {{ loop.index }}" data-full-src="{% optimizedImageUrl image.filePath, 1600 %}">
-                            {% image "src/work/" ~ slug ~ "/" ~ screen.image, "", "900px", "screen-image" %}
+                        <button class="gallery-item" id="image-{{ screen.image | slugify }}" aria-label="View photo {{ loop.index }}" data-full-src="{% optimizedImageUrl imagePath, 1600 %}">
+                            {% image imagePath, "", "900px", "screen-image" %}
                         </button>
                         {% if screen.text %}
                             <p class="screen-text">{{ screen.text }}</p>
@@ -83,18 +90,21 @@ layout: layouts/base.njk
                 {% endfor %}
             </section>
         {% endif %}
+
         {% if backstorySection %}
             <section class="backstory-section">
                 <h3>Backstory</h3>
                 <div>{{ backstorySection.text | safe }}</div>
             </section>
         {% endif %}
+
         {% if content | length > 0 %}
             <div class="project-main-content">
                 {{ content | safe }}
             </div>
         {% endif %}
     {% endif %}
+
     <div class="project-nav">
         {% set previousProject = collections.work | sort(attribute='data.order') | getPreviousCollectionItem(page) %}
         {% if not previousProject %}
@@ -105,6 +115,7 @@ layout: layouts/base.njk
                 <a href="{{ previousProject.url }}">← Previous project: {{ previousProject.data.title }}</a>
             </p>
         {% endif %}
+
         {% set nextProject = collections.work | sort(attribute='data.order') | getNextCollectionItem(page) %}
         {% if not nextProject %}
             {% set nextProject = collections.work | first %}
