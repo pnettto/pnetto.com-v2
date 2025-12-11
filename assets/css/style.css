@@ -38,14 +38,14 @@
 }
 
 [data-theme="light"] {
-  --bg-color: #d7d5cb;
-  --bg-secondary: #cbc6b0;
+  --bg-color: #c9beaa;
+  --bg-secondary: #b9ac92;
   --text-main: #3c3c3c;
   --text-heading: #111111;
   --text-muted: #333333;
   --border-color: #333333;
   --highlight-color: #000000;
-  --accent-color: #bb9036;
+  --accent-color: #153a56;
 }
 
 /* Reset & Base */
@@ -526,7 +526,7 @@ p {
 
 .badge {
   font-size: var(--font-size-xs);
-  padding: 0.2em 0.6em;
+  padding: 0.25em 0.7em;
   border-radius: var(--radius-full);
   background-color: var(--bg-secondary);
   color: var(--text-heading);
