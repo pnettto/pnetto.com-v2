@@ -146,6 +146,11 @@ p {
   display: none;
 }
 
+.page-nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .slider {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -686,7 +691,7 @@ picture {
   width: 100%;
   height: auto;
   border-radius: var(--radius-base);
-  border: 1px solid var(--border-color);
+  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.1);
   margin-bottom: var(--space-sm);
   display: block;
 }
@@ -707,9 +712,17 @@ picture {
 /* Album Index */
 .albums-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--space-sm);
   margin-top: var(--space-lg);
+}
+
+@media (min-width: 900px) {
+  .albums-grid {
+    width: min(calc(100vw - var(--space-2xl)), 1920px);
+    margin-left: calc(50% - min(calc(50vw - var(--space-lg)), 960px));
+    margin-right: calc(50% - min(calc(50vw - var(--space-lg)), 960px));
+  }
 }
 
 .album-card {
@@ -755,6 +768,7 @@ picture {
 
 .album-page {
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 900px) {
@@ -762,6 +776,7 @@ picture {
     width: min(calc(100vw - var(--space-2xl)), 1920px);
     margin-left: calc(50% - min(calc(50vw - var(--space-lg)), 960px));
     margin-right: calc(50% - min(calc(50vw - var(--space-lg)), 960px));
+    margin-bottom: 4rem;
   }
 }
 
