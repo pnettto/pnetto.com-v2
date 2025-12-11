@@ -73,6 +73,11 @@ a {
   transition: all 0.2s ease;
 }
 
+a.anchor {
+  height: 0;
+  border: 0;
+}
+
 a:hover {
   color: var(--highlight-color);
   border-bottom-color: var(--highlight-color);
@@ -338,9 +343,6 @@ p {
 /* Page header */
 /* Header & Nav */
 .page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 /* Logs List */
@@ -519,7 +521,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--bg-color);
+  background-color: var(--bg-color);
   padding: var(--space-sm) 0;
   margin-bottom: var(--space-lg);
 }
@@ -745,9 +747,10 @@ picture {
 
 @media (min-width: 900px) {
   .albums-grid {
-    width: min(calc(100vw - var(--space-2xl)), 1920px);
-    margin-left: calc(50% - min(calc(50vw - var(--space-lg)), 960px));
-    margin-right: calc(50% - min(calc(50vw - var(--space-lg)), 960px));
+    width: min(calc(100vw - var(--space-lg)), 1920px);
+    margin-left: calc(50% - min(calc(50vw - var(--space-sm)), 960px));
+    margin-right: calc(50% - min(calc(50vw - var(--space-sm)), 960px));
+    margin-bottom: 4rem;
   }
 }
 
