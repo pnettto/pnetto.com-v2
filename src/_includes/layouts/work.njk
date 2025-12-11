@@ -3,113 +3,133 @@ layout: layouts/base.njk
 ---
 
 <div class="page-nav-header">
-  <p><a href="/work/">← all</a></p>
-
-  {% set nextProject = collections.work | sort(attribute='data.order') | getNextCollectionItem(page) %}
-  {% if not nextProject %}
-    {% set nextProject = collections.work | first %}
-  {% endif %}
-  {% if nextProject %}
-    <p><a href="{{ nextProject.url }}">next →</a></p>
-  {% endif %}
+    <p>
+        <a href="/work/">← all</a>
+    </p>
+    {% set nextProject = collections.work | sort(attribute='data.order') | getNextCollectionItem(page) %}
+    {% if not nextProject %}
+        {% set nextProject = collections.work | first %}
+    {% endif %}
+    {% if nextProject %}
+        <p>
+            <a href="{{ nextProject.url }}">next →</a>
+        </p>
+    {% endif %}
 </div>
 
 <article class="project-detail">
-  <header class="project-header">
-    <h1>Project: {{ title }}</h1>
-    <div class="project-meta">
-      {% if client %}
-      <div class="project-meta-item">
-        <strong>Client:</strong> {{ client }}
-      </div>
-      {% endif %}
-      {% if role %}
-      <div class="project-meta-item">
-        <strong>Role:</strong> {{ role }}
-      </div>
-      {% endif %}
-      {% if year %}
-      <div class="project-meta-item">
-        <strong>Year:</strong> {{ year }}
-      </div>
-      {% endif %}
-      {% if url %}
-      <div class="project-meta-item">
-        <strong>URL:</strong> <a href="{{ url }}" target="_blank" rel="noopener noreferrer">{{ url }}</a>
-      </div>
-      {% endif %}
-    </div>
-  </header>
-
-  <!-- Checks if we have detailed content sections -->
-  {% set hasContent = introSection or screensSection or backstorySection %}
-  {% if not hasContent %}
-     {# No detailed content: Show Cover and Big Link #}
-     {% if coverImage %}
-        {% image "src/assets/images/projects/" ~ slug ~ "/" ~ coverImage, title ~ " Cover", "100vw", "project-hero-image" %}
-     {% endif %}
-     
-     <p>
-       This project does not have a detailed case study yet. 
-       {% if url %}
-         You can visit the live project at <a href="{{ url }}">{{ url }}</a>.
-       {% endif %}
-     </p>
-
-  {% else %}
-      {# Existing Content Flow #}
-      
-      {% if introSection %}
-      <section class="project-intro">
-        <h2>{{ introSection.title }}</h2>
-        <div>{{ introSection.text | safe }}</div>
-      </section>
-      {% endif %}
-
-      {% if screensSection %}
-      <section class="project-screens">
-        {% for screen in screensSection %}
-          <div class="screen-item">
-             {% image "src/assets/images/projects/" ~ slug ~ "/" ~ screen.image, "", "100vw", "screen-image" %}
-             {% if screen.text %}
-               <p class="screen-text">{{ screen.text }}</p>
-             {% endif %}
-          </div>
-        {% endfor %}
-      </section>
-      {% endif %}
-
-      {% if backstorySection %}
-      <section class="backstory-section">
-        <h3>Backstory</h3>
-        <div>{{ backstorySection.text | safe }}</div>
-      </section>
-      {% endif %}
-      
-      {% if content | length > 0 %}
-        <div class="project-main-content">
-          {{ content | safe }}
+    <header class="project-header">
+        <h1>Project: {{ title }}</h1>
+        <div class="project-meta">
+            {% if client %}
+                <div class="project-meta-item">
+                    <strong>Client:</strong>
+                    {{ client }}
+                </div>
+            {% endif %}
+            {% if role %}
+                <div class="project-meta-item">
+                    <strong>Role:</strong>
+                    {{ role }}
+                </div>
+            {% endif %}
+            {% if year %}
+                <div class="project-meta-item">
+                    <strong>Year:</strong>
+                    {{ year }}
+                </div>
+            {% endif %}
+            {% if url %}
+                <div class="project-meta-item">
+                    <strong>URL:</strong>
+                    <a href="{{ url }}" target="_blank" rel="noopener noreferrer">{{ url }}</a>
+                </div>
+            {% endif %}
         </div>
-      {% endif %}
-
-  {% endif %}
-
-
-  <div class="project-nav">
-    {% set previousProject = collections.work | sort(attribute='data.order') | getPreviousCollectionItem(page) %}
-    {% if not previousProject %}
-      {% set previousProject = collections.work | last %}
+    </header>
+    <!-- Checks if we have detailed content sections -->
+    {% set hasContent = introSection or screensSection or backstorySection %}
+    {% if not hasContent %}
+        {# No detailed content: Show Cover and Big Link #}
+        {% if coverImage %}
+            {% image "src/work/" ~ slug ~ "/" ~ coverImage, title ~ " Cover", "100vw", "project-hero-image" %}
+        {% endif %}
+        <p>
+            This project does not have a detailed case study yet.
+            {% if url %}
+                You can visit the live project at
+                <a href="{{ url }}">{{ url }}</a>.
+            {% endif %}
+        </p>
+    {% else %}
+        {# Existing Content Flow #}
+        {% if introSection %}
+            <section class="project-intro">
+                <h2>{{ introSection.title }}</h2>
+                <div>{{ introSection.text | safe }}</div>
+            </section>
+        {% endif %}
+        {% if screensSection %}
+            <section class="project-screens">
+                {% for screen in screensSection %}
+                    <div class="screen-item">
+                        <button class="work-image" id="image-{{ image.name | slugify }}" aria-label="View photo {{ loop.index }}" data-full-src="{% optimizedImageUrl image.filePath, 1600 %}">
+                            {% image "src/work/" ~ slug ~ "/" ~ screen.image, "", "900px", "screen-image" %}
+                        </button>
+                        {% if screen.text %}
+                            <p class="screen-text">{{ screen.text }}</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </section>
+        {% endif %}
+        {% if backstorySection %}
+            <section class="backstory-section">
+                <h3>Backstory</h3>
+                <div>{{ backstorySection.text | safe }}</div>
+            </section>
+        {% endif %}
+        {% if content | length > 0 %}
+            <div class="project-main-content">
+                {{ content | safe }}
+            </div>
+        {% endif %}
     {% endif %}
-    {% if previousProject %}
-      <p><a href="{{ previousProject.url }}">← Previous project: {{ previousProject.data.title }}</a></p>
-    {% endif %}
-
-    {% set nextProject = collections.work | sort(attribute='data.order') | getNextCollectionItem(page) %}
-    {% if not nextProject %}
-      {% set nextProject = collections.work | first %}
-    {% endif %}
-    {% if nextProject %}
-      <p><a href="{{ nextProject.url }}">Next project: {{ nextProject.data.title }} →</a></p>
-    {% endif %}
-  </div>
+    <div class="project-nav">
+        {% set previousProject = collections.work | sort(attribute='data.order') | getPreviousCollectionItem(page) %}
+        {% if not previousProject %}
+            {% set previousProject = collections.work | last %}
+        {% endif %}
+        {% if previousProject %}
+            <p>
+                <a href="{{ previousProject.url }}">← Previous project: {{ previousProject.data.title }}</a>
+            </p>
+        {% endif %}
+        {% set nextProject = collections.work | sort(attribute='data.order') | getNextCollectionItem(page) %}
+        {% if not nextProject %}
+            {% set nextProject = collections.work | first %}
+        {% endif %}
+        {% if nextProject %}
+            <p>
+                <a href="{{ nextProject.url }}">Next project: {{ nextProject.data.title }} →</a>
+            </p>
+        {% endif %}
+    </div>
 </article>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
+    <button class="lightbox-close" aria-label="Close lightbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+    </button>
+    <button class="lightbox-prev nav-arrow" aria-label="Previous photo">←</button>
+    <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+    <button class="lightbox-next nav-arrow" aria-label="Next photo">→</button>
+</div>
+
+<script src="/assets/js/gallery.js"></script>

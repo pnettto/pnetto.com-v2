@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.querySelector('.lightbox-close');
     const prevBtn = document.querySelector('.lightbox-prev');
     const nextBtn = document.querySelector('.lightbox-next');
-    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const galleryItems = document.querySelectorAll('.gallery-item img, .work-image img');
     
     let currentIndex = 0;
     const images = Array.from(galleryItems).map(img => {
-        const button = img.closest('.gallery-item');
+        const button = img.closest('.gallery-item') || img.closest('.work-image');
         return {
             src: button.dataset.fullSrc || img.src,
             id: button.id
