@@ -151,6 +151,10 @@ p {
   justify-content: space-between;
 }
 
+.page-nav-header p {
+  margin-bottom: 0;
+}
+
 .slider {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -625,6 +629,16 @@ picture {
   }
 }
 
+.project-detail {
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 600px) {
+  .project-detail {
+    margin-bottom: 5rem;
+  }
+}
+
 /* Project Detail */
 .project-header {
   margin-bottom: var(--space-2xl);
@@ -773,9 +787,9 @@ picture {
 
 @media (min-width: 900px) {
   .album-page {
-    width: min(calc(100vw - var(--space-2xl)), 1920px);
-    margin-left: calc(50% - min(calc(50vw - var(--space-lg)), 960px));
-    margin-right: calc(50% - min(calc(50vw - var(--space-lg)), 960px));
+    width: min(calc(100vw - var(--space-lg)), 1920px);
+    margin-left: calc(50% - min(calc(50vw - var(--space-sm)), 960px));
+    margin-right: calc(50% - min(calc(50vw - var(--space-sm)), 960px));
     margin-bottom: 4rem;
   }
 }

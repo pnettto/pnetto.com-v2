@@ -104,29 +104,29 @@ layout: layouts/base.njk
             </div>
         {% endif %}
     {% endif %}
-
-    <div class="project-nav">
-        {% set previousProject = collections.work | sort(attribute='data.order') | getPreviousCollectionItem(page) %}
-        {% if not previousProject %}
-            {% set previousProject = collections.work | last %}
-        {% endif %}
-        {% if previousProject %}
-            <p>
-                <a href="{{ previousProject.url }}">← Previous project: {{ previousProject.data.title }}</a>
-            </p>
-        {% endif %}
-
-        {% set nextProject = collections.work | sort(attribute='data.order') | getNextCollectionItem(page) %}
-        {% if not nextProject %}
-            {% set nextProject = collections.work | first %}
-        {% endif %}
-        {% if nextProject %}
-            <p>
-                <a href="{{ nextProject.url }}">Next project: {{ nextProject.data.title }} →</a>
-            </p>
-        {% endif %}
-    </div>
 </article>
+
+<div class="project-nav">
+    {% set previousProject = collections.work | sort(attribute='data.order') | getPreviousCollectionItem(page) %}
+    {% if not previousProject %}
+        {% set previousProject = collections.work | last %}
+    {% endif %}
+    {% if previousProject %}
+        <p>
+            <a href="{{ previousProject.url }}">← Previous project: {{ previousProject.data.title }}</a>
+        </p>
+    {% endif %}
+
+    {% set nextProject = collections.work | sort(attribute='data.order') | getNextCollectionItem(page) %}
+    {% if not nextProject %}
+        {% set nextProject = collections.work | first %}
+    {% endif %}
+    {% if nextProject %}
+        <p>
+            <a href="{{ nextProject.url }}">Next project: {{ nextProject.data.title }} →</a>
+        </p>
+    {% endif %}
+</div>
 
 <!-- Lightbox -->
 <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">

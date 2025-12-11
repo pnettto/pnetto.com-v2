@@ -114,8 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hash = window.location.hash;
     if (hash) {
         const id = hash.substring(1); // Remove '#'
-        const longId = `image-${id}-jpg`;
-        const index = images.findIndex(img => img.id === longId);
+        const index = images.findIndex(img => img.id.startsWith(`image-${id}`));
         if (index !== -1) {
             openLightbox(index);
         }
