@@ -3,23 +3,36 @@ layout: layouts/base.njk
 title: Welcome
 ---
 
-<header class="page-header">
-  <h1>Pedro Netto</h1>
-</header>
+<div class="welcome">
+    <div id="randomPhoto" class="random-photo"></div>
 
-<p>
-  I'm a
-  <a href="/work#development">web developer</a>
-  with a background in 
-  <a href="/work#education">teaching</a>
-  and 
-  <a href="/work#entrepreneurship">entrepreneurship</a>.
-</p>
-<p>
-  Learn more
-  <a href="/bio">
-    about me
-  </a>
-  and
-  <a href="/work">my work</a>.
-</p>
+    <div class="intro">
+        <div class="intro-inner">
+            <h1>Pedro Netto</h1>
+            
+            <div class="intro-body">
+                <p>
+                    I'm a
+                    <a href="/work#development">web developer</a>
+                    with a background in
+                    <a href="/work#education">teaching</a>
+                    and
+                    <a href="/work#entrepreneurship">entrepreneurship</a>.
+                </p>
+                <p>👈 Here is a random picture from my 
+                    <a href="/photos">photo archive</a>. Click it to see more!
+                </p>
+                <p>
+                    Learn more
+                    <a href="/bio">
+                        about me
+                    </a>
+                    and
+                    <a href="/work">my work</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/assets/js/photos.js"></script>

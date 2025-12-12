@@ -340,9 +340,55 @@ p {
   margin-bottom: 1.8rem;
 }
 
-/* Page header */
-/* Header & Nav */
-.page-header {
+.welcome .random-photo {
+  display: none;
+}
+
+.welcome .intro {
+  max-width: 30rem;
+  margin-top: 4rem;
+}
+
+@media (min-width: 1000px) {
+  .welcome {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+
+    width: min(calc(100vw - var(--space-lg)), 1000px);
+    margin-left: calc(50% - min(calc(50vw - var(--space-sm)), 500px));
+    margin-right: calc(50% - min(calc(50vw - var(--space-sm)), 500px));
+    margin-bottom: 4rem;
+  }
+
+  .welcome .intro {
+    display: flex;
+    align-items: center;
+    max-width: initial;
+    margin-top: -2rem;
+  }
+
+  .welcome .intro .intro-body {
+    transform: translateX(2rem);
+  }
+
+  .welcome .random-photo {
+    display: block;
+    cursor: pointer;
+  }
+
+  .welcome .random-photo img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3/4 !important;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .welcome .random-photo a {
+    color: var(--text-muted);
+    border: 0;
+  }
 }
 
 /* Logs List */
