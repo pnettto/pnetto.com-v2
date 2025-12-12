@@ -340,7 +340,7 @@ p {
   margin-bottom: 1.8rem;
 }
 
-.welcome .random-photo {
+.welcome .random-photos {
   display: none;
 }
 
@@ -349,38 +349,39 @@ p {
   margin-top: 4rem;
 }
 
+.welcome .photos-cta {
+  display: none;
+}
+
 @media (min-width: 1000px) {
   .welcome {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    position: relative;
     gap: 4rem;
-
-    width: min(calc(100vw - var(--space-lg)), 1000px);
-    margin-left: calc(50% - min(calc(50vw - var(--space-sm)), 500px));
-    margin-right: calc(50% - min(calc(50vw - var(--space-sm)), 500px));
+    width: 96vw;
+    margin-left: calc(50% - min(calc(50vw - var(--space-sm)), 48vw));
+    margin-right: calc(50% - min(calc(50vw - var(--space-sm)), 48vw));
     margin-bottom: 4rem;
   }
 
-  .welcome .intro {
-    display: flex;
-    align-items: center;
-    max-width: initial;
-    margin-top: -2rem;
-  }
-
-  .welcome .intro .intro-body {
-    transform: translateX(2rem);
+  .welcome .random-photos {
+    display: block;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    height: calc(100vh - 11rem);
+    border-radius: 10px;
+    overflow: hidden;
   }
 
   .welcome .random-photo {
-    display: block;
-    cursor: pointer;
+    position: relative;
   }
 
-  .welcome .random-photo img {
+  .welcome .random-photo picture, .welcome .random-photo img {
     width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 3/4 !important;
+    height: 100% !important;
     object-fit: cover;
     border-radius: 10px;
   }
@@ -388,6 +389,32 @@ p {
   .welcome .random-photo a {
     color: var(--text-muted);
     border: 0;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: var(--font-size-xs);
+  }
+
+  .welcome .intro {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    max-width: 30rem;
+    margin-top: initial;
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .welcome .intro .intro-body {
+    transform: translateX(1rem);
+    width: calc(100% - 1rem);
+  }
+
+  .welcome .photos-cta {
+    display: block;
   }
 }
 
