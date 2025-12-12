@@ -31,20 +31,24 @@
             ${album ? `<a href="/photos/${album.slug}">${album.title}</a>` : ''}
         `.trim();
     }
+
+    function refreshPictures() {
+        const randomPhotoEls = document.querySelectorAll(".random-photo");
+        randomPhotoEls.forEach((e) => {
+            if (!window.PHOTO_LIST) return;
+            const photos = window.PHOTO_LIST;
+            const randomImageMetadata = photos[Math.floor(Math.random() * photos.length)];
+            e.innerHTML = generateImgTag(randomImageMetadata)
+        })
+    }
     
     document.addEventListener("DOMContentLoaded", () => {
-        if (!window.PHOTO_LIST) return;
-        const photos = window.PHOTO_LIST;
-        const randomPhotoEl = document.getElementById("randomPhoto");
+        const randomPhotoEl = document.getElementById("randomPhotos");
         
         randomPhotoEl.addEventListener('click', () => {
-            const randomImageMetadata = photos[Math.floor(Math.random() * photos.length)];
-            randomPhotoEl.innerHTML = generateImgTag(randomImageMetadata)
+            refreshPictures();
         });
         
-        const randomImageMetadata = photos[Math.floor(Math.random() * photos.length)];
-        randomPhotoEl.innerHTML = generateImgTag(randomImageMetadata)
-        
-        
+        refreshPictures();
     });
 })();
