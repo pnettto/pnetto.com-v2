@@ -1,5 +1,30 @@
+const fs = require("fs");
+const path = require("path");
+const matter = require("gray-matter");
+
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require("@11ty/eleventy-img");
+
+function getFilesRecursive(dir) {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(e => {
+    const full = path.join(dir, e.name);
+    return e.isDirectory() ? getFilesRecursive(full) : [full];
+  });
+}
+
+function getFrontMatter(folderPath) {
+    // Get all .md files in folder y
+    const files = fs.readdirSync(folderPath).filter(f => f.endsWith(".md"));
+
+    if (files.length !== 1) {
+      throw new Error(`Expected exactly one .md file in folder y, but found ${files.length}`);
+    }
+
+    const filePath = path.join(folderPath, files[0]);
+    const content = fs.readFileSync(filePath, "utf-8");
+    const frontmatter = matter(content).data;
+    return frontmatter
+  }
 
 module.exports = async function (eleventyConfig) {
     const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
@@ -7,9 +32,11 @@ module.exports = async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/.nojekyll");
     eleventyConfig.addPassthroughCopy("src/photos/**/*.{jpg,jpeg,png,webp}");
-
+    
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+
+    eleventyConfig.addFilter("json", value => JSON.stringify(value));
 
     eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt, sizes = "100vw", className = "") {
         if(alt === undefined) {
@@ -143,6 +170,47 @@ module.exports = async function (eleventyConfig) {
 
     eleventyConfig.addCollection("references", (collectionApi) => {
         return collectionApi.getFilteredByGlob("src/bio/references/*.md");
+    });
+
+    eleventyConfig.addGlobalData("photoList", async function() {
+        const all = getFilesRecursive("src/photos");
+        const extensions = [".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif"];
+        const rawImages = all.filter(f => extensions.includes(path.extname(f).toLowerCase()));
+        const processedImages = [];
+        for (imagePath of rawImages) {
+            let metadata = await Image(imagePath, {
+                widths: [300, 600, 900, 1200, "auto"],
+                formats: ["webp", "jpeg"],
+                outputDir: "./public/img/",
+                urlPath: "/img/",
+                sharpOptions: {
+                    animated: true
+                },
+                jpegOptions: {
+                    quality: 90,
+                },
+                webpOptions: {
+                    quality: 90,
+                },
+                filenameFormat: function (id, src, width, format, options) {
+                    const path = require("path");
+                    const extension = path.extname(src);
+                    // Use id (hash) to prevent collisions for files with same name
+                    return `${id}-${width}w.${format}`;
+                }
+            });
+
+            const albumParts = imagePath.split('/').slice(0, 3);
+            const albumPath = albumParts.join('/');
+            metadata.album = {
+                path: albumPath,
+                title: getFrontMatter(albumPath).title,
+                slug: albumParts[albumParts.length - 1]
+            };
+
+            processedImages.push(metadata)
+        }
+        return processedImages;
     });
 
     return {
