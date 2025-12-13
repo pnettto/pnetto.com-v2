@@ -52,7 +52,7 @@
                 const randomImageMetadata = photos[randomIndex];
                 el.innerHTML = generateImgTag(randomImageMetadata)
                 photos.splice(randomIndex, 1);
-            }, 250);
+            }, 500);
         })
     }
     
