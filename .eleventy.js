@@ -81,6 +81,12 @@ module.exports = async function (eleventyConfig) {
         const parts = path.split('/');
         return parts[parts.length - 2];
     });
+    
+    // Get image name from a path
+    eleventyConfig.addFilter("getImageNameFromPath", function (path) {
+        const parts = path.split('/');
+        return parts[parts.length - 1];
+    });
 
     // Get the photo that matches the photo.source, via a path fragment
     eleventyConfig.addFilter("matchPhotosource", function (photos, sourceFragment) {

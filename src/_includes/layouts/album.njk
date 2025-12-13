@@ -24,7 +24,7 @@ layout: layouts/base.njk
 
     <div class="gallery-grid">
         {% for image in images %}
-            <button class="gallery-item" id="image-{{ image.name | slugify }}" aria-label="View photo {{ loop.index }}" data-full-src="{{ image.images.jpeg[image.images.jpeg.length - 1].url }}">
+            <button class="gallery-item" id="image-{{ image.source | getImageNameFromPath | slugify }}" aria-label="View photo {{ loop.index }}" data-full-src="{{ image.images.jpeg[image.images.jpeg.length - 1].url }}">
                 {% optmizedImageTag image %}
             </button>
         {% endfor %}
