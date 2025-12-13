@@ -837,14 +837,14 @@ picture {
 
 /* Album Index */
 .albums-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: var(--space-sm);
   margin-top: var(--space-lg);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 600px) {
   .albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--space-sm);
     width: min(calc(100vw - var(--space-lg)), 1920px);
     margin-left: calc(50% - min(calc(50vw - var(--space-sm)), 960px));
     margin-right: calc(50% - min(calc(50vw - var(--space-sm)), 960px));
@@ -864,17 +864,23 @@ picture {
 }
 
 .album-cover {
+  position: relative;
   aspect-ratio: 3/2;
   overflow: hidden;
 }
 
 .album-cover picture {
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }
 
 .album-cover img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
