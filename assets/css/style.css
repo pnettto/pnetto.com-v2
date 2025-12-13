@@ -30,6 +30,7 @@
   --space-2xl: 4rem;
   --space-3xl: 5rem;
   --space-4xl: 6rem;
+  --space-5xl: 8rem;
 
   /* Layout */
   --container-width: 900px;
@@ -378,11 +379,15 @@ p {
   .welcome .random-photo {
     position: relative;
     opacity: 1;
-    transition: opacity 0.5s ease-out;
+    background-color: var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: opacity 1s ease-out;
   }
 
   .welcome .random-photo.transparent {
     opacity: 0;
+    transition: opacity 0.5s ease-out;
   }
 
   .welcome .random-photo picture{
@@ -394,12 +399,15 @@ p {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover;
-    border-radius: 10px;
+    filter: brightness(0.9);
+    transition: filter 0.5s ease;
+  }
+  
+  .welcome .random-photo img:hover {
+    filter: brightness(1.1);
   }
 
-
-  
-  .welcome .random-photo a {
+  .welcome .random-photo .legend {
     color: var(--text-muted);
     border: 0;
     position: absolute;
@@ -408,7 +416,7 @@ p {
     font-size: var(--font-size-xs);
   }
 
-  .welcome .random-photo a:hover {
+  .welcome .random-photo .legend:hover {
     color: var(--text-main);
   }
 
@@ -680,7 +688,8 @@ a.project-card {
 
 
 .project-card-image {
-  width: 100%;
+  width: 25rem;
+  max-width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
   object-position: top left;
@@ -813,6 +822,19 @@ picture {
   margin-bottom: var(--space-3xl);
 }
 
+@media (min-width: calc(1200px)) {
+  .screen-item-image.gallery-item {
+    --max-width: 1600px;
+    width: min(100vw, var(--max-width));
+    margin-left: calc(50% - min(50vw, var(--max-width) / 2 )); 
+    padding: 0 var(--space-5xl);
+  }
+
+  .screen-item-image.gallery-item img {
+    width: 1600px;
+  }
+}
+
 .screen-image {
   width: 100%;
   height: auto;
@@ -941,18 +963,19 @@ picture {
 }
 
 .gallery-item {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  break-inside: avoid;
   display: block;
   width: 100%;
+  border: none;
+  padding: 0;
+  background: none;
+  break-inside: avoid;
+  cursor: pointer;
 }
 
 .gallery-item img {
-  width: 100%;
-  height: auto; /* Natural height */
+  width: 55rem;
+  max-width: 100%;
+  height: auto;
   display: block;
   transition: filter 0.3s ease;
   border-radius: var(--radius-base);
