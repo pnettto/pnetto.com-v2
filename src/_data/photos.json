@@ -26691,6 +26691,147 @@
     }
   },
   {
+    "source": "work/svenska-new-tab/cover.jpg",
+    "images": {
+      "webp": [
+        {
+          "format": "webp",
+          "width": 300,
+          "height": 169,
+          "url": "/img/fAFkiFUwLl-300w.webp",
+          "sourceType": "image/webp",
+          "srcset": "/img/fAFkiFUwLl-300w.webp 300w",
+          "filename": "fAFkiFUwLl-300w.webp",
+          "outputPath": "public/img/fAFkiFUwLl-300w.webp",
+          "size": 4888
+        },
+        {
+          "format": "webp",
+          "width": 600,
+          "height": 339,
+          "url": "/img/fAFkiFUwLl-600w.webp",
+          "sourceType": "image/webp",
+          "srcset": "/img/fAFkiFUwLl-600w.webp 600w",
+          "filename": "fAFkiFUwLl-600w.webp",
+          "outputPath": "public/img/fAFkiFUwLl-600w.webp",
+          "size": 6062
+        },
+        {
+          "format": "webp",
+          "width": 900,
+          "height": 509,
+          "url": "/img/fAFkiFUwLl-900w.webp",
+          "sourceType": "image/webp",
+          "srcset": "/img/fAFkiFUwLl-900w.webp 900w",
+          "filename": "fAFkiFUwLl-900w.webp",
+          "outputPath": "public/img/fAFkiFUwLl-900w.webp",
+          "size": 7432
+        },
+        {
+          "format": "webp",
+          "width": 1200,
+          "height": 679,
+          "url": "/img/fAFkiFUwLl-1200w.webp",
+          "sourceType": "image/webp",
+          "srcset": "/img/fAFkiFUwLl-1200w.webp 1200w",
+          "filename": "fAFkiFUwLl-1200w.webp",
+          "outputPath": "public/img/fAFkiFUwLl-1200w.webp",
+          "size": 8898
+        },
+        {
+          "format": "webp",
+          "width": 1600,
+          "height": 905,
+          "url": "/img/fAFkiFUwLl-1600w.webp",
+          "sourceType": "image/webp",
+          "srcset": "/img/fAFkiFUwLl-1600w.webp 1600w",
+          "filename": "fAFkiFUwLl-1600w.webp",
+          "outputPath": "public/img/fAFkiFUwLl-1600w.webp",
+          "size": 10862
+        },
+        {
+          "format": "webp",
+          "width": 3014,
+          "height": 1706,
+          "url": "/img/fAFkiFUwLl-3014w.webp",
+          "sourceType": "image/webp",
+          "srcset": "/img/fAFkiFUwLl-3014w.webp 3014w",
+          "filename": "fAFkiFUwLl-3014w.webp",
+          "outputPath": "public/img/fAFkiFUwLl-3014w.webp",
+          "size": 20608
+        }
+      ],
+      "jpeg": [
+        {
+          "format": "jpeg",
+          "width": 300,
+          "height": 169,
+          "url": "/img/fAFkiFUwLl-300w.jpeg",
+          "sourceType": "image/jpeg",
+          "srcset": "/img/fAFkiFUwLl-300w.jpeg 300w",
+          "filename": "fAFkiFUwLl-300w.jpeg",
+          "outputPath": "public/img/fAFkiFUwLl-300w.jpeg",
+          "size": 5776
+        },
+        {
+          "format": "jpeg",
+          "width": 600,
+          "height": 339,
+          "url": "/img/fAFkiFUwLl-600w.jpeg",
+          "sourceType": "image/jpeg",
+          "srcset": "/img/fAFkiFUwLl-600w.jpeg 600w",
+          "filename": "fAFkiFUwLl-600w.jpeg",
+          "outputPath": "public/img/fAFkiFUwLl-600w.jpeg",
+          "size": 8587
+        },
+        {
+          "format": "jpeg",
+          "width": 900,
+          "height": 509,
+          "url": "/img/fAFkiFUwLl-900w.jpeg",
+          "sourceType": "image/jpeg",
+          "srcset": "/img/fAFkiFUwLl-900w.jpeg 900w",
+          "filename": "fAFkiFUwLl-900w.jpeg",
+          "outputPath": "public/img/fAFkiFUwLl-900w.jpeg",
+          "size": 12305
+        },
+        {
+          "format": "jpeg",
+          "width": 1200,
+          "height": 679,
+          "url": "/img/fAFkiFUwLl-1200w.jpeg",
+          "sourceType": "image/jpeg",
+          "srcset": "/img/fAFkiFUwLl-1200w.jpeg 1200w",
+          "filename": "fAFkiFUwLl-1200w.jpeg",
+          "outputPath": "public/img/fAFkiFUwLl-1200w.jpeg",
+          "size": 16860
+        },
+        {
+          "format": "jpeg",
+          "width": 1600,
+          "height": 905,
+          "url": "/img/fAFkiFUwLl-1600w.jpeg",
+          "sourceType": "image/jpeg",
+          "srcset": "/img/fAFkiFUwLl-1600w.jpeg 1600w",
+          "filename": "fAFkiFUwLl-1600w.jpeg",
+          "outputPath": "public/img/fAFkiFUwLl-1600w.jpeg",
+          "size": 24763
+        },
+        {
+          "format": "jpeg",
+          "width": 3014,
+          "height": 1706,
+          "url": "/img/fAFkiFUwLl-3014w.jpeg",
+          "sourceType": "image/jpeg",
+          "srcset": "/img/fAFkiFUwLl-3014w.jpeg 3014w",
+          "filename": "fAFkiFUwLl-3014w.jpeg",
+          "outputPath": "public/img/fAFkiFUwLl-3014w.jpeg",
+          "size": 57651
+        }
+      ]
+    }
+  },
+  {
     "source": "work/tskoli/1.png",
     "images": {
       "webp": [

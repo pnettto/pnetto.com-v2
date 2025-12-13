@@ -17,7 +17,6 @@ containerClass: narrow
         </p>
     {% endif %}
 </div>
-
 <article class="project-detail">
     <header class="project-header">
         <h1>Project: {{ title }}</h1>
@@ -28,21 +27,18 @@ containerClass: narrow
                     {{ client }}
                 </div>
             {% endif %}
-
             {% if role %}
                 <div class="project-meta-item">
                     <strong>Role:</strong>
                     {{ role }}
                 </div>
             {% endif %}
-
             {% if year %}
                 <div class="project-meta-item">
                     <strong>Year:</strong>
                     {{ year }}
                 </div>
             {% endif %}
-
             {% if url %}
                 <div class="project-meta-item">
                     <strong>URL:</strong>
@@ -51,7 +47,6 @@ containerClass: narrow
             {% endif %}
         </div>
     </header>
-
     <!-- Checks if we have detailed content sections -->
     {% set hasContent = introSection or screensSection or backstorySection %}
     {% if not hasContent %}
@@ -69,38 +64,41 @@ containerClass: narrow
         </p>
     {% else %}
         {# Existing Content Flow #}
-        
         {% if introSection %}
             <section class="project-intro">
                 <h2>{{ introSection.title }}</h2>
                 <div>{{ introSection.text | safe }}</div>
             </section>
         {% endif %}
-
         {% if screensSection %}
             <section class="project-screens">
                 {% for screen in screensSection %}
                     <div class="screen-item">
-                        {% set imagePath = "work/" ~ slug ~ "/" ~ screen.image %}
-                        {% set image = photos | matchPhotosource(imagePath) %}
-                        <button class="gallery-item screen-item-image" id="image-{{ screen.image | slugify }}" aria-label="View photo {{ loop.index }}" data-full-src="{{ image.images.jpeg[image.images.jpeg.length - 1].url }}">
-                            {% optmizedImageTag image, { sizes: "(min-width: 870px) 100px, 100vw", className: "screen-image" } %}
-                        </button>
-                        {% if screen.text %}
-                            <p class="screen-text">{{ screen.text }}</p>
+                        {% if screen.image | isVideo('mp4') %}
+                            {% set videoPath = "work/" ~ slug ~ "/" ~ screen.image %}
+                            <video src="/{{ videoPath }}" class="project-video" autoplay muted loop playsinline>
+                                <source src="movie.mp4" type="video/mp4"/>
+                            </video>
+                        {% else %}
+                            {% set imagePath = "work/" ~ slug ~ "/" ~ screen.image %}
+                            {% set image = photos | matchPhotosource(imagePath) %}
+                            <button class="gallery-item screen-item-image" id="image-{{ screen.image | slugify }}" aria-label="View photo {{ loop.index }}" data-full-src="{{ image.images.jpeg[image.images.jpeg.length - 1].url }}">
+                                {% optmizedImageTag image, { sizes: "(min-width: 870px) 100px, 100vw", className: "screen-image" } %}
+                            </button>
+                            {% if screen.text %}
+                                <p class="screen-text">{{ screen.text }}</p>
+                            {% endif %}
                         {% endif %}
                     </div>
                 {% endfor %}
             </section>
         {% endif %}
-
         {% if backstorySection %}
             <section class="backstory-section">
                 <h3>Backstory</h3>
                 <div>{{ backstorySection.text | safe }}</div>
             </section>
         {% endif %}
-
         {% if content | length > 0 %}
             <div class="project-main-content">
                 {{ content | safe }}
@@ -108,7 +106,6 @@ containerClass: narrow
         {% endif %}
     {% endif %}
 </article>
-
 <div class="project-nav">
     {% set previousProject = collections.work | sort(attribute='data.order') | getPreviousCollectionItem(page) %}
     {% if not previousProject %}
@@ -119,7 +116,6 @@ containerClass: narrow
             <a href="{{ previousProject.url }}">← Previous project: {{ previousProject.data.title }}</a>
         </p>
     {% endif %}
-
     {% set nextProject = collections.work | sort(attribute='data.order') | getNextCollectionItem(page) %}
     {% if not nextProject %}
         {% set nextProject = collections.work | first %}
@@ -130,7 +126,6 @@ containerClass: narrow
         </p>
     {% endif %}
 </div>
-
 <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
     <button class="lightbox-close" aria-label="Close lightbox">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -140,9 +135,41 @@ containerClass: narrow
     </button>
     <button class="lightbox-prev nav-arrow" aria-label="Previous photo">◀</button>
     <div class="lightbox-content">
-        <img id="lightbox-img" src="" alt="">
+        <img id="lightbox-img" src="" alt=""></div>
+        <button class="lightbox-next nav-arrow" aria-label="Next photo">▶</button>
     </div>
-    <button class="lightbox-next nav-arrow" aria-label="Next photo">▶</button>
-</div>
-
-<script src="/assets/js/gallery.js"></script>
+    <script src="/assets/js/gallery.js"></script>
+    
+    {# Video player #}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.css"/>
+    <style>
+    .plyr {
+        --plyr-color-main: var(--accent-color); /* primary accent */
+        --plyr-video-background: var(--bg-color);
+        --plyr-menu-background: var(--bg-color);
+        --plyr-menu-color: var(--text-main);
+        --plyr-menu-border-color: var(--bg-color);
+        --plyr-tooltip-background: var(--accent-color);
+        --plyr-tooltip-color: var(--accent-color);
+    }
+    </style>
+    <script defer src="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.polyfilled.js"></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            const players = Array.from(document.querySelectorAll('.project-video')).map(video => new Plyr(video, {
+                autoplay: true,
+                muted: true,
+                loop: {
+                    active: true
+                },
+                controls: [
+                    'play', 'progress', 'mute', 'settings', 'fullscreen'
+                ],
+                settings: ['speed'],
+                speed: {
+                    selected: 1,
+                    options: [0.5, 1, 1.5, 2]
+                }
+            }));
+        });
+    </script>

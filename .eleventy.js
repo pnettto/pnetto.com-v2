@@ -9,6 +9,7 @@ module.exports = async function (eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/.nojekyll");
+    eleventyConfig.addPassthroughCopy("src/**/*.mp4");
 
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
@@ -26,6 +27,8 @@ module.exports = async function (eleventyConfig) {
     });
 
     eleventyConfig.addFilter("json", value => JSON.stringify(value));
+    
+    eleventyConfig.addFilter("isVideo", value => value.includes('.mp4'));
 
     eleventyConfig.addFilter("postDate", (dateObj) => {
         return dateObj.toLocaleDateString('en-US', {
