@@ -1,8 +1,9 @@
 ---
 layout: layouts/post.njk
 title: A Practical Guide to Meditation
-date: 2026-12-07
-tags: ["lifestyle"]
+date: 2025-12-07
+tags:
+    - lifestyle
 ---
 
 ## Intro

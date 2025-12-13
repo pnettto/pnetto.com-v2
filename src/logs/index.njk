@@ -28,7 +28,7 @@ title: Logs
     <div class="tags-list mini-tags">
         {% for tag in post.data.tags %}
             {% if tag != "post" %}
-            <a href="/category/{{ tag | slug }}/" class="badge">{{ tag }}</a>
+            <a href="/logs/category/{{ tag | slug }}/" class="badge">{{ tag }}</a>
             {% endif %}
         {% endfor %}
     </div>

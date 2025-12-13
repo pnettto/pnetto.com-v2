@@ -2,13 +2,17 @@
 layout: layouts/base.njk
 title: Photos
 ---
+
 <div class="photos-index">
     <header class="page-header">
         <h1>Photos</h1>
-        <p>Here are some pictures I took featuring a quiet look at daily life and natural places I've visited :) You can also see more of my experiments on <a href="https://unsplash.com/@pnettto">Unsplash</a> and <a href="https://mastodon.art/@pnetto">Mastodon</a>.</p>
+        <p>Here are some pictures I took featuring a quiet look at daily life and natural places I've visited :) You can also
+            see more of my experiments on
+            <a href="https://unsplash.com/@pnettto">Unsplash</a>
+            and
+            <a href="https://mastodon.art/@pnetto">Mastodon</a>.</p>
     </header>
 
-    
     <div class="albums-grid">
         {% for album in collections.photos | reverse %}
             {% set images = album.inputPath | getAlbumImages %}
@@ -27,13 +31,15 @@ title: Photos
         {% endfor %}
     </div>
 
-    <hr />
-
+    <hr/>
+    
     <h2>Usage note</h2>
-    <p>You are welcome to use the images from this site in your projects, both personal and commercial, under the following conditions:</p>
+    <p>You are welcome to use the images from this site in your projects, both personal and commercial, under the following
+        conditions:</p>
     <ul>
         <li>Include a citation crediting [Pedro Netto/pnetto.com] as the source.</li>
         <li>Do not sell or distribute the images as standalone files.</li>
     </ul>
-    <p>By using these images, you agree to the terms of the Creative Commons Attribution 4.0 International License (CC BY 4.0). For full license details, visit: https://creativecommons.org/licenses/by/4.0/</p>
+    <p>By using these images, you agree to the terms of the Creative Commons Attribution 4.0 International License (CC BY
+        4.0). For full license details, visit: https://creativecommons.org/licenses/by/4.0/</p>
 </div>
