@@ -3,7 +3,7 @@ layout: layouts/base.njk
 title: Photos
 ---
 
-<div class="photos-index">
+<div class="inner-container">
     <header class="page-header">
         <h1>Photos</h1>
         <p>Here are some pictures I took featuring a quiet look at daily life and natural places I've visited :) You can also
@@ -12,28 +12,31 @@ title: Photos
             and
             <a href="https://mastodon.art/@pnetto">Mastodon</a>.</p>
     </header>
+</div>
 
-    <div class="albums-grid">
-        {% for album in collections.photos | reverse %}
-            {% set albumSlug = album.url | getAlbumSlugFromUrl %}
-            {% set images = photos | getAlbum(albumSlug) %}
-            {% set cover = images[0] %}
+<div class="albums-grid">
+    {% for album in collections.photos | reverse %}
+        {% set albumSlug = album.url | getAlbumSlugFromUrl %}
+        {% set images = photos | getAlbum(albumSlug) %}
+        {% set cover = images[0] %}
 
-            <a href="{{ album.url }}" class="album-card">
-                <div class="album-cover">
-                    {% optmizedImageTag cover %}
-                </div>
+        <a href="{{ album.url }}" class="album-card">
+            <div class="album-cover">
+                {% optmizedImageTag cover %}
+            </div>
 
-                <div class="album-info">
-                    <h4>{{ album.data.title }}</h4>
-                    <span class="album-date">{{ album.date | albumDate }}</span>
-                </div>
-            </a>
-        {% endfor %}
-    </div>
+            <div class="album-info">
+                <h4>{{ album.data.title }}</h4>
+                <span class="album-date">{{ album.date | albumDate }}</span>
+            </div>
+        </a>
+    {% endfor %}
+</div>
 
-    <hr/>
-    
+<hr/>
+
+<div class="inner-container">
+
     <h2>Usage note</h2>
     <p>You are welcome to use the images from this site in your projects, both personal and commercial, under the following
         conditions:</p>
@@ -43,4 +46,4 @@ title: Photos
     </ul>
     <p>By using these images, you agree to the terms of the Creative Commons Attribution 4.0 International License (CC BY
         4.0). For full license details, visit: https://creativecommons.org/licenses/by/4.0/</p>
-</div>
+<div>

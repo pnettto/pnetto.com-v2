@@ -1,111 +1,110 @@
 ---
 layout: layouts/base.njk
+containerClass: narrow
 ---
 
-<div class="bio-container">
-    <header class="page-header">
-        <h1>{{ header.title }}</h1>
-    </header>
+<header class="page-header">
+    <h1>{{ header.title }}</h1>
+</header>
 
-    <a id="{{ "Start" | slugify }}" class="anchor"></a>
-    <div class="bio-intro">
-        <div class="intro-text">{{ intro.text | safe }}</div>
-    </div>
+<a id="{{ "Start" | slugify }}" class="anchor"></a>
+<div class="bio-intro">
+    <div class="intro-text">{{ intro.text | safe }}</div>
+</div>
 
-    <div class="tags-list sticky-tags">
-    {% set categories = ['Start', 'Tech Skills', 'Other Skills', 'Timeline', 'References', 'Personal Interests'] %}
-    {% for category in categories %}
-            <a href="#{{ category | slugify  }}" class="badge">{{ category }}</a>
+<div class="tags-list sticky-tags">
+{% set categories = ['Start', 'Tech Skills', 'Other Skills', 'Timeline', 'References', 'Personal Interests'] %}
+{% for category in categories %}
+        <a href="#{{ category | slugify  }}" class="badge">{{ category }}</a>
+    {% endfor %}
+</div>
+
+<a id="{{ "Tech Skills" | slugify }}" class="anchor"></a>
+<section id="tech-skills" class="bio-section">
+    <h2 class="underlined"  class="anchor">Tech Skills</h2>
+    <div class="skills-grid">
+        {% for group in techSkills %}
+        <div class="skill-group">
+            <h3>{{ group.title }}</h3>
+            <ul>
+                {% for item in group.items %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
         {% endfor %}
     </div>
+</section>
 
-    <a id="{{ "Tech Skills" | slugify }}" class="anchor"></a>
-    <section id="tech-skills" class="bio-section">
-        <h2 class="underlined"  class="anchor">Tech Skills</h2>
-        <div class="skills-grid">
-            {% for group in techSkills %}
-            <div class="skill-group">
-                <h3>{{ group.title }}</h3>
-                <ul>
-                    {% for item in group.items %}
-                    <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endfor %}
+<a id="{{ "Other Skills" | slugify }}" class="anchor"></a>
+<section id="other-skills" class="bio-section">
+    <h2 class="underlined">Other Skills</h2>
+    <div class="skills-grid">
+        {% for skill in otherSkills %}
+        <div class="skill-group">
+            <h3>{{ skill.title }}</h3>
+            <p>{{ skill.text | safe }}</p>
         </div>
-    </section>
+        {% endfor %}
+    </div>
+</section>
 
-    <a id="{{ "Other Skills" | slugify }}" class="anchor"></a>
-    <section id="other-skills" class="bio-section">
-        <h2 class="underlined">Other Skills</h2>
-        <div class="skills-grid">
-            {% for skill in otherSkills %}
-            <div class="skill-group">
-                <h3>{{ skill.title }}</h3>
-                <p>{{ skill.text | safe }}</p>
-            </div>
-            {% endfor %}
+<a id="{{ "Timeline" | slugify }}" class="anchor"></a>
+<section id="timeline" class="bio-section">
+    <h2 class="underlined">Timeline</h2>
+    <div class="timeline">
+        {% for item in timeline %}
+        <div class="timeline-item">
+            <div class="timeline-year">{{ item.title }}</div>
+            <div class="timeline-content">{{ item.text | safe }}</div>
         </div>
-    </section>
+        {% endfor %}
+    </div>
+</section>
 
-    <a id="{{ "Timeline" | slugify }}" class="anchor"></a>
-    <section id="timeline" class="bio-section">
-        <h2 class="underlined">Timeline</h2>
-        <div class="timeline">
-            {% for item in timeline %}
-            <div class="timeline-item">
-                <div class="timeline-year">{{ item.title }}</div>
-                <div class="timeline-content">{{ item.text | safe }}</div>
-            </div>
-            {% endfor %}
-        </div>
-    </section>
-    
-    <a id="{{ "References" | slugify }}" class="anchor"></a>
-    <section id="references" class="bio-section">
-        <h2 class="underlined">References</h2>
-        <div class="carousel-wrapper">
-            <button class="carousel-arrow nav-arrow prev" aria-label="Previous slide">←</button>
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    {% for ref in references | sort(attribute='data.order') %}
-                    <div class="carousel-card {{ ref.data.size }}">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                {{ ref.content | safe }}
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>{{ ref.data.referer }}</strong>
-                                {% if ref.data.companyName %}
-                                <span class="reference-company">
-                                    {% if ref.data.companyLink %}
-                                    <a href="{{ ref.data.companyLink }}" target="_blank" rel="noopener">{{ ref.data.companyName }}</a>
-                                    {% else %}
-                                    {{ ref.data.companyName }}
-                                    {% endif %}
-                                </span>
+<a id="{{ "References" | slugify }}" class="anchor"></a>
+<section id="references" class="bio-section">
+    <h2 class="underlined">References</h2>
+    <div class="carousel-wrapper">
+        <button class="carousel-arrow nav-arrow prev" aria-label="Previous slide">◀</button>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                {% for ref in references | sort(attribute='data.order') %}
+                <div class="carousel-card {{ ref.data.size }}">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            {{ ref.content | safe }}
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>{{ ref.data.referer }}</strong>
+                            {% if ref.data.companyName %}
+                            <span class="reference-company">
+                                {% if ref.data.companyLink %}
+                                <a href="{{ ref.data.companyLink }}" target="_blank" rel="noopener">{{ ref.data.companyName }}</a>
+                                {% else %}
+                                {{ ref.data.companyName }}
                                 {% endif %}
-                            </cite>
-                        </div>
+                            </span>
+                            {% endif %}
+                        </cite>
                     </div>
-                    {% endfor %}
                 </div>
+                {% endfor %}
             </div>
-            <button class="carousel-arrow nav-arrow next" aria-label="Next slide">→</button>
         </div>
-    </section>
+        <button class="carousel-arrow nav-arrow next" aria-label="Next slide">▶</button>
+    </div>
+</section>
 
-    <a id="{{ "Personal Interests" | slugify }}" class="anchor"></a>
-    <section id="personal-interests" class="bio-section">
-        <h2 class="underlined">Some personal interests</h2>
-        <div class="skills-grid">
-            {% for interest in personalInterests %}
-            <div class="skill-group">
-                <h3>{{ interest.title }}</h3>
-                <div class="interest-text">{{ interest.text | safe }}</div>
-            </div>
-            {% endfor %}
+<a id="{{ "Personal Interests" | slugify }}" class="anchor"></a>
+<section id="personal-interests" class="bio-section">
+    <h2 class="underlined">Some personal interests</h2>
+    <div class="skills-grid">
+        {% for interest in personalInterests %}
+        <div class="skill-group">
+            <h3>{{ interest.title }}</h3>
+            <div class="interest-text">{{ interest.text | safe }}</div>
         </div>
-    </section>
-</div>
+        {% endfor %}
+    </div>
+</section>

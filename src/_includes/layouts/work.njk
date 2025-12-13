@@ -1,5 +1,6 @@
 ---
 layout: layouts/base.njk
+containerClass: narrow
 ---
 
 <div class="page-nav-header">
@@ -130,7 +131,6 @@ layout: layouts/base.njk
     {% endif %}
 </div>
 
-<!-- Lightbox -->
 <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
     <button class="lightbox-close" aria-label="Close lightbox">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -138,11 +138,11 @@ layout: layouts/base.njk
             <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
     </button>
-    <button class="lightbox-prev nav-arrow" aria-label="Previous photo">←</button>
+    <button class="lightbox-prev nav-arrow" aria-label="Previous photo">◀</button>
     <div class="lightbox-content">
         <img id="lightbox-img" src="" alt="">
     </div>
-    <button class="lightbox-next nav-arrow" aria-label="Next photo">→</button>
+    <button class="lightbox-next nav-arrow" aria-label="Next photo">▶</button>
 </div>
 
 <script src="/assets/js/gallery.js"></script>
