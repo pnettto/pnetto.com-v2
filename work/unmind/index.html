@@ -61,7 +61,6 @@
         </p>
     
 </div>
-
 <article class="project-detail">
     <header class="project-header">
         <h1>Project: Unmind</h1>
@@ -72,11 +71,8 @@
                     Unmind (UL)
                 </div>
             
-
             
-
             
-
             
                 <div class="project-meta-item">
                     <strong>URL:</strong>
@@ -85,7 +81,6 @@
             
         </div>
     </header>
-
     <!-- Checks if we have detailed content sections -->
     
     
@@ -114,7 +109,6 @@
         </p>
     
 </article>
-
 <div class="project-nav">
     
     
@@ -123,7 +117,6 @@
             <a href="/work/isey-skyr-bar/">← Previous project: Ísey Skyr Bar</a>
         </p>
     
-
     
     
     
@@ -132,7 +125,6 @@
         </p>
     
 </div>
-
 <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
     <button class="lightbox-close" aria-label="Close lightbox">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -142,13 +134,44 @@
     </button>
     <button class="lightbox-prev nav-arrow" aria-label="Previous photo">◀</button>
     <div class="lightbox-content">
-        <img id="lightbox-img" src="" alt="">
+        <img id="lightbox-img" src="" alt=""></div>
+        <button class="lightbox-next nav-arrow" aria-label="Next photo">▶</button>
     </div>
-    <button class="lightbox-next nav-arrow" aria-label="Next photo">▶</button>
-</div>
-
-<script src="/assets/js/gallery.js"></script>
-
+    <script src="/assets/js/gallery.js"></script>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.css"/>
+    <style>
+    .plyr {
+        --plyr-color-main: var(--accent-color); /* primary accent */
+        --plyr-video-background: var(--bg-color);
+        --plyr-menu-background: var(--bg-color);
+        --plyr-menu-color: var(--text-main);
+        --plyr-menu-border-color: var(--bg-color);
+        --plyr-tooltip-background: var(--accent-color);
+        --plyr-tooltip-color: var(--accent-color);
+    }
+    </style>
+    <script defer src="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.polyfilled.js"></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            const players = Array.from(document.querySelectorAll('.project-video')).map(video => new Plyr(video, {
+                autoplay: true,
+                muted: true,
+                loop: {
+                    active: true
+                },
+                controls: [
+                    'play', 'progress', 'mute', 'settings', 'fullscreen'
+                ],
+                settings: ['speed'],
+                speed: {
+                    selected: 1,
+                    options: [0.5, 1, 1.5, 2]
+                }
+            }));
+        });
+    </script>
         </main>
 
     </div>

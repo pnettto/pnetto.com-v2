@@ -63,7 +63,6 @@
         </p>
     
 </div>
-
 <article class="project-detail">
     <header class="project-header">
         <h1>Project: Weather.is</h1>
@@ -74,21 +73,18 @@
                     Weather.is
                 </div>
             
-
             
                 <div class="project-meta-item">
                     <strong>Role:</strong>
                     Full stack developer
                 </div>
             
-
             
                 <div class="project-meta-item">
                     <strong>Year:</strong>
                     2020/2021
                 </div>
             
-
             
                 <div class="project-meta-item">
                     <strong>URL:</strong>
@@ -97,11 +93,9 @@
             
         </div>
     </header>
-
     <!-- Checks if we have detailed content sections -->
     
     
-        
         
         
             <section class="project-intro">
@@ -114,15 +108,15 @@
 </div>
             </section>
         
-
         
             <section class="project-screens">
                 
                     <div class="screen-item">
                         
-                        
-                        <button class="gallery-item screen-item-image" id="image-cover-png" aria-label="View photo 1" data-full-src="/img/KjM3qVm0ex-1501w.jpeg">
-                            <picture>
+                            
+                            
+                            <button class="gallery-item screen-item-image" id="image-cover-png" aria-label="View photo 1" data-full-src="/img/KjM3qVm0ex-1501w.jpeg">
+                                <picture>
                 <source type="image/webp" srcset="/img/KjM3qVm0ex-300w.webp 300w, /img/KjM3qVm0ex-600w.webp 600w, /img/KjM3qVm0ex-900w.webp 900w, /img/KjM3qVm0ex-1200w.webp 1200w, /img/KjM3qVm0ex-1501w.webp 1501w">
 <source type="image/jpeg" srcset="/img/KjM3qVm0ex-300w.jpeg 300w, /img/KjM3qVm0ex-600w.jpeg 600w, /img/KjM3qVm0ex-900w.jpeg 900w, /img/KjM3qVm0ex-1200w.jpeg 1200w, /img/KjM3qVm0ex-1501w.jpeg 1501w">
                 <img
@@ -134,19 +128,17 @@
                      class="screen-image"
                 >
                 </picture>
-                        </button>
+                            </button>
+                            
                         
                     </div>
                 
             </section>
         
-
         
-
         
     
 </article>
-
 <div class="project-nav">
     
     
@@ -155,7 +147,6 @@
             <a href="/work/unmind/">← Previous project: Unmind</a>
         </p>
     
-
     
     
         
@@ -166,7 +157,6 @@
         </p>
     
 </div>
-
 <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
     <button class="lightbox-close" aria-label="Close lightbox">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -176,13 +166,44 @@
     </button>
     <button class="lightbox-prev nav-arrow" aria-label="Previous photo">◀</button>
     <div class="lightbox-content">
-        <img id="lightbox-img" src="" alt="">
+        <img id="lightbox-img" src="" alt=""></div>
+        <button class="lightbox-next nav-arrow" aria-label="Next photo">▶</button>
     </div>
-    <button class="lightbox-next nav-arrow" aria-label="Next photo">▶</button>
-</div>
-
-<script src="/assets/js/gallery.js"></script>
-
+    <script src="/assets/js/gallery.js"></script>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.css"/>
+    <style>
+    .plyr {
+        --plyr-color-main: var(--accent-color); /* primary accent */
+        --plyr-video-background: var(--bg-color);
+        --plyr-menu-background: var(--bg-color);
+        --plyr-menu-color: var(--text-main);
+        --plyr-menu-border-color: var(--bg-color);
+        --plyr-tooltip-background: var(--accent-color);
+        --plyr-tooltip-color: var(--accent-color);
+    }
+    </style>
+    <script defer src="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.polyfilled.js"></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            const players = Array.from(document.querySelectorAll('.project-video')).map(video => new Plyr(video, {
+                autoplay: true,
+                muted: true,
+                loop: {
+                    active: true
+                },
+                controls: [
+                    'play', 'progress', 'mute', 'settings', 'fullscreen'
+                ],
+                settings: ['speed'],
+                speed: {
+                    selected: 1,
+                    options: [0.5, 1, 1.5, 2]
+                }
+            }));
+        });
+    </script>
         </main>
 
     </div>
