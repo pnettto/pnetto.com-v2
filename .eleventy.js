@@ -57,10 +57,8 @@ module.exports = async function (eleventyConfig) {
             webpOptions: {
                 quality: 90,
             },
-            filenameFormat: function (id, src, width, format, options) {
+            filenameFormat: function (id, _src, width, format) {
                 const path = require("path");
-                const extension = path.extname(src);
-                // Use id (hash) to prevent collisions for files with same name
                 return `${id}-${width}w.${format}`;
             }
         });
