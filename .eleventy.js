@@ -38,6 +38,72 @@ module.exports = async function (eleventyConfig) {
 
     eleventyConfig.addFilter("json", value => JSON.stringify(value));
 
+    eleventyConfig.addFilter("postDate", (dateObj) => {
+        return dateObj.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    });
+    eleventyConfig.addFilter("albumDate", (dateObj) => {
+        return dateObj.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+        });
+    });
+
+    eleventyConfig.addFilter("isoDate", (dateObj) => {
+        return dateObj.toISOString();
+    });
+
+    eleventyConfig.addFilter("getAllTags", collection => {
+        let tagSet = new Set();
+        for (let item of collection) {
+            (item.data.tags || []).forEach(tag => tagSet.add(tag));
+        }
+        return Array.from(tagSet);
+    });
+    
+    eleventyConfig.addCollection("logs", (collectionApi) => {
+        return collectionApi.getFilteredByGlob("src/logs/**/*.md");
+    });
+
+    eleventyConfig.addCollection("work", (collectionApi) => {
+        return collectionApi.getFilteredByGlob("src/work/**/*.md");
+    });
+
+    eleventyConfig.addCollection("photos", (collectionApi) => {
+        return collectionApi.getFilteredByGlob("src/photos/*/index.md");
+    });
+
+    // IMAGE WORK
+
+    eleventyConfig.addNunjucksAsyncShortcode("optimizedImageUrl", async function(src, width = "auto") {
+        if(src === undefined) {
+             return "";
+        }
+        let metadata = await Image(src, {
+            widths: [width],
+            formats: ["jpeg"],
+            outputDir: "./public/img/",
+            urlPath: (process.env.PATH_PREFIX || "/") + "img/",
+            sharpOptions: {
+                animated: true
+            },
+            jpegOptions: {
+                quality: 90,
+            },
+            filenameFormat: function (id, src, width, format, options) {
+                const path = require("path");
+                const extension = path.extname(src);
+                return `${id}-${width}w.${format}`;
+            }
+        });
+        
+        let data = metadata.jpeg[metadata.jpeg.length - 1];
+        return data.url;
+    });
+
     eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt, sizes = "100vw", className = "") {
         if(alt === undefined) {
             throw new Error(`Missing \`alt\` on image from: ${src}`);
@@ -74,51 +140,6 @@ module.exports = async function (eleventyConfig) {
         return Image.generateHTML(metadata, imageAttributes);
     });
 
-    eleventyConfig.addNunjucksAsyncShortcode("optimizedImageUrl", async function(src, width = "auto") {
-        if(src === undefined) {
-             return "";
-        }
-        let metadata = await Image(src, {
-            widths: [width],
-            formats: ["jpeg"],
-            outputDir: "./public/img/",
-            urlPath: (process.env.PATH_PREFIX || "/") + "img/",
-            sharpOptions: {
-                animated: true
-            },
-            jpegOptions: {
-                quality: 90,
-            },
-            filenameFormat: function (id, src, width, format, options) {
-                const path = require("path");
-                const extension = path.extname(src);
-                return `${id}-${width}w.${format}`;
-            }
-        });
-        
-        let data = metadata.jpeg[metadata.jpeg.length - 1];
-        return data.url;
-    });
-
-    // Date filters
-    eleventyConfig.addFilter("postDate", (dateObj) => {
-        return dateObj.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-    });
-    eleventyConfig.addFilter("albumDate", (dateObj) => {
-        return dateObj.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-        });
-    });
-
-    eleventyConfig.addFilter("isoDate", (dateObj) => {
-        return dateObj.toISOString();
-    });
-
     eleventyConfig.addFilter("getAlbumImages", (inputPath) => {
         const path = require("path");
         const fs = require("fs");
@@ -145,31 +166,6 @@ module.exports = async function (eleventyConfig) {
         return images;
     });
     
-    // Data extensions
-    eleventyConfig.addFilter("getAllTags", collection => {
-        let tagSet = new Set();
-        for (let item of collection) {
-            (item.data.tags || []).forEach(tag => tagSet.add(tag));
-        }
-        return Array.from(tagSet);
-    });
-    
-    eleventyConfig.addCollection("logs", (collectionApi) => {
-        return collectionApi.getFilteredByGlob("src/logs/**/*.md");
-    });
-
-    eleventyConfig.addCollection("work", (collectionApi) => {
-        return collectionApi.getFilteredByGlob("src/work/**/*.md");
-    });
-
-    eleventyConfig.addCollection("photos", (collectionApi) => {
-        return collectionApi.getFilteredByGlob("src/photos/*/index.md");
-    });
-
-    eleventyConfig.addCollection("references", (collectionApi) => {
-        return collectionApi.getFilteredByGlob("src/bio/references/*.md");
-    });
-
     eleventyConfig.addGlobalData("photoList", async function() {
         const all = getFilesRecursive("src/photos");
         const extensions = [".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif"];

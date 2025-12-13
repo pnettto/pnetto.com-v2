@@ -69,7 +69,7 @@ layout: layouts/base.njk
             <button class="carousel-arrow nav-arrow prev" aria-label="Previous slide">←</button>
             <div class="carousel-container">
                 <div class="carousel-track">
-                    {% for ref in collections.references | sort(attribute='data.order') %}
+                    {% for ref in references | sort(attribute='data.order') %}
                     <div class="carousel-card {{ ref.data.size }}">
                         <div class="carousel-scroll-area">
                             <blockquote class="reference-quote">
