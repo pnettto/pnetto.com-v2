@@ -349,7 +349,7 @@ p {
   margin-top: 4rem;
 }
 
-.welcome .photos-cta {
+.welcome .hide-this-box {
   display: none;
 }
 
@@ -360,7 +360,6 @@ p {
     width: 96vw;
     margin-left: calc(50% - min(calc(50vw - var(--space-sm)), 48vw));
     margin-right: calc(50% - min(calc(50vw - var(--space-sm)), 48vw));
-    margin-bottom: 4rem;
   }
 
   .welcome .random-photos {
@@ -371,21 +370,35 @@ p {
     gap: 1rem;
     width: 100%;
     height: calc(100vh - 11rem);
+    min-height: 30rem;
     border-radius: 10px;
     overflow: hidden;
   }
 
   .welcome .random-photo {
     position: relative;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
   }
 
-  .welcome .random-photo picture, .welcome .random-photo img {
+  .welcome .random-photo.transparent {
+    opacity: 0;
+  }
+
+  .welcome .random-photo picture{
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .welcome .random-photo img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover;
     border-radius: 10px;
   }
 
+
+  
   .welcome .random-photo a {
     color: var(--text-muted);
     border: 0;
@@ -393,6 +406,10 @@ p {
     top: 0.5rem;
     right: 0.5rem;
     font-size: var(--font-size-xs);
+  }
+
+  .welcome .random-photo a:hover {
+    color: var(--text-main);
   }
 
   .welcome .intro {
@@ -404,8 +421,16 @@ p {
     max-width: 30rem;
     margin-top: initial;
     background-color: var(--bg-color);
-    padding: 1rem;
+    padding: 2rem 3rem;
     border-radius: 10px;
+  }
+
+  .welcome .intro h1 {
+    margin-top: 0;
+  }
+
+  .welcome .intro p:last-child {
+    margin-bottom: 0
   }
 
   .welcome .intro .intro-body {
@@ -413,7 +438,7 @@ p {
     width: calc(100% - 1rem);
   }
 
-  .welcome .photos-cta {
+  .welcome .hide-this-box {
     display: block;
   }
 }

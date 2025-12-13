@@ -32,11 +32,11 @@ title: Welcome
                     <a href="/work">my work</a>.
                 </p>
 
-                <p class="photos-cta">👈 Here are some random pictures from my 
+                <p class="hide-this-box">👈 Here are some random pictures from my 
                     <a href="/photos">photo archive</a>. Click them to see more! 
                 </p>
                 
-                <p class="photos-cta">
+                <p class="hide-this-box">
                     <a href="#" id="introHideThis">Hide this box</a>.
                 </p>
             </div>
@@ -44,5 +44,7 @@ title: Welcome
     </div>
 </div>
 
+<script>
+    window.PHOTO_LIST = {{ photoList | json | safe }};
+</script>
 <script src="/assets/js/intro.js"></script>
-<script src="/assets/js/photos.js"></script>
