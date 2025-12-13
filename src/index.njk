@@ -45,6 +45,6 @@ title: Welcome
 </div>
 
 <script>
-    window.PHOTO_LIST = {{ photoList | json | safe }};
+    window.PHOTO_LIST = {{ photos | selectedPhotos | json | safe }};
 </script>
 <script src="/assets/js/intro.js"></script>

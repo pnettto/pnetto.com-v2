@@ -3,7 +3,7 @@
     const photos = window.PHOTO_LIST.slice(0);
 
     function generateImgTag(imageDataRaw, alt = "", sizes = "300vw", classes = "") {
-        const { album, ...imageData} = imageDataRaw;
+        const { album, images: imageData} = imageDataRaw;
 
         const fallbackFormat = Object.keys(imageData).find(fmt => imageData[fmt].length > 0);
         const fallbackImg = imageData[fallbackFormat][0];
@@ -36,16 +36,18 @@
                 ${sources}
                 ${imgTag}
             </picture>
-            ${album ? `<a href="/photos/${album.slug}">${album.title}</a>` : ''}
+            ${album ? `<a class="legend" href="/photos/${album.slug}">${album.title}</a>` : ''}
         `.trim();
     }
 
     function refreshPictures() {
         const randomPhotoEls = document.querySelectorAll(".random-photo");
+
         randomPhotoEls.forEach((el) => {
             el.classList.add('transparent');
+
             setTimeout(() => {
-                // Restart the list
+                // Restart the list when end is reached
                 if (photos.length === 0) photos.push(...window.PHOTO_LIST.slice(0))
 
                 const randomIndex = Math.floor(Math.random() * photos.length);

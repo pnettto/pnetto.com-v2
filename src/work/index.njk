@@ -30,7 +30,8 @@ eleventyExcludeFromCollections: true
           <a href="{{ project.url }}" class="project-card">
             {% if project.data.coverImage %}
               <div class="project-card-image-wrapper">
-                {% image "src/work/" ~ project.data.slug ~ "/" ~ project.data.coverImage, project.data.title, "(min-width: 30em) 50vw, 100vw", "project-card-image" %}
+                {% set image = photos | matchPhotosource(project.data.slug ~ "/" ~ project.data.coverImage) %}
+                {% optmizedImageTag image, { sizes: "(min-width: 870px) 25rem, 100vw", className: "project-card-image" } %}
               </div>
             {% endif %}
             <div class="project-card-content">
@@ -74,8 +75,9 @@ eleventyExcludeFromCollections: true
             {% if category | slugify | lower in project.data.categories and not project.data.featured %}
               <a href="{{ project.url }}" class="project-card">
                 {% if project.data.coverImage %}
-                  <div class="project-card-image-wrapper">
-                    {% image "src/work/" ~ project.data.slug ~ "/" ~ project.data.coverImage, project.data.title, "(min-width: 30em) 50vw, 100vw", "project-card-image" %}
+                    <div class="project-card-image-wrapper">
+                    {% set image = photos | matchPhotosource(project.data.slug ~ "/" ~ project.data.coverImage) %}
+                    {% optmizedImageTag image, { sizes: "(min-width: 870px) 25rem, 100vw", className: "project-card-image" } %}
                   </div>
                 {% endif %}
                 <div class="project-card-content">

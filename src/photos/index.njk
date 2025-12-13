@@ -15,14 +15,15 @@ title: Photos
 
     <div class="albums-grid">
         {% for album in collections.photos | reverse %}
-            {% set images = album.inputPath | getAlbumImages %}
+            {% set albumSlug = album.url | getAlbumSlugFromUrl %}
+            {% set images = photos | getAlbum(albumSlug) %}
             {% set cover = images[0] %}
+
             <a href="{{ album.url }}" class="album-card">
-                {% if cover %}
-                    <div class="album-cover">
-                        {% image cover.filePath, album.data.title, "400px" %}
-                    </div>
-                {% endif %}
+                <div class="album-cover">
+                    {% optmizedImageTag cover %}
+                </div>
+
                 <div class="album-info">
                     <h4>{{ album.data.title }}</h4>
                     <span class="album-date">{{ album.date | albumDate }}</span>

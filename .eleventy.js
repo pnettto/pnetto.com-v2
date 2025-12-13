@@ -1,40 +1,29 @@
 const fs = require("fs");
 const path = require("path");
-const matter = require("gray-matter");
-
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const Image = require("@11ty/eleventy-img");
-
-function getFilesRecursive(dir) {
-  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(e => {
-    const full = path.join(dir, e.name);
-    return e.isDirectory() ? getFilesRecursive(full) : [full];
-  });
-}
-
-function getFrontMatter(folderPath) {
-    // Get all .md files in folder y
-    const files = fs.readdirSync(folderPath).filter(f => f.endsWith(".md"));
-
-    if (files.length !== 1) {
-      throw new Error(`Expected exactly one .md file in folder y, but found ${files.length}`);
-    }
-
-    const filePath = path.join(folderPath, files[0]);
-    const content = fs.readFileSync(filePath, "utf-8");
-    const frontmatter = matter(content).data;
-    return frontmatter
-  }
+const matter = require("gray-matter");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = async function (eleventyConfig) {
     const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
 
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/.nojekyll");
-    eleventyConfig.addPassthroughCopy("src/photos/**/*.{jpg,jpeg,png,webp}");
-    
+
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+
+    eleventyConfig.addCollection("logs", (collectionApi) => {
+        return collectionApi.getFilteredByGlob("src/logs/**/*.md");
+    });
+
+    eleventyConfig.addCollection("work", (collectionApi) => {
+        return collectionApi.getFilteredByGlob("src/work/**/*.md");
+    });
+
+    eleventyConfig.addCollection("photos", (collectionApi) => {
+        return collectionApi.getFilteredByGlob("src/photos/*/index.md");
+    });
 
     eleventyConfig.addFilter("json", value => JSON.stringify(value));
 
@@ -63,149 +52,84 @@ module.exports = async function (eleventyConfig) {
         }
         return Array.from(tagSet);
     });
-    
-    eleventyConfig.addCollection("logs", (collectionApi) => {
-        return collectionApi.getFilteredByGlob("src/logs/**/*.md");
+
+    // Select only album-related photos
+    eleventyConfig.addFilter("selectedPhotos", function (photos) {
+        return photos.filter(p => !!p.album)
     });
 
-    eleventyConfig.addCollection("work", (collectionApi) => {
-        return collectionApi.getFilteredByGlob("src/work/**/*.md");
+
+    // Get an albums's images given the photos list, via the slug
+    eleventyConfig.addFilter("getAlbum", function (photos, albumSlug, options = {}) {
+        const { limit = null } = options;
+
+        let items = photos.filter(p => p.album?.slug === albumSlug);
+        if (limit) items = items.slice(0, limit);
+
+        return items;
     });
 
-    eleventyConfig.addCollection("photos", (collectionApi) => {
-        return collectionApi.getFilteredByGlob("src/photos/*/index.md");
+    // Get album slug from a folder path
+    eleventyConfig.addFilter("getAlbumSlugFromPath", function (path) {
+        const noTrailingSlashPath = path.replace(/\/$/, "");
+        const parts = noTrailingSlashPath.split('/');
+        return parts[parts.length - 2];
     });
 
-    // IMAGE WORK
+    // Get album slug from a url
+    eleventyConfig.addFilter("getAlbumSlugFromUrl", function (path) {
+        const parts = path.split('/');
+        return parts[parts.length - 2];
+    });
 
-    eleventyConfig.addNunjucksAsyncShortcode("optimizedImageUrl", async function(src, width = "auto") {
-        if(src === undefined) {
-             return "";
-        }
-        let metadata = await Image(src, {
-            widths: [width],
-            formats: ["jpeg"],
-            outputDir: "./public/img/",
-            urlPath: (process.env.PATH_PREFIX || "/") + "img/",
-            sharpOptions: {
-                animated: true
-            },
-            jpegOptions: {
-                quality: 90,
-            },
-            filenameFormat: function (id, src, width, format, options) {
-                const path = require("path");
-                const extension = path.extname(src);
-                return `${id}-${width}w.${format}`;
+    // Get the photo that matches the photo.source, via a path fragment
+    eleventyConfig.addFilter("matchPhotosource", function (photos, sourceFragment) {
+        return photos.filter(p => p.source.includes(sourceFragment))[0]
+    });
+
+    // Return an optimized picture tag with all version of an image
+    eleventyConfig.addShortcode(
+        "optmizedImageTag",
+        function (image, options = {}) {
+            const {
+                alt = "",
+                loading = "lazy",
+                decoding = "async",
+                className = "",
+                sizes = ""
+            } = options;
+
+            if (!image || !image.images) {
+                return "";
             }
-        });
-        
-        let data = metadata.jpeg[metadata.jpeg.length - 1];
-        return data.url;
-    });
 
-    eleventyConfig.addNunjucksAsyncShortcode("image", async function(src, alt, sizes = "100vw", className = "") {
-        if(alt === undefined) {
-            throw new Error(`Missing \`alt\` on image from: ${src}`);
+            const sources = Object.entries(image.images)
+                .map(([format, imgs]) => {
+                    const srcset = imgs
+                        .map(img => `${img.url} ${img.width}w`)
+                        .join(", ");
+
+                    return `<source type="image/${format}" srcset="${srcset}">`;
+                })
+                .join("\n");
+
+            const fallback = image.images.jpeg.at(-1);
+
+            return `
+                <picture>
+                ${sources}
+                <img
+                    src="${fallback.url}"
+                    alt="${alt}"
+                    loading="${loading}"
+                    decoding="${decoding}"
+                    ${sizes ? ` sizes="${sizes}"` : ""}
+                    ${className ? ` class="${className}"` : ""}
+                >
+                </picture>
+                `.trim();
         }
-
-        let metadata = await Image(src, {
-            widths: [300, 600, 900, 1200, "auto"],
-            formats: ["webp", "jpeg"],
-            outputDir: "./public/img/",
-            urlPath: "/img/",
-            sharpOptions: {
-                animated: true
-            },
-            jpegOptions: {
-                quality: 90,
-            },
-            webpOptions: {
-                quality: 90,
-            },
-            filenameFormat: function (id, _src, width, format) {
-                const path = require("path");
-                return `${id}-${width}w.${format}`;
-            }
-        });
-
-        let imageAttributes = {
-            alt,
-            sizes,
-            class: className,
-            loading: "lazy",
-            decoding: "async",
-        };
-
-        return Image.generateHTML(metadata, imageAttributes);
-    });
-
-    eleventyConfig.addFilter("getAlbumImages", (inputPath) => {
-        const path = require("path");
-        const fs = require("fs");
-        
-        let dir = path.dirname(inputPath);
-        if (!dir.startsWith(".")) {
-            dir = "./" + dir;
-        }
-
-        const files = fs.readdirSync(dir);
-        let images = [];
-
-        files.forEach(file => {
-            if (file.match(/\.(jpg|jpeg|png|webp)$/i)) {
-                let urlPath = path.join(dir, file).replace(/^src/, "").replace(/^\\src/, "");
-                images.push({
-                    name: file,
-                    path: urlPath,
-                    filePath: path.join(dir, file) // Needed for eleventy-img
-                });
-            }
-        });
-        
-        return images;
-    });
-    
-    eleventyConfig.addGlobalData("photoList", async function() {
-        const all = getFilesRecursive("src/photos");
-        const extensions = [".jpg", ".jpeg", ".png", ".gif", ".webp", ".avif"];
-        const rawImages = all.filter(f => extensions.includes(path.extname(f).toLowerCase()));
-        const processedImages = [];
-        for (imagePath of rawImages) {
-            let metadata = await Image(imagePath, {
-                widths: [300, 600, 900, 1200, "auto"],
-                formats: ["webp", "jpeg"],
-                outputDir: "./public/img/",
-                urlPath: "/img/",
-                sharpOptions: {
-                    animated: true
-                },
-                jpegOptions: {
-                    quality: 90,
-                },
-                webpOptions: {
-                    quality: 90,
-                },
-                filenameFormat: function (id, src, width, format, options) {
-                    const path = require("path");
-                    const extension = path.extname(src);
-                    // Use id (hash) to prevent collisions for files with same name
-                    return `${id}-${width}w.${format}`;
-                }
-            });
-
-            const albumParts = imagePath.split('/').slice(0, 3);
-            const albumPath = albumParts.join('/');
-            metadata.album = {
-                path: albumPath,
-                title: getFrontMatter(albumPath).title,
-                slug: albumParts[albumParts.length - 1]
-            };
-
-            processedImages.push(metadata)
-        }
-        return processedImages;
-    });
+    );
 
     return {
         pathPrefix: process.env.PATH_PREFIX || "/",

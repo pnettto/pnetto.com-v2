@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy"
+    "buildImages": "node scripts/build-images.js",
+    "build": "npm run buildImages && eleventy"
   },
   "keywords": [],
   "author": "",

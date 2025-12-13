@@ -56,7 +56,8 @@ layout: layouts/base.njk
     {% if not hasContent %}
         {# No detailed content: Show Cover and Big Link #}
         {% if coverImage %}
-            {% image "src/work/" ~ slug ~ "/" ~ coverImage, title ~ " Cover", "100vw", "project-hero-image" %}
+            {% set image = photos | matchPhotosource(slug ~ "/" ~ coverImage) %}
+            {% optmizedImageTag image, { sizes: "(min-width: 870px) 50rem, 100vw", className: "project-hero-image" } %}
         {% endif %}
         <p>
             This project does not have a detailed case study yet.
@@ -78,10 +79,11 @@ layout: layouts/base.njk
         {% if screensSection %}
             <section class="project-screens">
                 {% for screen in screensSection %}
-                    {%  set imagePath = "src/work/" ~ slug ~ "/" ~ screen.image %}
                     <div class="screen-item">
-                        <button class="gallery-item" id="image-{{ screen.image | slugify }}" aria-label="View photo {{ loop.index }}" data-full-src="{% optimizedImageUrl imagePath, 1600 %}">
-                            {% image imagePath, "", "900px", "screen-image" %}
+                        {% set imagePath = "work/" ~ slug ~ "/" ~ screen.image %}
+                        {% set image = photos | matchPhotosource(imagePath) %}
+                        <button class="gallery-item screen-item-image" id="image-{{ screen.image | slugify }}" aria-label="View photo {{ loop.index }}" data-full-src="{{ image.images.jpeg[image.images.jpeg.length - 1].url }}">
+                            {% optmizedImageTag image, { sizes: "(min-width: 870px) 100px, 100vw", className: "screen-image" } %}
                         </button>
                         {% if screen.text %}
                             <p class="screen-text">{{ screen.text }}</p>

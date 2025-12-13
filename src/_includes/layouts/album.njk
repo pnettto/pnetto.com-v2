@@ -19,12 +19,13 @@ layout: layouts/base.njk
 </div>
 
 <div class="album-page">
-    {% set images = page.inputPath | getAlbumImages %}
-    
+    {% set albumSlug = page.inputPath | getAlbumSlugFromPath %}
+    {% set images = photos | getAlbum(albumSlug) %}
+
     <div class="gallery-grid">
         {% for image in images %}
-            <button class="gallery-item" id="image-{{ image.name | slugify }}" aria-label="View photo {{ loop.index }}" data-full-src="{% optimizedImageUrl image.filePath, 1600 %}">
-                {% image image.filePath, title + " - Photo " + loop.index, "300px" %}
+            <button class="gallery-item" id="image-{{ image.name | slugify }}" aria-label="View photo {{ loop.index }}" data-full-src="{{ image.images.jpeg[image.images.jpeg.length - 1].url }}">
+                {% optmizedImageTag image %}
             </button>
         {% endfor %}
     </div>
