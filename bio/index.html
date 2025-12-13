@@ -13,10 +13,14 @@
     <link rel="stylesheet" href="/assets/css/prism.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container narrow">
         <header class="site-header">
             <a href="/" class="logo" aria-label="Home">
-                <img src="/assets/images/logo.svg" alt="MySite Logo" class="logo-img" height="80">
+                <svg class="logo-img" width="85" height="84" viewBox="0 0 85 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="bg" fill-rule="evenodd" clip-rule="evenodd" d="M41.5243 0.00231154C53.1617 0.133336 63.3614 6.42565 71.0342 15.1674C79.2761 24.5575 85.5608 35.9671 83.9629 48.3532C82.1703 62.2487 75.3441 76.5851 62.4117 82.0057C49.9528 87.2277 36.7258 79.6813 24.9322 73.0957C14.3337 67.1775 4.0323 59.6666 1.2588 47.8578C-1.53198 35.9754 3.30723 23.8363 11.1684 14.4934C18.7602 5.47057 29.7263 -0.130522 41.5243 0.00231154Z" fill="#000000DF" fill-opacity="0.8" />
+                    <path d="M25.3124 35.2789C22.3624 35.2789 19.6124 36.6789 17.6124 39.3789L17.2624 35.9789H12.4124V73.1789L18.0124 72.5289V60.1289C19.7124 62.0789 21.9624 63.0289 24.7124 63.0289C31.4124 63.0289 34.9124 57.1789 34.9124 49.1289C34.9124 40.7289 32.2624 35.2789 25.3124 35.2789ZM23.7624 39.5789C27.2624 39.5789 29.0124 42.3789 29.0124 49.1789C29.0124 55.7789 27.0124 58.6789 23.2124 58.6789C21.0624 58.6789 19.2624 57.6289 18.0124 55.7289V43.3789C19.3124 41.3289 21.2624 39.5789 23.7624 39.5789ZM42.4417 62.3789H48.0417V43.4289C49.4417 41.4289 51.6417 39.5789 54.2417 39.5789C57.4417 39.5789 57.9917 41.3289 57.9917 45.9289V62.3789H63.5917V43.1289C63.5917 38.1789 61.1417 35.2789 56.2417 35.2789C53.0417 35.2789 49.8917 36.7289 47.6917 39.4289L47.2917 35.9789H42.4417V62.3789Z" fill="white" fill-opacity="0.9" />
+                </svg>
+
             </a>
             <div style="display: flex; align-items: center; gap: var(--space-md);">
                 <button class="burger-menu" aria-label="Toggle Menu" aria-expanded="false">
@@ -45,14 +49,13 @@
 
         <main>
             
-<div class="bio-container">
-    <header class="page-header">
-        <h1>Bio</h1>
-    </header>
+<header class="page-header">
+    <h1>Bio</h1>
+</header>
 
-    <a id="start" class="anchor"></a>
-    <div class="bio-intro">
-        <div class="intro-text"><p>
+<a id="start" class="anchor"></a>
+<div class="bio-intro">
+    <div class="intro-text"><p>
   I’m a Full Stack Web Developer with over a decade of experience in
   the industry. I have worked as a freelancer, in NGOs, at great creative companies, 
   ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>) during 4 years, taught and modeled the web development course at <a href="/education/vefskoli">Vefskóli</a> for over 3 years, and 
@@ -68,200 +71,200 @@
   <a href="mailto:pedro@pnetto.com">pedro@pnetto.com</a>.
 </p>
 </div>
-    </div>
+</div>
 
-    <div class="tags-list sticky-tags">
+<div class="tags-list sticky-tags">
+
+
+        <a href="#start" class="badge">Start</a>
     
+        <a href="#tech-skills" class="badge">Tech Skills</a>
     
-            <a href="#start" class="badge">Start</a>
+        <a href="#other-skills" class="badge">Other Skills</a>
+    
+        <a href="#timeline" class="badge">Timeline</a>
+    
+        <a href="#references" class="badge">References</a>
+    
+        <a href="#personal-interests" class="badge">Personal Interests</a>
+    
+</div>
+
+<a id="tech-skills" class="anchor"></a>
+<section id="tech-skills" class="bio-section">
+    <h2 class="underlined"  class="anchor">Tech Skills</h2>
+    <div class="skills-grid">
         
-            <a href="#tech-skills" class="badge">Tech Skills</a>
+        <div class="skill-group">
+            <h3>Front-end</h3>
+            <ul>
+                
+                <li>Typescript proficiency</li>
+                
+                <li>Interface Development &amp; UX awareness</li>
+                
+                <li>NextJS/React expertise (incl. server components)</li>
+                
+                <li>SEO, Performance Optimization, &amp; Security Best Practices</li>
+                
+                <li>Build tooling/Continuous Integration</li>
+                
+                <li>Headless CMS/GraphQL API fluency</li>
+                
+                <li>Micro-service architecture (consumption)</li>
+                
+                <li>Code review proficiency</li>
+                
+            </ul>
+        </div>
         
-            <a href="#other-skills" class="badge">Other Skills</a>
+        <div class="skill-group">
+            <h3>Infrastructure</h3>
+            <ul>
+                
+                <li>Solid Linux experience</li>
+                
+                <li>Apache / Nginx / TLS</li>
+                
+                <li>Docker</li>
+                
+                <li>Vercel / AWS (EC2, S3) / Google Cloud / Digital Ocean / Netlify / Heroku</li>
+                
+                <li>Networking knowledge</li>
+                
+            </ul>
+        </div>
         
-            <a href="#timeline" class="badge">Timeline</a>
+        <div class="skill-group">
+            <h3>Back-end</h3>
+            <ul>
+                
+                <li>Python / Django / API design</li>
+                
+                <li>Cloud infrastructure</li>
+                
+                <li>Node.js ecosystem / Express / pm2</li>
+                
+                <li>PHP</li>
+                
+                <li>MySQL / Postgres / MongoDB</li>
+                
+                <li>DevOps familiarity</li>
+                
+            </ul>
+        </div>
         
-            <a href="#references" class="badge">References</a>
+        <div class="skill-group">
+            <h3>CMS</h3>
+            <ul>
+                
+                <li>Content Stack</li>
+                
+                <li>Wordpress / REST API / Custom Gutenberg Blocks</li>
+                
+                <li>Prismic</li>
+                
+                <li>Strapi</li>
+                
+            </ul>
+        </div>
         
-            <a href="#personal-interests" class="badge">Personal Interests</a>
+        <div class="skill-group">
+            <h3>Other</h3>
+            <ul>
+                
+                <li>Can design things like this site and collaborate with designers quite well</li>
+                
+                <li>Good communication skills with non-technical people, about technical topics</li>
+                
+            </ul>
+        </div>
+        
+        <div class="skill-group">
+            <h3>Currently studying</h3>
+            <ul>
+                
+                <li>Docker</li>
+                
+                <li>Code testing</li>
+                
+                <li>Continuous Integration</li>
+                
+                <li>Micro-interactions</li>
+                
+                <li>Creative coding</li>
+                
+            </ul>
+        </div>
         
     </div>
+</section>
 
-    <a id="tech-skills" class="anchor"></a>
-    <section id="tech-skills" class="bio-section">
-        <h2 class="underlined"  class="anchor">Tech Skills</h2>
-        <div class="skills-grid">
-            
-            <div class="skill-group">
-                <h3>Front-end</h3>
-                <ul>
-                    
-                    <li>Typescript proficiency</li>
-                    
-                    <li>Interface Development &amp; UX awareness</li>
-                    
-                    <li>NextJS/React expertise (incl. server components)</li>
-                    
-                    <li>SEO, Performance Optimization, &amp; Security Best Practices</li>
-                    
-                    <li>Build tooling/Continuous Integration</li>
-                    
-                    <li>Headless CMS/GraphQL API fluency</li>
-                    
-                    <li>Micro-service architecture (consumption)</li>
-                    
-                    <li>Code review proficiency</li>
-                    
-                </ul>
-            </div>
-            
-            <div class="skill-group">
-                <h3>Infrastructure</h3>
-                <ul>
-                    
-                    <li>Solid Linux experience</li>
-                    
-                    <li>Apache / Nginx / TLS</li>
-                    
-                    <li>Docker</li>
-                    
-                    <li>Vercel / AWS (EC2, S3) / Google Cloud / Digital Ocean / Netlify / Heroku</li>
-                    
-                    <li>Networking knowledge</li>
-                    
-                </ul>
-            </div>
-            
-            <div class="skill-group">
-                <h3>Back-end</h3>
-                <ul>
-                    
-                    <li>Python / Django / API design</li>
-                    
-                    <li>Cloud infrastructure</li>
-                    
-                    <li>Node.js ecosystem / Express / pm2</li>
-                    
-                    <li>PHP</li>
-                    
-                    <li>MySQL / Postgres / MongoDB</li>
-                    
-                    <li>DevOps familiarity</li>
-                    
-                </ul>
-            </div>
-            
-            <div class="skill-group">
-                <h3>CMS</h3>
-                <ul>
-                    
-                    <li>Content Stack</li>
-                    
-                    <li>Wordpress / REST API / Custom Gutenberg Blocks</li>
-                    
-                    <li>Prismic</li>
-                    
-                    <li>Strapi</li>
-                    
-                </ul>
-            </div>
-            
-            <div class="skill-group">
-                <h3>Other</h3>
-                <ul>
-                    
-                    <li>Can design things like this site and collaborate with designers quite well</li>
-                    
-                    <li>Good communication skills with non-technical people, about technical topics</li>
-                    
-                </ul>
-            </div>
-            
-            <div class="skill-group">
-                <h3>Currently studying</h3>
-                <ul>
-                    
-                    <li>Docker</li>
-                    
-                    <li>Code testing</li>
-                    
-                    <li>Continuous Integration</li>
-                    
-                    <li>Micro-interactions</li>
-                    
-                    <li>Creative coding</li>
-                    
-                </ul>
-            </div>
-            
+<a id="other-skills" class="anchor"></a>
+<section id="other-skills" class="bio-section">
+    <h2 class="underlined">Other Skills</h2>
+    <div class="skills-grid">
+        
+        <div class="skill-group">
+            <h3>Pragmatism</h3>
+            <p>I like to tackle problems in a systematic and predictable way, without inflating the solution unnecessarily.</p>
         </div>
-    </section>
-
-    <a id="other-skills" class="anchor"></a>
-    <section id="other-skills" class="bio-section">
-        <h2 class="underlined">Other Skills</h2>
-        <div class="skills-grid">
-            
-            <div class="skill-group">
-                <h3>Pragmatism</h3>
-                <p>I like to tackle problems in a systematic and predictable way, without inflating the solution unnecessarily.</p>
-            </div>
-            
-            <div class="skill-group">
-                <h3>Adaptability</h3>
-                <p>Thanks to extensive experience, I’m able to learn new Web Development-related technologies on demand.</p>
-            </div>
-            
-            <div class="skill-group">
-                <h3>Thoughtfulness</h3>
-                <p>I often raise discussions and ideas about projects and work environment in order to improve them.</p>
-            </div>
-            
-            <div class="skill-group">
-                <h3>Empathy</h3>
-                <p>I have an easy time stepping into other people’s shoes, which helps with being understanding and solving a wide variety of issues.</p>
-            </div>
-            
-            <div class="skill-group">
-                <h3>Educator</h3>
-                <p>I’ve been a Web Development instructor and a co-creator of an entire Web Development course. More about that <a href="/work?category=education">here</a>.</p>
-            </div>
-            
-            <div class="skill-group">
-                <h3>Entrepreneur</h3>
-                <p>I co-founded 2 companies. Making ideas become reality is a challenging and exciting concept to me.</p>
-            </div>
-            
+        
+        <div class="skill-group">
+            <h3>Adaptability</h3>
+            <p>Thanks to extensive experience, I’m able to learn new Web Development-related technologies on demand.</p>
         </div>
-    </section>
+        
+        <div class="skill-group">
+            <h3>Thoughtfulness</h3>
+            <p>I often raise discussions and ideas about projects and work environment in order to improve them.</p>
+        </div>
+        
+        <div class="skill-group">
+            <h3>Empathy</h3>
+            <p>I have an easy time stepping into other people’s shoes, which helps with being understanding and solving a wide variety of issues.</p>
+        </div>
+        
+        <div class="skill-group">
+            <h3>Educator</h3>
+            <p>I’ve been a Web Development instructor and a co-creator of an entire Web Development course. More about that <a href="/work?category=education">here</a>.</p>
+        </div>
+        
+        <div class="skill-group">
+            <h3>Entrepreneur</h3>
+            <p>I co-founded 2 companies. Making ideas become reality is a challenging and exciting concept to me.</p>
+        </div>
+        
+    </div>
+</section>
 
-    <a id="timeline" class="anchor"></a>
-    <section id="timeline" class="bio-section">
-        <h2 class="underlined">Timeline</h2>
-        <div class="timeline">
-            
-            <div class="timeline-item">
-                <div class="timeline-year">2025</div>
-                <div class="timeline-content"><ul>
+<a id="timeline" class="anchor"></a>
+<section id="timeline" class="bio-section">
+    <h2 class="underlined">Timeline</h2>
+    <div class="timeline">
+        
+        <div class="timeline-item">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-content"><ul>
   <li>Started at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> as a Data Engineering intern</li>
   <li>Started agentic AI development studies, as you do :)</li>
 </ul>
 </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-year">2024</div>
-                <div class="timeline-content"><ul>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-content"><ul>
   <li>Took a half-year sabbatical to travel through Costa Rica, Panama, Brazil, Tanzania, New Zealand, Thailand, Denmark and Sweden.</li>
   <li>Developed <a href="https://visitmaca.com" target="_blank">MACA</a>'s and <a href="https://teiahhospitality.com" target="_blank">Teiah</a>'s website</li>
   <li>Started studying Data Analysis at <a href="https://hyperisland.se" target="_blank">Hyper Island</a>.</li>
 </ul>
 </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-year">2022 - 2024</div>
-                <div class="timeline-content"><p>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-year">2022 - 2024</div>
+            <div class="timeline-content"><p>
   Lead front-end developer at 
   <a href="https://icelandair.is" target="_blank" rel="noopener">
     Icelandair
@@ -269,11 +272,11 @@
   a role in resolving various technical challenges arising from a complex technology ecosystem.
 </p>
 </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-year">2021 - 2022</div>
-                <div class="timeline-content"><p>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-year">2021 - 2022</div>
+            <div class="timeline-content"><p>
   Front-end developer at 
   <a href="https://kolibri.is" target="_blank" rel="noopener">
     Kolibri
@@ -282,11 +285,11 @@
   </a> on the Next.js stack.
 </p>
 </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-year">2018 - 2021</div>
-                <div class="timeline-content"><p>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-year">2018 - 2021</div>
+            <div class="timeline-content"><p>
   Mostly working with education at
   <a href="/work/io">Tækniskólinn</a> as an instructor
   and re-creating the Web Development course. Co-founded
@@ -298,11 +301,11 @@
   </a>.
 </p>
 </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-year">2014 - 2018</div>
-                <div class="timeline-content"><p>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-year">2014 - 2018</div>
+            <div class="timeline-content"><p>
   Founded Brisa, my web studio, where I created sites such as
   <a href="https://listfyriralla.is" target="_blank" rel="noopener">
     List Fyrir Alla
@@ -314,11 +317,11 @@
   <a href="/work">many others</a>.
 </p>
 </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-year">2013 - 2014</div>
-                <div class="timeline-content"><p>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-year">2013 - 2014</div>
+            <div class="timeline-content"><p>
   Moved to Iceland, to work at
   <a href="https://locatify.com" target="_blank" rel="noopener">
     Locatify
@@ -329,11 +332,11 @@
   I also coded features for their indoor positioning system.
 </p>
 </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-year">2009 - 2013</div>
-                <div class="timeline-content"><p>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-year">2009 - 2013</div>
+            <div class="timeline-content"><p>
   Worked for
   <a href="https://spiritlinux.com.br" target="_blank" rel="noopener">
     Spirit Linux
@@ -350,11 +353,11 @@
   stage lasted for 2 years before I moved out of Brazil.
 </p>
 </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-year">2007 - 2009</div>
-                <div class="timeline-content"><p>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-year">2007 - 2009</div>
+            <div class="timeline-content"><p>
   Earned my B.Tech. degree in Computer Networks, worked with
   <a href="https://aiesec.org" target="_blank" rel="noopener">
     AIESEC
@@ -363,315 +366,315 @@
   of conferences about Open Source Software.
 </p>
 </div>
-            </div>
-            
         </div>
-    </section>
-    
-    <a id="references" class="anchor"></a>
-    <section id="references" class="bio-section">
-        <h2 class="underlined">References</h2>
-        <div class="carousel-wrapper">
-            <button class="carousel-arrow nav-arrow prev" aria-label="Previous slide">←</button>
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    
-                    <div class="carousel-card large">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                
+        
+    </div>
+</section>
+
+<a id="references" class="anchor"></a>
+<section id="references" class="bio-section">
+    <h2 class="underlined">References</h2>
+    <div class="carousel-wrapper">
+        <button class="carousel-arrow nav-arrow prev" aria-label="Previous slide">◀</button>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                
+                <div class="carousel-card large">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            
 Pedro worked at Icelandair‘s web team as our lead front-end developer and I highly recommend him to any similar role. His thoughtful observation and commitment to sharing knowledge through well-organized documentation significantly contributed to our team's success. With solid technical skills and effective communication, he would be a valuable addition to any web development project or team.
 
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>Þórir Ólafsson</strong>
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>Þórir Ólafsson</strong>
+                            
+                            <span class="reference-company">
                                 
-                                <span class="reference-company">
-                                    
-                                    <a href="https://icelandair.is" target="_blank" rel="noopener">Digital Development Diretor</a>
-                                    
-                                </span>
+                                <a href="https://icelandair.is" target="_blank" rel="noopener">Digital Development Diretor</a>
                                 
-                            </cite>
-                        </div>
+                            </span>
+                            
+                        </cite>
                     </div>
-                    
-                    <div class="carousel-card large">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                
+                </div>
+                
+                <div class="carousel-card large">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            
 <p>Pedro and I were on the same product team at Icelandair. You could always rely on Pedro to contribute to solving challenging projects that we faced with his waste knowledge that he was always willing to share with the team. First and foremost Pedro is generally a nice person who is a great asset to any team.</p>
 
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>Hildur Óskarsdóttir</strong>
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>Hildur Óskarsdóttir</strong>
+                            
+                            <span class="reference-company">
                                 
-                                <span class="reference-company">
-                                    
-                                    <a href="http://icelandair.is" target="_blank" rel="noopener">Project Manager</a>
-                                    
-                                </span>
+                                <a href="http://icelandair.is" target="_blank" rel="noopener">Project Manager</a>
                                 
-                            </cite>
-                        </div>
+                            </span>
+                            
+                        </cite>
                     </div>
-                    
-                    <div class="carousel-card medium">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                <p>Pedro is a focused, detail-oriented person with great interpersonal skills. He is always willing to learn and teach.</p><p>Working in partnership with him was productive and enriching. His good mood is a remarkable feature.</p>
+                </div>
+                
+                <div class="carousel-card medium">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            <p>Pedro is a focused, detail-oriented person with great interpersonal skills. He is always willing to learn and teach.</p><p>Working in partnership with him was productive and enriching. His good mood is a remarkable feature.</p>
 
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>Kamyla Amorim</strong>
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>Kamyla Amorim</strong>
+                            
+                            <span class="reference-company">
                                 
-                                <span class="reference-company">
-                                    
-                                    <a href="https://recode.org.br" target="_blank" rel="noopener">Recode</a>
-                                    
-                                </span>
+                                <a href="https://recode.org.br" target="_blank" rel="noopener">Recode</a>
                                 
-                            </cite>
-                        </div>
+                            </span>
+                            
+                        </cite>
                     </div>
-                    
-                    <div class="carousel-card large">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                
+                </div>
+                
+                <div class="carousel-card large">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            
 <p>Pedro is very easy to work with. He has a lot of drive to keep moving forward, but always with a clear view to the final result and a willingness to dig into the details.</p>
 
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>Óskar Völundarson</strong>
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>Óskar Völundarson</strong>
+                            
+                            <span class="reference-company">
                                 
-                                <span class="reference-company">
-                                    
-                                    <a href="http://icelandair.is" target="_blank" rel="noopener">Content Architect</a>
-                                    
-                                </span>
+                                <a href="http://icelandair.is" target="_blank" rel="noopener">Content Architect</a>
                                 
-                            </cite>
-                        </div>
+                            </span>
+                            
+                        </cite>
                     </div>
-                    
-                    <div class="carousel-card medium">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                We worked with Brisa in building a robust and flexible system for our annual conference and year after year, we had gains in productivity and satisfaction among participants. Communication is always fast and simple.
+                </div>
+                
+                <div class="carousel-card medium">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            We worked with Brisa in building a robust and flexible system for our annual conference and year after year, we had gains in productivity and satisfaction among participants. Communication is always fast and simple.
 
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>Paulo Nakatani</strong>
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>Paulo Nakatani</strong>
+                            
+                            <span class="reference-company">
                                 
-                                <span class="reference-company">
-                                    
-                                    <a href="https://enps.com.br/admin" target="_blank" rel="noopener">ENPS</a>
-                                    
-                                </span>
+                                <a href="https://enps.com.br/admin" target="_blank" rel="noopener">ENPS</a>
                                 
-                            </cite>
-                        </div>
+                            </span>
+                            
+                        </cite>
                     </div>
-                    
-                    <div class="carousel-card large">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                
+                </div>
+                
+                <div class="carousel-card large">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            
 <p>List fyrir alla has been working with Pedro since when our project was established in 2016. He designed our website, which is constantly in progress and he is always positive and helpful in all communication and solves all our requests with a smile.</p>
 <p>He is extremely good at connecting with new projects and suggestions. He always shows his enthusiasm and great artistic insight and therefore he has become a valuable team member to us from the very beginning. </p>
 
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>Ragna Skinner &amp; Elfa Lilja Gísladóttir</strong>
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>Ragna Skinner &amp; Elfa Lilja Gísladóttir</strong>
+                            
+                            <span class="reference-company">
                                 
-                                <span class="reference-company">
-                                    
-                                    <a href="https://listfyriralla.is" target="_blank" rel="noopener">Ministry of Education, Science and Culture (Iceland)</a>
-                                    
-                                </span>
+                                <a href="https://listfyriralla.is" target="_blank" rel="noopener">Ministry of Education, Science and Culture (Iceland)</a>
                                 
-                            </cite>
-                        </div>
+                            </span>
+                            
+                        </cite>
                     </div>
-                    
-                    <div class="carousel-card large">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                
+                </div>
+                
+                <div class="carousel-card large">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            
  <p>Besides being a joy to work with, Pedro is a take-charge person who is able to present creative ideas and communicate the benefits. He has successfully developed several research plans for our company that have resulted in new visions.</p>
 
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>Michelle Ribeiro</strong>
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>Michelle Ribeiro</strong>
+                            
+                            <span class="reference-company">
                                 
-                                <span class="reference-company">
-                                    
-                                    Spirit Linux
-                                    
-                                </span>
+                                Spirit Linux
                                 
-                            </cite>
-                        </div>
+                            </span>
+                            
+                        </cite>
                     </div>
-                    
-                    <div class="carousel-card large">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                
+                </div>
+                
+                <div class="carousel-card large">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            
 <p>Pedro is a person whom transmits calm and reassurance, no matter how complex the task seems to be, executing it with competence and creativity.</p> <p>He is a great person to ask for suggestions and evaluations. Much of this is due to his interest and knowledge in very diverse areas.</p>
 
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>Murilo Polese</strong>
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>Murilo Polese</strong>
+                            
+                            <span class="reference-company">
                                 
-                                <span class="reference-company">
-                                    
-                                    <a href="http://murilopolese.com" target="_blank" rel="noopener">Friend &amp; Collaborator</a>
-                                    
-                                </span>
+                                <a href="http://murilopolese.com" target="_blank" rel="noopener">Friend &amp; Collaborator</a>
                                 
-                            </cite>
-                        </div>
+                            </span>
+                            
+                        </cite>
                     </div>
-                    
-                    <div class="carousel-card small">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                It was great working with Pedro at Brisa. Everything worked 100% and he was very quick to deliver. Would definitely recommend Brisa.
-
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>Halldór Örn Jónsson</strong>
-                                
-                                <span class="reference-company">
-                                    
-                                    <a href="/work/zo-on" target="_blank" rel="noopener">ZO.ON</a>
-                                    
-                                </span>
-                                
-                            </cite>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-card small">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                Brisa is great to work with. Creativity, skills and fun comes to mind. Very happy to have found this great web design company. Highly recommended.
-
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>Bernhard Stefan Bernhardsson</strong>
-                                
-                                <span class="reference-company">
-                                    
-                                    <a href="https://weather.is" target="_blank" rel="noopener">Weather.is</a>
-                                    
-                                </span>
-                                
-                            </cite>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-card small">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                I can really recommend these guys and look forward to do some more work with them in the future.
-
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>Fridrik Larsen</strong>
-                                
-                                <span class="reference-company">
-                                    
-                                    <a href="https://charge.events" target="_blank" rel="noopener">CHARGE Energy Conference</a>
-                                    
-                                </span>
-                                
-                            </cite>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-card small">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                JA Iceland was really pleased to work with Brisa - young, dynamic and very professional! Thank you for the great work!
-
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>Minna Melleri</strong>
-                                
-                                <span class="reference-company">
-                                    
-                                    <a href="https://ungirfrumkvodlar.is" target="_blank" rel="noopener">Junior Achievement Iceland</a>
-                                    
-                                </span>
-                                
-                            </cite>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-card small">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                I was a real delight to work with Pedro, he helped us develop our wordpress website and the core workings of our web app.  I'd be happy to work with him again in the future.
-
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>Nick Tong</strong>
-                                
-                                <span class="reference-company">
-                                    
-                                    <a href="https://unmind.com" target="_blank" rel="noopener">Unmind</a>
-                                    
-                                </span>
-                                
-                            </cite>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-card small">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                Kaffitár was really pleased with the work by Brisa - professional and easy to work with. Thank you for the great work!
-
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>Sólrún Björk Guðmundsdóttir</strong>
-                                
-                                <span class="reference-company">
-                                    
-                                    <a href="https://kaffitar.is" target="_blank" rel="noopener">Kaffitár</a>
-                                    
-                                </span>
-                                
-                            </cite>
-                        </div>
-                    </div>
-                    
                 </div>
-            </div>
-            <button class="carousel-arrow nav-arrow next" aria-label="Next slide">→</button>
-        </div>
-    </section>
+                
+                <div class="carousel-card small">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            It was great working with Pedro at Brisa. Everything worked 100% and he was very quick to deliver. Would definitely recommend Brisa.
 
-    <a id="personal-interests" class="anchor"></a>
-    <section id="personal-interests" class="bio-section">
-        <h2 class="underlined">Some personal interests</h2>
-        <div class="skills-grid">
-            
-            <div class="skill-group">
-                <h3>Music</h3>
-                <div class="interest-text"><p>
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>Halldór Örn Jónsson</strong>
+                            
+                            <span class="reference-company">
+                                
+                                <a href="/work/zo-on" target="_blank" rel="noopener">ZO.ON</a>
+                                
+                            </span>
+                            
+                        </cite>
+                    </div>
+                </div>
+                
+                <div class="carousel-card small">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            Brisa is great to work with. Creativity, skills and fun comes to mind. Very happy to have found this great web design company. Highly recommended.
+
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>Bernhard Stefan Bernhardsson</strong>
+                            
+                            <span class="reference-company">
+                                
+                                <a href="https://weather.is" target="_blank" rel="noopener">Weather.is</a>
+                                
+                            </span>
+                            
+                        </cite>
+                    </div>
+                </div>
+                
+                <div class="carousel-card small">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            I can really recommend these guys and look forward to do some more work with them in the future.
+
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>Fridrik Larsen</strong>
+                            
+                            <span class="reference-company">
+                                
+                                <a href="https://charge.events" target="_blank" rel="noopener">CHARGE Energy Conference</a>
+                                
+                            </span>
+                            
+                        </cite>
+                    </div>
+                </div>
+                
+                <div class="carousel-card small">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            JA Iceland was really pleased to work with Brisa - young, dynamic and very professional! Thank you for the great work!
+
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>Minna Melleri</strong>
+                            
+                            <span class="reference-company">
+                                
+                                <a href="https://ungirfrumkvodlar.is" target="_blank" rel="noopener">Junior Achievement Iceland</a>
+                                
+                            </span>
+                            
+                        </cite>
+                    </div>
+                </div>
+                
+                <div class="carousel-card small">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            I was a real delight to work with Pedro, he helped us develop our wordpress website and the core workings of our web app.  I'd be happy to work with him again in the future.
+
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>Nick Tong</strong>
+                            
+                            <span class="reference-company">
+                                
+                                <a href="https://unmind.com" target="_blank" rel="noopener">Unmind</a>
+                                
+                            </span>
+                            
+                        </cite>
+                    </div>
+                </div>
+                
+                <div class="carousel-card small">
+                    <div class="carousel-scroll-area">
+                        <blockquote class="reference-quote">
+                            Kaffitár was really pleased with the work by Brisa - professional and easy to work with. Thank you for the great work!
+
+                        </blockquote>
+                        <cite class="reference-author">
+                            <strong>Sólrún Björk Guðmundsdóttir</strong>
+                            
+                            <span class="reference-company">
+                                
+                                <a href="https://kaffitar.is" target="_blank" rel="noopener">Kaffitár</a>
+                                
+                            </span>
+                            
+                        </cite>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <button class="carousel-arrow nav-arrow next" aria-label="Next slide">▶</button>
+    </div>
+</section>
+
+<a id="personal-interests" class="anchor"></a>
+<section id="personal-interests" class="bio-section">
+    <h2 class="underlined">Some personal interests</h2>
+    <div class="skills-grid">
+        
+        <div class="skill-group">
+            <h3>Music</h3>
+            <div class="interest-text"><p>
   I play the guitar since my teenage years and have been looking
   for a band to join lately. Wanna jam? :)
 </p>
 </div>
-            </div>
-            
-            <div class="skill-group">
-                <h3>Photography</h3>
-                <div class="interest-text"><p>
+        </div>
+        
+        <div class="skill-group">
+            <h3>Photography</h3>
+            <div class="interest-text"><p>
   Early in 2020 I bought a Fujifilm X-T20 and have been having a
   fantastic time capturing some of the beautiful things I see
   around.
@@ -682,11 +685,11 @@ Pedro worked at Icelandair‘s web team as our lead front-end developer and I hi
   </a>!
 </p>
 </div>
-            </div>
-            
-            <div class="skill-group">
-                <h3>Drawing &amp; Painting</h3>
-                <div class="interest-text"><p>
+        </div>
+        
+        <div class="skill-group">
+            <h3>Drawing &amp; Painting</h3>
+            <div class="interest-text"><p>
   Admitedly, I’m the worse at drawing. To counter this small
   issue, I love creating pictures that don’t require this skill,
   like creating patterns.
@@ -695,20 +698,19 @@ Pedro worked at Icelandair‘s web team as our lead front-end developer and I hi
   digital creation.
 </p>
 </div>
-            </div>
-            
-            <div class="skill-group">
-                <h3>Philosophy</h3>
-                <div class="interest-text"><p>
+        </div>
+        
+        <div class="skill-group">
+            <h3>Philosophy</h3>
+            <div class="interest-text"><p>
   The questions with answers can amaze, but the ones without any
   make you stare into the void and wonder: why? 🔮
 </p>
 </div>
-            </div>
-            
         </div>
-    </section>
-</div>
+        
+    </div>
+</section>
 
         </main>
 
