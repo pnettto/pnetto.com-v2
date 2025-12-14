@@ -8,5 +8,5 @@ slug: enps
 title: Conference Manager
 client: Int. Meeting on Social Policy (BR)
 coverImage: cover.png
-nanoDescription: Conference Manager (Python/Django)
+type: Conference Manager (Python/Django)
 ---

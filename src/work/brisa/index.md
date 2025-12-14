@@ -10,7 +10,7 @@ role: Founder
 client: Brisa
 logo: logo.png
 coverImage: cover.png
-nanoDescription: Web Development Program
+type: Web Development Program
 shortDescription: >
   <p>My first company, a web studio that operated for 4 years and created sites for clients in Iceland and abroad.</p>
 introSection:

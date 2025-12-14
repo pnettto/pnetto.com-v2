@@ -11,7 +11,7 @@ role: Full stack developer
 url: https://lysi-life.dk
 logo: logo.svg
 coverImage: cover.png
-nanoDescription: E-commerce platform
+type: E-commerce platform
 shortDescription: >
   <ul>
     <li>E-commerce CMS (WooCommerce)</li>
@@ -27,23 +27,23 @@ introSection:
       <li>Create a testing tool to provide product suggestions</li>
     </ul>
 screensSection:
-  - image: cover.png
+  - media: cover.png
     text: "The cover page, featuring clear calls to action and simple navigation."
-  - image: 1.png
+  - media: 1.png
     text: "Here the multinational aspect of the website can be visualized on the cross-country menu. Each store uses the same system, with small tweaks to cater for specific needs."
-  - image: 8.png
+  - media: 8.png
     text: "In the product's page the option to subscribe is checked by default, but other options are also available."
-  - image: 2.png
+  - media: 2.png
     text: "Test module call to action."
-  - image: 3.png
+  - media: 3.png
     text: "Details of the test module."
-  - image: 4.png
+  - media: 4.png
     text: "Details of the test module."
-  - image: 5.png
+  - media: 5.png
     text: "Details of the test module."
-  - image: 6.png
+  - media: 6.png
     text: "Details of the test module."
-  - image: 7.png
+  - media: 7.png
     text: "Blog entry (placeholder text), featuring a share button"
 backstorySection:
   text: >

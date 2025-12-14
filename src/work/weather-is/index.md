@@ -12,7 +12,7 @@ year: 2020/2021
 url: https://weather.is
 logo: logo.png
 coverImage: cover.png
-nanoDescription: Next.js Website & Back-end
+type: Next.js Website & Back-end
 shortDescription: >
   <ul>
     <li>Custom Headless CMS (WP)</li>
@@ -29,6 +29,6 @@ introSection:
       <li>Develop a really powerful PDF generator</li>
     </ul>
 screensSection:
-  - image: cover.png
+  - media: cover.png
     text: ""
 ---

@@ -12,7 +12,7 @@ year: 2020/2021
 url: https://io.tskoli.dev
 logo: logo.svg
 coverImage: cover.png
-nanoDescription: School Management System
+type: School Management System
 shortDescription: >
   <ul>
     <li>Custom Peer Assessment <br/> System (Next.js)</li>
@@ -29,17 +29,17 @@ introSection:
       <li>Make a homey and minimalistic system that students could use on an everyday basis</li>
     </ul>
 screensSection:
-  - image: cover.png
+  - media: cover.png
     text: "The reviews page shows the instances in wich the student has given some feedbad to a peer, and the grade they got for that feedback. On the top, it's possible to see the calculated grade for that module (the course has 8 Modules)."
-  - image: 1.png
+  - media: 1.png
     text: "The Returns page gives an overview of all assignments. From there, the student can return their work, to be evaluated by their peers."
-  - image: 2.png
+  - media: 2.png
     text: "An example of the Learning Guide page. Here the students can find important information about what to look for in this specific topic."
-  - image: 3.png
+  - media: 3.png
     text: "An Assignment Return example. The student has already received a Review from a peer and in turn gave them a grade."
-  - image: 6.png
+  - media: 6.png
     text: "The Recordings page. All online classes, workshops and other important sessions are recorded and made available through this page."
-  - image: 7.png
+  - media: 7.png
     text: "Dark Mode. Students will often work into the night, so it was important to spare their eyes and create a dark mode."
 backstorySection:
   text: >

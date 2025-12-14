@@ -11,7 +11,7 @@ role: Full stack developer
 url: https://zo-on.is
 logo: logo.png
 coverImage: cover.png
-nanoDescription: E-commerce platform
+type: E-commerce platform
 shortDescription: >
   <ul>
     <li>Multistore E-commerce Platform (Shopify integration + Wordpress)</li>
@@ -27,13 +27,13 @@ introSection:
       <li>Seamlessly plug in into <a href="https://www.coplus.com/" target="_blank" rel="noopener">CoPlus'</a> workflow to implement their design</li>
     </ul>
 screensSection:
-  - image: cover.png
+  - media: cover.png
     text: "Cover page"
-  - image: 1.png
+  - media: 1.png
     text: "Featured products"
-  - image: 2.png
+  - media: 2.png
     text: "Products list"
-  - image: 3.png
+  - media: 3.png
     text: "Store finder"
 backstorySection:
   text: >

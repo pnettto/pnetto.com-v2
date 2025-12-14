@@ -44,8 +44,8 @@ title: Work
                 {% if project.data.role %}
                   <span class="meta-item"><strong>Role:</strong> {{ project.data.role }}</span>
                 {% endif %}
-                {% if project.data.nanoDescription %}
-                  <span class="meta-item"><strong>Type: </strong> {{ project.data.nanoDescription }}</span>
+                {% if project.data.type %}
+                  <span class="meta-item"><strong>Type: </strong> {{ project.data.type }}</span>
                 {% endif %}
               </div>
               {% endif %}
@@ -73,7 +73,7 @@ title: Work
             {% if category | slugify | lower in project.data.categories and not project.data.featured %}
               <a href="{{ project.url }}" class="project-card">
                 {% if project.data.coverImage %}
-                    <div class="project-card-image-wrapper">
+                  <div class="project-card-image-wrapper">
                     {% set image = photos | matchPhotosource(project.data.slug ~ "/" ~ project.data.coverImage) %}
                     {% optmizedImageTag image, { sizes: "(min-width: 870px) 25rem, 100vw", className: "project-card-image" } %}
                   </div>
@@ -89,11 +89,10 @@ title: Work
                     {% if project.data.role %}
                       <span class="meta-item"><strong>Role:</strong> {{ project.data.role }}</span>
                     {% endif %}
+                    {% if project.data.type %}
+                      <span class="meta-item"><strong>Type: </strong> {{ project.data.type }}</span>
+                    {% endif %}
                   </div>
-                  {% endif %}
-
-                  {% if project.data.nanoDescription %}
-                  <p class="project-card-description">{{ project.data.nanoDescription }}</p>
                   {% endif %}
 
                   <span class="project-card-link">See more &rarr;</span>

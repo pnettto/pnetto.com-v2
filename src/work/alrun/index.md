@@ -9,5 +9,5 @@ title: Alrún
 client: Alrún (IS)
 url: https://alrun.is
 coverImage: cover.png
-nanoDescription: Website & Shopify theme
+type: Website & Shopify theme
 ---

@@ -10,7 +10,7 @@ role: Author
 client: Hyper Island
 url: https://instant-graph-maker.streamlit.app/
 coverImage: cover.jpg
-nanoDescription: Chart creator for Data Analysts
+type: Chart creator for Data Analysts
 shortDescription: >
   <p>Create charts by simply describing what you want to see. The tool automatically selects the right data and suggests a chart, which you can customize further.</p>
 introSection:
@@ -22,17 +22,17 @@ introSection:
       <li>Provides an easy workflow for creating and saving charts.</li>
     </ul>
 screensSection:
-  - image: cover.jpg
+  - media: cover.jpg
     text: The official site (link above)
-  - image: 2.jpg
+  - media: 2.jpg
     text: Scenes of the app in action
-  - image: 3.jpg
+  - media: 3.jpg
     text: Scenes of the app in action
-  - image: 4.jpg
+  - media: 4.jpg
     text: Scenes of the app in action
-  - image: 5.jpg
+  - media: 5.jpg
     text: Scenes of the app in action
-  - image: 6.jpg
+  - media: 6.jpg
     text: Scenes of the app in action
 backstorySection:
   text: >

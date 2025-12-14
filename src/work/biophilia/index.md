@@ -11,7 +11,7 @@ role: Full stack developer
 url: https://biophiliaeducational.org
 logo: logo.png
 coverImage: cover.png
-nanoDescription: Custom Wordpress Theme
+type: Custom Wordpress Theme
 shortDescription: >
   <ul>
     <li>Custom Wordpress Theme</li>
@@ -27,17 +27,17 @@ introSection:
       <li>Consultancy on the information architecture to get rid of old unwanted data and make the important bits pop</li>
     </ul>
 screensSection:
-  - image: cover.png
+  - media: cover.png
     text: Details of the homepage
-  - image: 1.png
+  - media: 1.png
     text: Details of the homepage
-  - image: 2.png
+  - media: 2.png
     text: Details of the homepage
-  - image: 3.png
+  - media: 3.png
     text: Details of the homepage
-  - image: 4.png
+  - media: 4.png
     text: Details of the homepage
-  - image: 5.png
+  - media: 5.png
     text: Details of the homepage
 backstorySection:
   text: >

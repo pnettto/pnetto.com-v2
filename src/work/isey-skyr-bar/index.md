@@ -9,5 +9,5 @@ title: Ísey Skyr Bar
 client: Ísey (IS)
 url: https://iseyskyrbar.is
 coverImage: cover.png
-nanoDescription: Wordpress website
+type: Wordpress website
 ---

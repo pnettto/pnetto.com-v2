@@ -11,7 +11,7 @@ client: Tækniskólinn
 url: https://tskoli.is/namsbraut/vefthroun/
 logo: logo.svg
 coverImage: cover.png
-nanoDescription: Web Development Program
+type: Web Development Program
 shortDescription: >
   <p>Creation of an entire Web Development course for the largest Technical School in Iceland</p>
 introSection:
@@ -24,17 +24,17 @@ introSection:
       <li>Create pathway for future improvements</li>
     </ul>
 screensSection:
-  - image: cover.png
+  - media: cover.png
     text: "The official site (link above)"
-  - image: 2.png
+  - media: 2.png
     text: "Scenes of our course"
-  - image: 3.png
+  - media: 3.png
     text: "Scenes of our course"
-  - image: 4.png
+  - media: 4.png
     text: "Scenes of our course"
-  - image: 5.png
+  - media: 5.png
     text: "Scenes of our course"
-  - image: 6.png
+  - media: 6.png
     text: "Scenes of our course"
 backstorySection:
   text: >

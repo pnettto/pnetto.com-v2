@@ -9,5 +9,5 @@ title: List Fyrir Alla
 client: Icelandic Ministry of Education (IS)
 url: https://listfyriralla.is
 coverImage: cover.png
-nanoDescription: Wordpress website & Interactive map (React)
+type: Wordpress website & Interactive map (React)
 ---

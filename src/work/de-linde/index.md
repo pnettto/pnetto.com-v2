@@ -12,7 +12,7 @@ year: 2020/2021
 url: https://delinde.dk
 logo: logo.png
 coverImage: cover.png
-nanoDescription: Next.js Website & Back-end
+type: Next.js Website & Back-end
 shortDescription: >
   <ul>
     <li>Custom Headless CMS (WP)</li>
@@ -30,25 +30,25 @@ introSection:
       <li>Seamlessly plug into <a href="https://limbo.works" target="_blank" rel="noopener">Limbo's</a> work flow</li>
     </ul>
 screensSection:
-  - image: cover.png
+  - media: cover.png
     text: "The cover page. 3 versions of this page were created for more flexibility on the editor's side."
-  - image: 1.png
+  - media: 1.png
     text: "The Property page. Here the user has a clear view of what they have at their disposal in this rather long page. It counts on scroll spies, modal gallery, floor plan carousel, conditional rendering according to what is available for this specific property and more."
-  - image: 2.png
+  - media: 2.png
     text: "This is the Property Search page. The filters are synced with the Wordpress custo taxonomies and each property has a carousel gallery."
-  - image: 3.png
+  - media: 3.png
     text: "The Portfolio page. It takes information from a custom type in Wordpress and neatly organizes the grid using a pure CSS masonry effect."
-  - image: 4.png
+  - media: 4.png
     text: "An example of the modular components in this site. My custom Gutenberg superblock makes sure all pages can composed in the way that makes more sense for that context. In the detail, an automatically inverted column makes this process even easier."
-  - image: 5.png
+  - media: 5.png
     text: "Another example of a part composed with my Gutenberg superblock."
-  - image: 6.png
+  - media: 6.png
     text: "The menu, sliding from the right. In the detail it's possible to see how the upper menu, which seems to be part of the page below actually pops up over this hidden side menu, giving more functionality and life to the site."
-  - image: 7.png
+  - media: 7.png
     text: "Another Gutenberg superblock example, this time it's the carousel, to which I made sure to add an option (in the CMS) to make it small or very large, in order to acommodate the design."
-  - image: 8.png
+  - media: 8.png
     text: "The team component, constructed from a custom type in Wordpress, also making use of custom taxonomies to organize the teams. In the CMS, I created a dedicated block to make the content creation seamless, by using a similar interface to this component."
-  - image: 9.png
+  - media: 9.png
     text: "The Article page shows how much control the user has. A standard format was never set, being the editor in charge of choosing which parts from the Gutenberg superblock they want to show in this specific article."
 backstorySection:
   text: >

@@ -9,7 +9,7 @@ title: Svenska New Tab
 role: Author
 url: https://github.com/pnettto/svenska
 coverImage: cover.jpg
-nanoDescription: Flashcards app to learn Swedish 
+type: Flashcards app to learn Swedish 
 shortDescription: >
   <p>Svenska New Tab is a new tab extension that shows a new Swedish word everytime the user opens a new tab. It's a great way to acquire new vocabulary, and highly extensible.</p>
 introSection:
@@ -22,5 +22,6 @@ introSection:
       <li>Uses OpenAI for addin new words and translating</li>
     </ul>
 screensSection:
-  - image: demo.mp4
+  - media: demo.mp4
+    text: Quick demo of the app's functionalities
 ---

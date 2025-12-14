@@ -13,7 +13,7 @@ year: 2018/2019
 url: https://conbeo.com
 logo: logo.svg
 coverImage: cover.png
-nanoDescription: Website & Admin panel
+type: Website & Admin panel
 shortDescription: >
   <ul>
     <li>Headless CMS (Wordpress)</li>
@@ -29,19 +29,19 @@ introSection:
       <li>Create a friendly and efficient checkout flow</li>
     </ul>
 screensSection:
-  - image: cover.png
+  - media: cover.png
     text: "The cover page, very fresh and intuitive. It's easy to get going with the tour search, thanks to UX tweaks and user tests."
-  - image: 1.png
+  - media: 1.png
     text: "The Book a Tour page, designed to allow the user find tours quickly but also to discover opportunities they might not be considering."
-  - image: 2.png
+  - media: 2.png
     text: "The Tour page. We hid the complexity of having a lot of content in one page by making use of simple menus which stick to the top as the user scrolls and by hinting at the multiple pictures a gallery can have on top. The booking box is a dialog of it own, responding to the user with useful feedback as they try to find the perfect tour."
-  - image: 3.png
+  - media: 3.png
     text: "Here's the articles page, called Travel Guide. We have created an entire content strategy to up our domain authority, among other SEO indicators, and get more visitors onto the site."
-  - image: 4.png
+  - media: 4.png
     text: "The login page for Tour Operators. Unfortunately I'm not able to show the insides of this system, but it's an Angular 6 app which allows them customize their tour pages, their own CMS. They can also see bookings, reports, statistics and the like."
-  - image: 5.png
+  - media: 5.png
     text: "A search modal overlays the whole site once the search button has been clicked. Maybe the color choice wasn't the best, but it worked like a charm!"
-  - image: 6.png
+  - media: 6.png
     text: "Several informational pages were in place to inform the visitors about the possibilities of engaging with us. Here, a page made for Tour Operators who want to be part of our marketplace."
 backstorySection:
   text: >
