@@ -135,10 +135,13 @@
                 
             </section>
         
+
         
+
         
     
 </article>
+
 <div class="project-nav">
     
     
@@ -146,6 +149,7 @@
         <p>
             <a href="/work/unmind/">← Previous project: Unmind</a>
         </p>
+    
     
     
     
@@ -157,6 +161,7 @@
         </p>
     
 </div>
+
 <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
     <button class="lightbox-close" aria-label="Close lightbox">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -169,6 +174,7 @@
         <img id="lightbox-img" src="" alt=""></div>
         <button class="lightbox-next nav-arrow" aria-label="Next photo">▶</button>
     </div>
+
     <script src="/assets/js/gallery.js"></script>
     
     
@@ -190,17 +196,10 @@
             const players = Array.from(document.querySelectorAll('.project-video')).map(video => new Plyr(video, {
                 autoplay: true,
                 muted: true,
-                loop: {
-                    active: true
-                },
-                controls: [
-                    'play', 'progress', 'mute', 'settings', 'fullscreen'
-                ],
+                loop: { active: true },
+                controls: [ 'play', 'progress', 'mute', 'settings', 'fullscreen' ],
                 settings: ['speed'],
-                speed: {
-                    selected: 1,
-                    options: [0.5, 1, 1.5, 2]
-                }
+                speed: { selected: 1, options: [0.5, 1, 1.5, 2] }
             }));
         });
     </script>
