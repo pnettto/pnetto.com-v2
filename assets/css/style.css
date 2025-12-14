@@ -149,13 +149,17 @@ p {
 }
 
 .logo-img {
-  height: 60px;
+  height: 50px;
   width: auto;
   display: block;
 }
 
 .logo-img .bg {
   fill: var(--accent-color);
+}
+
+.logo-img :nth-child(2) {
+  fill: var(--bg-color);
 }
 
 /* Theme Toggle */
