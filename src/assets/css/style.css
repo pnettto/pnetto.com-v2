@@ -368,7 +368,7 @@ p {
   margin-bottom: 1.8rem;
 }
 
-.welcome .random-photos {
+.welcome .random-photos .random-photo {
   display: none;
 }
 
@@ -394,17 +394,50 @@ p {
     display: block;
     cursor: pointer;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "intro photo1 photo3"
+      "photo4 photo2 photo3";
+    grid-template-columns: 1fr 0.8fr 1fr;
+    grid-template-rows: 1fr 0.8fr;
     gap: 1rem;
     width: 100%;
     height: calc(100vh - 11rem);
     min-height: 30rem;
     border-radius: 10px;
-    overflow: hidden;
+  }
+
+  .welcome .random-photos .random-photo {
+    display: block;
+  }
+  .welcome .random-photos [class^="cell"] {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  .welcome .random-photos .cell1 {
+    grid-area: photo1;
+  }
+
+  .welcome .random-photos .cell2 {
+    grid-area: photo2;
+  }
+
+  .welcome .random-photos .cell3 {
+    grid-area: photo3;
+  }
+
+  .welcome .random-photos .cell4 {
+    grid-area: photo4;
+  }
+  
+  .welcome .random-photos .cell5 {
+    grid-area: intro;
   }
 
   .welcome .random-photo {
     position: relative;
+    width: 100%;
+    height: 100%;
     opacity: 1;
     background-color: var(--border-color);
     border-radius: 10px;
@@ -452,16 +485,11 @@ p {
   }
 
   .welcome .intro {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
     display: flex;
     align-items: center;
-    max-width: 32rem;
     margin-top: initial;
-    background-color: var(--bg-color);
     padding: 1.5rem;
-    border-radius: 10px;
+    padding-left: 0;
   }
 
   .welcome .intro h1 {
