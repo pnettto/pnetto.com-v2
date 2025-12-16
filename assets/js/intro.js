@@ -61,17 +61,11 @@
     document.addEventListener("DOMContentLoaded", () => {
         const randomPhotoEl = document.getElementById("randomPhotos");
         const introBoxEl = document.getElementById("introBox");
-        const introHideThisEl = document.getElementById("introHideThis");
         
         randomPhotoEl.addEventListener('click', () => {
             refreshPictures();
         });
 
-        introHideThisEl.addEventListener('click', (e) => {
-            e.preventDefault();
-            introBoxEl.style = 'display: none;'
-        });
-        
         refreshPictures();
     });
 })()
