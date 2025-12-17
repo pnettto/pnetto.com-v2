@@ -61,6 +61,65 @@ html {
   font-weight: 400;
 }
 
+@media (min-width: 1680px) {
+  :root {
+    --font-size-base: 20px;
+    --container-width-narrow: 1100px;
+  }
+}
+
+@media (min-width: 1890px) {
+  :root {
+    --font-size-base: 22px;
+    --container-width-narrow: 1200px;
+  }
+}
+
+@media (min-width: 2016px) {
+  :root {
+    --font-size-base: 24px;
+    --container-width-narrow: 1300px;
+  }
+}
+
+@media (min-width: 2228px) {
+  :root {
+    --font-size-base: 26px;
+    --container-width-narrow: 1400px;
+    --inner-container-max-width: 1200px;
+  }
+}
+
+@media (min-width: 3024px) {
+  :root {
+    --font-size-base: 32px;
+    --container-width: min(90vw, 2000px);
+    --container-width-narrow: 1800px;
+    --container-width-large: 2500px;
+    --inner-container-max-width: 1500px;
+  }
+}
+
+@media (min-width: 4536px) {
+  :root {
+    --font-size-base: 48px;
+    --container-width: min(90vw, 3000px);
+    --container-width-narrow: 2700px;
+    --container-width-large: 3500px;
+    --inner-container-max-width: 2000px;
+  }
+}
+
+@media (min-width: 6048px) {
+  :root {
+    --font-size-base: 60px;
+    --container-width: min(90vw, 4500px);
+    --container-width-narrow: 3600px;
+    --container-width-large: 5000px;
+    --inner-container-max-width: 2500px;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -150,7 +209,7 @@ p {
 }
 
 .logo-img {
-  height: 50px;
+  height: 2.5rem;
   width: auto;
   display: block;
 }
@@ -404,6 +463,8 @@ p {
     height: calc(100vh - 11rem);
     min-height: 30rem;
     border-radius: 10px;
+    padding-bottom: 2rem;
+    margin-bottom: -10rem;
   }
 
   .welcome .random-photos .random-photo {
@@ -459,21 +520,24 @@ p {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover;
-    transition: filter 0.5s ease;
-  }
-  
-  .welcome .random-photo img:hover {
-    filter: brightness(1.1);
   }
 
   .welcome .random-photo .legend {
-    color: var(--text-main);
+    color: white;
     opacity: 0.5;
     border: 0;
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
     font-size: var(--font-size-xs);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0 4px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+  }
+
+  .welcome .random-photo .legend:hover {
+    background-color: rgba(0, 0, 0, 0.8);
   }
 
   [data-theme="light"] .welcome .random-photo .legend {
@@ -488,8 +552,8 @@ p {
     display: flex;
     align-items: center;
     margin-top: initial;
-    padding: 1.5rem;
     padding-left: 0;
+    background-color: var(--bg-color);
   }
 
   .welcome .intro h1 {
@@ -911,7 +975,7 @@ picture {
 @media (min-width: calc(1200px)) {
   .screen-item-image.gallery-item {
     width: calc(90vw - 2 * var(--space-lg));
-    max-width: 1500px;
+    max-width: 70rem;
     margin-left: 50%;
     transform: translateX(-50%);
   }
@@ -953,7 +1017,7 @@ picture {
 @media (min-width: 600px) {
   .albums-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     column-gap: var(--space-md);
     row-gap: var(--space-xl);
     margin-bottom: 4rem;
