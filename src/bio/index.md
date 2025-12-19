@@ -75,7 +75,7 @@ otherSkills:
   - title: Empathy
     text: I have an easy time stepping into other people’s shoes, which helps with being understanding and solving a wide variety of issues.
   - title: Educator
-    text: I’ve been a Web Development instructor and a co-creator of an entire Web Development course. More about that <a href="/work?category=education">here</a>.
+    text: I’ve been a Web Development instructor and a co-creator of an entire Web Development course. More about that <a href="/work/tskoli/">here</a>.
   - title: Entrepreneur
     text: I co-founded 2 companies. Making ideas become reality is a challenging and exciting concept to me.
 timeline:
