@@ -22,7 +22,7 @@ title: Photos
 
         <a href="{{ album.url }}" class="album-card">
             <div class="album-cover">
-                {% optmizedImageTag cover %}
+                {% optmizedImageTag cover, { aspectRatio: '6 / 4' } %}
             </div>
 
             <div class="album-info">

@@ -37,7 +37,7 @@ layout: layouts/base.njk
 
             <button
                 class="gallery-item"
-                id="image-{{ image.source | getImageNameFromPath | slugify }}"
+                id="{{ image.source | getImageNameFromPath | slugify | hash }}"
                 aria-label="View photo {{ loop.index }}"
                 data-full-src="{{ image.images.jpeg[image.images.jpeg.length - 1].url }}"
                 style="aspect-ratio: {{ imageWidth }} / {{ imageHeight }};"
@@ -90,3 +90,15 @@ layout: layouts/base.njk
 </div>
 
 <script src="/assets/js/gallery.js"></script>
+<script src="/assets/js/masonry.js"></script>
+<script defer>
+    const breakpoints = [
+        { width: 1920, columns: 5 },
+        { width: 1200, columns: 4 },
+        { width: 900, columns: 3 },
+        { width: 600, columns: 2 },
+        { width: 0, columns: 1 },
+    ];
+
+    initMasonry(".gallery-grid", breakpoints);
+</script>

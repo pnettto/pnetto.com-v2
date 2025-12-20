@@ -60,7 +60,7 @@ function getAlbumFrontMatter(albumDir) {
       urlPath: "/img",
       filenameFormat: (id, src, width, format) => {
         const name = path.parse(src).name;
-        return `${name}-${width || "orig"}w.${format}`;
+        return `${id}-${name}-${width || "orig"}w.${format}`;
       },
     });
 

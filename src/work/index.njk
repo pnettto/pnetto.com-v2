@@ -5,105 +5,133 @@ title: Work
 
 <header class="page-header">
   <h1>Work</h1>
-  <p>Here you will find a non-exhaustive showcase of projects I have worked on.</p>
+  <p>
+    Here you will find a non-exhaustive showcase of projects I have worked on.
+  </p>
 </header>
 
-
 <div class="tags-list sticky-tags">
-{% set categories = ['Development', 'Education', 'Entrepreneurship', 'Pet Projects'] %}
-{% for category in categories %}
-        <a href="#{{ category | slugify  }}" class="badge">{{ category }}</a>
-    {% endfor %}
+  {%
+    set categories = ['Development', 'Education', 'Entrepreneurship', 'Pet Projects']
+  %}
+  {% for category in categories %}
+    <a href="#{{ category | slugify  }}" class="badge">{{ category }}</a>
+  {% endfor %}
 </div>
 
 <div class="work-container">
   {% for category in categories %}
-  <section class="project-category">
-    <a id="{{ category | slugify }}" class="anchor"></a>
-    <h2 class="underlined">{{ category }}</h2>
-    
-    {# Featured Projects #}
-    <div class="project-grid">
-      {% for project in collections.work | sort(attribute='data.order') %}
-        {% if category | slugify | lower in project.data.categories and project.data.featured %}
-          <a href="{{ project.url }}" class="project-card">
-            {% if project.data.coverImage %}
-              <div class="project-card-image-wrapper">
-                {% set image = photos | matchPhotosource(project.data.slug ~ "/" ~ project.data.coverImage) %}
-                {% optmizedImageTag image, { sizes: "(min-width: 870px) 25rem, 100vw", className: "project-card-image" } %}
-              </div>
-            {% endif %}
-            <div class="project-card-content">
-              <h3>{{ project.data.title }}</h3>
-              
-              {% if project.data.client or project.data.role %}
-              <div class="project-card-meta">
-                {% if project.data.client %}
-                  <span class="meta-item"><strong>Client:</strong> {{ project.data.client }}</span>
-                {% endif %}
-                {% if project.data.role %}
-                  <span class="meta-item"><strong>Role:</strong> {{ project.data.role }}</span>
-                {% endif %}
-                {% if project.data.type %}
-                  <span class="meta-item"><strong>Type: </strong> {{ project.data.type }}</span>
-                {% endif %}
-              </div>
+    <section class="project-category">
+      <a id="{{ category | slugify }}" class="anchor"></a>
+      <h2 class="underlined">{{ category }}</h2>
+
+      {# Featured Projects #}
+      <div class="project-grid">
+        {% for project in collections.work | sort(attribute='data.order') %}
+          {%
+            if category | slugify | lower in project.data.categories and project.data.featured
+          %}
+            <a href="{{ project.url }}" class="project-card fade-in">
+              {% if project.data.coverImage %}
+                <div class="project-card-image-wrapper">
+                  {%
+                    set image = photos | matchPhotosource(project.data.slug ~ "/" ~ project.data.coverImage)
+                  %}
+                  {%
+                    optmizedImageTag image, { sizes: "(min-width: 870px) 25rem, 100vw", className: "project-card-image", aspectRatio: '6 / 4' }
+                  %}
+                </div>
               {% endif %}
+              <div class="project-card-content">
+                <h3>{{ project.data.title }}</h3>
 
-              <span class="project-card-link">See more &rarr;</span>
-            </div>
-          </a>
-        {% endif %}
-      {% endfor %}
-    </div>
-
-    {# Other Projects (See more) #}
-    {% set hasOtherProjects = false %}
-    {% for project in collections.work %}
-      {% if category | slugify | lower in project.data.categories and not project.data.featured %}
-        {% set hasOtherProjects = true %}
-      {% endif %}
-    {% endfor %}
-
-    {% if hasOtherProjects %}
-      <details class="see-more-container">
-        <summary>See more</summary>
-        <div class="project-grid">
-          {% for project in collections.work | sort(attribute='data.order') %}
-            {% if category | slugify | lower in project.data.categories and not project.data.featured %}
-              <a href="{{ project.url }}" class="project-card">
-                {% if project.data.coverImage %}
-                  <div class="project-card-image-wrapper">
-                    {% set image = photos | matchPhotosource(project.data.slug ~ "/" ~ project.data.coverImage) %}
-                    {% optmizedImageTag image, { sizes: "(min-width: 870px) 25rem, 100vw", className: "project-card-image" } %}
-                  </div>
-                {% endif %}
-                <div class="project-card-content">
-                  <h3>{{ project.data.title }}</h3>
-                  
-                  {% if project.data.client or project.data.role %}
+                {% if project.data.client or project.data.role %}
                   <div class="project-card-meta">
                     {% if project.data.client %}
-                      <span class="meta-item"><strong>Client:</strong> {{ project.data.client }}</span>
+                      <span class="meta-item"><strong>Client:</strong> {{
+                          project.data.client
+                        }}</span>
                     {% endif %}
                     {% if project.data.role %}
-                      <span class="meta-item"><strong>Role:</strong> {{ project.data.role }}</span>
+                      <span class="meta-item"><strong>Role:</strong> {{
+                          project.data.role
+                        }}</span>
                     {% endif %}
                     {% if project.data.type %}
-                      <span class="meta-item"><strong>Type: </strong> {{ project.data.type }}</span>
+                      <span class="meta-item"><strong>Type: </strong> {{
+                          project.data.type
+                        }}</span>
                     {% endif %}
                   </div>
+                {% endif %}
+
+                <span class="project-card-link">See more &rarr;</span>
+              </div>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {# Other Projects (See more) #}
+      {% set hasOtherProjects = false %}
+      {% for project in collections.work %}
+        {%
+          if category | slugify | lower in project.data.categories and not project.data.featured
+        %}
+          {% set hasOtherProjects = true %}
+        {% endif %}
+      {% endfor %}
+
+      {% if hasOtherProjects %}
+        <details class="see-more-container">
+          <summary>See more</summary>
+          <div class="project-grid">
+            {% for project in collections.work | sort(attribute='data.order') %}
+              {%
+                if category | slugify | lower in project.data.categories and not project.data.featured
+              %}
+                <a href="{{ project.url }}" class="project-card">
+                  {% if project.data.coverImage %}
+                    <div class="project-card-image-wrapper">
+                      {%
+                        set image = photos | matchPhotosource(project.data.slug ~ "/" ~ project.data.coverImage)
+                      %}
+                      {%
+                        optmizedImageTag image, { sizes: "(min-width: 870px) 25rem, 100vw", className: "project-card-image", aspectRatio: '6 / 4' }
+                      %}
+                    </div>
                   {% endif %}
+                  <div class="project-card-content">
+                    <h3>{{ project.data.title }}</h3>
 
-                  <span class="project-card-link">See more &rarr;</span>
-                </div>
-              </a>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </details>
-    {% endif %}
+                    {% if project.data.client or project.data.role %}
+                      <div class="project-card-meta">
+                        {% if project.data.client %}
+                          <span class="meta-item"><strong>Client:</strong> {{
+                              project.data.client
+                            }}</span>
+                        {% endif %}
+                        {% if project.data.role %}
+                          <span class="meta-item"><strong>Role:</strong> {{
+                              project.data.role
+                            }}</span>
+                        {% endif %}
+                        {% if project.data.type %}
+                          <span class="meta-item"><strong>Type: </strong> {{
+                              project.data.type
+                            }}</span>
+                        {% endif %}
+                      </div>
+                    {% endif %}
 
-  </section>
+                    <span class="project-card-link">See more &rarr;</span>
+                  </div>
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </details>
+      {% endif %}
+    </section>
   {% endfor %}
 </div>
