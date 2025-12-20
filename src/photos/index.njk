@@ -17,8 +17,11 @@ title: Photos
 <div class="albums-grid">
     {% for album in collections.photos | reverse %}
         {% set albumSlug = album.url | getAlbumSlugFromUrl %}
-        {% set images = photos | getAlbum(albumSlug) %}
-        {% set cover = images[0] %}
+        {% set albumPhotos = photos | getAlbum(albumSlug) %}
+        {% set cover = albumPhotos | matchPhotosource(album.data.cover) %}
+        {% if not cover %}
+            {% set cover = albumPhotos[0] %}
+        {% endif %}
 
         <a href="{{ album.url }}" class="album-card">
             <div class="album-cover">

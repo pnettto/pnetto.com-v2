@@ -97,7 +97,9 @@ module.exports = async function (eleventyConfig) {
     eleventyConfig.addFilter(
         "matchPhotosource",
         function (photos, sourceFragment) {
-            return photos.filter((p) => p.source.includes(sourceFragment))[0];
+            return photos.filter((p) => {
+                return p.source.includes(sourceFragment);
+            })[0];
         },
     );
 
