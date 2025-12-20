@@ -6,14 +6,16 @@
   "scripts": {
     "start": "eleventy --serve",
     "buildImages": "node scripts/build-images.js",
-    "build": "npm run buildImages && eleventy"
+    "build": "npm run buildImages && eleventy",
+    "compile-private": "ELEVENTY_MODE=compile eleventy && rm -rf src/private-compiled && mkdir -p src/private-compiled && cp -R public/private-open/ src/private-compiled/ && rm -rf public/private-open/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2"
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "dotenv": "^17.2.3"
   },
   "dependencies": {
     "@11ty/eleventy-img": "^6.0.4",

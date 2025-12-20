@@ -1,0 +1,87 @@
+---
+layout: layouts/base.njk
+containerClass: narrow
+---
+
+<style>
+    .password-wall {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+        padding: var(--space-xl);
+        background: var(--bg-secondary);
+        border-radius: var(--radius-base);
+        max-width: 30rem;
+    }
+
+    .password-wall.is-visible {
+        display: flex;
+    }
+
+    .password-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .password-form input {
+        padding: var(--space-sm) var(--space-md);
+        background: var(--bg-color);
+        border: none;
+        border-radius: var(--radius-base);
+        color: var(--text-main);
+        text-align: center;
+    }
+
+    .password-form input:focus {
+        outline: none;
+    }
+
+    .password-form button {
+        padding: var(--space-sm) var(--space-md);
+        background: var(--accent-color);
+        color: var(--bg-color);
+        border: none;
+        border-radius: var(--radius-base);
+        font-weight: bold;
+        cursor: pointer;
+        transition: opacity 0.2s;
+    }
+
+    .password-form button:hover {
+        opacity: 0.9;
+    }
+
+    .protected-content-wrapper {
+        display: none;
+        visibility: hidden;
+    }
+</style>
+
+<div id="password-wall" class="password-wall">
+    <div class="password-form">
+        <input
+            type="password"
+            id="password-input"
+            placeholder="Enter password..."
+            autofocus
+        >
+        <button id="unlock-button">Unlock</button>
+    </div>
+</div>
+
+<article>
+    {% set effectivePassword = password or site.defaultPassword %}
+    <div
+        id="protected-content"
+        class="protected-content-wrapper"
+        data-encrypted="{{ content | encrypt(effectivePassword) | safe }}"
+    >
+    </div>
+</article>
+
+<script src="/assets/js/protection.js"></script>

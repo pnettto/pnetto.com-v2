@@ -131,6 +131,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-primary);
+  font-size: inherit;
+}
+
 a {
   color: var(--accent-color);
   text-decoration: none;

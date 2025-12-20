@@ -1,7 +1,9 @@
+require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
 const Image = require("@11ty/eleventy-img");
 const matter = require("gray-matter");
+const crypto = require("crypto");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = async function (eleventyConfig) {
@@ -10,6 +12,7 @@ module.exports = async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/.nojekyll");
     eleventyConfig.addPassthroughCopy("src/**/*.mp4");
+    eleventyConfig.addPassthroughCopy({ "src/private-compiled": "private" });
 
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
@@ -24,6 +27,10 @@ module.exports = async function (eleventyConfig) {
 
     eleventyConfig.addCollection("photos", (collectionApi) => {
         return collectionApi.getFilteredByGlob("src/photos/*/index.md");
+    });
+
+    eleventyConfig.addCollection("private", (collectionApi) => {
+        return collectionApi.getFilteredByGlob("src/private-open/*.md");
     });
 
     eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
@@ -114,6 +121,63 @@ module.exports = async function (eleventyConfig) {
         }
         return hash;
     });
+
+    eleventyConfig.addFilter("encrypt", (content, password) => {
+        if (!password) {
+            console.warn(
+                "No password provided for encrypted content. Content will be hidden but NOT securely encrypted.",
+            );
+            password = "temporary-dev-password";
+        }
+
+        const algorithm = "aes-256-gcm";
+        const iterations = 150_000;
+        const keyLength = 32; // 256 bits
+        const digest = "sha256";
+
+        // Generate random salt (public, stored with ciphertext)
+        const salt = crypto.randomBytes(16);
+
+        // Derive key using PBKDF2 (slow, brute-force resistant)
+        const key = crypto.pbkdf2Sync(
+            password,
+            salt,
+            iterations,
+            keyLength,
+            digest,
+        );
+
+        // AES-GCM IV (12 bytes recommended)
+        const iv = crypto.randomBytes(12);
+        const cipher = crypto.createCipheriv(algorithm, key, iv);
+
+        let encrypted = cipher.update(content, "utf8", "hex");
+        encrypted += cipher.final("hex");
+
+        const authTag = cipher.getAuthTag();
+
+        // Everything needed for decryption (except password)
+        const payload = {
+            iv: iv.toString("hex"),
+            tag: authTag.toString("hex"),
+            data: encrypted,
+            salt: salt.toString("hex"),
+            iterations,
+        };
+
+        return Buffer.from(JSON.stringify(payload)).toString("base64");
+    });
+
+    // Allow to use /private-open for compiling
+    eleventyConfig.setUseGitIgnore(false);
+
+    // Ignore compiled snapshots folder
+    eleventyConfig.ignores.add("src/private-compiled/");
+
+    // Only process 'private-open' when compiling
+    if (process.env.ELEVENTY_MODE !== "compile") {
+        eleventyConfig.ignores.add("src/private-open/");
+    }
 
     // Return an optimized picture tag with all version of an image
     eleventyConfig.addShortcode(
