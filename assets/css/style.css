@@ -163,6 +163,16 @@ p {
   margin-top: 0;
 }
 
+/* Image fade in effect (site wide) */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.is-loaded {
+  opacity: 1;
+}
+
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
@@ -835,7 +845,6 @@ a.project-card {
 
 .project-card-image {
   max-width: 100%;
-  aspect-ratio: 16/9;
   object-fit: cover;
   object-position: top left;
   border-radius: var(--radius-base);
@@ -1046,7 +1055,6 @@ picture {
 
 .album-cover {
   position: relative;
-  aspect-ratio: 3/2;
   overflow: hidden;
 }
 
@@ -1059,7 +1067,6 @@ picture {
 }
 
 .album-cover img {
-  aspect-ratio: 3/2;
   position: absolute;
   top: 0;
   left: 0;
@@ -1098,46 +1105,34 @@ picture {
 
 /* Album Page Grid */
 .gallery-grid {
-  column-count: 3;
-  column-gap: var(--space-md);
-  margin-top: var(--space-lg);
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
 }
 
-.gallery-grid button {
-  margin-bottom: var(--space-md);
-}
-
-@media (max-width: 900px) {
-  .gallery-grid {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 600px) {
-  .gallery-grid {
-    column-count: 1;
-  }
+.gallery-grid .masonry-column {
+  gap: var(--space-md) !important;
 }
 
 .gallery-item {
+  /* aspect ratio defined on html */
   display: block;
   width: 100%;
-  border: none;
   padding: 0;
-  background: none;
-  break-inside: avoid;
-  cursor: pointer;
-  background-color: var(--border-color);
+  background-color: var(--bg-secondary);
+  border: none;
   border-radius: var(--radius-base);
   overflow: hidden;
+  cursor: pointer;
 }
+
 
 .gallery-item img {
   display: block;
-  width: 55rem;
   max-width: 100%;
-  height: auto;
-  transition: filter 0.3s ease;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-item:hover img {

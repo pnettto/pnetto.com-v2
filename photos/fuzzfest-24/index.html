@@ -1,52 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedro Netto - Fuzzfest &#39;24</title>
-    <meta name="description" content="Great night at Debaser (Stockholm) with Dævar, Bottenhavet and Siena Root. - Fuzzfest &#39;24">
-    <link rel="icon" type="image/png" href="/assets/images/logo.png">
-    <link rel="stylesheet" href="https://use.typekit.net/pmu6sig.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/prism.css">
-</head>
-<body>
-    <div class="container ">
-        <header class="site-header">
-            <a href="/" class="logo" aria-label="Home">
-                <svg class="logo-img" width="85" height="84" viewBox="0 0 85 84" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="bg" fill-rule="evenodd" clip-rule="evenodd" d="M41.5243 0.00231154C53.1617 0.133336 63.3614 6.42565 71.0342 15.1674C79.2761 24.5575 85.5608 35.9671 83.9629 48.3532C82.1703 62.2487 75.3441 76.5851 62.4117 82.0057C49.9528 87.2277 36.7258 79.6813 24.9322 73.0957C14.3337 67.1775 4.0323 59.6666 1.2588 47.8578C-1.53198 35.9754 3.30723 23.8363 11.1684 14.4934C18.7602 5.47057 29.7263 -0.130522 41.5243 0.00231154Z" fill="#000000DF" fill-opacity="0.8" />
-                    <path d="M25.3124 35.2789C22.3624 35.2789 19.6124 36.6789 17.6124 39.3789L17.2624 35.9789H12.4124V73.1789L18.0124 72.5289V60.1289C19.7124 62.0789 21.9624 63.0289 24.7124 63.0289C31.4124 63.0289 34.9124 57.1789 34.9124 49.1289C34.9124 40.7289 32.2624 35.2789 25.3124 35.2789ZM23.7624 39.5789C27.2624 39.5789 29.0124 42.3789 29.0124 49.1789C29.0124 55.7789 27.0124 58.6789 23.2124 58.6789C21.0624 58.6789 19.2624 57.6289 18.0124 55.7289V43.3789C19.3124 41.3289 21.2624 39.5789 23.7624 39.5789ZM42.4417 62.3789H48.0417V43.4289C49.4417 41.4289 51.6417 39.5789 54.2417 39.5789C57.4417 39.5789 57.9917 41.3289 57.9917 45.9289V62.3789H63.5917V43.1289C63.5917 38.1789 61.1417 35.2789 56.2417 35.2789C53.0417 35.2789 49.8917 36.7289 47.6917 39.4289L47.2917 35.9789H42.4417V62.3789Z" fill="white" fill-opacity="0.9" />
-                </svg>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pedro Netto - Fuzzfest &#39;24</title>
+        <meta
+            name="description"
+            content="Great night at Debaser (Stockholm) with Dævar, Bottenhavet and Siena Root. - Fuzzfest &#39;24"
+        >
+        <link rel="icon" type="image/png" href="/assets/images/logo.png">
+        <link rel="stylesheet" href="https://use.typekit.net/pmu6sig.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+    </head>
+    <body>
+        <div class="container ">
+            <header class="site-header">
+                <a href="/" class="logo" aria-label="Home">
+                    <svg
+                        class="logo-img"
+                        width="85"
+                        height="84"
+                        viewBox="0 0 85 84"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            class="bg"
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M41.5243 0.00231154C53.1617 0.133336 63.3614 6.42565 71.0342 15.1674C79.2761 24.5575 85.5608 35.9671 83.9629 48.3532C82.1703 62.2487 75.3441 76.5851 62.4117 82.0057C49.9528 87.2277 36.7258 79.6813 24.9322 73.0957C14.3337 67.1775 4.0323 59.6666 1.2588 47.8578C-1.53198 35.9754 3.30723 23.8363 11.1684 14.4934C18.7602 5.47057 29.7263 -0.130522 41.5243 0.00231154Z"
+                            fill="#000000DF"
+                            fill-opacity="0.8"
+                        />
+                        <path
+                            d="M25.3124 35.2789C22.3624 35.2789 19.6124 36.6789 17.6124 39.3789L17.2624 35.9789H12.4124V73.1789L18.0124 72.5289V60.1289C19.7124 62.0789 21.9624 63.0289 24.7124 63.0289C31.4124 63.0289 34.9124 57.1789 34.9124 49.1289C34.9124 40.7289 32.2624 35.2789 25.3124 35.2789ZM23.7624 39.5789C27.2624 39.5789 29.0124 42.3789 29.0124 49.1789C29.0124 55.7789 27.0124 58.6789 23.2124 58.6789C21.0624 58.6789 19.2624 57.6289 18.0124 55.7289V43.3789C19.3124 41.3289 21.2624 39.5789 23.7624 39.5789ZM42.4417 62.3789H48.0417V43.4289C49.4417 41.4289 51.6417 39.5789 54.2417 39.5789C57.4417 39.5789 57.9917 41.3289 57.9917 45.9289V62.3789H63.5917V43.1289C63.5917 38.1789 61.1417 35.2789 56.2417 35.2789C53.0417 35.2789 49.8917 36.7289 47.6917 39.4289L47.2917 35.9789H42.4417V62.3789Z"
+                            fill="white"
+                            fill-opacity="0.9"
+                        />
+                    </svg>
+                </a>
+                <div
+                    style="display: flex; align-items: center; gap: var(--space-md)"
+                >
+                    <button
+                        class="burger-menu"
+                        aria-label="Toggle Menu"
+                        aria-expanded="false"
+                    >
+                        <span class="burger-bar"></span>
+                        <span class="burger-bar"></span>
+                        <span class="burger-bar"></span>
+                    </button>
+                    <nav class="main-nav">
+                        <ul>
+                            <li>
+                                <a
+                                    href="/"
+                                    
+                                >Home</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/bio/"
+                                    
+                                >Bio</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/work/"
+                                    
+                                >Work</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/photos/"
+                                    
+                                >Photos</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/logs/"
+                                    
+                                >Logs</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/contact/"
+                                    
+                                >Contact</a>
+                            </li>
+                        </ul>
+                        <div class="theme-switch-wrapper">
+                            <label
+                                class="theme-switch"
+                                for="theme-toggle"
+                                aria-label="Toggle Dark/Light Mode"
+                            >
+                                <input type="checkbox" id="theme-toggle" />
+                                <div class="slider"></div>
+                            </label>
+                        </div>
+                    </nav>
+                </div>
+            </header>
 
-            </a>
-            <div style="display: flex; align-items: center; gap: var(--space-md);">
-                <button class="burger-menu" aria-label="Toggle Menu" aria-expanded="false">
-                    <span class="burger-bar"></span>
-                    <span class="burger-bar"></span>
-                    <span class="burger-bar"></span>
-                </button>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="/" >Home</a></li>
-                        <li><a href="/bio/" >Bio</a></li>
-                        <li><a href="/work/" >Work</a></li>
-                        <li><a href="/photos/" >Photos</a></li>
-                        <li><a href="/logs/" >Logs</a></li>
-                        <li><a href="/contact/" >Contact</a></li>
-                    </ul>
-                    <div class="theme-switch-wrapper">
-                        <label class="theme-switch" for="theme-toggle" aria-label="Toggle Dark/Light Mode">
-                            <input type="checkbox" id="theme-toggle" />
-                            <div class="slider"></div>
-                        </label>
-                    </div>
-                </nav>
-            </div>
-        </header>
-
-        <main>
-            <div class="page-nav-header">
+            <main>
+                <div class="page-nav-header">
     <p><a href="/photos/">← all</a></p>
 
     
@@ -78,23 +138,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf0039-jpg"
+                id="2819755380"
                 aria-label="View photo 1"
-                data-full-src="/img/_DSF0039-1920w.jpeg"
+                data-full-src="/img/J-nVtWNYoq-_DSF0039-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF0039-900w.webp 900w, /img/_DSF0039-1200w.webp 1200w, /img/_DSF0039-1600w.webp 1600w, /img/_DSF0039-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF0039-900w.jpeg 900w, /img/_DSF0039-1200w.jpeg 1200w, /img/_DSF0039-1600w.jpeg 1600w, /img/_DSF0039-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF0039-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/J-nVtWNYoq-_DSF0039-900w.webp 900w, /img/J-nVtWNYoq-_DSF0039-1200w.webp 1200w, /img/J-nVtWNYoq-_DSF0039-1600w.webp 1600w, /img/J-nVtWNYoq-_DSF0039-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/J-nVtWNYoq-_DSF0039-900w.jpeg 900w, /img/J-nVtWNYoq-_DSF0039-1200w.jpeg 1200w, /img/J-nVtWNYoq-_DSF0039-1600w.jpeg 1600w, /img/J-nVtWNYoq-_DSF0039-1920w.jpeg 1920w">
+                    <img
+                        src="/img/J-nVtWNYoq-_DSF0039-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -103,23 +166,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf0051-jpg"
+                id="2504798338"
                 aria-label="View photo 2"
-                data-full-src="/img/_DSF0051-1920w.jpeg"
+                data-full-src="/img/CKkryKpe1O-_DSF0051-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF0051-900w.webp 900w, /img/_DSF0051-1200w.webp 1200w, /img/_DSF0051-1600w.webp 1600w, /img/_DSF0051-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF0051-900w.jpeg 900w, /img/_DSF0051-1200w.jpeg 1200w, /img/_DSF0051-1600w.jpeg 1600w, /img/_DSF0051-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF0051-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/CKkryKpe1O-_DSF0051-900w.webp 900w, /img/CKkryKpe1O-_DSF0051-1200w.webp 1200w, /img/CKkryKpe1O-_DSF0051-1600w.webp 1600w, /img/CKkryKpe1O-_DSF0051-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/CKkryKpe1O-_DSF0051-900w.jpeg 900w, /img/CKkryKpe1O-_DSF0051-1200w.jpeg 1200w, /img/CKkryKpe1O-_DSF0051-1600w.jpeg 1600w, /img/CKkryKpe1O-_DSF0051-1920w.jpeg 1920w">
+                    <img
+                        src="/img/CKkryKpe1O-_DSF0051-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -128,23 +194,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf0115-jpg"
+                id="3982990445"
                 aria-label="View photo 3"
-                data-full-src="/img/_DSF0115-1920w.jpeg"
+                data-full-src="/img/ePfJBOeNT--_DSF0115-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF0115-900w.webp 900w, /img/_DSF0115-1200w.webp 1200w, /img/_DSF0115-1600w.webp 1600w, /img/_DSF0115-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF0115-900w.jpeg 900w, /img/_DSF0115-1200w.jpeg 1200w, /img/_DSF0115-1600w.jpeg 1600w, /img/_DSF0115-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF0115-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/ePfJBOeNT--_DSF0115-900w.webp 900w, /img/ePfJBOeNT--_DSF0115-1200w.webp 1200w, /img/ePfJBOeNT--_DSF0115-1600w.webp 1600w, /img/ePfJBOeNT--_DSF0115-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/ePfJBOeNT--_DSF0115-900w.jpeg 900w, /img/ePfJBOeNT--_DSF0115-1200w.jpeg 1200w, /img/ePfJBOeNT--_DSF0115-1600w.jpeg 1600w, /img/ePfJBOeNT--_DSF0115-1920w.jpeg 1920w">
+                    <img
+                        src="/img/ePfJBOeNT--_DSF0115-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -153,23 +222,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf0117-jpg"
+                id="1835202091"
                 aria-label="View photo 4"
-                data-full-src="/img/_DSF0117-1920w.jpeg"
+                data-full-src="/img/iv-ZH74rEx-_DSF0117-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF0117-900w.webp 900w, /img/_DSF0117-1200w.webp 1200w, /img/_DSF0117-1600w.webp 1600w, /img/_DSF0117-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF0117-900w.jpeg 900w, /img/_DSF0117-1200w.jpeg 1200w, /img/_DSF0117-1600w.jpeg 1600w, /img/_DSF0117-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF0117-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/iv-ZH74rEx-_DSF0117-900w.webp 900w, /img/iv-ZH74rEx-_DSF0117-1200w.webp 1200w, /img/iv-ZH74rEx-_DSF0117-1600w.webp 1600w, /img/iv-ZH74rEx-_DSF0117-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/iv-ZH74rEx-_DSF0117-900w.jpeg 900w, /img/iv-ZH74rEx-_DSF0117-1200w.jpeg 1200w, /img/iv-ZH74rEx-_DSF0117-1600w.jpeg 1600w, /img/iv-ZH74rEx-_DSF0117-1920w.jpeg 1920w">
+                    <img
+                        src="/img/iv-ZH74rEx-_DSF0117-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -178,23 +250,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf0132-jpg"
+                id="3616467030"
                 aria-label="View photo 5"
-                data-full-src="/img/_DSF0132-1920w.jpeg"
+                data-full-src="/img/GextxZjAml-_DSF0132-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF0132-900w.webp 900w, /img/_DSF0132-1200w.webp 1200w, /img/_DSF0132-1600w.webp 1600w, /img/_DSF0132-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF0132-900w.jpeg 900w, /img/_DSF0132-1200w.jpeg 1200w, /img/_DSF0132-1600w.jpeg 1600w, /img/_DSF0132-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF0132-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/GextxZjAml-_DSF0132-900w.webp 900w, /img/GextxZjAml-_DSF0132-1200w.webp 1200w, /img/GextxZjAml-_DSF0132-1600w.webp 1600w, /img/GextxZjAml-_DSF0132-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/GextxZjAml-_DSF0132-900w.jpeg 900w, /img/GextxZjAml-_DSF0132-1200w.jpeg 1200w, /img/GextxZjAml-_DSF0132-1600w.jpeg 1600w, /img/GextxZjAml-_DSF0132-1920w.jpeg 1920w">
+                    <img
+                        src="/img/GextxZjAml-_DSF0132-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -203,23 +278,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf0338-jpg"
+                id="3310349242"
                 aria-label="View photo 6"
-                data-full-src="/img/_DSF0338-1920w.jpeg"
+                data-full-src="/img/rN0f42raKe-_DSF0338-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF0338-900w.webp 900w, /img/_DSF0338-1200w.webp 1200w, /img/_DSF0338-1600w.webp 1600w, /img/_DSF0338-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF0338-900w.jpeg 900w, /img/_DSF0338-1200w.jpeg 1200w, /img/_DSF0338-1600w.jpeg 1600w, /img/_DSF0338-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF0338-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/rN0f42raKe-_DSF0338-900w.webp 900w, /img/rN0f42raKe-_DSF0338-1200w.webp 1200w, /img/rN0f42raKe-_DSF0338-1600w.webp 1600w, /img/rN0f42raKe-_DSF0338-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/rN0f42raKe-_DSF0338-900w.jpeg 900w, /img/rN0f42raKe-_DSF0338-1200w.jpeg 1200w, /img/rN0f42raKe-_DSF0338-1600w.jpeg 1600w, /img/rN0f42raKe-_DSF0338-1920w.jpeg 1920w">
+                    <img
+                        src="/img/rN0f42raKe-_DSF0338-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -228,23 +306,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf0459-jpg"
+                id="3087329334"
                 aria-label="View photo 7"
-                data-full-src="/img/_DSF0459-1920w.jpeg"
+                data-full-src="/img/arTDUAqKrr-_DSF0459-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF0459-900w.webp 900w, /img/_DSF0459-1200w.webp 1200w, /img/_DSF0459-1600w.webp 1600w, /img/_DSF0459-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF0459-900w.jpeg 900w, /img/_DSF0459-1200w.jpeg 1200w, /img/_DSF0459-1600w.jpeg 1600w, /img/_DSF0459-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF0459-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/arTDUAqKrr-_DSF0459-900w.webp 900w, /img/arTDUAqKrr-_DSF0459-1200w.webp 1200w, /img/arTDUAqKrr-_DSF0459-1600w.webp 1600w, /img/arTDUAqKrr-_DSF0459-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/arTDUAqKrr-_DSF0459-900w.jpeg 900w, /img/arTDUAqKrr-_DSF0459-1200w.jpeg 1200w, /img/arTDUAqKrr-_DSF0459-1600w.jpeg 1600w, /img/arTDUAqKrr-_DSF0459-1920w.jpeg 1920w">
+                    <img
+                        src="/img/arTDUAqKrr-_DSF0459-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -253,23 +334,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf0644-jpg"
+                id="2525165118"
                 aria-label="View photo 8"
-                data-full-src="/img/_DSF0644-1920w.jpeg"
+                data-full-src="/img/vASQ7RAS_e-_DSF0644-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF0644-900w.webp 900w, /img/_DSF0644-1200w.webp 1200w, /img/_DSF0644-1600w.webp 1600w, /img/_DSF0644-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF0644-900w.jpeg 900w, /img/_DSF0644-1200w.jpeg 1200w, /img/_DSF0644-1600w.jpeg 1600w, /img/_DSF0644-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF0644-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/vASQ7RAS_e-_DSF0644-900w.webp 900w, /img/vASQ7RAS_e-_DSF0644-1200w.webp 1200w, /img/vASQ7RAS_e-_DSF0644-1600w.webp 1600w, /img/vASQ7RAS_e-_DSF0644-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/vASQ7RAS_e-_DSF0644-900w.jpeg 900w, /img/vASQ7RAS_e-_DSF0644-1200w.jpeg 1200w, /img/vASQ7RAS_e-_DSF0644-1600w.jpeg 1600w, /img/vASQ7RAS_e-_DSF0644-1920w.jpeg 1920w">
+                    <img
+                        src="/img/vASQ7RAS_e-_DSF0644-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -278,23 +362,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf0707-jpg"
+                id="1683827488"
                 aria-label="View photo 9"
-                data-full-src="/img/_DSF0707-1920w.jpeg"
+                data-full-src="/img/X-T3WIVNyv-_DSF0707-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF0707-900w.webp 900w, /img/_DSF0707-1200w.webp 1200w, /img/_DSF0707-1600w.webp 1600w, /img/_DSF0707-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF0707-900w.jpeg 900w, /img/_DSF0707-1200w.jpeg 1200w, /img/_DSF0707-1600w.jpeg 1600w, /img/_DSF0707-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF0707-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/X-T3WIVNyv-_DSF0707-900w.webp 900w, /img/X-T3WIVNyv-_DSF0707-1200w.webp 1200w, /img/X-T3WIVNyv-_DSF0707-1600w.webp 1600w, /img/X-T3WIVNyv-_DSF0707-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/X-T3WIVNyv-_DSF0707-900w.jpeg 900w, /img/X-T3WIVNyv-_DSF0707-1200w.jpeg 1200w, /img/X-T3WIVNyv-_DSF0707-1600w.jpeg 1600w, /img/X-T3WIVNyv-_DSF0707-1920w.jpeg 1920w">
+                    <img
+                        src="/img/X-T3WIVNyv-_DSF0707-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -303,23 +390,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf0754-jpg"
+                id="1405570568"
                 aria-label="View photo 10"
-                data-full-src="/img/_DSF0754-1920w.jpeg"
+                data-full-src="/img/TSKXMpKxIz-_DSF0754-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF0754-900w.webp 900w, /img/_DSF0754-1200w.webp 1200w, /img/_DSF0754-1600w.webp 1600w, /img/_DSF0754-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF0754-900w.jpeg 900w, /img/_DSF0754-1200w.jpeg 1200w, /img/_DSF0754-1600w.jpeg 1600w, /img/_DSF0754-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF0754-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/TSKXMpKxIz-_DSF0754-900w.webp 900w, /img/TSKXMpKxIz-_DSF0754-1200w.webp 1200w, /img/TSKXMpKxIz-_DSF0754-1600w.webp 1600w, /img/TSKXMpKxIz-_DSF0754-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/TSKXMpKxIz-_DSF0754-900w.jpeg 900w, /img/TSKXMpKxIz-_DSF0754-1200w.jpeg 1200w, /img/TSKXMpKxIz-_DSF0754-1600w.jpeg 1600w, /img/TSKXMpKxIz-_DSF0754-1920w.jpeg 1920w">
+                    <img
+                        src="/img/TSKXMpKxIz-_DSF0754-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -328,23 +418,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf0789-jpg"
+                id="1362419358"
                 aria-label="View photo 11"
-                data-full-src="/img/_DSF0789-1920w.jpeg"
+                data-full-src="/img/7Nepp_d53q-_DSF0789-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF0789-900w.webp 900w, /img/_DSF0789-1200w.webp 1200w, /img/_DSF0789-1600w.webp 1600w, /img/_DSF0789-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF0789-900w.jpeg 900w, /img/_DSF0789-1200w.jpeg 1200w, /img/_DSF0789-1600w.jpeg 1600w, /img/_DSF0789-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF0789-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/7Nepp_d53q-_DSF0789-900w.webp 900w, /img/7Nepp_d53q-_DSF0789-1200w.webp 1200w, /img/7Nepp_d53q-_DSF0789-1600w.webp 1600w, /img/7Nepp_d53q-_DSF0789-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/7Nepp_d53q-_DSF0789-900w.jpeg 900w, /img/7Nepp_d53q-_DSF0789-1200w.jpeg 1200w, /img/7Nepp_d53q-_DSF0789-1600w.jpeg 1600w, /img/7Nepp_d53q-_DSF0789-1920w.jpeg 1920w">
+                    <img
+                        src="/img/7Nepp_d53q-_DSF0789-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -353,23 +446,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf1013-jpg"
+                id="3644589721"
                 aria-label="View photo 12"
-                data-full-src="/img/_DSF1013-1920w.jpeg"
+                data-full-src="/img/lSZm8c8qQr-_DSF1013-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF1013-900w.webp 900w, /img/_DSF1013-1200w.webp 1200w, /img/_DSF1013-1600w.webp 1600w, /img/_DSF1013-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF1013-900w.jpeg 900w, /img/_DSF1013-1200w.jpeg 1200w, /img/_DSF1013-1600w.jpeg 1600w, /img/_DSF1013-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF1013-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/lSZm8c8qQr-_DSF1013-900w.webp 900w, /img/lSZm8c8qQr-_DSF1013-1200w.webp 1200w, /img/lSZm8c8qQr-_DSF1013-1600w.webp 1600w, /img/lSZm8c8qQr-_DSF1013-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/lSZm8c8qQr-_DSF1013-900w.jpeg 900w, /img/lSZm8c8qQr-_DSF1013-1200w.jpeg 1200w, /img/lSZm8c8qQr-_DSF1013-1600w.jpeg 1600w, /img/lSZm8c8qQr-_DSF1013-1920w.jpeg 1920w">
+                    <img
+                        src="/img/lSZm8c8qQr-_DSF1013-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -378,23 +474,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf1051-jpg"
+                id="3534494843"
                 aria-label="View photo 13"
-                data-full-src="/img/_DSF1051-1920w.jpeg"
+                data-full-src="/img/LUzq1PkK78-_DSF1051-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF1051-900w.webp 900w, /img/_DSF1051-1200w.webp 1200w, /img/_DSF1051-1600w.webp 1600w, /img/_DSF1051-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF1051-900w.jpeg 900w, /img/_DSF1051-1200w.jpeg 1200w, /img/_DSF1051-1600w.jpeg 1600w, /img/_DSF1051-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF1051-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/LUzq1PkK78-_DSF1051-900w.webp 900w, /img/LUzq1PkK78-_DSF1051-1200w.webp 1200w, /img/LUzq1PkK78-_DSF1051-1600w.webp 1600w, /img/LUzq1PkK78-_DSF1051-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/LUzq1PkK78-_DSF1051-900w.jpeg 900w, /img/LUzq1PkK78-_DSF1051-1200w.jpeg 1200w, /img/LUzq1PkK78-_DSF1051-1600w.jpeg 1600w, /img/LUzq1PkK78-_DSF1051-1920w.jpeg 1920w">
+                    <img
+                        src="/img/LUzq1PkK78-_DSF1051-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -403,23 +502,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf1206-jpg"
+                id="4244995889"
                 aria-label="View photo 14"
-                data-full-src="/img/_DSF1206-1920w.jpeg"
+                data-full-src="/img/xDsHBmhBJU-_DSF1206-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF1206-900w.webp 900w, /img/_DSF1206-1200w.webp 1200w, /img/_DSF1206-1600w.webp 1600w, /img/_DSF1206-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF1206-900w.jpeg 900w, /img/_DSF1206-1200w.jpeg 1200w, /img/_DSF1206-1600w.jpeg 1600w, /img/_DSF1206-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF1206-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/xDsHBmhBJU-_DSF1206-900w.webp 900w, /img/xDsHBmhBJU-_DSF1206-1200w.webp 1200w, /img/xDsHBmhBJU-_DSF1206-1600w.webp 1600w, /img/xDsHBmhBJU-_DSF1206-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/xDsHBmhBJU-_DSF1206-900w.jpeg 900w, /img/xDsHBmhBJU-_DSF1206-1200w.jpeg 1200w, /img/xDsHBmhBJU-_DSF1206-1600w.jpeg 1600w, /img/xDsHBmhBJU-_DSF1206-1920w.jpeg 1920w">
+                    <img
+                        src="/img/xDsHBmhBJU-_DSF1206-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -428,23 +530,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf1422-jpg"
+                id="430744553"
                 aria-label="View photo 15"
-                data-full-src="/img/_DSF1422-1920w.jpeg"
+                data-full-src="/img/MPid4lBiQC-_DSF1422-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF1422-900w.webp 900w, /img/_DSF1422-1200w.webp 1200w, /img/_DSF1422-1600w.webp 1600w, /img/_DSF1422-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF1422-900w.jpeg 900w, /img/_DSF1422-1200w.jpeg 1200w, /img/_DSF1422-1600w.jpeg 1600w, /img/_DSF1422-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF1422-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/MPid4lBiQC-_DSF1422-900w.webp 900w, /img/MPid4lBiQC-_DSF1422-1200w.webp 1200w, /img/MPid4lBiQC-_DSF1422-1600w.webp 1600w, /img/MPid4lBiQC-_DSF1422-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/MPid4lBiQC-_DSF1422-900w.jpeg 900w, /img/MPid4lBiQC-_DSF1422-1200w.jpeg 1200w, /img/MPid4lBiQC-_DSF1422-1600w.jpeg 1600w, /img/MPid4lBiQC-_DSF1422-1920w.jpeg 1920w">
+                    <img
+                        src="/img/MPid4lBiQC-_DSF1422-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -453,23 +558,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf1514-jpg"
+                id="1480099755"
                 aria-label="View photo 16"
-                data-full-src="/img/_DSF1514-1920w.jpeg"
+                data-full-src="/img/aWiYurENET-_DSF1514-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF1514-900w.webp 900w, /img/_DSF1514-1200w.webp 1200w, /img/_DSF1514-1600w.webp 1600w, /img/_DSF1514-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF1514-900w.jpeg 900w, /img/_DSF1514-1200w.jpeg 1200w, /img/_DSF1514-1600w.jpeg 1600w, /img/_DSF1514-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF1514-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/aWiYurENET-_DSF1514-900w.webp 900w, /img/aWiYurENET-_DSF1514-1200w.webp 1200w, /img/aWiYurENET-_DSF1514-1600w.webp 1600w, /img/aWiYurENET-_DSF1514-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/aWiYurENET-_DSF1514-900w.jpeg 900w, /img/aWiYurENET-_DSF1514-1200w.jpeg 1200w, /img/aWiYurENET-_DSF1514-1600w.jpeg 1600w, /img/aWiYurENET-_DSF1514-1920w.jpeg 1920w">
+                    <img
+                        src="/img/aWiYurENET-_DSF1514-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -478,23 +586,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf1590-jpg"
+                id="3743062111"
                 aria-label="View photo 17"
-                data-full-src="/img/_DSF1590-1920w.jpeg"
+                data-full-src="/img/Q2qiNH9GQX-_DSF1590-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF1590-900w.webp 900w, /img/_DSF1590-1200w.webp 1200w, /img/_DSF1590-1600w.webp 1600w, /img/_DSF1590-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF1590-900w.jpeg 900w, /img/_DSF1590-1200w.jpeg 1200w, /img/_DSF1590-1600w.jpeg 1600w, /img/_DSF1590-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF1590-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/Q2qiNH9GQX-_DSF1590-900w.webp 900w, /img/Q2qiNH9GQX-_DSF1590-1200w.webp 1200w, /img/Q2qiNH9GQX-_DSF1590-1600w.webp 1600w, /img/Q2qiNH9GQX-_DSF1590-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/Q2qiNH9GQX-_DSF1590-900w.jpeg 900w, /img/Q2qiNH9GQX-_DSF1590-1200w.jpeg 1200w, /img/Q2qiNH9GQX-_DSF1590-1600w.jpeg 1600w, /img/Q2qiNH9GQX-_DSF1590-1920w.jpeg 1920w">
+                    <img
+                        src="/img/Q2qiNH9GQX-_DSF1590-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -503,23 +614,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf1615-jpg"
+                id="3208488277"
                 aria-label="View photo 18"
-                data-full-src="/img/_DSF1615-1920w.jpeg"
+                data-full-src="/img/IKIoxvfaJ4-_DSF1615-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF1615-900w.webp 900w, /img/_DSF1615-1200w.webp 1200w, /img/_DSF1615-1600w.webp 1600w, /img/_DSF1615-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF1615-900w.jpeg 900w, /img/_DSF1615-1200w.jpeg 1200w, /img/_DSF1615-1600w.jpeg 1600w, /img/_DSF1615-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF1615-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/IKIoxvfaJ4-_DSF1615-900w.webp 900w, /img/IKIoxvfaJ4-_DSF1615-1200w.webp 1200w, /img/IKIoxvfaJ4-_DSF1615-1600w.webp 1600w, /img/IKIoxvfaJ4-_DSF1615-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/IKIoxvfaJ4-_DSF1615-900w.jpeg 900w, /img/IKIoxvfaJ4-_DSF1615-1200w.jpeg 1200w, /img/IKIoxvfaJ4-_DSF1615-1600w.jpeg 1600w, /img/IKIoxvfaJ4-_DSF1615-1920w.jpeg 1920w">
+                    <img
+                        src="/img/IKIoxvfaJ4-_DSF1615-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -528,23 +642,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf9917-jpg"
+                id="651395850"
                 aria-label="View photo 19"
-                data-full-src="/img/_DSF9917-1280w.jpeg"
+                data-full-src="/img/jbOb6AXn_7-_DSF9917-1280w.jpeg"
                 style="aspect-ratio: 900 / 1350;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF9917-900w.webp 900w, /img/_DSF9917-1200w.webp 1200w, /img/_DSF9917-1280w.webp 1280w">
-<source type="image/jpeg" srcset="/img/_DSF9917-900w.jpeg 900w, /img/_DSF9917-1200w.jpeg 1200w, /img/_DSF9917-1280w.jpeg 1280w">
-                <img
-                    src="/img/_DSF9917-1280w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1280 / 1920; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/jbOb6AXn_7-_DSF9917-900w.webp 900w, /img/jbOb6AXn_7-_DSF9917-1200w.webp 1200w, /img/jbOb6AXn_7-_DSF9917-1280w.webp 1280w">
+<source type="image/jpeg" srcset="/img/jbOb6AXn_7-_DSF9917-900w.jpeg 900w, /img/jbOb6AXn_7-_DSF9917-1200w.jpeg 1200w, /img/jbOb6AXn_7-_DSF9917-1280w.jpeg 1280w">
+                    <img
+                        src="/img/jbOb6AXn_7-_DSF9917-1280w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -553,23 +670,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf9964-jpg"
+                id="2934081568"
                 aria-label="View photo 20"
-                data-full-src="/img/_DSF9964-1920w.jpeg"
+                data-full-src="/img/NHMKme0bz--_DSF9964-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF9964-900w.webp 900w, /img/_DSF9964-1200w.webp 1200w, /img/_DSF9964-1600w.webp 1600w, /img/_DSF9964-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF9964-900w.jpeg 900w, /img/_DSF9964-1200w.jpeg 1200w, /img/_DSF9964-1600w.jpeg 1600w, /img/_DSF9964-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF9964-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/NHMKme0bz--_DSF9964-900w.webp 900w, /img/NHMKme0bz--_DSF9964-1200w.webp 1200w, /img/NHMKme0bz--_DSF9964-1600w.webp 1600w, /img/NHMKme0bz--_DSF9964-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/NHMKme0bz--_DSF9964-900w.jpeg 900w, /img/NHMKme0bz--_DSF9964-1200w.jpeg 1200w, /img/NHMKme0bz--_DSF9964-1600w.jpeg 1600w, /img/NHMKme0bz--_DSF9964-1920w.jpeg 1920w">
+                    <img
+                        src="/img/NHMKme0bz--_DSF9964-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -578,23 +698,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf9974-jpg"
+                id="3350708253"
                 aria-label="View photo 21"
-                data-full-src="/img/_DSF9974-1920w.jpeg"
+                data-full-src="/img/1ZBg9r2nWu-_DSF9974-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF9974-900w.webp 900w, /img/_DSF9974-1200w.webp 1200w, /img/_DSF9974-1600w.webp 1600w, /img/_DSF9974-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF9974-900w.jpeg 900w, /img/_DSF9974-1200w.jpeg 1200w, /img/_DSF9974-1600w.jpeg 1600w, /img/_DSF9974-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF9974-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/1ZBg9r2nWu-_DSF9974-900w.webp 900w, /img/1ZBg9r2nWu-_DSF9974-1200w.webp 1200w, /img/1ZBg9r2nWu-_DSF9974-1600w.webp 1600w, /img/1ZBg9r2nWu-_DSF9974-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/1ZBg9r2nWu-_DSF9974-900w.jpeg 900w, /img/1ZBg9r2nWu-_DSF9974-1200w.jpeg 1200w, /img/1ZBg9r2nWu-_DSF9974-1600w.jpeg 1600w, /img/1ZBg9r2nWu-_DSF9974-1920w.jpeg 1920w">
+                    <img
+                        src="/img/1ZBg9r2nWu-_DSF9974-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -603,23 +726,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf9977-jpg"
+                id="1918552612"
                 aria-label="View photo 22"
-                data-full-src="/img/_DSF9977-1280w.jpeg"
+                data-full-src="/img/ZPkW_YumOH-_DSF9977-1280w.jpeg"
                 style="aspect-ratio: 900 / 1350;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF9977-900w.webp 900w, /img/_DSF9977-1200w.webp 1200w, /img/_DSF9977-1280w.webp 1280w">
-<source type="image/jpeg" srcset="/img/_DSF9977-900w.jpeg 900w, /img/_DSF9977-1200w.jpeg 1200w, /img/_DSF9977-1280w.jpeg 1280w">
-                <img
-                    src="/img/_DSF9977-1280w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1280 / 1920; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/ZPkW_YumOH-_DSF9977-900w.webp 900w, /img/ZPkW_YumOH-_DSF9977-1200w.webp 1200w, /img/ZPkW_YumOH-_DSF9977-1280w.webp 1280w">
+<source type="image/jpeg" srcset="/img/ZPkW_YumOH-_DSF9977-900w.jpeg 900w, /img/ZPkW_YumOH-_DSF9977-1200w.jpeg 1200w, /img/ZPkW_YumOH-_DSF9977-1280w.jpeg 1280w">
+                    <img
+                        src="/img/ZPkW_YumOH-_DSF9977-1280w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
             
@@ -628,23 +754,26 @@
 
             <button
                 class="gallery-item"
-                id="image-dsf9992-jpg"
+                id="2915035717"
                 aria-label="View photo 23"
-                data-full-src="/img/_DSF9992-1920w.jpeg"
+                data-full-src="/img/owicxrnfvd-_DSF9992-1920w.jpeg"
                 style="aspect-ratio: 900 / 600;"
             >
-                <picture>
-                <source type="image/webp" srcset="/img/_DSF9992-900w.webp 900w, /img/_DSF9992-1200w.webp 1200w, /img/_DSF9992-1600w.webp 1600w, /img/_DSF9992-1920w.webp 1920w">
-<source type="image/jpeg" srcset="/img/_DSF9992-900w.jpeg 900w, /img/_DSF9992-1200w.jpeg 1200w, /img/_DSF9992-1600w.jpeg 1600w, /img/_DSF9992-1920w.jpeg 1920w">
-                <img
-                    src="/img/_DSF9992-1920w.jpeg"
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                    
-                    
-                >
-                </picture>
+                <div style="width: 100%; aspect-ratio: 1920 / 1280; background-color: var(--bg-secondary); ">
+                    <picture style="width: 100%; height: 100%;">
+                    <source type="image/webp" srcset="/img/owicxrnfvd-_DSF9992-900w.webp 900w, /img/owicxrnfvd-_DSF9992-1200w.webp 1200w, /img/owicxrnfvd-_DSF9992-1600w.webp 1600w, /img/owicxrnfvd-_DSF9992-1920w.webp 1920w">
+<source type="image/jpeg" srcset="/img/owicxrnfvd-_DSF9992-900w.jpeg 900w, /img/owicxrnfvd-_DSF9992-1200w.jpeg 1200w, /img/owicxrnfvd-_DSF9992-1600w.jpeg 1600w, /img/owicxrnfvd-_DSF9992-1920w.jpeg 1920w">
+                    <img
+                        src="/img/owicxrnfvd-_DSF9992-1920w.jpeg"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        
+                        class="fade-in "
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                    >
+                    </picture>
+                </div>
             </button>
         
     </div>
@@ -688,12 +817,28 @@
 </div>
 
 <script src="/assets/js/gallery.js"></script>
+<script src="/assets/js/masonry.js"></script>
+<script defer>
+    const breakpoints = [
+        { width: 1920, columns: 5 },
+        { width: 1200, columns: 4 },
+        { width: 900, columns: 3 },
+        { width: 600, columns: 2 },
+        { width: 0, columns: 1 },
+    ];
 
-        </main>
+    initMasonry(".gallery-grid", breakpoints);
+</script>
 
-    </div>
+            </main>
+        </div>
 
-    <script src="/assets/js/theme.js"></script>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="6bee7ceb-6636-4498-9524-5e21d4b48fd2"></script>
-</body>
+        <script src="/assets/js/theme.js"></script>
+        <script src="/assets/js/fade-in.js"></script>
+        <script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id="6bee7ceb-6636-4498-9524-5e21d4b48fd2"
+        ></script>
+    </body>
 </html>
