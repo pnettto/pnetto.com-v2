@@ -1127,15 +1127,17 @@ picture {
   background: none;
   break-inside: avoid;
   cursor: pointer;
+  background-color: var(--border-color);
+  border-radius: var(--radius-base);
+  overflow: hidden;
 }
 
 .gallery-item img {
+  display: block;
   width: 55rem;
   max-width: 100%;
   height: auto;
-  display: block;
   transition: filter 0.3s ease;
-  border-radius: var(--radius-base);
 }
 
 .gallery-item:hover img {

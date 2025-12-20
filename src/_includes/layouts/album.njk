@@ -3,10 +3,10 @@ layout: layouts/base.njk
 ---
 <div class="page-nav-header">
     <p><a href="/photos/">← all</a></p>
-    
+
     {% set nextAlbum = collections.photos | getNextCollectionItem(page) %}
     {% if not nextAlbum %}
-      {% set nextAlbum = collections.photos | first %}
+        {% set nextAlbum = collections.photos | first %}
     {% endif %}
     {% if nextAlbum %}
         <p><a href="{{ nextAlbum.url }}">{{ nextAlbum.data.title }} →</a></p>
@@ -15,16 +15,33 @@ layout: layouts/base.njk
 
 <div class="album-header">
     <h1>{{ title }}</h1>
+    {% if description %}
+        <p>{{ description }}</p>
+    {% endif %}
     <p class="album-date">{{ date | albumDate }}</p>
 </div>
 
 <div class="album-page">
     {% set albumSlug = page.inputPath | getAlbumSlugFromPath %}
-    {% set images = photos | getAlbum(albumSlug) %}
+    {% set images = photos %}
+    {% if reverse %}
+        {% set images = images | reverse %}
+    {% endif %}
+    {% set images = images | getAlbum(albumSlug) %}
 
     <div class="gallery-grid">
         {% for image in images %}
-            <button class="gallery-item" id="image-{{ image.source | getImageNameFromPath | slugify }}" aria-label="View photo {{ loop.index }}" data-full-src="{{ image.images.jpeg[image.images.jpeg.length - 1].url }}">
+            {% set imageSample = image.images.jpeg[0] %}
+            {% set imageWidth = imageSample.width %}
+            {% set imageHeight = imageSample.height %}
+
+            <button
+                class="gallery-item"
+                id="image-{{ image.source | getImageNameFromPath | slugify }}"
+                aria-label="View photo {{ loop.index }}"
+                data-full-src="{{ image.images.jpeg[image.images.jpeg.length - 1].url }}"
+                style="aspect-ratio: {{ imageWidth }} / {{ imageHeight }};"
+            >
                 {% optmizedImageTag image %}
             </button>
         {% endfor %}
@@ -34,15 +51,15 @@ layout: layouts/base.njk
 <div class="page-nav-header">
     {% set prevAlbum = collections.photos | getPreviousCollectionItem(page) %}
     {% if not prevAlbum %}
-      {% set prevAlbum = collections.photos | last %}
+        {% set prevAlbum = collections.photos | last %}
     {% endif %}
     {% if prevAlbum %}
         <p><a href="{{ prevAlbum.url }}">← {{ prevAlbum.data.title }}</a></p>
     {% endif %}
-    
+
     {% set nextAlbum = collections.photos | getNextCollectionItem(page) %}
     {% if not nextAlbum %}
-      {% set nextAlbum = collections.photos | first %}
+        {% set nextAlbum = collections.photos | first %}
     {% endif %}
     {% if nextAlbum %}
         <p><a href="{{ nextAlbum.url }}">{{ nextAlbum.data.title }} →</a></p>
@@ -52,12 +69,20 @@ layout: layouts/base.njk
 <!-- Lightbox -->
 <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
     <button class="lightbox-close" aria-label="Close lightbox">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
     </button>
-    <button class="lightbox-prev nav-arrow" aria-label="Previous photo">◀</button>
+    <button class="lightbox-prev nav-arrow" aria-label="Previous photo">
+        ◀
+    </button>
     <div class="lightbox-content">
         <img id="lightbox-img" src="" alt="">
     </div>
