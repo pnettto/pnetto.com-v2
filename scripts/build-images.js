@@ -8,7 +8,7 @@ const Image = require("@11ty/eleventy-img");
 -------------------------- */
 
 function getFilesRecursive(dir) {
-  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const full = path.join(dir, entry.name);
     return entry.isDirectory() ? getFilesRecursive(full) : [full];
   });
@@ -25,7 +25,7 @@ function getAlbumFrontMatter(albumDir) {
     return albumCache[albumDir];
   }
 
-  const files = fs.readdirSync(albumDir).filter(f => f.endsWith(".md"));
+  const files = fs.readdirSync(albumDir).filter((f) => f.endsWith(".md"));
 
   if (files.length !== 1) {
     throw new Error(`Expected 1 md file in ${albumDir}`);
@@ -33,7 +33,7 @@ function getAlbumFrontMatter(albumDir) {
 
   const content = fs.readFileSync(
     path.join(albumDir, files[0]),
-    "utf-8"
+    "utf-8",
   );
 
   const data = matter(content).data;
@@ -50,9 +50,7 @@ function getAlbumFrontMatter(albumDir) {
   const output = [];
 
   const allFiles = getFilesRecursive(imageRoot);
-  const images = allFiles.filter(f =>
-    /\.(jpg|jpeg|png|webp)$/i.test(f)
-  );
+  const images = allFiles.filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f));
 
   for (const imagePath of images) {
     const metadata = await Image(imagePath, {
@@ -60,23 +58,25 @@ function getAlbumFrontMatter(albumDir) {
       formats: ["webp", "jpeg"],
       outputDir: "public/img",
       urlPath: "/img",
-      filenameFormat: (id, src, width, format) =>
-        `${id}-${width || "orig"}w.${format}`,
+      filenameFormat: (id, src, width, format) => {
+        const name = path.parse(src).name;
+        return `${name}-${width || "orig"}w.${format}`;
+      },
     });
 
     const imageData = {
       source: imagePath.replace(/^src\//, ""),
-      images: metadata
-    }
+      images: metadata,
+    };
 
-    if (imagePath.includes('/photos/')) {
+    if (imagePath.includes("/photos/")) {
       const albumDir = path.dirname(imagePath);
       const albumData = getAlbumFrontMatter(albumDir);
       imageData.album = {
         title: albumData.title,
         slug: path.basename(albumDir),
-        path: albumDir.replace(/^src/, "")
-      }
+        path: albumDir.replace(/^src/, ""),
+      };
     }
 
     output.push(imageData);
@@ -85,7 +85,7 @@ function getAlbumFrontMatter(albumDir) {
   fs.mkdirSync("src/_data", { recursive: true });
   fs.writeFileSync(
     "src/_data/photos.json",
-    JSON.stringify(output, null, 2)
+    JSON.stringify(output, null, 2),
   );
 
   console.log(`✔ Processed ${output.length} images`);
