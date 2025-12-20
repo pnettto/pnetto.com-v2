@@ -1,9 +1,16 @@
 function initMasonry(classSelector, breakpoints) {
     const masonry = document.querySelector(classSelector);
-    const masonryChildren = masonry.children;
 
     const render = () => {
-        const items = Array.from(masonryChildren);
+        // Flatten items from existing columns
+        const items = [];
+        Array.from(masonry.children).forEach((child) => {
+            if (child.classList.contains("masonry-column")) {
+                items.push(...Array.from(child.children));
+            } else {
+                items.push(child);
+            }
+        });
 
         // Prevent container collapse
         const currentHeight = masonry.offsetHeight;
