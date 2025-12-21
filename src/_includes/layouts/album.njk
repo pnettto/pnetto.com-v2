@@ -41,7 +41,7 @@ layout: layouts/base.njk
                 data-full-src="{{ image.images.jpeg[image.images.jpeg.length - 1].url }}"
                 style="aspect-ratio: {{ imageWidth }} / {{ imageHeight }};"
             >
-                {% optmizedImageTag image %}
+                {% optmizedImageTag image, { sizes: "(min-width: 1920px) 20vw, (min-width: 1200px) 25vw, (min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" } %}
             </button>
         {% endfor %}
     </div>

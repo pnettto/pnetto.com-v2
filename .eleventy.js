@@ -199,7 +199,9 @@ module.exports = async function (eleventyConfig) {
                         .map((img) => `${img.url} ${img.width}w`)
                         .join(", ");
 
-                    return `<source type="image/${format}" srcset="${srcset}">`;
+                    return `<source type="image/${format}" srcset="${srcset}"${
+                        sizes ? ` sizes="${sizes}"` : ""
+                    }>`;
                 })
                 .join("\n");
 
