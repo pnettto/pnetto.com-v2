@@ -14,6 +14,18 @@ function getFilesRecursive(dir) {
   });
 }
 
+function stripOutputPath(metadata) {
+  const cleaned = {};
+
+  for (const format of Object.keys(metadata)) {
+    cleaned[format] = metadata[format].map(
+      ({ outputPath, sourceType, size, ...rest }) => rest,
+    );
+  }
+
+  return cleaned;
+}
+
 /* -------------------------
    Memoized front matter
 -------------------------- */
@@ -53,16 +65,18 @@ function getAlbumFrontMatter(albumDir) {
   const images = allFiles.filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f));
 
   for (const imagePath of images) {
-    const metadata = await Image(imagePath, {
+    const outputDir = path.join(__dirname, "../compiled/img");
+    const rawMetadata = await Image(imagePath, {
       widths: [900, 1200, 1600, null],
       formats: ["webp", "jpeg"],
-      outputDir: "public/img",
+      outputDir: outputDir,
       urlPath: "/img",
       filenameFormat: (id, src, width, format) => {
         const name = path.parse(src).name;
         return `${name}-${id}-${width || "orig"}w.${format}`;
       },
     });
+    const metadata = stripOutputPath(rawMetadata);
 
     const imageData = {
       source: imagePath.replace(/^src\//, ""),
@@ -85,7 +99,7 @@ function getAlbumFrontMatter(albumDir) {
   fs.mkdirSync("src/_data", { recursive: true });
   fs.writeFileSync(
     "src/_data/photos.json",
-    JSON.stringify(output, null, 2),
+    JSON.stringify(output, null, 0),
   );
 
   console.log(`✔ Processed ${output.length} images`);

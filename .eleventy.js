@@ -12,7 +12,11 @@ module.exports = async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/.nojekyll");
     eleventyConfig.addPassthroughCopy("src/**/*.mp4");
-    eleventyConfig.addPassthroughCopy({ "src/private-compiled": "private" });
+    eleventyConfig.addPassthroughCopy({ "compiled/private": "private" });
+    eleventyConfig.addPassthroughCopy({ "compiled/img": "img" });
+    eleventyConfig.addPassthroughCopy({
+        "src/_data/photos.json": "photos.json",
+    });
 
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
@@ -65,7 +69,19 @@ module.exports = async function (eleventyConfig) {
 
     // Select only album-related photos
     eleventyConfig.addFilter("selectedPhotos", function (photos) {
-        return photos.filter((p) => !!p.album);
+        const filteredPhotos = photos.filter((p) => !!p.album);
+
+        // // Shuffle the filtered photos array
+        for (let i = filteredPhotos.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [filteredPhotos[i], filteredPhotos[j]] = [
+                filteredPhotos[j],
+                filteredPhotos[i],
+            ];
+        }
+
+        // Return the first 150 random photos
+        return filteredPhotos.slice(0, 4);
     });
 
     // Get an albums's images given the photos list, via the slug
@@ -127,7 +143,6 @@ module.exports = async function (eleventyConfig) {
             console.warn(
                 "No password provided for encrypted content. Content will be hidden but NOT securely encrypted.",
             );
-            password = "temporary-dev-password";
         }
 
         const algorithm = "aes-256-gcm";

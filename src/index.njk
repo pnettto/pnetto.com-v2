@@ -32,7 +32,7 @@ title: Welcome
                             <a href="/work">my work</a>.
                         </p>
 
-                        <p>Here are some random pictures from my 
+                        <p>Here are some pictures from my 
                             <a href="/photos">photo archive</a>. Click them to see more! 
                         </p>
                     </div>
@@ -44,5 +44,6 @@ title: Welcome
 
 <script>
     window.PHOTO_LIST = {{ photos | selectedPhotos | json | safe }};
+    fetch('/photos.json').then(e => e.json()).then(e => window.PHOTO_LIST = window.PHOTO_LIST.concat(e))
 </script>
 <script src="/assets/js/intro.js"></script>

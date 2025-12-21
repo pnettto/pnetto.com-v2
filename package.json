@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "eleventy --serve",
-    "buildImages": "node scripts/build-images.js",
-    "build": "npm run buildImages && eleventy",
-    "compile-private": "ELEVENTY_MODE=compile eleventy && rm -rf src/private-compiled && mkdir -p src/private-compiled && cp -R public/private-open/ src/private-compiled/ && rm -rf public/private-open/"
+    "build": "eleventy",
+    "compileImages": "node scripts/build-images.js",
+    "compilePrivate": "ELEVENTY_MODE=compile eleventy && rm -rf compiled/private && mkdir -p compiled/private && cp -R public/private-open/ compiled/private && rm -rf public/private-open/",
+    "compile": "npm run compileImages && npm run compilePrivate"
   },
   "keywords": [],
   "author": "",
