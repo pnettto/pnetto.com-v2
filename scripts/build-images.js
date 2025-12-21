@@ -68,11 +68,19 @@ function getAlbumFrontMatter(albumDir) {
     const outputDir = path.join(__dirname, "../compiled/img");
     const rawMetadata = await Image(imagePath, {
       widths: [900, 1200, 1600, 1920],
-      formats: ["webp", "jpeg"],
+      formats: ["jpeg"],
       outputDir: outputDir,
       urlPath: "/img",
+      sharpJpegOptions: {
+        quality: 90,
+        progressive: true,
+        mozjpeg: true, // High-quality encoder
+        chromaSubsampling: "4:4:4", // Prevents color bleeding/pixelation around edges
+        dither: true, // Enable dithering to reduce banding
+      },
       filenameFormat: (id, src, width, format) => {
         const name = path.parse(src).name;
+        console.log(`${name}-${id}-${width || "orig"}w.${format}`);
         return `${name}-${id}-${width || "orig"}w.${format}`;
       },
     });
