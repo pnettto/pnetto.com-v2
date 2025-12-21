@@ -1,6 +1,8 @@
+import { generateImgTag } from "./generateImgTag.js";
+
 document.addEventListener("DOMContentLoaded", () => {
     const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxContent = document.getElementById("lightbox-content");
     const closeBtn = document.querySelector(".lightbox-close");
     const prevBtn = document.querySelector(".lightbox-prev");
     const nextBtn = document.querySelector(".lightbox-next");
@@ -15,6 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return {
             src: button.dataset.fullSrc || img.src,
             id: button.id,
+            metadata: button.dataset.imageMetadata
+                ? JSON.parse(button.dataset.imageMetadata)
+                : null,
         };
     });
 
@@ -29,10 +34,31 @@ document.addEventListener("DOMContentLoaded", () => {
         history.replaceState(null, null, " ");
     }
 
+    function updateLightboxImage(index) {
+        const photo = images[index];
+
+        if (photo.metadata) {
+            lightboxContent.innerHTML = generateImgTag(photo.metadata);
+            const img = lightboxContent.querySelector("img");
+            img.classList.add("fade-out");
+            img.onload = () => {
+                img.classList.add("is-loaded");
+                img.classList.remove("fade-out");
+            };
+        } else {
+            lightboxContent.innerHTML =
+                `<img id="lightbox-img" src="${photo.src}" alt="">`;
+            const img = lightboxContent.querySelector("img");
+            img.onload = () => {
+                img.classList.add("is-loaded");
+            };
+        }
+    }
+
     function openLightbox(index) {
         if (index < 0 || index >= images.length) return;
         currentIndex = index;
-        lightboxImg.src = images[currentIndex].src;
+        updateLightboxImage(currentIndex);
         lightbox.setAttribute("aria-hidden", "false");
         lightbox.classList.add("visible");
         document.body.style.overflow = "hidden"; // Prevent scrolling
@@ -47,27 +73,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function showNext() {
-        lightboxImg.classList.add("fade-out");
-        setTimeout(() => {
-            currentIndex = (currentIndex + 1) % images.length;
-            lightboxImg.src = images[currentIndex].src;
-            updateHash(currentIndex);
-            lightboxImg.onload = () => {
-                lightboxImg.classList.remove("fade-out");
-            };
-        }, 200);
+        currentIndex = (currentIndex + 1) % images.length;
+        updateLightboxImage(currentIndex);
+        updateHash(currentIndex);
     }
 
     function showPrev() {
-        lightboxImg.classList.add("fade-out");
-        setTimeout(() => {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            lightboxImg.src = images[currentIndex].src;
-            updateHash(currentIndex);
-            lightboxImg.onload = () => {
-                lightboxImg.classList.remove("fade-out");
-            };
-        }, 200);
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateLightboxImage(currentIndex);
+        updateHash(currentIndex);
     }
 
     // Event Listeners
