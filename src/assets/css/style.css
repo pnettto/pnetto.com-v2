@@ -1,11 +1,11 @@
 :root {
-  --bg-color: #0e141b;
-  --bg-secondary: #19252e;
+  --bg-color: hsl(212 40% 5% / 1);
+  --bg-secondary: hsl(212 40% 12% / 1);
   --text-main: #d6d6d6;
   --text-heading: #d6d6d6;
   --text-muted: #b0b0b0;
 
-  --accent-color: #c69e46;
+  --accent-color: hsl(41 49% 53% / 1);
   --highlight-color: #efefef;
 
   --border-color: #333333;
