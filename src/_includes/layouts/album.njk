@@ -39,6 +39,7 @@ layout: layouts/base.njk
                 id="{{ image.source | getImageNameFromPath | slugify | hash }}"
                 aria-label="View photo {{ loop.index }}"
                 data-full-src="{{ image.images.jpeg[image.images.jpeg.length - 1].url }}"
+                data-image-metadata='{{ image | json | escape }}'
                 style="aspect-ratio: {{ imageWidth }} / {{ imageHeight }};"
             >
                 {% optmizedImageTag image, { sizes: "(min-width: 1920px) 20vw, (min-width: 1200px) 25vw, (min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" } %}
@@ -82,13 +83,13 @@ layout: layouts/base.njk
     <button class="lightbox-prev nav-arrow" aria-label="Previous photo">
         ◀
     </button>
-    <div class="lightbox-content">
+    <div class="lightbox-content" id="lightbox-content">
         <img id="lightbox-img" src="" alt="">
     </div>
     <button class="lightbox-next nav-arrow" aria-label="Next photo">▶</button>
 </div>
 
-<script src="/assets/js/gallery.js"></script>
+<script type="module" src="/assets/js/gallery.js"></script>
 <script src="/assets/js/masonry.js"></script>
 <script defer>
     const breakpoints = [

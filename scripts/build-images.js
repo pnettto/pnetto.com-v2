@@ -67,7 +67,7 @@ function getAlbumFrontMatter(albumDir) {
   for (const imagePath of images) {
     const outputDir = path.join(__dirname, "../compiled/img");
     const rawMetadata = await Image(imagePath, {
-      widths: [900, 1200, 1600, null],
+      widths: [900, 1200, 1600, 1920],
       formats: ["webp", "jpeg"],
       outputDir: outputDir,
       urlPath: "/img",

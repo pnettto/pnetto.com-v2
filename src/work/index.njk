@@ -38,7 +38,7 @@ title: Work
                     set image = globalAllPhotos | matchPhotosource(project.data.slug ~ "/" ~ project.data.coverImage)
                   %}
                   {%
-                    optmizedImageTag image, { sizes: "(min-width: 870px) 25rem, 100vw", className: "project-card-image", aspectRatio: '6 / 4' }
+                    optmizedImageTag image, { sizes: "(min-width: 1000px) 35vw, (min-width: 870px) 50vw, 100vw", className: "project-card-image", aspectRatio: '6 / 4' }
                   %}
                 </div>
               {% endif %}
@@ -97,7 +97,7 @@ title: Work
                         set image = globalAllPhotos | matchPhotosource(project.data.slug ~ "/" ~ project.data.coverImage)
                       %}
                       {%
-                        optmizedImageTag image, { sizes: "(min-width: 870px) 25rem, 100vw", className: "project-card-image", aspectRatio: '6 / 4' }
+                        optmizedImageTag image, { sizes: "(min-width: 1000px) 35vw, (min-width: 870px) 50vw, 100vw", className: "project-card-image", aspectRatio: '6 / 4' }
                       %}
                     </div>
                   {% endif %}
