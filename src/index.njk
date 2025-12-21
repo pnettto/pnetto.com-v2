@@ -44,6 +44,6 @@ title: Welcome
 
 <script>
     window.PHOTO_LIST = {{ photos | selectedPhotos | json | safe }};
-    fetch('/photos.json').then(e => e.json()).then(e => window.PHOTO_LIST = window.PHOTO_LIST.concat(e))
+    fetch('/album-photos.json').then(e => e.json()).then(e => window.PHOTO_LIST = window.PHOTO_LIST.concat(e))
 </script>
 <script src="/assets/js/intro.js"></script>

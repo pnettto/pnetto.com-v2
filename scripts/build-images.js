@@ -102,5 +102,11 @@ function getAlbumFrontMatter(albumDir) {
     JSON.stringify(output, null, 0),
   );
 
+  const albumPhotos = output.filter((p) => !!p.album);
+  fs.writeFileSync(
+    "src/_data/album-photos.json",
+    JSON.stringify(albumPhotos, null, 0),
+  );
+
   console.log(`✔ Processed ${output.length} images`);
 })();

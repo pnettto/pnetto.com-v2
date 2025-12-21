@@ -15,7 +15,7 @@ module.exports = async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "compiled/private": "private" });
     eleventyConfig.addPassthroughCopy({ "compiled/img": "img" });
     eleventyConfig.addPassthroughCopy({
-        "src/_data/photos.json": "photos.json",
+        "src/_data/album-photos.json": "album-photos.json",
     });
 
     eleventyConfig.addPlugin(syntaxHighlight);
