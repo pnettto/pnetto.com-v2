@@ -1,21 +1,7 @@
-const goAwayListener = (e) => {
-    const link = e.target.closest("a");
-    if (!link) return;
-
-    e.preventDefault();
-
-    const container = document.querySelector(
-        ".container.fade-in.is-loaded",
-    );
-    container.classList.add("go-away");
-
-    setTimeout(() => {
-        window.location.href = link.href;
-    }, 200);
-};
-
 document.addEventListener("DOMContentLoaded", () => {
-    document.addEventListener("click", goAwayListener);
+    setTimeout(() => {
+        document.querySelector(".container").classList.add("is-loaded");
+    }, 200);
 
     const observer = new IntersectionObserver(
         (entries) => {
@@ -25,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const el = entry.target;
                 const reveal = () => el.classList.add("is-loaded");
 
-                if (el.tagName === "IMG" && !el.complete) {
-                    el.addEventListener("load", reveal);
-                    el.addEventListener("error", reveal);
+                if (el.tagName === "IMG") {
+                    // Make sure the image is loaded before revealing
+                    el.decode().then(reveal).catch(reveal);
                 } else {
                     reveal();
                 }

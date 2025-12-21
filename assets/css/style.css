@@ -177,7 +177,7 @@ p {
 /* Image fade in effect (site wide) */
 .fade-in {
   opacity: 0;
-  transition: opacity 1s var(--transition-effect);
+  transition: opacity 0.5s var(--transition-effect);
 }
 
 .fade-in.is-loaded {
@@ -185,14 +185,15 @@ p {
 }
 
 .container {
+  opacity: 0;
   max-width: var(--container-width);
   margin: 0 auto;
   padding: var(--space-xl) var(--space-md);
 }
 
-.container.go-away {
-  transition: opacity 0.15s;
-  opacity: 0;
+.container.is-loaded {
+  transition: opacity 1s;
+  opacity: 1;
 }
 
 @media (min-width: 600px) {
