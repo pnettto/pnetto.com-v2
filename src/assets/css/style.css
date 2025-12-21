@@ -40,6 +40,8 @@
   
   --radius-base: 4px;
   --radius-full: 9999px;
+
+  --transition-effect: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme="light"] {
@@ -175,7 +177,7 @@ p {
 /* Image fade in effect (site wide) */
 .fade-in {
   opacity: 0;
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.5s var(--transition-effect);
 }
 
 .fade-in.is-loaded {
@@ -473,8 +475,8 @@ p {
     cursor: pointer;
     display: grid;
     grid-template-areas:
-      "intro photo1 photo3"
-      "photo4 photo2 photo3";
+      "intro photo2 photo4"
+      "photo1 photo3 photo4";
     grid-template-columns: 1fr 0.8fr 1fr;
     grid-template-rows: 1fr 0.8fr;
     gap: 1rem;
@@ -519,26 +521,26 @@ p {
     width: 100%;
     height: 100%;
     opacity: 1;
-    background-color: var(--border-color);
     border-radius: 10px;
     overflow: hidden;
     transition: opacity 1s ease-out;
   }
 
-  .welcome .random-photo.transparent {
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
+  .welcome .random-photo > div {
+    aspect-ratio: initial;
+    height: 100%;
   }
 
-  .welcome .random-photo picture{
-    width: 100% !important;
-    height: 100% !important;
+  .welcome .random-photo .fade-in {
+    transition: opacity 1s var(--transition-effect);
   }
 
+  .welcome .random-photo picture,
   .welcome .random-photo img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover;
+    object-position: center;
   }
 
   .welcome .random-photo .legend {
@@ -571,6 +573,7 @@ p {
     display: flex;
     align-items: center;
     margin-top: initial;
+    padding: 1rem;
     padding-left: 0;
     background-color: var(--bg-color);
   }
@@ -1141,7 +1144,7 @@ picture {
   max-width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s var(--transition-effect);
 }
 
 .gallery-item:hover img {

@@ -67,11 +67,11 @@ module.exports = async function (eleventyConfig) {
         return Array.from(tagSet);
     });
 
-    // Select only album-related photos
-    eleventyConfig.addFilter("selectedPhotos", function (photos) {
+    eleventyConfig.addFilter("coverPhotos", function (photos) {
+        // Select only album-related photos
         const filteredPhotos = photos.filter((p) => !!p.album);
 
-        // // Shuffle the filtered photos array
+        // Shuffle the filtered photos array
         for (let i = filteredPhotos.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [filteredPhotos[i], filteredPhotos[j]] = [
@@ -80,7 +80,7 @@ module.exports = async function (eleventyConfig) {
             ];
         }
 
-        // Return the first 150 random photos
+        // Return the first 4 random photos
         return filteredPhotos.slice(0, 4);
     });
 

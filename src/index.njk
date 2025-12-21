@@ -5,15 +5,33 @@ title: Welcome
 
 <div class="welcome">
     <div class="random-photos" id="randomPhotos">
-        <div class="cell1"><div class="random-photo transparent"></div></div>
-        <div class="cell2"><div class="random-photo transparent"></div></div>
-        <div class="cell3"><div class="random-photo transparent"></div></div>
-        <div class="cell4"><div class="random-photo transparent"></div></div>
+        {%
+            set coverImages = [
+                '2021-04-13-red-and-white-wooden-house-on-snow-covered-ground',
+                '2025-03-17-colorful-paints-are-mixed-and-smeared-together',
+                '_DSF1206',
+                'DSCF8035-Enhanced-NR'
+            ]
+        %}
+        {% for image in coverImages %}
+            {% set cellImage = photos | matchPhotosource(image) %}
+            <div class="cell{{ loop.index }}">
+                <div class="random-photo">
+                    {%
+                        optmizedImageTag cellImage, { 
+                            sizes: "(min-width: 1000px) " ~ (loop.index == 4 and "70vw" or "35vw") ~ ", 100vw", 
+                            className: "fade-in" 
+                        }
+                    %}
+                </div>
+            </div>
+        {% endfor %}
+
         <div class="cell5">
-            <div class="intro" id="introBox">
+            <div class="intro fade-in" id="introBox">
                 <div class="intro-inner">
                     <h1>Pedro Netto</h1>
-                    
+
                     <div class="intro-body">
                         <p>
                             I'm a
@@ -21,7 +39,8 @@ title: Welcome
                             with a background in
                             <a href="/work#education">teaching</a>
                             and
-                            <a href="/work#entrepreneurship">entrepreneurship</a>.
+                            <a href="/work#entrepreneurship"
+                            >entrepreneurship</a>.
                         </p>
                         <p>
                             Learn more
@@ -32,8 +51,10 @@ title: Welcome
                             <a href="/work">my work</a>.
                         </p>
 
-                        <p>Here are some pictures from my 
-                            <a href="/photos">photo archive</a>. Click them to see more! 
+                        <p>
+                            Here are some pictures from my
+                            <a href="/photos">photo archive</a>. Click them to
+                            see more!
                         </p>
                     </div>
                 </div>
@@ -43,7 +64,9 @@ title: Welcome
 </div>
 
 <script>
-    window.PHOTO_LIST = {{ photos | selectedPhotos | json | safe }};
-    fetch('/album-photos.json').then(e => e.json()).then(e => window.PHOTO_LIST = window.PHOTO_LIST.concat(e))
+    window.PHOTO_LIST = [];
+    fetch("/album-photos.json").then((e) => e.json()).then((e) =>
+        window.PHOTO_LIST = window.PHOTO_LIST.concat(e)
+    );
 </script>
 <script src="/assets/js/intro.js"></script>

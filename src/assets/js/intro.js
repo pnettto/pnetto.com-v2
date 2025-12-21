@@ -21,12 +21,6 @@
             return `<source type="${type}" srcset="${srcset}" sizes="${sizes}">`;
         }).join("\n    ");
 
-        window.fadeIn = function (event) {
-            event.target.closest(".random-photo").classList.remove(
-                "transparent",
-            );
-        };
-
         const imgTag = `
             <img 
             src="${fallbackImg.url}"
@@ -36,15 +30,16 @@
             class="${classes}"
             loading="lazy"
             decoding="async"
-            onload="fadeIn(event)"
             >
         `.trim();
 
         return `
-            <picture>
-                ${sources}
-                ${imgTag}
-            </picture>
+            <div style="width: 100%; background-color: var(--bg-secondary); ">
+                <picture>
+                    ${sources}
+                    ${imgTag}
+                </picture>
+            </div>
             ${
             album
                 ? `<a class="legend" href="/photos/${album.slug}">${album.title}</a>`
@@ -57,8 +52,6 @@
         const randomPhotoEls = document.querySelectorAll(".random-photo");
 
         randomPhotoEls.forEach((el) => {
-            el.classList.add("transparent");
-
             setTimeout(() => {
                 // Restart the list when end is reached
                 if (photos.length === 0) {
@@ -80,7 +73,5 @@
         randomPhotoEl.addEventListener("click", () => {
             refreshPictures();
         });
-
-        refreshPictures();
     });
 })();
