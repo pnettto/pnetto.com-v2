@@ -62,26 +62,27 @@ containerClass: narrow
     }
 </style>
 
-<div id="password-wall" class="password-wall">
-    <div class="password-form">
-        <input
-            type="password"
-            id="password-input"
-            placeholder="Enter password..."
-            autofocus
+<div class="container narrow fade-in">
+    <div id="password-wall" class="password-wall">
+        <div class="password-form">
+            <input
+                type="password"
+                id="password-input"
+                placeholder="Enter password..."
+                autofocus
+            >
+            <button id="unlock-button">Unlock</button>
+        </div>
+    </div>
+
+    <article>
+        {% set effectivePassword = password or site.defaultPassword %}
+        <div
+            id="protected-content"
+            class="protected-content-wrapper"
+            data-encrypted="{{ content | encrypt(effectivePassword) | safe }}"
         >
-        <button id="unlock-button">Unlock</button>
-    </div>
+        </div>
+    </article>
 </div>
-
-<article>
-    {% set effectivePassword = password or site.defaultPassword %}
-    <div
-        id="protected-content"
-        class="protected-content-wrapper"
-        data-encrypted="{{ content | encrypt(effectivePassword) | safe }}"
-    >
-    </div>
-</article>
-
 <script src="/assets/js/protection.js"></script>

@@ -17,7 +17,7 @@ title: Photos
 <div class="albums-grid">
     {% for album in collections.photos | reverse %}
         {% set albumSlug = album.url | getAlbumSlugFromUrl %}
-        {% set albumPhotos = photos | getAlbum(albumSlug) %}
+        {% set albumPhotos = globalAlbumPhotos | getAlbum(albumSlug) %}
         {% set cover = albumPhotos | matchPhotosource(album.data.cover) %}
         {% if not cover %}
             {% set cover = albumPhotos[0] %}

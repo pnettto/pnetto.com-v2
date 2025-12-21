@@ -1,8 +1,4 @@
 require("dotenv").config();
-const fs = require("fs");
-const path = require("path");
-const Image = require("@11ty/eleventy-img");
-const matter = require("gray-matter");
 const crypto = require("crypto");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
@@ -15,7 +11,7 @@ module.exports = async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "compiled/private": "private" });
     eleventyConfig.addPassthroughCopy({ "compiled/img": "img" });
     eleventyConfig.addPassthroughCopy({
-        "src/_data/album-photos.json": "album-photos.json",
+        "src/_data/globalAlbumPhotos.json": "albumPhotos.json",
     });
 
     eleventyConfig.addPlugin(syntaxHighlight);
@@ -65,23 +61,6 @@ module.exports = async function (eleventyConfig) {
             (item.data.tags || []).forEach((tag) => tagSet.add(tag));
         }
         return Array.from(tagSet);
-    });
-
-    eleventyConfig.addFilter("coverPhotos", function (photos) {
-        // Select only album-related photos
-        const filteredPhotos = photos.filter((p) => !!p.album);
-
-        // Shuffle the filtered photos array
-        for (let i = filteredPhotos.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [filteredPhotos[i], filteredPhotos[j]] = [
-                filteredPhotos[j],
-                filteredPhotos[i],
-            ];
-        }
-
-        // Return the first 4 random photos
-        return filteredPhotos.slice(0, 4);
     });
 
     // Get an albums's images given the photos list, via the slug

@@ -7,22 +7,28 @@ title: Welcome
     <div class="random-photos" id="randomPhotos">
         {%
             set coverImages = [
-                '2021-04-13-red-and-white-wooden-house-on-snow-covered-ground',
-                '2025-03-17-colorful-paints-are-mixed-and-smeared-together',
-                '_DSF1206',
-                'DSCF8035-Enhanced-NR'
+            '_DSF4618',
+            '_DSF6306',
+            '2021-02-25-gray-and-white-rocky-mountain-tCpQRPKnfZY',
+            '2023-09-12-PBOeAx34i9g' 
             ]
         %}
         {% for image in coverImages %}
-            {% set cellImage = photos | matchPhotosource(image) %}
+            {% set cellImage = globalAllPhotos | matchPhotosource(image) %}
             <div class="cell{{ loop.index }}">
                 <div class="random-photo">
                     {%
                         optmizedImageTag cellImage, { 
-                            sizes: "(min-width: 1000px) " ~ (loop.index == 4 and "70vw" or "35vw") ~ ", 100vw", 
+                            sizes: "(min-width: 1000px) " ~ (loop.index == 4 and "100vw" or "50vw") ~ ", 100vw", 
                             className: "fade-in" 
                         }
                     %}
+                    <div class="fade-in">
+                        <a
+                            class="legend fade-in"
+                            href="/photos/{{cellImage.album.slug}}"
+                        >{{ cellImage.album.title }}</a>
+                    </div>
                 </div>
             </div>
         {% endfor %}
@@ -51,10 +57,15 @@ title: Welcome
                             <a href="/work">my work</a>.
                         </p>
 
-                        <p>
+                        <p class="mobile-hide">
                             Here are some pictures from my
                             <a href="/photos">photo archive</a>. Click them to
                             see more!
+                        </p>
+
+                        <p class="mobile-show">
+                            And since you're here why not go check some of
+                            <a href="/photos">my pictures</a>? :)
                         </p>
                     </div>
                 </div>
@@ -65,7 +76,7 @@ title: Welcome
 
 <script>
     window.PHOTO_LIST = [];
-    fetch("/album-photos.json").then((e) => e.json()).then((e) =>
+    fetch("/albumPhotos.json").then((e) => e.json()).then((e) =>
         window.PHOTO_LIST = window.PHOTO_LIST.concat(e)
     );
 </script>

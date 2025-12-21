@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="/assets/css/prism.css">
     </head>
     <body>
-        <div class="container narrow">
+        <div class="container narrow fade-in">
             <header class="site-header">
                 <a href="/" class="logo" aria-label="Home">
                     <svg
@@ -166,28 +166,29 @@
     }
 </style>
 
-<div id="password-wall" class="password-wall">
-    <div class="password-form">
-        <input
-            type="password"
-            id="password-input"
-            placeholder="Enter password..."
-            autofocus
+<div class="container narrow fade-in">
+    <div id="password-wall" class="password-wall">
+        <div class="password-form">
+            <input
+                type="password"
+                id="password-input"
+                placeholder="Enter password..."
+                autofocus
+            >
+            <button id="unlock-button">Unlock</button>
+        </div>
+    </div>
+
+    <article>
+        
+        <div
+            id="protected-content"
+            class="protected-content-wrapper"
+            data-encrypted="eyJpdiI6IjQ1YmY0MDE0NjM2YjYzYjU3NGUxYWQ0YyIsInRhZyI6ImQyM2YxYmQ4MjBkNDZlYzNiMDE5YjlmODUwZDc5Y2IyIiwiZGF0YSI6IjAzNWI0YzkxZTAzMDFmNDNhMzYzYTg4NDJkYmQ2MDIxZGY0YmU3NmM1ZTI0NTViMjk3NTBkN2E0ZGEyNDhhMjA4Y2U5ZTc1ZmJhN2IwYmE1NDNlMjM5OTRjZGZhMGY5ZDJiYzE1NmUyNTcxMTQ5Zjk0NDRhM2RkNjhmZDBkOWMzNWMyMWM4ZDRmZTcwMmZjYmI1Y2RlOWY3ZDAzZTEyYjRkOTk4NWRmZTgzNGY4ZDUwODAxZmUzZmQ5MzMzYjVkOGYzNGRhOWJmMjVlNTYxZjZlOWJiNWNlMGJjZWNiZTJjZWI2ODRjYTkyYmEwMDg0MWEyMjE5NDU4ZWZlYmU1NWNjYzQwMmNlZDcyNzY2Njc5Yjc3NTJiOWFiMDYyNmRhZjkyZTNlMGMwNmI0MTBhOGE3NzYxOGYxOWUwYTgzOGNhNzczZWRmZDk5ZGYxYjZlZTM1ZDVlMjY0ZjYyZDQ1MWYyNTZhZjA5OGI0YjZmYTI0MDIwNWE2ZTRlOWQ3Y2Q5ZGI4ZjM4MDlkYjFkYmM0YTZhNGE4MzQ4ZjJjMTI1YTA5ZWI4ZGRjOWQ5YzNkNGEyMTM2ZjE4N2JmYmEzMjk0OWQwZmQ2MzZkZjE3ZWExYmIzZDg5ODU5ZGE3N2FlZWEwM2MwY2Y0MzdkZDY3Y2Q1Y2FlZjgzMzgzMjVhMmYyNDYwZjIzNWMxZjdlOGZiNDYwM2FlNWM4MmIwNGExZjMwNmQ1OTU5ZjRiMjc3MzgyNzEyZjc1NDhhMmVlNDBmNjljOWVlNzA0OTRhNjA4ZTc0NDZhNzcxNzIzOWY0ODE3NTc4OWJlMjM0OTQxNDI4ZTUzMmMzZDEyNzQ0NjcxZjRmODNjZmUwZmViYTVlZmU3YmM1MDg5NDk3ZDZmOWNmZmRhZGU3NTQzNDk1ZWJhY2FiOGUwZWUyNGRmMjM3YmRlYTM5M2Q4MDk5OGYwYjNkNTc0MDcwYzFmYzIyYThiZTcyMzQzMjc2N2ZmYzJmMWQ2ZjM4ZWJiNDgxZDBkZjhhZTE2YjlmODgxZjVkY2E5YWI4MTQyZDFlZGU2OWIzNjcxY2YyMTA0N2NhYmUyYmI1MTYwYTRlOTk1Njc5OWRkMTNlNjQ0MTZjNjZlNjc5ZDRiZmM0MGQ1NTg1ZWYwYjdjYmNiMmMyYTRjOGVjYTYyZmYwNDM1Mjc2M2ZhYmE5YzIzMzMzZjMyODIyYTM0OGQ2N2VjYTRhNGFjNGYyZDA0MjE0NDFkMmZlZTEzOWM4OGIxNzA1MWZkMmQ0ZjE1Njg2MDRlZmVkMWRiMjZiZjQxMjIzNDgzYzIwMjRjY2NlZTRlOTUxYTIzZTBhZDljMzU2ZjMwMzQ2ZjJkMTVjYzQ1YTgyNWVmZGE4MGUyNTY1NzM5ZTQ1MDY4NGYzMmRkZjdhMmEzOTRmZGNjOGNmZjY1NmQwM2Y5NzExMmRjMjJhZWE3ZjkzYjU2N2FmMDg3YTk3NjRiOTQ5NzBmM2FlOTI5MmEyMTdkZTYxNGJiYzgxODI3ZmEwYjUxNzgyMzQ2MGRjY2JlNzY0NWNjNzZhM2I3NDg1Y2VjZDdkMzY0ZjE1ZGVkMTIyMTBmZDgwNjg3NTdkZDlkMjViYzk1MWYwZDU2YTAxNzVjMGVjMmI2YyIsInNhbHQiOiI4MDNkMDIzM2Y5Mjc5MDIzN2Q3OTdkNjdhMzkzM2NjYWRhMGFkODc4ZDU5NmI5Yjg3OTk4Y2RmNWVmZDE4NzQ2IiwiaXRlcmF0aW9ucyI6MTUwMDAwfQ=="
         >
-        <button id="unlock-button">Unlock</button>
-    </div>
+        </div>
+    </article>
 </div>
-
-<article>
-    
-    <div
-        id="protected-content"
-        class="protected-content-wrapper"
-        data-encrypted="eyJpdiI6IjVkNThlZTM4YTA1M2M5NTdiNmFkNDYxZCIsInRhZyI6IjY2MTJmZTdmZThhMmMyNmEyMzBiOWZiYTZhNjA2ZjcxIiwiZGF0YSI6IjcwOTRlMjk0YTg1MTE4YjNiNjFmMTBmNzhiMjc5ZmUyZmViMWZiMzJhOTg2ZDYzNGRmMGQ3NWFkM2Q5YTg0NTI0NGYxNjEzZWIzMDRjYWM1NjU1ZDY4MWY5M2ZmNjkxMGZkOGFmMzIyNTU1ZTc0NWMzZTIyZWI5YTkyYzE4NjZhZGQxMWE4ZjRjNTRkZjY5N2E5OWQzMTg4NDY1ZjNhMTc5ZjFmYWIwNjRkZjAzNzYxOWU3MDBmYWQ1YzljNmJjZjUzNzg0NmM3OTBmMWFjOGM5NmYwZGY1MDA0NGJlYjY0ZWQyZjlkYzMyMzQ4YTMyY2I0NGI0NmFmY2M3NmQ0Yzc3OThlYjY2ZTU1NzBhYTM5ODU3MTU3OTYzZjc1ZmNkZDA2NmZlMmQzMTUxODUyZTIzNTJmODZmMjgyNTEwYTgyZjQ1ZmZhYzIyOTI2MDEwZGJlNTBiYmU1Yzk1ODU4MDlmZDBmMjFjMTg4ZDNhYzYyNzk4ZGRkNGUyNjY2OWQzNzgwMGE2MTk1MWU2MzNmYTcyOWZjNWM3YzRiMWI1MDMxYjIwOWIwYWJiZGQxM2Y0NzU2ZDFmZDVmOGRlZDVkMTJkZThjOGVjNGZkMTUwZGNkMzc4M2ZmNzVjMTY4NzQwZjliYjU5ZTUzNDZjNWY4NjA2NzhkZTJjODY5YTFmYzJjMWQwOWU5MjNlNjM5NmIyZWQzYzVkOGNkNmM3NmFmYjViOWMwMmUwNjY1NjllZDRjZDg0YWMzZDVhYTI4ZjMwNDA3MjA1ZGYxM2ZjZjZjMmMwZThiN2NjOWYxMWE3YjE5NzYwYTVlNjNiZjNiN2NiMGY0NDU4MTY5ZmVlYzVlNGY5NzJlNTBkOTA2MmYwZWEyNzYzNGZlNjljMmFiYTUxYzAxOTcwMjUwYmRjOTk4NTg3YTFlYjEyMDUyM2I0MTE4NGZmMTU0ZmFjZGI3NmQwOWFjMmFjMzlkZDgzMzM5ZDExYzI1NGFiMjEyZDA5ZjM5MTIzYmU2M2RmODUzZmY2OGNkYmI4Y2U4MDliMmIzYjc1NWI5OTcwZGQxNGMwZDYyYTMxZDEwMjJjNTdmMDkwMGM5Yjc0NjZmNjU4YjNmMDI1ZDQ1MWQyNGUzOWU3MzY0ZTY3MjU3NmY0M2UzYTRiMWM1ZDkyYTczZmViNjFlZjIzZDA4NjZiZThlNjAxMzA1MmNhOTQ2OWMyNzAwMzk2N2Q1NGE5ODNiMTM5ZGMwMTE1NTU5MTYzMWQzZmRkZGE2YmFjZGQ4YjFlNzhlMmNiMmNmMzc3ZWFkYmZhZmFhYzE2MTVlZjA4MWQ0OTQzMzg0MTVmYjZmYjZkMTZhNmU3ZjllYjMyMzg2ZDNlNjY4Nzg4NjA1NWU1ZTU5ZmFmODEzNjEwZjUxZDBhNzY5YTQ2NDFkMzgxNzQ4NjdjM2U4YzFiYTY3NWVhNDU3ZjNiMTNhYTJlM2FmYzJjYzAyYzNkM2QzOGNjYjRjYWQwNmY3YTlhNjY3Y2JkYjg2ZTZkODdkZDFhZjU0ZTE4NzQ0ZDM1NzhlYzIwN2E2ODBjYTMzYzE4MDhhYjZjN2Q2YjAyNjFkYjYxNGY4YzY0ZGFhYWE3ODFlYjQ3ODJjMzU3MDc2NzRlNjc1YzliYyIsInNhbHQiOiI4MDNkMDIzM2Y5Mjc5MDIzN2Q3OTdkNjdhMzkzM2NjYWRhMGFkODc4ZDU5NmI5Yjg3OTk4Y2RmNWVmZDE4NzQ2IiwiaXRlcmF0aW9ucyI6MTUwMDAwfQ=="
-    >
-    </div>
-</article>
-
 <script src="/assets/js/protection.js"></script>
 
             </main>

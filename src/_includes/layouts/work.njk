@@ -7,7 +7,9 @@ containerClass: narrow
     <p>
         <a href="/work/">← all</a>
     </p>
-    {% set nextProject = collections.work | sort(attribute='data.order') | getNextCollectionItem(page) %}
+    {%
+        set nextProject = collections.work | sort(attribute='data.order') | getNextCollectionItem(page)
+    %}
     {% if not nextProject %}
         {% set nextProject = collections.work | first %}
     {% endif %}
@@ -42,7 +44,11 @@ containerClass: narrow
             {% if url %}
                 <div class="project-meta-item">
                     <strong>URL:</strong>
-                    <a href="{{ url }}" target="_blank" rel="noopener noreferrer">{{ url }}</a>
+                    <a
+                        href="{{ url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >{{ url }}</a>
                 </div>
             {% endif %}
         </div>
@@ -52,8 +58,12 @@ containerClass: narrow
     {% if not hasContent %}
         {# No detailed content: Show Cover and Big Link #}
         {% if coverImage %}
-            {% set image = photos | matchPhotosource(slug ~ "/" ~ coverImage) %}
-            {% optmizedImageTag image, { sizes: "(min-width: 870px) 50rem, 100vw", className: "project-hero-image" } %}
+            {%
+                set image = globalAllPhotos | matchPhotosource(slug ~ "/" ~ coverImage)
+            %}
+            {%
+                optmizedImageTag image, { sizes: "(min-width: 870px) 50rem, 100vw", className: "project-hero-image" }
+            %}
         {% endif %}
         <p>
             This project does not have a detailed case study yet.
@@ -75,15 +85,35 @@ containerClass: narrow
                 {% for screen in screensSection %}
                     <div class="screen-item">
                         {% if screen.media | isVideo('mp4') %}
-                            {% set videoPath = "work/" ~ slug ~ "/" ~ screen.media %}
-                            <video src="/{{ videoPath }}" class="project-video" autoplay muted loop playsinline>
-                                <source src="movie.mp4" type="video/mp4"/>
+                            {%
+                                set videoPath = "work/" ~ slug ~ "/" ~ screen.media
+                            %}
+                            <video
+                                src="/{{ videoPath }}"
+                                class="project-video"
+                                autoplay
+                                muted
+                                loop
+                                playsinline
+                            >
+                                <source src="movie.mp4" type="video/mp4" />
                             </video>
                         {% else %}
-                            {% set imagePath = "work/" ~ slug ~ "/" ~ screen.media %}
-                            {% set image = photos | matchPhotosource(imagePath) %}
-                            <button class="gallery-item screen-item-image" id="image-{{ screen.media | slugify }}" aria-label="View photo {{ loop.index }}" data-full-src="{{ image.images.jpeg[image.images.jpeg.length - 1].url }}">
-                                {% optmizedImageTag image, { sizes: "(min-width: 870px) 100px, 100vw", className: "screen-image" } %}
+                            {%
+                                set imagePath = "work/" ~ slug ~ "/" ~ screen.media
+                            %}
+                            {%
+                                set image = globalAllPhotos | matchPhotosource(imagePath)
+                            %}
+                            <button
+                                class="gallery-item screen-item-image"
+                                id="image-{{ screen.media | slugify }}"
+                                aria-label="View photo {{ loop.index }}"
+                                data-full-src="{{ image.images.jpeg[image.images.jpeg.length - 1].url }}"
+                            >
+                                {%
+                                    optmizedImageTag image, { sizes: "(min-width: 870px) 100px, 100vw", className: "screen-image" }
+                                %}
                             </button>
                             {% if screen.text %}
                                 <p class="screen-text">{{ screen.text }}</p>
@@ -110,45 +140,64 @@ containerClass: narrow
 </article>
 
 <div class="project-nav">
-    {% set previousProject = collections.work | sort(attribute='data.order') | getPreviousCollectionItem(page) %}
+    {%
+        set previousProject = collections.work | sort(attribute='data.order') | getPreviousCollectionItem(page)
+    %}
     {% if not previousProject %}
         {% set previousProject = collections.work | last %}
     {% endif %}
     {% if previousProject %}
         <p>
-            <a href="{{ previousProject.url }}">← Previous project: {{ previousProject.data.title }}</a>
+            <a href="{{ previousProject.url }}">← Previous project: {{
+                    previousProject.data.title
+                }}</a>
         </p>
     {% endif %}
-    
-    {% set nextProject = collections.work | sort(attribute='data.order') | getNextCollectionItem(page) %}
+
+    {%
+        set nextProject = collections.work | sort(attribute='data.order') | getNextCollectionItem(page)
+    %}
     {% if not nextProject %}
         {% set nextProject = collections.work | first %}
     {% endif %}
     {% if nextProject %}
         <p>
-            <a href="{{ nextProject.url }}">Next project: {{ nextProject.data.title }} →</a>
+            <a href="{{ nextProject.url }}"
+            >Next project: {{ nextProject.data.title }} →</a>
         </p>
     {% endif %}
 </div>
 
 <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
     <button class="lightbox-close" aria-label="Close lightbox">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
     </button>
-    <button class="lightbox-prev nav-arrow" aria-label="Previous photo">◀</button>
+    <button class="lightbox-prev nav-arrow" aria-label="Previous photo">
+        ◀
+    </button>
     <div class="lightbox-content">
-        <img id="lightbox-img" src="" alt=""></div>
-        <button class="lightbox-next nav-arrow" aria-label="Next photo">▶</button>
+        <img id="lightbox-img" src="" alt="">
     </div>
+    <button class="lightbox-next nav-arrow" aria-label="Next photo">▶</button>
+</div>
 
-    <script src="/assets/js/gallery.js"></script>
-    
-    {# Video player #}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.css"/>
-    <style>
+<script src="/assets/js/gallery.js"></script>
+
+{# Video player #}
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.css"
+/>
+<style>
     .plyr {
         --plyr-color-main: var(--accent-color); /* primary accent */
         --plyr-video-background: var(--bg-color);
@@ -158,17 +207,30 @@ containerClass: narrow
         --plyr-tooltip-background: var(--accent-color);
         --plyr-tooltip-color: var(--accent-color);
     }
-    </style>
-    <script defer src="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.polyfilled.js"></script>
-    <script defer>
-        document.addEventListener('DOMContentLoaded', () => {
-            const players = Array.from(document.querySelectorAll('.project-video')).map(video => new Plyr(video, {
+</style>
+<script
+    defer
+    src="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.polyfilled.js"
+></script>
+<script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+        const players = Array.from(
+            document.querySelectorAll(".project-video"),
+        ).map((video) =>
+            new Plyr(video, {
                 autoplay: true,
                 muted: true,
                 loop: { active: true },
-                controls: [ 'play', 'progress', 'mute', 'settings', 'fullscreen' ],
-                settings: ['speed'],
-                speed: { selected: 1, options: [0.5, 1, 1.5, 2] }
-            }));
-        });
-    </script>
+                controls: [
+                    "play",
+                    "progress",
+                    "mute",
+                    "settings",
+                    "fullscreen",
+                ],
+                settings: ["speed"],
+                speed: { selected: 1, options: [0.5, 1, 1.5, 2] },
+            })
+        );
+    });
+</script>

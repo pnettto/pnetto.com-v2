@@ -35,7 +35,7 @@ title: Work
               {% if project.data.coverImage %}
                 <div class="project-card-image-wrapper">
                   {%
-                    set image = photos | matchPhotosource(project.data.slug ~ "/" ~ project.data.coverImage)
+                    set image = globalAllPhotos | matchPhotosource(project.data.slug ~ "/" ~ project.data.coverImage)
                   %}
                   {%
                     optmizedImageTag image, { sizes: "(min-width: 870px) 25rem, 100vw", className: "project-card-image", aspectRatio: '6 / 4' }
@@ -94,7 +94,7 @@ title: Work
                   {% if project.data.coverImage %}
                     <div class="project-card-image-wrapper">
                       {%
-                        set image = photos | matchPhotosource(project.data.slug ~ "/" ~ project.data.coverImage)
+                        set image = globalAllPhotos | matchPhotosource(project.data.slug ~ "/" ~ project.data.coverImage)
                       %}
                       {%
                         optmizedImageTag image, { sizes: "(min-width: 870px) 25rem, 100vw", className: "project-card-image", aspectRatio: '6 / 4' }

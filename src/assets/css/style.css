@@ -114,7 +114,7 @@ html {
 
 @media (min-width: 6048px) {
   :root {
-    --font-size-base: 60px;
+    --font-size-base: 65px;
     --container-width: min(90vw, 4500px);
     --container-width-narrow: 3600px;
     --container-width-large: 5000px;
@@ -177,7 +177,7 @@ p {
 /* Image fade in effect (site wide) */
 .fade-in {
   opacity: 0;
-  transition: opacity 0.5s var(--transition-effect);
+  transition: opacity 1s var(--transition-effect);
 }
 
 .fade-in.is-loaded {
@@ -188,6 +188,11 @@ p {
   max-width: var(--container-width);
   margin: 0 auto;
   padding: var(--space-xl) var(--space-md);
+}
+
+.container.go-away {
+  transition: opacity 0.15s;
+  opacity: 0;
 }
 
 @media (min-width: 600px) {
@@ -461,6 +466,21 @@ p {
   display: none;
 }
 
+.welcome .mobile-hide {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .welcome .mobile-hide {
+    display: block;
+  }
+
+  .welcome .mobile-show {
+    display: none;
+  }
+}
+
+
 @media (min-width: 1000px) {
   .welcome {
     position: relative;
@@ -472,7 +492,6 @@ p {
 
   .welcome .random-photos {
     display: block;
-    cursor: pointer;
     display: grid;
     grid-template-areas:
       "intro photo2 photo4"
@@ -490,6 +509,7 @@ p {
 
   .welcome .random-photos .random-photo {
     display: block;
+    cursor: pointer;
   }
   .welcome .random-photos [class^="cell"] {
     min-height: 0;

@@ -23,11 +23,10 @@ layout: layouts/base.njk
 
 <div class="album-page">
     {% set albumSlug = page.inputPath | getAlbumSlugFromPath %}
-    {% set images = photos %}
+    {% set images = globalAlbumPhotos | getAlbum(albumSlug) %}
     {% if reverse %}
         {% set images = images | reverse %}
     {% endif %}
-    {% set images = images | getAlbum(albumSlug) %}
 
     <div class="gallery-grid">
         {% for image in images %}

@@ -98,13 +98,13 @@ function getAlbumFrontMatter(albumDir) {
 
   fs.mkdirSync("src/_data", { recursive: true });
   fs.writeFileSync(
-    "src/_data/photos.json",
+    "src/_data/globalAllPhotos.json",
     JSON.stringify(output, null, 0),
   );
 
   const albumPhotos = output.filter((p) => !!p.album);
   fs.writeFileSync(
-    "src/_data/album-photos.json",
+    "src/_data/globalAlbumPhotos.json",
     JSON.stringify(albumPhotos, null, 0),
   );
 
