@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="/assets/css/prism.css">
     </head>
     <body>
-        <div class="container narrow">
+        <div class="container narrow fade-in">
             <header class="site-header">
                 <a href="/" class="logo" aria-label="Home">
                     <svg
@@ -166,28 +166,29 @@
     }
 </style>
 
-<div id="password-wall" class="password-wall">
-    <div class="password-form">
-        <input
-            type="password"
-            id="password-input"
-            placeholder="Enter password..."
-            autofocus
+<div class="container narrow fade-in">
+    <div id="password-wall" class="password-wall">
+        <div class="password-form">
+            <input
+                type="password"
+                id="password-input"
+                placeholder="Enter password..."
+                autofocus
+            >
+            <button id="unlock-button">Unlock</button>
+        </div>
+    </div>
+
+    <article>
+        
+        <div
+            id="protected-content"
+            class="protected-content-wrapper"
+            data-encrypted="eyJpdiI6IjczYWYwMjY3MDAyNzE2YzhiZDMzODQ5YSIsInRhZyI6ImY4ZDcyNDE3NmQ5MDhjMmJiN2MxM2UxMzI5MmM2MzE1IiwiZGF0YSI6IjVjYzdlMzBiYzM0NjI4Y2IzNTYzNWJhOWY1MTg3ZDgxZTJkMzhjOTA1ZDExYTVmZDliYmE0MmFkMzVmMTMwOGJkOTA2MGE3NjdkZDU2MWJlZGEzNDgyN2FiZGUzOTVkMjY3NDRhN2U3M2QwMTExYzU3YThlMGJmZmIyNDAwMWM5ZjNjNmY3MDNlMjAxNjk2YTNmNGQwNGI0OWJkZTFhYThhYzM4NmM2NzA3ZmZmNTAxZTg1NTAyY2MyOWY2ZWU5NTZkYWVmNTk1ODg0NGExOGYxNjNjOTY3Y2JjNDczYzUyMDZmOTNmMzMxMGI5Yzk4NGRlNGVmZjk1YjlhNDM4YTYwMTRkNjJlYzNiZmRlNWQzMTkyNGVhZDlhYWRjYjQ1OTA5MjY4YjM2MmVmYTU0M2Y2ZDMwMDNkMDVlNGVlNmM1NWQzOWMwODFiMzI2NTBiYjE2OTdlYWQ1YTU0NjljZDBiY2EwMjBhZjRmNWNhOGNmN2Q3ODY5ODJmYjc1ZWRjOTg2YWZkMDcwZDZjMzFjYTNiNDA5NmU1NjA5ZmJjYWEyYWQwNzRiZTQ4MWI5ZWI5NDBmMjA1ZWU1MjYwMzk5YjE1OTI0YzU0ODlhZDk5NWYxNDMxNWM1YjBjODYxZmYzZTc0YWE4ZWEyZjI1YzEzMzFjYzM5YWJlMjU1NjQyYTJjYTlkMjMyNjllMzllYjI3ZTYxNjdiNzg0OWZhNmQwMzA3YWZmYzM5MWZiNzUwZDQzMGRkYTgzMTRmYzZjM2Q3Y2NmYmNjZDM0NzJhNjZmZjdkNWY5NGIyNWEyZjI0NzQ0M2UzODdlNDJkMDdkOWZmZTJhYmI0MmYxYjRjMDIzOTJhMTBjODhmNDBhOWViZWQ1OWVmMTE5NDlkZTBjNTg1NzVmNDlkOGE2YjcxMTliMmZiNTdmOTZkYjAzNjliNTEwYzFlODk3ZTQzZTQ4NWFkZWRiYjhhMDQ3MWExYWZkNmU1MzY4Yjc0OGE5MDk0ODIxYjQ0M2Y3ZmE1NjczYjJlMCIsInNhbHQiOiI4MDNkMDIzM2Y5Mjc5MDIzN2Q3OTdkNjdhMzkzM2NjYWRhMGFkODc4ZDU5NmI5Yjg3OTk4Y2RmNWVmZDE4NzQ2IiwiaXRlcmF0aW9ucyI6MTUwMDAwfQ=="
         >
-        <button id="unlock-button">Unlock</button>
-    </div>
+        </div>
+    </article>
 </div>
-
-<article>
-    
-    <div
-        id="protected-content"
-        class="protected-content-wrapper"
-        data-encrypted="eyJpdiI6IjJhOWU3ZmZjZWZkOWViMGJhZjUwZWY4ZiIsInRhZyI6IjVhZDMwOTM2ZjFiMTA5NjliMmY0YzI5YWI5NWZmZTUxIiwiZGF0YSI6ImZlOWUxMDcwNjNjZGFkMGQ5Y2U3MTkxZmU4ODYyMDgzMGMwM2MyMzEyNzRjYTc5ZGYwZDc5ZTdmYWU0NjY4ZTY5NWJmZGUyNWNhNzkzMjU2YzMzNTU5OTlmYTYxYWI5Zjk5ZmNhYWFmYWI2Nzg5YTdlM2FkMzgzYWI5NzY2NjkzMDk2ZTkyOWZhOWU2NjkxZDgyMjAzOTdiMjVhNzM5MGVkZGU2OGM2NThhZmU0MDE5N2MyMGFhYTk1MmY1YWJjM2UwZTBiYWViZTVlOWMzNWI5MWVhNTQ1YTEyNjA5YjU3YjE3MDgxNTI1YzIyZTQ2YjNlMTFjNTY5ZmFjNjA2NDBkMjI4OTQ1N2NkYjA2YjQ2M2YzM2MwYjRiYzc0ODhjMzUxZTBjYWY3Yzg0YTQxYWUyNjRkYmU2Y2E0MDIzZTBhMTdmZjRkZjEzOTdiYjVjNzNiZTRlMTM0YmZmNTZkOTBhYmQ2MzRlNjZlODk2MTM5MzllNjA4MjgxNDQyOTNmY2RmNTJlNDUxZDM2ODc5MmUxOGY5OGQzMTAyYmMyMmJjOGMxMTkwZTgxMGE3YzVhNDJhYjMzMDEzYjhkZmM0NTE0MjQ3MGJjYTZkMDJjNjYyYzNmZTJhZGY5NTZkYzhjYmU2MjhjNWE2M2RjM2QwNjk1NzdhZDU5MTgwZjRlYTFjMjBhMDA0YmY2YzI1YzhkODRlZTY1ZTkwYmE4NTk0NmM0NjQzZDM0MjdkZTBlZGM3NmVkN2NjY2EyMTIxYzkzNDhmOTUxYWFmOTk0ZDYyMDFkNTA5ZWI1YzkwMzUyM2Q3NDRiNzI1NGFlY2IxM2U2YjlhMGUwMzcwMjliNTA3Y2Q2ZThkODk0ZjA5YmY4ZmFhYzFhYWNhZTI0YTMyYTUzMTMyMjg1Zjg3OWZiZmEwMTg5MDdhOTYyOTc0YzJlNTVlZTg2Mzc3M2VhYWRmMWJjZTJmZDIwNjI0MTAwMTQ1NWI0MDg0MGI0ZmFlMDgzMWNmYjEwZjY0NDBkZmJiNTM5OSIsInNhbHQiOiI4MDNkMDIzM2Y5Mjc5MDIzN2Q3OTdkNjdhMzkzM2NjYWRhMGFkODc4ZDU5NmI5Yjg3OTk4Y2RmNWVmZDE4NzQ2IiwiaXRlcmF0aW9ucyI6MTUwMDAwfQ=="
-    >
-    </div>
-</article>
-
 <script src="/assets/js/protection.js"></script>
 
             </main>

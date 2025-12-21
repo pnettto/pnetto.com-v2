@@ -1,50 +1,55 @@
+const goAwayListener = (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+
+    e.preventDefault();
+
+    const container = document.querySelector(
+        ".container.fade-in.is-loaded",
+    );
+    container.classList.add("go-away");
+
+    setTimeout(() => {
+        window.location.href = link.href;
+    }, 200);
+};
+
 document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("click", goAwayListener);
+
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const item = entry.target;
-                    const img = item.tagName === "IMG"
-                        ? item
-                        : item.querySelector("img");
+                if (!entry.isIntersecting) return;
 
-                    const reveal = () => {
-                        requestAnimationFrame(() => {
-                            item.classList.add("is-loaded");
-                        });
-                    };
+                const el = entry.target;
+                const reveal = () => el.classList.add("is-loaded");
 
-                    if (img && !img.complete) {
-                        img.addEventListener("load", reveal, { once: true });
-                    } else {
-                        reveal();
-                    }
-                    observer.unobserve(item);
+                if (el.tagName === "IMG" && !el.complete) {
+                    el.addEventListener("load", reveal);
+                    el.addEventListener("error", reveal);
+                } else {
+                    reveal();
                 }
+
+                observer.unobserve(el);
             });
         },
-        { threshold: 0.1, rootMargin: "50px" },
+        {
+            threshold: 0,
+            rootMargin: "100px",
+        },
     );
 
-    // Initial scan for elements with .fade-in class or content images
     const scanAndObserve = () => {
-        const selectors = [
-            ".fade-in:not(.is-loaded)",
-            "img:not(.is-loaded):not(.logo-img):not(.no-fade)",
-        ];
-
-        document.querySelectorAll(selectors.join(",")).forEach((el) => {
-            // If it's an image without the fade-in class, add it for the CSS transition
-            if (el.tagName === "IMG" && !el.classList.contains("fade-in")) {
-                el.classList.add("fade-in");
-            }
-            observer.observe(el);
-        });
+        const elements = document.querySelectorAll(".fade-in:not(.is-loaded)");
+        elements.forEach((el) => observer.observe(el));
     };
 
+    // Initial scan
     scanAndObserve();
 
-    // Observe changes in the DOM to support dynamically added content (like masonry)
+    // Re-scan when content changes (e.g. masonry, dynamic loading)
     const mutationObserver = new MutationObserver(() => {
         scanAndObserve();
     });
@@ -53,4 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         childList: true,
         subtree: true,
     });
+
+    // Fallback: scan on window load to catch everything else
+    window.addEventListener("load", scanAndObserve);
 });

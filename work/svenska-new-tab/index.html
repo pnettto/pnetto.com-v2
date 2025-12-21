@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="/assets/css/prism.css">
     </head>
     <body>
-        <div class="container narrow">
+        <div class="container narrow fade-in">
             <header class="site-header">
                 <a href="/" class="logo" aria-label="Home">
                     <svg
@@ -134,7 +134,11 @@
             
                 <div class="project-meta-item">
                     <strong>URL:</strong>
-                    <a href="https://github.com/pnettto/svenska" target="_blank" rel="noopener noreferrer">https://github.com/pnettto/svenska</a>
+                    <a
+                        href="https://github.com/pnettto/svenska"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >https://github.com/pnettto/svenska</a>
                 </div>
             
         </div>
@@ -161,8 +165,15 @@
                     <div class="screen-item">
                         
                             
-                            <video src="/work/svenska-new-tab/demo.mp4" class="project-video" autoplay muted loop playsinline>
-                                <source src="movie.mp4" type="video/mp4"/>
+                            <video
+                                src="/work/svenska-new-tab/demo.mp4"
+                                class="project-video"
+                                autoplay
+                                muted
+                                loop
+                                playsinline
+                            >
+                                <source src="movie.mp4" type="video/mp4" />
                             </video>
                         
                     </div>
@@ -184,34 +195,47 @@
             <a href="/work/list-fyrir-alla/">← Previous project: List Fyrir Alla</a>
         </p>
     
-    
+
     
     
     
         <p>
-            <a href="/work/tskoli/">Next project: Development Course →</a>
+            <a href="/work/tskoli/"
+            >Next project: Development Course →</a>
         </p>
     
 </div>
 
 <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
     <button class="lightbox-close" aria-label="Close lightbox">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
     </button>
-    <button class="lightbox-prev nav-arrow" aria-label="Previous photo">◀</button>
+    <button class="lightbox-prev nav-arrow" aria-label="Previous photo">
+        ◀
+    </button>
     <div class="lightbox-content">
-        <img id="lightbox-img" src="" alt=""></div>
-        <button class="lightbox-next nav-arrow" aria-label="Next photo">▶</button>
+        <img id="lightbox-img" src="" alt="">
     </div>
+    <button class="lightbox-next nav-arrow" aria-label="Next photo">▶</button>
+</div>
 
-    <script src="/assets/js/gallery.js"></script>
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.css"/>
-    <style>
+<script src="/assets/js/gallery.js"></script>
+
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.css"
+/>
+<style>
     .plyr {
         --plyr-color-main: var(--accent-color); /* primary accent */
         --plyr-video-background: var(--bg-color);
@@ -221,20 +245,34 @@
         --plyr-tooltip-background: var(--accent-color);
         --plyr-tooltip-color: var(--accent-color);
     }
-    </style>
-    <script defer src="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.polyfilled.js"></script>
-    <script defer>
-        document.addEventListener('DOMContentLoaded', () => {
-            const players = Array.from(document.querySelectorAll('.project-video')).map(video => new Plyr(video, {
+</style>
+<script
+    defer
+    src="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.polyfilled.js"
+></script>
+<script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+        const players = Array.from(
+            document.querySelectorAll(".project-video"),
+        ).map((video) =>
+            new Plyr(video, {
                 autoplay: true,
                 muted: true,
                 loop: { active: true },
-                controls: [ 'play', 'progress', 'mute', 'settings', 'fullscreen' ],
-                settings: ['speed'],
-                speed: { selected: 1, options: [0.5, 1, 1.5, 2] }
-            }));
-        });
-    </script>
+                controls: [
+                    "play",
+                    "progress",
+                    "mute",
+                    "settings",
+                    "fullscreen",
+                ],
+                settings: ["speed"],
+                speed: { selected: 1, options: [0.5, 1, 1.5, 2] },
+            })
+        );
+    });
+</script>
+
             </main>
         </div>
 

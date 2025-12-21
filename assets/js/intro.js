@@ -2,12 +2,7 @@
     if (!window.PHOTO_LIST) return;
     const photos = window.PHOTO_LIST.slice(0);
 
-    function generateImgTag(
-        imageDataRaw,
-        alt = "",
-        sizes = "300vw",
-        classes = "",
-    ) {
+    function generateImgTag(imageDataRaw, { sizes }) {
         const { album, images: imageData } = imageDataRaw;
 
         const fallbackFormat = Object.keys(imageData).find((fmt) =>
@@ -16,38 +11,31 @@
         const fallbackImg = imageData[fallbackFormat][0];
         const sources = Object.entries(imageData).map(([format, variants]) => {
             const srcset = variants.map((v) => v.srcset).join(", ");
-            const type = variants[0].sourceType; // e.g. "image/webp"
-
-            return `<source type="${type}" srcset="${srcset}" sizes="${sizes}">`;
+            const type = variants[0].format; // e.g. "image/webp"
+            return `<source type="image/${type}" srcset="${srcset}" sizes="(min-width: 1000px) ${sizes}, 100vw">`;
         }).join("\n    ");
-
-        window.fadeIn = function (event) {
-            event.target.closest(".random-photo").classList.remove(
-                "transparent",
-            );
-        };
 
         const imgTag = `
             <img 
             src="${fallbackImg.url}"
             width="${fallbackImg.width}"
             height="${fallbackImg.height}"
-            alt="${alt}"
-            class="${classes}"
+            class="fade-in"
             loading="lazy"
             decoding="async"
-            onload="fadeIn(event)"
             >
         `.trim();
 
         return `
-            <picture>
-                ${sources}
-                ${imgTag}
-            </picture>
+            <div style="width: 100%; background-color: var(--bg-secondary); ">
+                <picture>
+                    ${sources}
+                    ${imgTag}
+                </picture>
+            </div>
             ${
             album
-                ? `<a class="legend" href="/photos/${album.slug}">${album.title}</a>`
+                ? `<div class="fade-in"><a class="legend" href="/photos/${album.slug}">${album.title}</a></div>`
                 : ""
         }
         `.trim();
@@ -56,9 +44,7 @@
     function refreshPictures() {
         const randomPhotoEls = document.querySelectorAll(".random-photo");
 
-        randomPhotoEls.forEach((el) => {
-            el.classList.add("transparent");
-
+        randomPhotoEls.forEach((el, index) => {
             setTimeout(() => {
                 // Restart the list when end is reached
                 if (photos.length === 0) {
@@ -67,20 +53,28 @@
 
                 const randomIndex = Math.floor(Math.random() * photos.length);
                 const randomImageMetadata = photos[randomIndex];
-                el.innerHTML = generateImgTag(randomImageMetadata);
+                el.innerHTML = generateImgTag(randomImageMetadata, {
+                    sizes: index === 3 ? "100vw" : "50vw",
+                });
                 photos.splice(randomIndex, 1);
             }, 500);
         });
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-        const randomPhotoEl = document.getElementById("randomPhotos");
-        const introBoxEl = document.getElementById("introBox");
-
-        randomPhotoEl.addEventListener("click", () => {
-            refreshPictures();
+        const randomPhotoEls = document.querySelectorAll(
+            ".random-photo",
+        );
+        randomPhotoEls.forEach((el) => {
+            el.addEventListener("click", () => {
+                const fadeIns = el.closest(".random-photos").querySelectorAll(
+                    ".random-photo .fade-in",
+                );
+                fadeIns.forEach((fd) => {
+                    fd.classList.remove("is-loaded");
+                });
+                refreshPictures();
+            });
         });
-
-        refreshPictures();
     });
 })();
