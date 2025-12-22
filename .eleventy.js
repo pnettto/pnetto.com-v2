@@ -132,10 +132,7 @@ export default async function (eleventyConfig) {
         const digest = "sha256";
 
         // Generate random salt (public, stored with ciphertext)
-        const salt = Buffer.from(
-            "803d0233f92790237d797d67a3933ccada0ad878d596b9b87998cdf5efd18746",
-            "hex",
-        );
+        const salt = crypto.randomBytes(16); // Unique for every call
 
         // Derive key using PBKDF2 (slow, brute-force resistant)
         const key = crypto.pbkdf2Sync(
