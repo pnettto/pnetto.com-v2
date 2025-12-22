@@ -1,9 +1,9 @@
-require("dotenv").config();
-const crypto = require("crypto");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const generateImgTag = require("./src/_utils/generateImgTag.js");
+import "dotenv/config";
+import crypto from "crypto";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import { generateImgTag } from "./src/_utils/generateImgTag.js";
 
-module.exports = async function (eleventyConfig) {
+export default async function (eleventyConfig) {
     const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
 
     eleventyConfig.addPassthroughCopy("src/assets");
@@ -190,4 +190,4 @@ module.exports = async function (eleventyConfig) {
             output: "public",
         },
     };
-};
+}
