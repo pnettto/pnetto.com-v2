@@ -527,7 +527,7 @@ p {
       "photo1 photo3 photo4";
     grid-template-columns: 1fr 0.8fr 1fr;
     grid-template-rows: 1fr 0.8fr;
-    gap: 1rem;
+    gap: var(--space-sm);
     width: 100%;
     height: calc(100vh - 11rem);
     min-height: 30rem;
@@ -834,24 +834,24 @@ p {
 .project-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-lg);
+  gap: var(--space-md);
 }
 
 @media (min-width: 870px) {
   .project-grid {
-    grid-template-columns: repeat(2, calc((100% / 2) - ((var(--space-lg)) / 2)));
+    grid-template-columns: repeat(2, calc((100% / 2) - ((var(--space-md)) / 2)));
   }
 }
 
 @media (min-width: 1000px) {
   .project-grid {
-    grid-template-columns: repeat(3, calc((100% / 3) - ((var(--space-lg) * 2) / 3)));
+    grid-template-columns: repeat(3, calc((100% / 3) - ((var(--space-md) * 2) / 3)));
   }
 }
 
 @media (min-width: 1500px) {
   .project-grid {
-    grid-template-columns: repeat(3, calc((100% / 3) - ((var(--space-lg) * 2) / 3)));
+    grid-template-columns: repeat(3, calc((100% / 3) - ((var(--space-md) * 2) / 3)));
   }
 }
 
@@ -1067,8 +1067,8 @@ picture {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     column-gap: var(--space-md);
-    row-gap: var(--space-xl);
-    margin-bottom: 4rem;
+    row-gap: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
   }
 }
 
@@ -1145,12 +1145,12 @@ picture {
 /* Album Page Grid */
 .gallery-grid {
   display: flex;
-  gap: var(--space-md);
+  gap: var(--space-sm);
   align-items: flex-start;
 }
 
 .gallery-grid .masonry-column {
-  gap: var(--space-md) !important;
+  gap: var(--space-sm) !important;
 }
 
 .gallery-item {
