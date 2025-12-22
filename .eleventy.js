@@ -1,11 +1,13 @@
 require("dotenv").config();
 const crypto = require("crypto");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const generateImgTag = require("./src/_utils/generateImgTag.js");
 
 module.exports = async function (eleventyConfig) {
     const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
 
     eleventyConfig.addPassthroughCopy("src/assets");
+    eleventyConfig.addPassthroughCopy({ "src/_utils": "assets/js/utils" });
     eleventyConfig.addPassthroughCopy("src/.nojekyll");
     eleventyConfig.addPassthroughCopy("src/**/*.mp4");
     eleventyConfig.addPassthroughCopy({ "compiled/private": "private" });
@@ -177,61 +179,9 @@ module.exports = async function (eleventyConfig) {
     }
 
     // Return an optimized picture tag with all version of an image
-    eleventyConfig.addShortcode(
-        "optmizedImageTag",
-        function (image, options = {}) {
-            let {
-                alt = "",
-                loading = "lazy",
-                decoding = "async",
-                className = "",
-                sizes = "",
-                aspectRatio,
-            } = options;
-
-            if (!image || !image.images) {
-                return "";
-            }
-
-            const sources = Object.entries(image.images)
-                .map(([format, imgs]) => {
-                    const srcset = imgs
-                        .map((img) => `${img.url} ${img.width}w`)
-                        .join(", ");
-
-                    return `<source type="image/${format}" srcset="${srcset}"${
-                        sizes ? ` sizes="${sizes}"` : ""
-                    }>`;
-                })
-                .join("\n");
-
-            const fallback = image.images.jpeg.at(-1);
-
-            if (!aspectRatio) {
-                aspectRatio = `${fallback.width} / ${fallback.height}`;
-            }
-
-            const wrapperStyle =
-                `width: 100%; aspect-ratio: ${aspectRatio}; background-color: var(--bg-secondary);`;
-
-            return `
-                <div style="${wrapperStyle} ">
-                    <picture style="width: 100%; height: 100%;">
-                    ${sources}
-                    <img
-                        src="${fallback.url}"
-                        alt="${alt}"
-                        loading="${loading}"
-                        decoding="${decoding}"
-                        ${sizes ? ` sizes="${sizes}"` : ""}
-                        class="fade-in ${className}"
-                        style="width: 100%; height: 100%; object-fit: cover;"
-                    >
-                    </picture>
-                </div>
-                `.trim();
-        },
-    );
+    eleventyConfig.addShortcode("optmizedImageTag", (imageDataRaw, options) => {
+        return generateImgTag(imageDataRaw, options);
+    });
 
     return {
         pathPrefix: process.env.PATH_PREFIX || "/",
