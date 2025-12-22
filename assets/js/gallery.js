@@ -1,4 +1,4 @@
-import { generateImgTag } from "./generateImgTag.js";
+import { generateImgTag } from "./utils/generateImgTag.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const lightbox = document.getElementById("lightbox");
@@ -38,7 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const photo = images[index];
 
         if (photo.metadata) {
-            lightboxContent.innerHTML = generateImgTag(photo.metadata);
+            lightboxContent.innerHTML = generateImgTag(photo.metadata, {
+                objectFit: "contain",
+            });
             const img = lightboxContent.querySelector("img");
             img.classList.add("fade-out");
             img.onload = () => {
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function openLightbox(index) {
+        console.log("hey");
         if (index < 0 || index >= images.length) return;
         currentIndex = index;
         updateLightboxImage(currentIndex);

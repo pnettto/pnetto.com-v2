@@ -1,4 +1,4 @@
-import { generateImgTag } from "./generateImgTag.js";
+import { generateImgTag } from "./utils/generateImgTag.js";
 
 (function () {
     if (!window.PHOTO_LIST) return;
@@ -15,9 +15,16 @@ import { generateImgTag } from "./generateImgTag.js";
 
                 const randomIndex = Math.floor(Math.random() * photos.length);
                 const randomImageMetadata = photos[randomIndex];
-                el.innerHTML = generateImgTag(randomImageMetadata, {
+
+                const imageTag = generateImgTag(randomImageMetadata, {
                     sizes: index === 3 ? "100vw" : "50vw",
                 });
+                const legendTag = randomImageMetadata.album
+                    ? `<div class="fade-in"><a class="legend" href="/photos/${randomImageMetadata.album.slug}">${randomImageMetadata.album.title}</a></div>`
+                    : "";
+                el.innerHTML = `${imageTag}${legendTag}`;
+
+                // Remove photo from list
                 photos.splice(randomIndex, 1);
             }, 500);
         });
