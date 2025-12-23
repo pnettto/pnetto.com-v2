@@ -1,16 +1,14 @@
 :root {
   --bg-color: hsl(212 40% 5% / 1);
   --bg-secondary: hsl(212 40% 12% / 1);
-  --text-main: #d6d6d6;
-  --text-heading: #d6d6d6;
-  --text-muted: #b0b0b0;
-
+  --text-main: hsl(0 0% 82% / 1);
+  --text-heading: hsl(0 0% 82% / 1);
+  --text-muted: hsl(0 0% 60% / 1);
   --accent-color: hsl(41 35% 50% / 1);
   --highlight-color: #efefef;
-
   --border-color: #333333;
 
-  --font-primary: "code-saver", monospace;
+  --font-primary: "calling-code", monospace;
 
   /* Font Sizes */
   --font-size-xs: 0.75rem;
@@ -152,6 +150,7 @@ textarea,
 select {
   font-family: var(--font-primary);
   font-size: inherit;
+  font-weight: 400;
 }
 
 a {
