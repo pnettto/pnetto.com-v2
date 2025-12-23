@@ -187,63 +187,36 @@ export default async function (eleventyConfig) {
     });
 
     const languageMap = {
-        "assembly": 45,
-        "bash": 46,
-        "basic": 47,
-        "c": 50,
-        "c++": 54,
-        "clojure": 86,
-        "c#": 51,
-        "cobol": 77,
-        "common lisp": 55,
-        "d": 56,
-        "elixir": 57,
-        "erlang": 58,
-        "executable": 44,
-        "f#": 87,
-        "fortran": 59,
-        "go": 60,
-        "groovy": 88,
-        "haskell": 61,
-        "java": 62,
-        "javascript": 63,
-        "kotlin": 78,
-        "lua": 64,
-        "multi-file program": 89,
-        "objective-c": 79,
-        "ocaml": 65,
-        "octave": 66,
-        "pascal": 67,
-        "perl": 85,
-        "php": 68,
-        "plain text": 43,
-        "prolog": 69,
-        "python": 71,
-        "r": 80,
-        "ruby": 72,
-        "rust": 73,
-        "scala": 81,
-        "sql": 82,
-        "swift": 83,
-        "typescript": 74,
-        "visual basic.net": 8,
+        "typescript": "1.32.3",
+        "javascript": "1.32.3",
+        "python": "3.12.0",
+        "go": "1.16.2",
+        "sqlite3": "3.36.0",
+        "bash": "5.2.0",
     };
 
     eleventyConfig.addPairedShortcode(
         "codeRunner",
-        function (content, langName, isEditable = false) {
-            const langId = languageMap[langName.toLowerCase()] || 43;
+        function (content, title, languageName, isEditable = false) {
+            // Fix for sqlite
+            const pistonLanguageName = languageName.toLowerCase().replace(
+                "sql",
+                "sqlite3",
+            );
+
+            const languageVersion = languageMap[pistonLanguageName] ||
+                43;
             const editableAttr = isEditable
                 ? 'contenteditable="true" spellcheck="false"'
                 : "";
 
             // Prism work
-            loadLanguages([langName.toLowerCase()]);
+            loadLanguages([languageName.toLowerCase()]);
             const highlightedCode = Prism.highlight(
                 content,
-                Prism.languages[langName.toLowerCase()] ||
+                Prism.languages[languageName.toLowerCase()] ||
                     Prism.languages.plaintext,
-                langName,
+                languageName,
             );
 
             // Encode newlines as HTML entities to prevent the Markdown parser from
@@ -252,12 +225,38 @@ export default async function (eleventyConfig) {
             const safeHighlightedCode = highlightedCode.replace(/\n/g, "&#10;");
 
             // Return compressed HTML to prevent markdown parser from misinterpreting indentation
-            return `<div class="code-runner" data-lang-id="${langId}">
-                <pre class="language-${langName.toLowerCase()}">
-                    <code ${editableAttr}>${safeHighlightedCode}</code>
-                </pre>
-                <button onclick="runCode(this)">Run ${langName}</button>
-                <div class="output"></div>
+            return `<div class="code-container code-runner" data-language-version="${languageVersion}" data-language-name="${languageName}">
+                <label class="language-label">${languageName}</label>
+                ${title !== "" ? `<div class="code-header">${title}</div>` : ""}
+                <pre class="language-${languageName.toLowerCase()}"><code ${editableAttr}>${safeHighlightedCode}</code></pre>
+                <button onclick="runCode(this)">Run</button>
+                <div class="code-output"></div>
+            </div>`;
+        },
+    );
+
+    eleventyConfig.addPairedShortcode(
+        "code",
+        function (content, title, languageName) {
+            // Prism work
+            loadLanguages([languageName.toLowerCase()]);
+            const highlightedCode = Prism.highlight(
+                content,
+                Prism.languages[languageName.toLowerCase()] ||
+                    Prism.languages.plaintext,
+                languageName,
+            );
+
+            // Encode newlines as HTML entities to prevent the Markdown parser from
+            // breaking the HTML structure (e.g., injecting <p> tags or stripping indentation).
+            // This ensures the content looks like a single line to the parser but renders correctly.
+            const safeHighlightedCode = highlightedCode.replace(/\n/g, "&#10;");
+
+            // Return compressed HTML to prevent markdown parser from misinterpreting indentation
+            return `<div class="code-container" data-language-name="${languageName}">
+                <label class="language-label">${languageName}</label>
+                ${title !== "" ? `<div class="code-header">${title}</div>` : ""}
+                <pre class="language-${languageName.toLowerCase()}"><code>${safeHighlightedCode}</code></pre>
             </div>`;
         },
     );

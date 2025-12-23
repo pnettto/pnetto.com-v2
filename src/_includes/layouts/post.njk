@@ -9,7 +9,7 @@ containerClass: narrow
     <header class="page-header">
         <h1>{{ title }}</h1>
     </header>
-        
+
     <div class="post-meta">
         <time datetime="{{ date | postDate }}">{{ date | postDate }}</time>
     </div>
@@ -18,10 +18,12 @@ containerClass: narrow
         {{ content | safe }}
     </div>
 
-    <div class="tags-list" style="margin-bottom: 2rem;">
+    <div class="tags-list" style="margin-bottom: 2rem">
         {% for tag in tags %}
             {% if tag != "post" %}
-            <a href="/category/{{ tag | slug }}/" class="badge">{{ tag }}</a>
+                <a href="/logs/category/{{ tag | slug }}/" class="badge">{{
+                    tag
+                }}</a>
             {% endif %}
         {% endfor %}
     </div>
