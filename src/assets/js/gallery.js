@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function openLightbox(index) {
-        console.log("hey");
         if (index < 0 || index >= images.length) return;
         currentIndex = index;
         updateLightboxImage(currentIndex);
@@ -121,23 +120,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.key === "ArrowLeft") showPrev();
     });
 
-    // Swipe Support
-    let touchStartX = 0;
-    let touchEndX = 0;
-
     lightbox.addEventListener("touchstart", (e) => {
-        touchStartX = e.changedTouches[0].screenX;
+        console.log(`e.target.nodeName`, e.target.nodeName);
+        if (e.touches[0].clientX > (document.body.clientWidth / 2)) {
+            showNext();
+        } else {
+            showPrev();
+        }
     });
-
-    lightbox.addEventListener("touchend", (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-
-    function handleSwipe() {
-        if (touchEndX < touchStartX - 50) showNext();
-        if (touchEndX > touchStartX + 50) showPrev();
-    }
 
     // Check for hash on load
     const hash = window.location.hash;
