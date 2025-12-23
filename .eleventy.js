@@ -2,6 +2,8 @@ import "dotenv/config";
 import crypto from "crypto";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { generateImgTag } from "./src/_utils/generateImgTag.js";
+import Prism from "prismjs";
+import loadLanguages from "prismjs/components/index.js";
 
 export default async function (eleventyConfig) {
     const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
@@ -183,6 +185,82 @@ export default async function (eleventyConfig) {
     eleventyConfig.addShortcode("optmizedImageTag", (imageDataRaw, options) => {
         return generateImgTag(imageDataRaw, options);
     });
+
+    const languageMap = {
+        "assembly": 45,
+        "bash": 46,
+        "basic": 47,
+        "c": 50,
+        "c++": 54,
+        "clojure": 86,
+        "c#": 51,
+        "cobol": 77,
+        "common lisp": 55,
+        "d": 56,
+        "elixir": 57,
+        "erlang": 58,
+        "executable": 44,
+        "f#": 87,
+        "fortran": 59,
+        "go": 60,
+        "groovy": 88,
+        "haskell": 61,
+        "java": 62,
+        "javascript": 63,
+        "kotlin": 78,
+        "lua": 64,
+        "multi-file program": 89,
+        "objective-c": 79,
+        "ocaml": 65,
+        "octave": 66,
+        "pascal": 67,
+        "perl": 85,
+        "php": 68,
+        "plain text": 43,
+        "prolog": 69,
+        "python": 71,
+        "r": 80,
+        "ruby": 72,
+        "rust": 73,
+        "scala": 81,
+        "sql": 82,
+        "swift": 83,
+        "typescript": 74,
+        "visual basic.net": 8,
+    };
+
+    eleventyConfig.addPairedShortcode(
+        "codeRunner",
+        function (content, langName, isEditable = false) {
+            const langId = languageMap[langName.toLowerCase()] || 43;
+            const editableAttr = isEditable
+                ? 'contenteditable="true" spellcheck="false"'
+                : "";
+
+            // Prism work
+            loadLanguages([langName.toLowerCase()]);
+            const highlightedCode = Prism.highlight(
+                content,
+                Prism.languages[langName.toLowerCase()] ||
+                    Prism.languages.plaintext,
+                langName,
+            );
+
+            // Encode newlines as HTML entities to prevent the Markdown parser from
+            // breaking the HTML structure (e.g., injecting <p> tags or stripping indentation).
+            // This ensures the content looks like a single line to the parser but renders correctly.
+            const safeHighlightedCode = highlightedCode.replace(/\n/g, "&#10;");
+
+            // Return compressed HTML to prevent markdown parser from misinterpreting indentation
+            return `<div class="code-runner" data-lang-id="${langId}">
+                <pre class="language-${langName.toLowerCase()}">
+                    <code ${editableAttr}>${safeHighlightedCode}</code>
+                </pre>
+                <button onclick="runCode(this)">Run ${langName}</button>
+                <div class="output"></div>
+            </div>`;
+        },
+    );
 
     return {
         pathPrefix: process.env.PATH_PREFIX || "/",

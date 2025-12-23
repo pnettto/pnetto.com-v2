@@ -1499,3 +1499,74 @@ picture {
 .reference-company a:hover {
   color: var(--accent-color);
 }
+
+.code-runner {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1.5em 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.code-runner pre {
+  margin: 0;
+  margin-top: -1.3rem;
+  background: #252526;
+  border-bottom: 1px solid #333;
+  white-space: pre !important;
+  unicode-bidi: embed;
+}
+
+.code-runner pre code {
+    margin: 0;
+    outline: none;
+}
+
+.code-runner button {
+  background: #007acc;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.code-runner button:hover {
+  background: #0062a3;
+}
+
+.code-runner button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+.code-runner .output-header {
+  padding: 5px 15px;
+  font-size: 0.8em;
+  color: #888;
+  text-transform: uppercase;
+  background: #1e1e1e;
+}
+
+.code-runner .output {
+  padding: 0 15px 15px 15px;
+  color: #b5cea8;
+  white-space: pre-wrap;
+  min-height: 1.2em;
+}
+
+.spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
