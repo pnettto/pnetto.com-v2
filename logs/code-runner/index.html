@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pedro Netto - Code runner with Piston</title>
+        <meta
+            name="description"
+            content="Pedro Netto&#39;s website - Code runner with Piston"
+        >
+        <link rel="icon" type="image/png" href="/assets/images/logo.png">
+        <link rel="stylesheet" href="https://use.typekit.net/pmu6sig.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/prism.css">
+    </head>
+    <body>
+        <div class="container narrow">
+            <header class="site-header">
+                <a href="/" class="logo" aria-label="Home">
+                    <svg
+                        class="logo-img"
+                        width="85"
+                        height="84"
+                        viewBox="0 0 85 84"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            class="bg"
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M41.5243 0.00231154C53.1617 0.133336 63.3614 6.42565 71.0342 15.1674C79.2761 24.5575 85.5608 35.9671 83.9629 48.3532C82.1703 62.2487 75.3441 76.5851 62.4117 82.0057C49.9528 87.2277 36.7258 79.6813 24.9322 73.0957C14.3337 67.1775 4.0323 59.6666 1.2588 47.8578C-1.53198 35.9754 3.30723 23.8363 11.1684 14.4934C18.7602 5.47057 29.7263 -0.130522 41.5243 0.00231154Z"
+                            fill="#000000DF"
+                            fill-opacity="0.8"
+                        />
+                        <path
+                            d="M25.3124 35.2789C22.3624 35.2789 19.6124 36.6789 17.6124 39.3789L17.2624 35.9789H12.4124V73.1789L18.0124 72.5289V60.1289C19.7124 62.0789 21.9624 63.0289 24.7124 63.0289C31.4124 63.0289 34.9124 57.1789 34.9124 49.1289C34.9124 40.7289 32.2624 35.2789 25.3124 35.2789ZM23.7624 39.5789C27.2624 39.5789 29.0124 42.3789 29.0124 49.1789C29.0124 55.7789 27.0124 58.6789 23.2124 58.6789C21.0624 58.6789 19.2624 57.6289 18.0124 55.7289V43.3789C19.3124 41.3289 21.2624 39.5789 23.7624 39.5789ZM42.4417 62.3789H48.0417V43.4289C49.4417 41.4289 51.6417 39.5789 54.2417 39.5789C57.4417 39.5789 57.9917 41.3289 57.9917 45.9289V62.3789H63.5917V43.1289C63.5917 38.1789 61.1417 35.2789 56.2417 35.2789C53.0417 35.2789 49.8917 36.7289 47.6917 39.4289L47.2917 35.9789H42.4417V62.3789Z"
+                            fill="white"
+                            fill-opacity="0.9"
+                        />
+                    </svg>
+                </a>
+                <div
+                    style="display: flex; align-items: center; gap: var(--space-md)"
+                >
+                    <button
+                        class="burger-menu"
+                        aria-label="Toggle Menu"
+                        aria-expanded="false"
+                    >
+                        <span class="burger-bar"></span>
+                        <span class="burger-bar"></span>
+                        <span class="burger-bar"></span>
+                    </button>
+                    <nav class="main-nav">
+                        <ul>
+                            <li>
+                                <a
+                                    href="/"
+                                    
+                                >Home</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/bio/"
+                                    
+                                >Bio</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/work/"
+                                    
+                                >Work</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/photos/"
+                                    
+                                >Photos</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/logs/"
+                                    
+                                >Logs</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/contact/"
+                                    
+                                >Contact</a>
+                            </li>
+                        </ul>
+                        <div class="theme-switch-wrapper">
+                            <label
+                                class="theme-switch"
+                                for="theme-toggle"
+                                aria-label="Toggle Dark/Light Mode"
+                            >
+                                <input type="checkbox" id="theme-toggle" />
+                                <div class="slider"></div>
+                            </label>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+
+            <main>
+                
+<article>
+    <p><a href="/logs/">← back</a></p>
+
+    <header class="page-header">
+        <h1>Code runner with Piston</h1>
+    </header>
+
+    <div class="post-meta">
+        <time datetime="December 23, 2025">December 23, 2025</time>
+    </div>
+
+    <div class="post-content">
+        <h2></h2>
+<p>Today I played around with creating a cor running environment for my website. I plan to share some hello worlds I create going forward (starting now?), so I thought it would be nice to showcase scripts and their outputs.</p>
+<p>After some research on the options, passing through <a href="https://runno.dev/">Runno</a> and <a href="https://judge0.com/">Judge0</a>, I landed on using <a href="https://github.com/engineer-man/piston">Piston</a>, a service so lightweight I could spin up on a GCP e2-micro for free.</p>
+<p>I set up a Docker environment that spins up both a Piston instance (API) and a Caddy (reverse proxy). The first executes incoming code in the installed environments and the later makes just only good requests arrive and other web server niceness.</p>
+<div class="code-container" data-language-name="yml">
+                <label class="language-label">yml</label>
+                <div class="code-header">docker-compose.yml</div>
+                <pre class="language-yml"><code>&#10;<span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3.8'</span>&#10;&#10;<span class="token key atrule">services</span><span class="token punctuation">:</span>&#10;  <span class="token key atrule">piston</span><span class="token punctuation">:</span>&#10;    <span class="token key atrule">image</span><span class="token punctuation">:</span> ghcr.io/engineer<span class="token punctuation">-</span>man/piston&#10;    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always&#10;    <span class="token key atrule">privileged</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>&#10;    <span class="token comment"># No ports here; internal communication only via Caddy</span>&#10;    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>&#10;      <span class="token punctuation">-</span> ./piston_data<span class="token punctuation">:</span>/piston/data&#10;&#10;  <span class="token key atrule">caddy</span><span class="token punctuation">:</span>&#10;    <span class="token key atrule">image</span><span class="token punctuation">:</span> caddy<span class="token punctuation">:</span>latest&#10;    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always&#10;    <span class="token key atrule">ports</span><span class="token punctuation">:</span>&#10;      <span class="token punctuation">-</span> <span class="token string">"80:80"</span>&#10;    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>&#10;      <span class="token punctuation">-</span> ./Caddyfile<span class="token punctuation">:</span>/etc/caddy/Caddyfile&#10;      <span class="token punctuation">-</span> caddy_data<span class="token punctuation">:</span>/data&#10;      <span class="token punctuation">-</span> caddy_config<span class="token punctuation">:</span>/config&#10;    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>&#10;      <span class="token punctuation">-</span> piston&#10;&#10;<span class="token key atrule">volumes</span><span class="token punctuation">:</span>&#10;  <span class="token key atrule">caddy_data</span><span class="token punctuation">:</span>&#10;  <span class="token key atrule">caddy_config</span><span class="token punctuation">:</span>&#10;</code></pre>
+            </div>
+<div class="code-container" data-language-name="nginx">
+                <label class="language-label">nginx</label>
+                <div class="code-header">Caddyfile</div>
+                <pre class="language-nginx"><code>&#10;<span class="token punctuation">{</span>&#10;    <span class="token directive"><span class="token keyword">servers</span></span> <span class="token punctuation">{</span>&#10;        <span class="token directive"><span class="token keyword">timeouts</span></span> <span class="token punctuation">{</span>&#10;            read_body   10s&#10;            read_header 5s&#10;            write       10s&#10;            idle        30s&#10;        <span class="token punctuation">}</span>&#10;    <span class="token punctuation">}</span>&#10;<span class="token punctuation">}</span>&#10;&#10;:80 <span class="token punctuation">{</span>&#10;    <span class="token comment"># 1. Performance: Compress JSON/Text responses</span>&#10;    <span class="token directive"><span class="token keyword">encode</span> zstd gzip&#10;&#10;    <span class="token comment"># 2. Security: Hardening headers</span>&#10;    header</span> <span class="token punctuation">{</span>&#10;        Access-Control-Allow-Origin *&#10;        Access-Control-Allow-Methods "GET, POST, OPTIONS"&#10;        Access-Control-Allow-Headers "Content-Type, Authorization"&#10;        Access-Control-Max-Age "7200"&#10;        X-Frame-Options "DENY"&#10;        X-Content-Type-Options "nosniff"&#10;        -Server&#10;    <span class="token punctuation">}</span>&#10;&#10;    <span class="token comment"># 3. Protection: Limit payload size for your e2-micro</span>&#10;    <span class="token directive"><span class="token keyword">request_body</span></span> <span class="token punctuation">{</span>&#10;        max_size 10k&#10;    <span class="token punctuation">}</span>&#10;&#10;    <span class="token comment"># Handle CORS preflight</span>&#10;    @options <span class="token punctuation">{</span>&#10;        method OPTIONS&#10;    <span class="token punctuation">}</span>&#10;    <span class="token directive"><span class="token keyword">respond</span> @options <span class="token string">""</span> <span class="token number">204</span>&#10;&#10;    <span class="token comment"># 4. Proxy to Piston</span>&#10;    handle</span> <span class="token punctuation">{</span>&#10;        <span class="token directive"><span class="token keyword">reverse_proxy</span> piston:2000</span> <span class="token punctuation">{</span>&#10;            <span class="token directive"><span class="token keyword">header_up</span> X-Real-IP</span> <span class="token punctuation">{</span>remote_host<span class="token punctuation">}</span>&#10;        <span class="token punctuation">}</span>&#10;    <span class="token punctuation">}</span>&#10;<span class="token punctuation">}</span>&#10;</code></pre>
+            </div>
+<br />
+And after creating a little snippet shortcode in my 11ty I can do things like this:
+<div class="code-container code-runner" data-language-version="3.12.0" data-language-name="python">
+                <label class="language-label">python</label>
+                <div class="code-header">Python example</div>
+                <pre class="language-python"><code contenteditable="true" spellcheck="false">&#10;<span class="token keyword">import</span> time&#10;&#10;<span class="token keyword">def</span> <span class="token function">loop_sum</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>&#10;    res <span class="token operator">=</span> <span class="token number">0</span>&#10;    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span> &#10;        res <span class="token operator">+=</span> i&#10;    <span class="token keyword">return</span> res&#10;&#10;start <span class="token operator">=</span> time<span class="token punctuation">.</span>perf_counter<span class="token punctuation">(</span><span class="token punctuation">)</span>&#10;loop_sum<span class="token punctuation">(</span><span class="token number">100000</span><span class="token punctuation">)</span>&#10;<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Loop duration: </span><span class="token interpolation"><span class="token punctuation">{</span>time<span class="token punctuation">.</span>perf_counter<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start<span class="token punctuation">:</span><span class="token format-spec">.6f</span><span class="token punctuation">}</span></span><span class="token string">s"</span></span><span class="token punctuation">)</span>&#10;&#10;start <span class="token operator">=</span> time<span class="token punctuation">.</span>perf_counter<span class="token punctuation">(</span><span class="token punctuation">)</span>&#10;<span class="token builtin">sum</span><span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">100000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>&#10;<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Built-in duration: </span><span class="token interpolation"><span class="token punctuation">{</span>time<span class="token punctuation">.</span>perf_counter<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start<span class="token punctuation">:</span><span class="token format-spec">.6f</span><span class="token punctuation">}</span></span><span class="token string">s"</span></span><span class="token punctuation">)</span>&#10;</code></pre>
+                <button onclick="runCode(this)">Run</button>
+                <div class="code-output"></div>
+            </div>
+<div class="code-container code-runner" data-language-version="3.36.0" data-language-name="sql">
+                <label class="language-label">sql</label>
+                <div class="code-header">SQL example</div>
+                <pre class="language-sql"><code contenteditable="true" spellcheck="false">&#10;<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> users <span class="token punctuation">(</span>id <span class="token keyword">INTEGER</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span> name <span class="token keyword">TEXT</span><span class="token punctuation">)</span><span class="token punctuation">;</span>&#10;<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> users <span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token keyword">VALUES</span> <span class="token punctuation">(</span><span class="token string">'Piston'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'Caddy'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>&#10;<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> users <span class="token keyword">WHERE</span> name <span class="token operator">LIKE</span> <span class="token string">'P%'</span><span class="token punctuation">;</span>&#10;</code></pre>
+                <button onclick="runCode(this)">Run</button>
+                <div class="code-output"></div>
+            </div>
+<div class="code-container code-runner" data-language-version="5.2.0" data-language-name="bash">
+                <label class="language-label">bash</label>
+                <div class="code-header">Bash example</div>
+                <pre class="language-bash"><code contenteditable="true" spellcheck="false">&#10;<span class="token comment"># Create a dummy module</span>&#10;<span class="token builtin class-name">echo</span> <span class="token string">"def add(a, b): return a + b"</span> <span class="token operator">></span> math_utils.py&#10;&#10;<span class="token comment"># Create a test script</span>&#10;<span class="token builtin class-name">echo</span> <span class="token string">"from math_utils import add; assert add(2, 2) == 4; print('Test Passed')"</span> <span class="token operator">></span> test_math.py&#10;&#10;<span class="token comment"># Execute</span>&#10;python3 test_math.py&#10;</code></pre>
+                <button onclick="runCode(this)">Run</button>
+                <div class="code-output"></div>
+            </div>
+<br />
+<p>It's exciting to get my hands dirty in the world of Docker, cloud VMs and writing again. Using a tool like Gemini to tailor examples and explain terms and concepts has been incredibly useful, even if if goes a bit crazy (or wrong) sometimes. For all the heat AI gets, I think this is one of its best uses: learning something new. Can't wait to share next week's prototypes!</p>
+<p>As a next step, I'd like to setup another VM to deploy small prototypes made in python, node and deno. For example, APIs or small web apps which I could then showcase here inside an iframe, and not need to worry if some service I forgot the the password to still hosts or runs my code later. We shall see!</p>
+
+    </div>
+
+    <div class="tags-list" style="margin-bottom: 2rem">
+        
+            
+                <a href="/logs/category/code/" class="badge">code</a>
+            
+        
+    </div>
+</article>
+
+            </main>
+        </div>
+
+        <script src="/assets/js/theme.js"></script>
+        <script src="/assets/js/fade-in.js"></script>
+        <script src="/assets/js/code-runner.js"></script>
+        <script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id="6bee7ceb-6636-4498-9524-5e21d4b48fd2"
+        ></script>
+    </body>
+</html>
