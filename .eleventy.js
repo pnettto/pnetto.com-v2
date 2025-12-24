@@ -186,26 +186,9 @@ export default async function (eleventyConfig) {
         return generateImgTag(imageDataRaw, options);
     });
 
-    const languageMap = {
-        "typescript": "1.32.3",
-        "javascript": "1.32.3",
-        "python": "3.12.0",
-        "go": "1.16.2",
-        "sqlite3": "3.36.0",
-        "bash": "5.2.0",
-    };
-
     eleventyConfig.addPairedShortcode(
         "codeRunner",
         function (content, title, languageName, isEditable = false) {
-            // Fix for sqlite
-            const pistonLanguageName = languageName.toLowerCase().replace(
-                "sql",
-                "sqlite3",
-            );
-
-            const languageVersion = languageMap[pistonLanguageName] ||
-                43;
             const editableAttr = isEditable
                 ? 'contenteditable="true" spellcheck="false"'
                 : "";
@@ -225,7 +208,7 @@ export default async function (eleventyConfig) {
             const safeHighlightedCode = highlightedCode.replace(/\n/g, "&#10;");
 
             // Return compressed HTML to prevent markdown parser from misinterpreting indentation
-            return `<div class="code-container code-runner" data-language-version="${languageVersion}" data-language-name="${languageName}">
+            return `<div class="code-container code-runner" data-language-name="${languageName}">
                 <label class="language-label">${languageName}</label>
                 ${title !== "" ? `<div class="code-header">${title}</div>` : ""}
                 <pre class="language-${languageName.toLowerCase()}"><code ${editableAttr}>${safeHighlightedCode}</code></pre>
