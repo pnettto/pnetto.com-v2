@@ -138,4 +138,4 @@ As a next step, I'd like to setup another VM to deploy small prototypes made in 
 
 Edit: wait, actually I have spend a few more hours and created an environment using Docker and Caddy to host all kinds of applications in a new VM instance. Look, this is running inside a docker container which has some html and js that calls a python program, which in turn executes a go script and makes use of a Postgress database. Of course, the whole environment gets updated every time I commit to the repo that hosts the applications through Githib actions. This is stuff is just crazy!
 
-<iframe src="https://demos.pnetto.com/another/" style="width: 100%; aspect-ratio: 4 / 3;"></iframe>
+<iframe src="https://demos.pnetto.com/two/" style="width: 100%; aspect-ratio: 4 / 3;"></iframe>
