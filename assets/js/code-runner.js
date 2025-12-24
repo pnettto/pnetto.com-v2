@@ -3,7 +3,6 @@ async function runCode(button) {
     const outputEl = codeRunnerEl.querySelector(".code-output");
     const codeEl = codeRunnerEl.querySelector("code");
 
-    const languageVersion = codeRunnerEl.dataset.languageVersion;
     const languageName = codeRunnerEl.dataset.languageName;
     const code = codeEl.textContent;
     const originalText = button.innerText;
@@ -15,26 +14,30 @@ async function runCode(button) {
 
     try {
         const response = await fetch(
-            `https://piston.pnetto.com/api/v2/execute`,
+            `https://demos.pnetto.com/code-executor`,
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    language: languageName,
-                    version: languageVersion,
-                    files: [{ content: code }],
-                }),
+                body: JSON.stringify({ lang: languageName, code }),
             },
         );
 
         const result = await response.json();
-        const output = result.run.output || "Program executed with no output.";
+
+        if (result.error) {
+            outputEl.style.color = "#f44747";
+            console.log(result.error);
+            outputEl.innerText = "Execution error.";
+        }
+        outputEl.style.color = "";
+        const output = result.stdout || "Program executed with no output.";
 
         outputEl.innerText = output;
         outputEl.classList.add("is-loaded");
     } catch (err) {
         outputEl.style.color = "#f44747";
-        outputEl.innerText = `Error: ${err}`;
+        console.error(err);
+        outputEl.innerText = `Execution error.`;
     } finally {
         button.disabled = false;
         button.innerText = originalText;
