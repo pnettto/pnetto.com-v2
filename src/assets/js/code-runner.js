@@ -14,15 +14,18 @@ async function runCode(button) {
     outputEl.innerText = "";
 
     try {
-        const response = await fetch(`http://34.72.106.161/api/v2/execute`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                language: languageName,
-                version: languageVersion,
-                files: [{ content: code }],
-            }),
-        });
+        const response = await fetch(
+            `https://piston.pnetto.com/api/v2/execute`,
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    language: languageName,
+                    version: languageVersion,
+                    files: [{ content: code }],
+                }),
+            },
+        );
 
         const result = await response.json();
         const output = result.run.output || "Program executed with no output.";
