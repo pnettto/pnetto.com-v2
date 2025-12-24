@@ -133,3 +133,9 @@ python3 test_math.py
 It's exciting to get my hands dirty in the world of Docker, cloud VMs and writing again. Using a tool like Gemini to tailor examples and explain terms and concepts has been incredibly useful, even if if goes a bit crazy (or wrong) sometimes. For all the heat AI gets, I think this is one of its best uses: learning something new. Can't wait to share next week's prototypes!
 
 As a next step, I'd like to setup another VM to deploy small prototypes made in python, node and deno. For example, APIs or small web apps which I could then showcase here inside an iframe, and not need to worry if some service I forgot the the password to still hosts or runs my code later. We shall see!
+
+---
+
+Edit: wait, actually I have spend a few more hours and created an environment using Docker and Caddy to host all kinds of applications in a new VM instance. Look, this is running inside a docker container which has some html and js that calls a python program, which in turn executes a go script. Of course, it all gets updated every time I commit to the repo that hosts the applications. This is stuff is just crazy!
+
+<iframe src="https://demos.pnetto.com/another/" style="width: 100%; aspect-ratio: 4 / 3;"></iframe>
