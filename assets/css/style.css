@@ -1578,6 +1578,7 @@ picture {
 .code-container .code-output {
   display: none;
   padding: 0 15px 15px 15px;
+  font-size: 0.8rem;
   color: #b5cea8;
   white-space: pre-wrap;
   min-height: 1.2em;
