@@ -29,8 +29,17 @@ async function runCode(button) {
             console.log(result.error);
             outputEl.innerText = "Execution error.";
         }
+
+        let output = "";
         outputEl.style.color = "";
-        const output = result.stdout || "Program executed with no output.";
+        if (result.stdout) {
+            output = result.stdout;
+        } else if (result.stderr) {
+            outputEl.style.color = "#e7bd18ff";
+            output = result.stderr;
+        } else {
+            output = "Program executed with no output.";
+        }
 
         outputEl.innerText = output;
         outputEl.classList.add("is-loaded");
