@@ -118,14 +118,24 @@ SELECT * FROM users WHERE name LIKE 'P%';
 {% endcodeRunner %}
 
 {% codeRunner "Bash example", "bash", true %}
-# Create a dummy module
-echo "def add(a, b): return a + b" > math_utils.py
+REPORT_FILE="accounts_report.txt"
+DATA='{"Fulano":{"usd":87454},"Beltrano":{"usd":2923.73}}'
+FULANO_CASH=$(echo "$DATA" | grep -oP '(?<="Fulano":\{"usd":)[0-9.]+')
+BELTRANO_CASH=$(echo "$DATA" | grep -oP '(?<="Beltrano":\{"usd":)[0-9.]+')
 
-# Create a test script
-echo "from math_utils import add; assert add(2, 2) == 4; print('Test Passed')" > test_math.py
+{
+    echo "=========================================="
+    echo "      SANDBOX BANK ACCOUNT REPORT        "
+    echo "      Created on: $(date)"
+    echo "=========================================="
+    echo ""
+    echo "  - Fulano has: \$${FULANO_CASH}"
+    echo "  - Beltrano has: \$${BELTRANO_CASH}"
+    echo ""
+    echo "Status: Execution Successful"
+} > "$REPORT_FILE"
 
-# Execute
-python3 test_math.py
+cat "$REPORT_FILE"
 {% endcodeRunner %}
 
 <br />
