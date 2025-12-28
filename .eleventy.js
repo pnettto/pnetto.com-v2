@@ -12,7 +12,6 @@ export default async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "src/_utils": "assets/js/utils" });
     eleventyConfig.addPassthroughCopy("src/.nojekyll");
     eleventyConfig.addPassthroughCopy("src/**/*.mp4");
-    eleventyConfig.addPassthroughCopy({ "compiled/private": "private" });
     eleventyConfig.addPassthroughCopy({ "compiled/img": "img" });
     eleventyConfig.addPassthroughCopy({
         "src/_data/globalAlbumPhotos.json": "albumPhotos.json",
