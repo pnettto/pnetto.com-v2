@@ -1,3 +1,4 @@
+import "dotenv/config";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -70,7 +71,7 @@ function getAlbumFrontMatter(albumDir) {
       widths: [900, 1200, 1600, 1920],
       formats: ["jpeg"],
       outputDir: outputDir,
-      urlPath: "/img",
+      urlPath: process.env.R2_URL ? `${process.env.R2_URL}/img/` : "/img",
       sharpJpegOptions: {
         quality: 80,
         progressive: true,
@@ -79,8 +80,8 @@ function getAlbumFrontMatter(albumDir) {
         dither: true, // Enable dithering to reduce banding
       },
       filenameFormat: (id, src, width, format) => {
+        // console.log(`${name}-${id}-${width || "orig"}w.${format}`);
         const name = path.parse(src).name;
-        console.log(`${name}-${id}-${width || "orig"}w.${format}`);
         return `${name}-${id}-${width || "orig"}w.${format}`;
       },
     });

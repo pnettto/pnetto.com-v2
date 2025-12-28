@@ -8,6 +8,7 @@
     "start": "eleventy --serve",
     "build": "eleventy",
     "compileImages": "node scripts/build-images.js",
+    "r2": "node scripts/r2-manager.js",
     "compilePrivate": "ELEVENTY_MODE=compile eleventy && rm -rf src/private && mkdir -p src/private && cp -R public/private-open/ src/private && rm -rf public/private-open/"
   },
   "keywords": [],
@@ -16,7 +17,9 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
-    "dotenv": "^17.2.3"
+    "dotenv": "^17.2.3",
+    "@aws-sdk/client-s3": "^3.958.0",
+    "p-limit": "^7.2.0"
   },
   "dependencies": {
     "@11ty/eleventy-img": "^6.0.4",

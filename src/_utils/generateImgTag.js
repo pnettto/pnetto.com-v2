@@ -13,7 +13,10 @@ export function generateImgTag(imageDataRaw, options = {}) {
     }
 
     const sources = Object.entries(imageData).map(([format, variants]) => {
-        const srcset = variants.map((v) => v.srcset).join(", ");
+        const srcset = variants.map((v) => {
+            const url = v.url;
+            return `${url} ${v.width}w`;
+        }).join(", ");
         const type = variants[0].format;
         return `<source type="image/${type}" srcset="${srcset}" sizes="${
             options?.sizes ?? "90vw"
@@ -21,6 +24,7 @@ export function generateImgTag(imageDataRaw, options = {}) {
     }).join("\n");
 
     const fallback = imageDataRaw.images.jpeg.at(-1);
+    const fallbackUrl = fallback.url;
 
     if (!aspectRatio) {
         aspectRatio = `${fallback.width} / ${fallback.height}`;
@@ -28,7 +32,7 @@ export function generateImgTag(imageDataRaw, options = {}) {
 
     const imgTag = `
         <img 
-        src="${fallback.url}"
+        src="${fallbackUrl}"
         alt=""
         class="fade-in ${className}"
         ${sizes ? ` sizes="${sizes}"` : ""}
