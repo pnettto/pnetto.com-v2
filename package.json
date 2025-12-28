@@ -8,8 +8,7 @@
     "start": "eleventy --serve",
     "build": "eleventy",
     "compileImages": "node scripts/build-images.js",
-    "compilePrivate": "ELEVENTY_MODE=compile eleventy && rm -rf compiled/private && mkdir -p compiled/private && cp -R public/private-open/ compiled/private && rm -rf public/private-open/",
-    "compile": "npm run compileImages && npm run compilePrivate"
+    "compilePrivate": "ELEVENTY_MODE=compile eleventy && rm -rf compiled/private && mkdir -p compiled/private && cp -R public/private-open/ compiled/private && rm -rf public/private-open/"
   },
   "keywords": [],
   "author": "",

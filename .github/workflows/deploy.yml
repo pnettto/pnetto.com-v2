@@ -36,8 +36,8 @@ jobs:
       - name: Cache compiled assets
         uses: actions/cache@v4
         with:
-          path: compiled
-          key: ${{ runner.os }}-compiled-${{ hashFiles('scripts/build-images.js', 'src/_data/globalAllPhotos.json') }}-${{ github.run_id }}
+          path: compiled/img
+          key: ${{ runner.os }}-compiled-${{ hashFiles('scripts/build-images.js', 'src/_data/globalAllPhotos.json') }}
           restore-keys: |
             ${{ runner.os }}-compiled-
 
@@ -45,7 +45,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run compile && npm run build
+        run: npm run compileImages && npm run build
         env:
           PATH_PREFIX: "/"
 
