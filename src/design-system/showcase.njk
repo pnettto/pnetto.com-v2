@@ -1,20 +1,8 @@
 ---
 title: Design System
-layout: layouts/protected.njk
+layout: layouts/base.njk
 containerClass: narrow
 eleventyExcludeFromCollections: true
-extraHeadScripts: |
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.polyfilled.js"></script>
-  <script defer src="/design-system/js/video.js"></script>
-  <script>
-    document.addEventListener("contentDecrypted", () => {
-      if (typeof Prism !== "undefined") Prism.highlightAll();
-      if (typeof Plyr !== "undefined" && typeof initVideoPlayers === "function") initVideoPlayers();
-    });
-  </script>
 ---
 
 <article class="design-system-showcase">
@@ -332,3 +320,23 @@ console.log("Doubled:", doubled);</code></pre>
         color: white;
     }
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"
+></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.css">
+<script
+    defer
+    src="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.polyfilled.js"
+></script>
+<script defer src="/design-system/js/video.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        if (typeof Prism !== "undefined") Prism.highlightAll();
+        if (
+            typeof Plyr !== "undefined" &&
+            typeof initVideoPlayers === "function"
+        ) initVideoPlayers();
+    });
+</script>
