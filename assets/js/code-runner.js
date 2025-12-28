@@ -14,7 +14,7 @@ async function runCode(button) {
 
     try {
         const response = await fetch(
-            `https://demos.pnetto.com/code-executor`,
+            `https://demo-garden.pnetto.com/code-executor`,
             {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
