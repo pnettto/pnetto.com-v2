@@ -1,4 +1,8 @@
-import { generateImgTag } from "./utils/generateImgTag.js";
+/* ==========================================================================
+   GALLERY - Lightbox with Image Optimization Support
+   ========================================================================== */
+
+import { generateImgTag } from "/assets/js/utils/generateImgTag.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const lightbox = document.getElementById("lightbox");
@@ -10,23 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
         ".gallery-item img, .work-image img",
     );
 
+    if (!lightbox || !lightboxContent || galleryItems.length === 0) return;
+
     let currentIndex = 0;
     const images = Array.from(galleryItems).map((img) => {
         const button = img.closest(".gallery-item") ||
             img.closest(".work-image");
         return {
-            src: button.dataset.fullSrc || img.src,
-            id: button.id,
-            metadata: button.dataset.imageMetadata
+            src: button?.dataset.fullSrc || img.src,
+            id: button?.id,
+            metadata: button?.dataset.imageMetadata
                 ? JSON.parse(button.dataset.imageMetadata)
                 : null,
         };
     });
 
     function updateHash(index) {
-        if (images[index] && images[index].id) {
-            const shortId = images[index].id;
-            history.replaceState(null, null, "#" + shortId);
+        if (images[index]?.id) {
+            history.replaceState(null, null, "#" + images[index].id);
         }
     }
 
@@ -51,9 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             lightboxContent.innerHTML =
                 `<img id="lightbox-img" src="${photo.src}" alt="">`;
             const img = lightboxContent.querySelector("img");
-            img.onload = () => {
-                img.classList.add("is-loaded");
-            };
+            img.onload = () => img.classList.add("is-loaded");
         }
     }
 
@@ -63,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateLightboxImage(currentIndex);
         lightbox.setAttribute("aria-hidden", "false");
         lightbox.classList.add("visible");
-        document.body.style.overflow = "hidden"; // Prevent scrolling
+        document.body.style.overflow = "hidden";
         updateHash(index);
     }
 
@@ -88,54 +91,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Event Listeners
     galleryItems.forEach((img, index) => {
-        img.closest("button").addEventListener(
+        img.closest("button")?.addEventListener(
             "click",
             () => openLightbox(index),
         );
     });
 
-    closeBtn.addEventListener("click", closeLightbox);
-    nextBtn.addEventListener("click", (e) => {
+    closeBtn?.addEventListener("click", closeLightbox);
+    nextBtn?.addEventListener("click", (e) => {
         e.stopPropagation();
         showNext();
     });
-    prevBtn.addEventListener("click", (e) => {
+    prevBtn?.addEventListener("click", (e) => {
         e.stopPropagation();
         showPrev();
     });
 
-    // Close on clicking outside image
     lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-            closeLightbox();
-        }
+        if (e.target === lightbox) closeLightbox();
     });
 
     // Keyboard Navigation
     document.addEventListener("keydown", (e) => {
         if (lightbox.getAttribute("aria-hidden") === "true") return;
-
         if (e.key === "Escape") closeLightbox();
         if (e.key === "ArrowRight") showNext();
         if (e.key === "ArrowLeft") showPrev();
     });
 
+    // Touch Navigation
     lightbox.addEventListener("touchstart", (e) => {
-        console.log(`e.target.nodeName`, e.target.nodeName);
-        if (e.touches[0].clientX > (document.body.clientWidth / 2)) {
+        if (e.touches[0].clientX > document.body.clientWidth / 2) {
             showNext();
         } else {
             showPrev();
         }
     });
 
-    // Check for hash on load
+    // Deep link from hash
     const hash = window.location.hash;
     if (hash) {
-        const id = hash.substring(1); // Remove '#'
-        const index = images.findIndex((img) => img.id.startsWith(id));
-        if (index !== -1) {
-            openLightbox(index);
-        }
+        const id = hash.substring(1);
+        const index = images.findIndex((img) => img.id?.startsWith(id));
+        if (index !== -1) openLightbox(index);
     }
 });

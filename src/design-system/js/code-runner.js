@@ -1,3 +1,7 @@
+/* ==========================================================================
+   CODE RUNNER - Execute code snippets
+   ========================================================================== */
+
 async function runCode(button) {
     const codeRunnerEl = button.closest(".code-runner");
     const outputEl = codeRunnerEl.querySelector(".code-output");

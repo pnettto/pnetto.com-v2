@@ -100,11 +100,19 @@
             protectedContent.style.visibility = "visible";
             protectedContent.classList.add("fade-in");
 
+            // Initialize dynamic content after decryption
+            initDecryptedContent();
+
             // Export the derived key and store in localStorage
             const rawKey = await crypto.subtle.exportKey("raw", cryptoKey);
             localStorage.setItem(storageKey, bufferToHex(rawKey));
 
             return true;
+        }
+
+        function initDecryptedContent() {
+            // Dispatch custom event for pages to hook into
+            document.dispatchEvent(new CustomEvent("contentDecrypted"));
         }
 
         async function unlockWithStoredKey(rawHexKey) {
@@ -131,6 +139,9 @@
                 protectedContent.style.display = "block";
                 protectedContent.style.visibility = "visible";
                 protectedContent.classList.add("fade-in");
+
+                // Initialize dynamic content after decryption
+                initDecryptedContent();
 
                 return true;
             } catch {

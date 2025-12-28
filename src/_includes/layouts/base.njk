@@ -10,8 +10,8 @@
         >
         <link rel="icon" type="image/png" href="/assets/images/logo.png">
         <link rel="stylesheet" href="https://use.typekit.net/pmu6sig.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <link rel="stylesheet" href="/assets/css/prism.css">
+        <link rel="stylesheet" href="/design-system/css/index.css">
+        {{ extraHeadScripts | safe }}
     </head>
     <body>
         <div class="container {{ containerClass }}">
@@ -122,9 +122,9 @@
             </main>
         </div>
 
-        <script src="/assets/js/theme.js"></script>
-        <script src="/assets/js/fade-in.js"></script>
-        <script src="/assets/js/code-runner.js"></script>
+        <script src="/design-system/js/ui.js"></script>
+        <script src="/design-system/js/effects.js"></script>
+        <script src="/design-system/js/code-runner.js"></script>
         <script
             defer
             src="https://cloud.umami.is/script.js"

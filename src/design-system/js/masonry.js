@@ -1,5 +1,10 @@
-function initMasonry(classSelector, breakpoints) {
-    const masonry = document.querySelector(classSelector);
+/* ==========================================================================
+   MASONRY - Dynamic Column Layout
+   ========================================================================== */
+
+function initMasonry(selector, breakpoints) {
+    const masonry = document.querySelector(selector);
+    if (!masonry) return;
 
     const render = () => {
         // Flatten items from existing columns
@@ -16,10 +21,10 @@ function initMasonry(classSelector, breakpoints) {
         const currentHeight = masonry.offsetHeight;
         if (currentHeight > 0) masonry.style.minHeight = currentHeight + "px";
 
-        // Clear masonry container
+        // Clear container
         masonry.innerHTML = "";
 
-        // Determine current number of columns
+        // Determine columns
         const screenWidth = window.innerWidth;
         const currentBreakpoint = breakpoints.find((bp) =>
             screenWidth >= bp.width
@@ -31,12 +36,12 @@ function initMasonry(classSelector, breakpoints) {
         for (let i = 0; i < columnsCount; i++) {
             const col = document.createElement("div");
             col.className = "masonry-column";
-            col.style = "display: flex;flex-direction: column;flex: 1;";
+            col.style = "display: flex; flex-direction: column; flex: 1;";
             masonry.appendChild(col);
             columns.push(col);
         }
 
-        // Function to get column with smallest height
+        // Get shortest column
         const getShortestColumn = () => {
             let shortest = columns[0];
             let minHeight = shortest.offsetHeight;
@@ -49,18 +54,14 @@ function initMasonry(classSelector, breakpoints) {
             return shortest;
         };
 
-        // Sequentially append items to the shortest column
+        // Append items to shortest column
         (function appendNext(index) {
             if (index >= items.length) return;
-
-            const item = items[index];
-            const targetColumn = getShortestColumn();
-            targetColumn.appendChild(item);
-
+            getShortestColumn().appendChild(items[index]);
             appendNext(index + 1);
         })(0);
 
-        // Reset min-height after a brief delay to allow layout to settle
+        // Reset min-height
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
                 masonry.style.minHeight = "";
@@ -71,13 +72,15 @@ function initMasonry(classSelector, breakpoints) {
     let resizeTimeout;
     const debouncedRender = () => {
         clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            render();
-        }, 500);
+        resizeTimeout = setTimeout(render, 500);
     };
 
     window.addEventListener("load", render);
     window.addEventListener("resize", debouncedRender);
-
     render();
+}
+
+// Export
+if (typeof module !== "undefined") {
+    module.exports = { initMasonry };
 }
