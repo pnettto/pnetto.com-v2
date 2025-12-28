@@ -13,15 +13,16 @@ In the second 2021 I was getting ready to apply for jobs in Copenhagen as my pla
 
 It was an exciting time, there was a lot to look forward to and I wanted my professional website to reflect who I was and what I was looking for, so that my new life, including the job, would be more aligned with my expectations.
 
-So I set out to create a crafty design and publish a Next.js website. Next was all the rage back then and I was certainly happy to use a platform which allowed me to build static sites while exercising my React muscles. 
+So I set out to create a crafty design and publish a Next.js website. Next was all the rage back then and I was certainly happy to use a platform which allowed me to build static sites while exercising my React muscles. Here's a navigable frame:
 
-Picture: https://pedronetto-p980n7u1l-pedro-nettos-projects.vercel.app/
+<iframe src="https://pedronetto-p980n7u1l-pedro-nettos-projects.vercel.app/work" style="width: 100%; aspect-ratio: 16 / 9; zoom: 50%; margin-bottom: 2rem;">
+</iframe>
 
 It worked well! I got several job offers, including one from Lego, but I ended up going to Icelandair, a company that taught me a whole lot. I like to think that success had something to do with how I communicated my professional skills through the website.
 
 In the end, I think the best thing about building the site was to take the time to write down my story, and take a moment to appreciate how far I had come. It was a celebration of tech love. I realized I had become one of those fortunate people who actually love their jobs. Seeing all the case studies coming to life on my website were a great way to reflect and put a face to the memory.
 
-But fast forward, we're in 2025 (nearly 2026, time flew), and I thought it was high time the website got a new face and new content.
+But fast forward, we're in 2025 (nearly 2026, time flew), and I thought it was high time the website got a new face and new content, and this website is the result.
 
 I wanted to preserve the existing functionality, the portfolio, the bio, but add a section for my photos (a hobby I've been developing since 2020) and my writings. I have been wanting to write for a long time.
 
