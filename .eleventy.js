@@ -1,5 +1,6 @@
 import "dotenv/config";
 import crypto from "crypto";
+import { spawn } from "child_process";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { generateImgTag } from "./src/_utils/generateImgTag.js";
 import Prism from "prismjs";
@@ -8,8 +9,27 @@ import loadLanguages from "prismjs/components/index.js";
 export default async function (eleventyConfig) {
     const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
 
+    // Watch design system files for changes
+    eleventyConfig.addWatchTarget("src/design-system/**/*.{css,js}");
+
+    // Re-run bundle script after build
+    eleventyConfig.on("eleventy.after", async () => {
+        // We run this as a child process to decouple the bundling from the main thread
+        // and to reuse the existing script.
+        console.log("[11ty] Bundling assets...");
+        const child = spawn("node", ["scripts/bundle-assets.js"], {
+            stdio: "inherit",
+        });
+
+        return new Promise((resolve, reject) => {
+            child.on("close", (code) => {
+                if (code === 0) resolve();
+                else reject(new Error(`Bundling exited with code ${code}`));
+            });
+        });
+    });
+
     eleventyConfig.addPassthroughCopy("src/assets");
-    eleventyConfig.addPassthroughCopy("src/design-system");
     eleventyConfig.addPassthroughCopy({ "src/_utils": "assets/js/utils" });
     eleventyConfig.addPassthroughCopy("src/.nojekyll");
     eleventyConfig.addPassthroughCopy("src/**/*.mp4");

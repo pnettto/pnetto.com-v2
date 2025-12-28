@@ -104,16 +104,16 @@ layout: layouts/base.njk
         4.0). For full license details, visit: https://creativecommons.org/licenses/by/4.0/</p>
 <div>
 
-<script type="module" src="/design-system/js/gallery.js"></script>
-<script src="/design-system/js/masonry.js"></script>
 <script defer>
-    const breakpoints = [
-        { width: 1920, columns: 5 },
-        { width: 1200, columns: 4 },
-        { width: 900, columns: 3 },
-        { width: 600, columns: 2 },
-        { width: 0, columns: 1 },
-    ];
+    document.addEventListener("DOMContentLoaded", () => {
+        const breakpoints = [
+            { width: 1920, columns: 5 },
+            { width: 1200, columns: 4 },
+            { width: 900, columns: 3 },
+            { width: 600, columns: 2 },
+            { width: 0, columns: 1 },
+        ];
 
-    initMasonry(".gallery-grid", breakpoints);
+        initMasonry(".gallery-grid", breakpoints);
+    });
 </script>

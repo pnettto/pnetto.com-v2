@@ -31,3 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
         initVideoPlayers();
     }
 });
+
+window.initVideoPlayers = initVideoPlayers;
+export { initVideoPlayers };

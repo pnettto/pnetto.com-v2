@@ -2,7 +2,7 @@
    GALLERY - Lightbox with Image Optimization Support
    ========================================================================== */
 
-import { generateImgTag } from "/assets/js/utils/generateImgTag.js";
+import { generateImgTag } from "../../_utils/generateImgTag.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const lightbox = document.getElementById("lightbox");

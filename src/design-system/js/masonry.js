@@ -81,6 +81,6 @@ function initMasonry(selector, breakpoints) {
 }
 
 // Export
-if (typeof module !== "undefined") {
-    module.exports = { initMasonry };
-}
+// Export
+window.initMasonry = initMasonry;
+export { initMasonry };

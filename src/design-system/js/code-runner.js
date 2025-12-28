@@ -57,3 +57,6 @@ async function runCode(button) {
         button.innerText = originalText;
     }
 }
+
+window.runCode = runCode;
+export { runCode };
