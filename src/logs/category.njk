@@ -15,23 +15,25 @@ containerClass: narrow
 </header>
 
 <ul class="post-list">
-{% set taglist = collections[ tag ] %}
-{% for post in taglist | reverse %}
-  <li class="post-item">
-    <div class="post-item-header">
+  {% set taglist = collections[ tag ] %}
+  {% for post in taglist | reverse %}
+    <li class="post-item">
+      <div class="post-item-header">
         <div class="post-main">
-            <a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a>
+          <a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a>
         </div>
         <span class="post-meta">{{ post.date | postDate }}</span>
-    </div>
+      </div>
 
-    <div class="tags-list mini-tags">
+      <div class="tags-list mini-tags">
         {% for tag in post.data.tags %}
-            {% if tag != "post" %}
-            <a href="/logs/category/{{ tag | slug }}/" class="badge">{{ tag }}</a>
-            {% endif %}
+          {% if tag != "post" %}
+            <a href="/logs/category/{{ tag | slug }}/" class="badge">{{
+              tag
+            }}</a>
+          {% endif %}
         {% endfor %}
-    </div>
-  </li>
-{% endfor %}
+      </div>
+    </li>
+  {% endfor %}
 </ul>

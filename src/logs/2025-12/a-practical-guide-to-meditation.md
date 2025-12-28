@@ -4,6 +4,7 @@ title: A Practical Guide to Meditation
 date: 2025-12-07
 tags:
     - lifestyle
+    - 2015-12
 ---
 
 ## Intro

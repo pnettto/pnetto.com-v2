@@ -4,6 +4,7 @@ title: "Hawk: A new tab to-do app"
 date: 2025-12-28
 tags:
     - code
+    - 2015-12
 ---
 
 I love to use a notebook to organize my day. It makes me more productive to know what I need to do by having a quick look and it offloads things I'd otherwise have to remember, to the paper. But it can be a little annoying having to have the notebook on me to check what I need to next or add something to the list, so having it in the computer and the phone at the same time was something I wished for.
