@@ -17,9 +17,9 @@ So I set out to create a crafty design and publish a Next.js website. Next was a
 
 Picture: https://pedronetto-p980n7u1l-pedro-nettos-projects.vercel.app/
 
-It worked well! I got several job offers, including one from Lego, but I ended up going to Icelandair, a company that taught me a whole lot. I like to think that success had something to do with with how I communicated my professional skills through the website.
+It worked well! I got several job offers, including one from Lego, but I ended up going to Icelandair, a company that taught me a whole lot. I like to think that success had something to do with how I communicated my professional skills through the website.
 
-In the end, I think the best thing about build the site was to take the time to write down my story, and take a moment to appreciate how far I had come. It was a celebration of tech love. I realized I had become one of those fortunate people who actually love their jobs. Seeing all the case studies coming to life on my website were a great way to reflect and put a face to the memory.
+In the end, I think the best thing about building the site was to take the time to write down my story, and take a moment to appreciate how far I had come. It was a celebration of tech love. I realized I had become one of those fortunate people who actually love their jobs. Seeing all the case studies coming to life on my website were a great way to reflect and put a face to the memory.
 
 But fast forward, we're in 2025 (nearly 2026, time flew), and I thought it was high time the website got a new face and new content.
 
@@ -27,15 +27,15 @@ I wanted to preserve the existing functionality, the portfolio, the bio, but add
 
 I actually do quite a bit of writing, only I do it for myself. I keep a journal for well over a decade, and I love how the simple act of putting word on the screen magically makes whatever you have in your head way clearer.
 
-There's also the great benefit of preserving memory. There's always so much happening in life, things we've learn, people we meet, ideas we stumble upon. If we don't do anything albout it, in the end of each week most of it will disappear in thin air.
+There's also the great benefit of preserving memory. There's always so much happening in life, things we've learned, people we meet, ideas we stumble upon. If we don't do anything about it, at the end of each week most of it will disappear in thin air.
 
 Conversely, if we do materialize in some sort of way, they become not only more vivid in our biological memories, but they also become a database which we can then access for future use. There's this and there's also offloading the necessity of remembering. My memory is not the greatest (I think) so writing really does the trick for me.
 
-The problem is that I haven't had a place where I enjoyed publish. Well now that problem is over. THe new pnetto.com has a shiny and new section just for texts, which I called "Logs", to avoid the weight of having to publish an "Article" or even a "Post". The purpose of Logs is not so much to share things I know with anyone so much as to having my personal thoughts database which might come in handy to refer to in the future.
+The problem is that I haven't had a place where I enjoyed publishing. Well now that problem is over. THe new pnetto.com has a shiny and new section just for texts, which I called "Logs", to avoid the weight of having to publish an "Article" or even a "Post". The purpose of Logs is not so much to share things I know with anyone so much as to having my personal thoughts database which might come in handy to refer to in the future.
 
 So if you're here and you're reading this, I'm very surprised indeed. You're not me, and yet you are still here, really incredible stuff.
 
-The Photo sections is also a mechanism I came up with to support my photography hobby. I thought that, if I did have a beautiful place to post photos, I would be more inclined to actuall do something with all those hours go over Lightroom material :)
+The Photo section is also a mechanism I came up with to support my photography hobby. I thought that, if I did have a beautiful place to post photos, I would be more inclined to actually do something with all those hours go over Lightroom material :)
 
 But alright, to the implementation.
 
@@ -47,21 +47,21 @@ Anyway, I thought it would be a good opportunity to get into the AI train and ha
 
 After I had a stripped down version of my old site now in the shape of a modern, simple 11ty website, it was time to get my hands dirty and start implementing all the functionality I wanted.
 
-I had an special amount of fun with creating a new design, which is minimal and programmer-like. I always like when I see a proper programmer website, so simple, so functional, giving way to the amazing content they create.
+I had a special amount of fun with creating a new design, which is minimal and programmer-like. I always like when I see a proper programmer website, so simple, so functional, giving way to the amazing content they create.
 
 And it's kind of misleading too! Simplicity is always misleading. It looks so easy, but the problem is that because it's so simple things can feel out of place or "off" very easily. So I did spend my fair share of time polishing the design, choosing a font and so on. It reminded me of a co-worker I had that used to scream at me when he saw me perfecting something for a long time: "stop licking this thing!". He meant it like a cat licks the fur non-stop until it's absolutely perfect.
 
 Awyway, when that was in place and I got tired of admiring how fast a static website builds and loads, I started adding some niceness.
 
-For example, the images are all hosted on Cloudflare's R2. I have 2GB of pictures, with all the pre-built variations (I build 3 different sizes) to prevent you, my dear visitor, from downloading huge files unecessarily. They are all synced with a bucket I have there, and because they have no egress fees and don't charge until you have 10GB of stuff, it's free. Incredible technology hosting my photos for free, I won't complain.
+For example, the images are all hosted on Cloudflare's R2. I have 2GB of pictures, with all the pre-built variations (I build 3 different sizes) to prevent you, my dear visitor, from downloading huge files unnecessarily. They are all synced with a bucket I have there, and because they have no egress fees and don't charge until you have 10GB of stuff, it's free. Incredible technology hosting my photos for free, I won't complain.
 
-Also free is the hosting on Github pages, including the build CI/CD(which takes 40s) every time I push new content. Isn't it incredible? Who's paying for this? There's definitely a fair share of processing in the build pipeline, but I gues that's nothing for them. I still can't understand this type of riches. I should really get Microsoft stocks 🤔
+Also free is the hosting on Github pages, including the build CI/CD(which takes 40s) every time I push new content. Isn't it incredible? Who's paying for this? There's definitely a fair share of processing in the build pipeline, but I guess that's nothing for them. I still can't understand this type of riches. I should really get Microsoft stocks 🤔
 
 And here are my favorite parts of my `.eleventy.js`.
 
 ### Encryption
 
-With this filter I can encode pages in a way they are only available after the user inputs a password I chose. It's a pretty cool way to add a security layer, although for sure not a guarantee some crazy ass hacker won't force their way through. When creating this I learned that inefficiency can be a feature! If someone were to try and crack this encryption they would take forever (or lots of money) simply because the decription process is too slow (~100ms) 😂
+With this filter I can encode pages in a way they are only available after the user inputs a password I chose. It's a pretty cool way to add a security layer, although for sure not a guarantee some crazy ass hacker won't force their way through. When creating this I learned that inefficiency can be a feature! If someone were to try and crack this encryption they would take forever (or lots of money) simply because the decryption process is too slow (~100ms) 😂
 
 {% code "encrypt", "javascript" %}
 eleventyConfig.addFilter("encrypt", (content, password) => {
@@ -167,4 +167,4 @@ And there you have it. The website is awesome, I love it, I'm so glad I went on 
 
 My expectations are to use it often to publish photos, learnings, work-related things, and so on.
 
-We'll see how it pans our but I'm sure this tool is a great addition to my lifestyle and an incredible soruce of inspiration.
+We'll see how it pans out but I'm sure this tool is a great addition to my lifestyle and an incredible source of inspiration.
