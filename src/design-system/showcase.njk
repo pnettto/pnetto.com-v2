@@ -9,6 +9,12 @@ extraHeadScripts: |
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.css">
   <script defer src="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.polyfilled.js"></script>
   <script defer src="/design-system/js/video.js"></script>
+  <script>
+    document.addEventListener("contentDecrypted", () => {
+      if (typeof Prism !== "undefined") Prism.highlightAll();
+      if (typeof Plyr !== "undefined" && typeof initVideoPlayers === "function") initVideoPlayers();
+    });
+  </script>
 ---
 
 <article class="design-system-showcase">
@@ -118,23 +124,26 @@ extraHeadScripts: |
             Code blocks with syntax highlighting. Prism.js applies highlighting
             at runtime:
         </p>
-        <pre
-            class="language-javascript"
-        >
-<code class="language-javascript">const greeting = "Hello, World!";
+        <div class="code-container">
+            <label class="language-label">javascript</label>
+            <pre
+                class="language-javascript"
+            >
+    <code class="language-javascript">const greeting = "Hello, World!";
 
 function sayHello(name) {
-  return `Hello, ${name}!`;
+return `Hello, ${name}!`;
 }
 
 console.log(sayHello("Design System"));</code></pre>
+        </div>
     </section>
 
     <section class="bio-section">
         <h2 class="underlined">Code Runner</h2>
         <p>Interactive code execution with syntax highlighting:</p>
 
-        <div class="code-container code-runner" data-language-name="Python">
+        <div class="code-container code-runner" data-language-name="python">
             <label class="language-label">Python</label>
             <div class="code-header">Fibonacci Example</div>
             <pre
@@ -151,8 +160,8 @@ fibonacci(10)</code></pre>
             <div class="code-output"></div>
         </div>
 
-        <div class="code-container code-runner" data-language-name="JavaScript">
-            <label class="language-label">JavaScript</label>
+        <div class="code-container code-runner" data-language-name="node">
+            <label class="language-label">Node</label>
             <pre
                 class="language-javascript"
             >
@@ -323,12 +332,3 @@ console.log("Doubled:", doubled);</code></pre>
         color: white;
     }
 </style>
-
-<script>
-    // Listen for content decryption and initialize components
-    document.addEventListener("contentDecrypted", () => {
-        console.log("hello");
-        if (typeof Prism !== "undefined") Prism.highlightAll();
-        if (typeof Plyr !== "undefined") initVideoPlayers();
-    });
-</script>

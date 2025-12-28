@@ -30,8 +30,9 @@ async function runCode(button) {
 
         if (result.error) {
             outputEl.style.color = "#f44747";
-            console.log(result.error);
-            outputEl.innerText = "Execution error.";
+            outputEl.innerText = `Execution error: ${result.error}`;
+            outputEl.classList.add("is-loaded");
+            return;
         }
 
         let output = "";
