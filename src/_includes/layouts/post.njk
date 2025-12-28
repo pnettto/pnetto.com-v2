@@ -28,3 +28,47 @@ containerClass: narrow
         {% endfor %}
     </div>
 </article>
+
+
+{# Video player #}
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.css"
+/>
+<style>
+    .plyr {
+        --plyr-color-main: var(--accent-color); /* primary accent */
+        --plyr-video-background: var(--bg-color);
+        --plyr-menu-background: var(--bg-color);
+        --plyr-menu-color: var(--text-main);
+        --plyr-menu-border-color: var(--bg-color);
+        --plyr-tooltip-background: var(--accent-color);
+        --plyr-tooltip-color: var(--accent-color);
+    }
+</style>
+<script
+    defer
+    src="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.polyfilled.js"
+></script>
+<script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+        const players = Array.from(
+            document.querySelectorAll(".project-video"),
+        ).map((video) =>
+            new Plyr(video, {
+                autoplay: true,
+                muted: true,
+                loop: { active: true },
+                controls: [
+                    "play",
+                    "progress",
+                    "mute",
+                    "settings",
+                    "fullscreen",
+                ],
+                settings: ["speed"],
+                speed: { selected: 1, options: [0.5, 1, 1.5, 2] },
+            })
+        );
+    });
+</script>

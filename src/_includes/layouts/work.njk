@@ -88,16 +88,18 @@ containerClass: narrow
                             {%
                                 set videoPath = "work/" ~ slug ~ "/" ~ screen.media
                             %}
-                            <video
-                                src="/{{ videoPath }}"
-                                class="project-video"
-                                autoplay
-                                muted
-                                loop
-                                playsinline
-                            >
-                                <source src="movie.mp4" type="video/mp4" />
-                            </video>
+                            <div class="video-wrapper">
+                                <video
+                                    src="/{{ videoPath }}"
+                                    class="project-video"
+                                    autoplay
+                                    muted
+                                    loop
+                                    playsinline
+                                >
+                                    <source src="movie.mp4" type="video/mp4" />
+                                </video>
+                            </div>
                         {% else %}
                             {%
                                 set imagePath = "work/" ~ slug ~ "/" ~ screen.media
@@ -116,9 +118,9 @@ containerClass: narrow
                                     optmizedImageTag image, { sizes: "(min-width: 1000px) 90vw, 100vw", className: "screen-image" }
                                 %}
                             </button>
-                            {% if screen.text %}
-                                <p class="screen-text">{{ screen.text }}</p>
-                            {% endif %}
+                        {% endif %}
+                        {% if screen.text %}
+                            <p class="screen-text">{{ screen.text }}</p>
                         {% endif %}
                     </div>
                 {% endfor %}
