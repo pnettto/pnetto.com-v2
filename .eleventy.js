@@ -14,17 +14,19 @@ export default async function (eleventyConfig) {
 
     // Re-run bundle script after build
     eleventyConfig.on("eleventy.after", async () => {
-        // We run this as a child process to decouple the bundling from the main thread
-        // and to reuse the existing script.
-        console.log("[11ty] Bundling assets...");
-        const child = spawn("node", ["scripts/bundle-assets.js"], {
-            stdio: "inherit",
-        });
-
         return new Promise((resolve, reject) => {
+            const child = spawn("node", ["scripts/bundle-assets.js"], {
+                stdio: "inherit",
+            });
+
+            child.on("error", (err) => {
+                console.error("Failed to start subprocess.");
+                reject(err);
+            });
+
             child.on("close", (code) => {
                 if (code === 0) resolve();
-                else reject(new Error(`Bundling exited with code ${code}`));
+                else reject(new Error(`Bundling failed with code ${code}`));
             });
         });
     });
