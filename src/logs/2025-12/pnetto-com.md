@@ -150,6 +150,7 @@ eleventyConfig.addPairedShortcode(
         </div>`;
     },
 );
+{% endcode %}
 
 ### Optmized image tag
 
