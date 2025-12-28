@@ -152,7 +152,6 @@ export default async function (eleventyConfig) {
         const keyLength = 32; // 256 bits
         const digest = "sha256";
 
-        // Generate random salt (public, stored with ciphertext)
         // Same password for all pages
         const salt = Buffer.from(
             "803d0233f92790237d797d67a3933ccada0ad878d596b9b87998cdf5efd18746",
