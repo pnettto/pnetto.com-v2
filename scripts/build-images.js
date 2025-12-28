@@ -72,7 +72,7 @@ function getAlbumFrontMatter(albumDir) {
       outputDir: outputDir,
       urlPath: "/img",
       sharpJpegOptions: {
-        quality: 90,
+        quality: 80,
         progressive: true,
         mozjpeg: true, // High-quality encoder
         chromaSubsampling: "4:4:4", // Prevents color bleeding/pixelation around edges
