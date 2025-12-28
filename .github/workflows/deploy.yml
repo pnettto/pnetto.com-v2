@@ -4,29 +4,34 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "24"
-
-      - name: Cache dependencies
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          node-version: "22"
+          cache: "npm"
 
       - name: Install Dependencies
         run: npm ci
@@ -36,10 +41,11 @@ jobs:
         env:
           PATH_PREFIX: "/"
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        if: ${{ github.ref == 'refs/heads/main' }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          cname: pnetto.com
+          path: "./public"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
