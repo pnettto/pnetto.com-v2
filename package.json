@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "npm compilePrivate && eleventy",
+    "build": "npm run compilePrivate && eleventy",
     "start": "eleventy --serve",
     "compilePrivate": "ELEVENTY_MODE=compile eleventy --config=.eleventy.private.js --output=tmpPrivate && rm -rf src/private && mkdir -p src/private && cp -R tmpPrivate/* src/private/ && rm -rf tmpPrivate",
     "watchPrivate": "chokidar \"src/private-open/**/*\" -c \"npm run compilePrivate\"",
