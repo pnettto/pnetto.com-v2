@@ -37,10 +37,6 @@ export default async function (eleventyConfig) {
         return collectionApi.getFilteredByGlob("src/photos/*/index.md");
     });
 
-    eleventyConfig.addCollection("private", (collectionApi) => {
-        return collectionApi.getFilteredByGlob("src/private-open/*.md");
-    });
-
     eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
 
     eleventyConfig.addFilter("isVideo", (value) => value.includes(".mp4"));
@@ -52,6 +48,7 @@ export default async function (eleventyConfig) {
             day: "numeric",
         });
     });
+
     eleventyConfig.addFilter("albumDate", (dateObj) => {
         return dateObj.toLocaleDateString("en-US", {
             year: "numeric",
@@ -173,16 +170,9 @@ export default async function (eleventyConfig) {
         return Buffer.from(JSON.stringify(payload)).toString("base64");
     });
 
-    // Allow to use /private-open for compiling
-    eleventyConfig.setUseGitIgnore(false);
-
-    // Ignore compiled snapshots folder
-    eleventyConfig.ignores.add("src/private-compiled/");
-
-    // Only process 'private-open' when compiling
-    if (process.env.ELEVENTY_MODE !== "compile") {
-        eleventyConfig.ignores.add("src/private-open/");
-    }
+    // Ignore private-open (processed by .eleventy.private.js)
+    eleventyConfig.ignores.add("src/private-open/");
+    eleventyConfig.watchIgnores.add("src/private-open");
 
     // Return an optimized picture tag with all version of an image
     eleventyConfig.addShortcode("optmizedImageTag", (imageDataRaw, options) => {
@@ -246,9 +236,6 @@ export default async function (eleventyConfig) {
             </div>`;
         },
     );
-
-    // Ignore changes on private logs (handled by its own npm watcher)
-    eleventyConfig.watchIgnores.add("src/private-open");
 
     return {
         pathPrefix: process.env.PATH_PREFIX || "/",

@@ -9,8 +9,19 @@ export default function (eleventyConfig) {
 
     // Tell Eleventy to follow symlinks
     eleventyConfig.setUseGitIgnore(false);
-
     eleventyConfig.setWatchThrottleWaitTime(100);
+
+    eleventyConfig.addCollection("private", (collectionApi) => {
+        return collectionApi.getFilteredByGlob("src/private-open/*.md");
+    });
+
+    eleventyConfig.addFilter("postDate", (dateObj) => {
+        return dateObj.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        });
+    });
 
     eleventyConfig.addFilter("encrypt", (content, password) => {
         if (!password) {
