@@ -1,6 +1,5 @@
 import "dotenv/config";
 import crypto from "crypto";
-import { spawn } from "child_process";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { generateImgTag } from "./src/_utils/generateImgTag.js";
 import Prism from "prismjs";
@@ -9,26 +8,10 @@ import loadLanguages from "prismjs/components/index.js";
 export default async function (eleventyConfig) {
     const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
 
-    // Watch design system files for changes
-    eleventyConfig.addWatchTarget("src/design-system/**/*.{css,js}");
-
-    // Re-run bundle script after build
-    eleventyConfig.on("eleventy.after", async () => {
-        return new Promise((resolve, reject) => {
-            const child = spawn("node", ["scripts/bundle-assets.js"], {
-                stdio: "inherit",
-            });
-
-            child.on("error", (err) => {
-                console.error("Failed to start subprocess.");
-                reject(err);
-            });
-
-            child.on("close", (code) => {
-                if (code === 0) resolve();
-                else reject(new Error(`Bundling failed with code ${code}`));
-            });
-        });
+    // Copy built assets from the design-system submodule
+    eleventyConfig.addPassthroughCopy({
+        "src/design-system/dist/css": "design-system/css",
+        "src/design-system/dist/js": "design-system/js",
     });
 
     eleventyConfig.addPassthroughCopy("src/assets");
