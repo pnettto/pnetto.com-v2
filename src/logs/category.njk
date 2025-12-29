@@ -11,7 +11,14 @@ containerClass: narrow
 <p><a href="/logs/">← back</a></p>
 
 <header class="page-header">
-  <h1>Category: {{ tag }}</h1>
+  <h1>
+    Category:
+    {% if tag.match("^[0-9]{4}-[0-9]{2}") %}
+      {{ tag.split('-') | reverse | join('/') }}
+    {% else %}
+      {{ tag }}
+    {% endif %}
+  </h1>
 </header>
 
 <ul class="post-list">
@@ -28,9 +35,13 @@ containerClass: narrow
       <div class="tags-list mini-tags">
         {% for tag in post.data.tags %}
           {% if tag != "post" %}
-            <a href="/logs/category/{{ tag | slug }}/" class="badge">{{
-              tag
-            }}</a>
+            <a href="/logs/category/{{ tag | slug }}/" class="badge">
+              {% if tag.match("^[0-9]{4}-[0-9]{2}") %}
+                {{ tag.split('-') | reverse | join('/') }}
+              {% else %}
+                {{ tag }}
+              {% endif %}
+            </a>
           {% endif %}
         {% endfor %}
       </div>

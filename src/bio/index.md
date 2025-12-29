@@ -194,10 +194,8 @@ personalInterests:
         around.
       </p>
       <p>
-        Check my pics on
-        <a href="https://unsplash.com/pnettto" target="_blank" rel="noopener">
-          Unsplash
-        </a>!
+        Check my pics on the
+        <a href="/photos">photos</a> section!
       </p>
   - title: Drawing & Painting
     text: >

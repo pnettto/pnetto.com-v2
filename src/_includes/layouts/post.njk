@@ -21,14 +21,17 @@ containerClass: narrow
     <div class="tags-list" style="margin-bottom: 2rem">
         {% for tag in tags %}
             {% if tag != "post" %}
-                <a href="/logs/category/{{ tag | slug }}/" class="badge">{{
-                    tag
-                }}</a>
+                <a href="/logs/category/{{ tag | slug }}/" class="badge">
+                    {% if tag.match("^[0-9]{4}-[0-9]{2}") %}
+                        {{ tag.split('-') | reverse | join('/') }}
+                    {% else %}
+                        {{ tag }}
+                    {% endif %}
+                </a>
             {% endif %}
         {% endfor %}
     </div>
 </article>
-
 
 {# Video player #}
 <link

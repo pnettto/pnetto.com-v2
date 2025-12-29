@@ -120,7 +120,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Touch Navigation
-    lightbox.addEventListener("touchstart", (e) => {
+    lightbox.addEventListener("touchend", (e) => {
+        // Ignore if multiple fingers were on the screen (indicates a pinch/zoom)
+        if (e.changedTouches.length !== 1 || e.touches.length > 0) return;
+
         if (e.touches[0].clientX > document.body.clientWidth / 2) {
             showNext();
         } else {

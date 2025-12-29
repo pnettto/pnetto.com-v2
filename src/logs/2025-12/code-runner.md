@@ -3,8 +3,8 @@ layout: layouts/post.njk
 title: Code runner with Piston
 date: 2025-12-23
 tags:
-    - code
-    - 2015-12
+    - tech
+    - 2025-12
 ---
 ##
 
@@ -92,7 +92,13 @@ volumes:
 
 
 <br />
+
+
 With that done, I could create a shortcode in my 11ty and start doing things like this:
+
+
+_(Edit: since I wrote this the code executor was replaced by my own application, built from scratch, but the functionality remains the same.)_
+
 
 {% codeRunner "Python example", "python", true %}
 import time
@@ -149,4 +155,4 @@ As a next step, I'd like to setup another VM to deploy small prototypes made in 
 
 Edit: wait, actually I have spend a few more hours and created an environment using Docker and Caddy to host all kinds of applications in a new VM instance. Look, this is running inside a docker container which has some html and js that calls a python program, which in turn executes a go script and makes use of a Postgress database. Of course, the whole environment gets updated every time I commit to the repo that hosts the applications through Githib actions. This is stuff is just crazy!
 
-<iframe src="https://demo-garden.pnetto.com/two/" style="width: 100%; aspect-ratio: 4 / 3;"></iframe>
+<iframe src="https://demo-garden.pnetto.com/two/" style="zoom:75%"></iframe>

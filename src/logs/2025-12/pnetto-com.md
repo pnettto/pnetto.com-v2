@@ -3,10 +3,10 @@ layout: layouts/post.njk
 title: pnetto.com gets a facelift! 💅
 date: 2025-12-28
 tags:
-    - code
+    - tech
     - career
-    - lifestyle
-    - 2015-12
+    - hobby
+    - 2025-12
 ---
 
 In the second 2021 I was getting ready to apply for jobs in Copenhagen as my plan to leave Reykjavík after 9 years started coming closer to become a reality.
@@ -15,8 +15,7 @@ It was an exciting time, there was a lot to look forward to and I wanted my prof
 
 So I set out to create a crafty design and publish a Next.js website. Next was all the rage back then and I was certainly happy to use a platform which allowed me to build static sites while exercising my React muscles. Here's a navigable frame:
 
-<iframe src="https://pedronetto-p980n7u1l-pedro-nettos-projects.vercel.app/work" style="width: 100%; aspect-ratio: 16 / 9; zoom: 50%; margin-bottom: 2rem;">
-</iframe>
+<iframe src="https://pedronetto-p980n7u1l-pedro-nettos-projects.vercel.app/work"></iframe>
 
 It worked well! I got several job offers, including one from Lego, but I ended up going to Icelandair, a company that taught me a whole lot. I like to think that success had something to do with how I communicated my professional skills through the website.
 

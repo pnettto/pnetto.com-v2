@@ -10,7 +10,7 @@
 
 .post-item {
   border-bottom: 1px solid var(--border);
-  padding-bottom: 1rem;
+  padding: var(--sp-md) 0;
 }
 
 .post-item-header {
@@ -19,7 +19,6 @@
   gap: 1rem;
   justify-content: space-between;
   align-items: flex-start;
-  padding: var(--sp-sm) 0;
 }
 
 @media (min-width: 600px) {

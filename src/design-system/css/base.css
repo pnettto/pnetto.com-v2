@@ -97,3 +97,13 @@ picture {
   display: block;
   width: 100%;
 }
+
+/* iframes, used mostly for demos */
+iframe {
+  width: 100%; 
+  aspect-ratio: 16 / 9; 
+  zoom: 50%; 
+  margin-bottom: 2rem;
+  border: 0;
+  border-radius: var(--radius-lg);
+}

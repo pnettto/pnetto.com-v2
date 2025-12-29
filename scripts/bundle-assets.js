@@ -20,6 +20,7 @@ async function bundle() {
             bundle: true,
             minify: true,
             loader: { ".css": "css" },
+            sourcemap: true,
             logLevel: "info",
         });
 
