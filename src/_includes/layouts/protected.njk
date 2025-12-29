@@ -78,7 +78,7 @@ layout: layouts/base.njk
         {% set effectivePassword = password or site.defaultPassword %}
         <div
             id="protected-content"
-            class="protected-content-wrapper"
+            class="post-content protected-content-wrapper"
             data-encrypted="{{ content | encrypt(effectivePassword) | safe }}"
         >
         </div>

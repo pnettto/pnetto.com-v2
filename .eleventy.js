@@ -247,6 +247,9 @@ export default async function (eleventyConfig) {
         },
     );
 
+    // Ignore changes on private logs (handled by its own npm watcher)
+    eleventyConfig.watchIgnores.add("src/private-open");
+
     return {
         pathPrefix: process.env.PATH_PREFIX || "/",
         dir: {

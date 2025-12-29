@@ -185,5 +185,14 @@
                 if (e.key === "Enter") handleUnlock();
             });
         }
+
+        if (window.WebSocket) {
+            const ws = new WebSocket("ws://localhost:8080");
+            ws.onopen = () => {
+                ws.onmessage = () => {
+                    checkSavedKey();
+                };
+            };
+        }
     });
 })();
