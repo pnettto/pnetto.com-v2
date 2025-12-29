@@ -17,31 +17,31 @@ So I set out to create a crafty design and publish a Next.js website. Next was a
 
 <iframe src="https://pedronetto-p980n7u1l-pedro-nettos-projects.vercel.app/work"></iframe>
 
-It worked well! I got several job offers, including one from Lego, but I ended up going to Icelandair, a company that taught me a whole lot. I like to think that success had something to do with how I communicated my professional skills through the website.
+It worked well! I got a few good job offers, including one from Lego! In the end went to work at [Icelandair](/work/icelandair), where I went on to lead the frontend team, and that taught me a whole lot. I like to think that this success had at least something to do with how I communicated my professional skills through the website.
 
-In the end, I think the best thing about building the site was to take the time to write down my story, and take a moment to appreciate how far I had come. It was a celebration of tech love. I realized I had become one of those fortunate people who actually love their jobs. Seeing all the case studies coming to life on my website were a great way to reflect and put a face to the memory.
+Really, the best thing about building the site was to take the time to write down my story, and take a moment to appreciate how far I had come. It was a celebration of my love for tech. I realized I had become one of those fortunate people who actually love their jobs. Seeing all the case studies coming to life on my website was a great way to reflect and put a face to the memory.
 
 But fast forward, we're in 2025 (nearly 2026, time flew), and I thought it was high time the website got a new face and new content, and this website is the result.
 
-I wanted to preserve the existing functionality, the portfolio, the bio, but add a section for my photos (a hobby I've been developing since 2020) and my writings. I have been wanting to write for a long time.
+I wanted to preserve the existing functionality, the portfolio, the bio, but add a section for my photos (a hobby I've been developing since 2020, no pun intendeded) and my writings. I have been wanting to write in public for a long time.
 
-I actually do quite a bit of writing, only I do it for myself. I keep a journal for well over a decade, and I love how the simple act of putting word on the screen magically makes whatever you have in your head way clearer.
+I actually do quite a bit of writing, but mostly for myself. I keep a journal for well over a decade, and I love how the simple act of putting words on the screen magically makes whatever you have in your head way clearer.
 
-There's also the great benefit of preserving memory. There's always so much happening in life, things we've learned, people we meet, ideas we stumble upon. If we don't do anything about it, at the end of each week most of it will disappear in thin air.
+There's also the great benefit of preserving memory. There's always so much happening in life, things we've learned, people we meet, ideas we stumble upon. If we don't do anything about it, at the end of each week most of it will disappear into thin air.
 
-Conversely, if we do materialize in some sort of way, they become not only more vivid in our biological memories, but they also become a database which we can then access for future use. There's this and there's also offloading the necessity of remembering. My memory is not the greatest (I think) so writing really does the trick for me.
+Conversely, if we do materialize it in some sort of way, they become not only more vivid in our biological memories, but they also become a database which we can then access for future use. And it feels good to offload the need of remembering. My memory is not the greatest (I think) so writing really does the trick for me.
 
-The problem is that I haven't had a place where I enjoyed publishing. Well now that problem is over. THe new pnetto.com has a shiny and new section just for texts, which I called "Logs", to avoid the weight of having to publish an "Article" or even a "Post". The purpose of Logs is not so much to share things I know with anyone so much as to having my personal thoughts database which might come in handy to refer to in the future.
+The problem is that I haven't had a place where I enjoyed publishing. Well now that problem is over. The new [pnetto.com](pnetto.com) has a shiny and new section just for texts, which I called "Logs", to avoid the weight of having to publish an "Article" or even a "Post". The purpose of Logs is not so much to share things I know with anyone so much as to having my personal thoughts database which might come in handy to refer to in the future.
 
-So if you're here and you're reading this, I'm very surprised indeed. You're not me, and yet you are still here, really incredible stuff.
+So if you're here and you're reading this, I'm very surprised indeed. You're not me, and yet you are still here, really incredible stuff. Welcome, though! Always happy to [make friends](/contact).
 
-The Photo section is also a mechanism I came up with to support my photography hobby. I thought that, if I did have a beautiful place to post photos, I would be more inclined to actually do something with all those hours go over Lightroom material :)
+The [photos section](/photos) is also a mechanism I came up with to support my photography hobby. I thought that, if I did have a beautiful place to post photos, I would be more inclined to actually do something with all those hours going over Lightroom tutorials :)
 
 But alright, to the implementation.
 
 ## Implementation
 
-Creating this new site has been a challenge as much as an opportunity. Migrating a 2020 Next.js site proved a little complicated. In the heat of the moment I ended up over-engineering the whole thing and Node version mismatches started causing explosions on my logs and I tried to build the website again on my shiny 2025 Mac with Node v9385859343875893-alpha.
+Creating this new site has been a challenge, as much as an opportunity. Migrating a 2020 Next.js site proved a little complicated. Back then I got a little excited and ended up over-engineering the whole thing. Version mismatches started causing explosions in my logs as I tried to build the website again on my shiny 2025 Mac with Node v9385859343875893-alpha.
 
 Anyway, I thought it would be a good opportunity to get into the AI train and have a robot migrate the site for me, which... worked! All that boring work that is migrating versions, and method names, and new conventions and stuff, all that got solved in a rather smooth way by some LLM somewhere.
 
@@ -53,15 +53,15 @@ And it's kind of misleading too! Simplicity is always misleading. It looks so ea
 
 Awyway, when that was in place and I got tired of admiring how fast a static website builds and loads, I started adding some niceness.
 
-For example, the images are all hosted on Cloudflare's R2. I have 2GB of pictures, with all the pre-built variations (I build 3 different sizes) to prevent you, my dear visitor, from downloading huge files unnecessarily. They are all synced with a bucket I have there, and because they have no egress fees and don't charge until you have 10GB of stuff, it's free. Incredible technology hosting my photos for free, I won't complain.
+For example, the images are all hosted on Cloudflare's R2. I have 2GB of pictures, with all the pre-built variations (I build 3 different sizes) to prevent you, my dear visitor, from downloading huge files unnecessarily. They are all synced with a bucket I have there, and because they have no egress fees and don't charge until you have 10GB of stuff, it's free. Incredible, bleeding edge technology hosting my photos for free, I won't complain.
 
-Also free is the hosting on Github pages, including the build CI/CD(which takes 40s) every time I push new content. Isn't it incredible? Who's paying for this? There's definitely a fair share of processing in the build pipeline, but I guess that's nothing for them. I still can't understand this type of riches. I should really get Microsoft stocks 🤔
+Also free is the hosting on Github pages, including the build CI/CD (which takes 40s) every time I push new content. Isn't it baffling? Who's paying for this? 
 
-And here are my favorite parts of my `.eleventy.js`.
+Moving on, here are some of my favorite bits:
 
 ### Encryption
 
-With this filter I can encode pages in a way they are only available after the user inputs a password I chose. It's a pretty cool way to add a security layer, although for sure not a guarantee some crazy ass hacker won't force their way through. When creating this I learned that inefficiency can be a feature! If someone were to try and crack this encryption they would take forever (or lots of money) simply because the decryption process is too slow (~100ms) 😂
+With this filter I can encode pages in a way they are only available after the user inputs a password I chose. It's a pretty cool way to add a security layer, although for sure not a guarantee some crazy ass hacker won't force their way through. When creating this I learned that inefficiency can be a feature! If someone were to try and crack this encryption they would take forever (or lots of money) simply because the decryption process is too slow (~100ms/try) 😂
 
 {% code "encrypt", "javascript" %}
 eleventyConfig.addFilter("encrypt", (content, password) => {
@@ -76,7 +76,7 @@ eleventyConfig.addFilter("encrypt", (content, password) => {
     const keyLength = 32; // 256 bits
     const digest = "sha256";
 
-    // Same password for all pages
+    // Same password for all pages, change this to invalidate all sessions
     const salt = Buffer.from(
         "803d0233f92790237d797d67a3933ccada0ad878d596b9b87998cdf5efd18746",
         "hex",
@@ -91,7 +91,7 @@ eleventyConfig.addFilter("encrypt", (content, password) => {
         digest,
     );
 
-    // AES-GCM IV (12 bytes recommended)
+    // AES-GCM IV (12 bytes)
     const iv = crypto.randomBytes(12);
     const cipher = crypto.createCipheriv(algorithm, key, iv);
 
@@ -152,9 +152,9 @@ eleventyConfig.addPairedShortcode(
 );
 {% endcode %}
 
-### Optmized image tag
+### Image tag optmizer
 
-This allows me to create my own optimized image tag with all sizes as source options, straight from a pre-generated JSON file that contains all the information it needs.
+This allows me to create my own optimized image tag with all sizes as source options, straight from a pre-compiled JSON file that contains all the information it needs to do a good job.
 
 {% code "codeRunner", "javascript" %}
 eleventyConfig.addShortcode("optmizedImageTag", (imageDataRaw, options) => {
@@ -162,10 +162,10 @@ eleventyConfig.addShortcode("optmizedImageTag", (imageDataRaw, options) => {
 });
 {% endcode %}
 
-### Finally
+### Wrapping up
 
 And there you have it. The website is awesome, I love it, I'm so glad I went on to renew it.
 
 My expectations are to use it often to publish photos, learnings, work-related things, and so on.
 
-We'll see how it pans out but I'm sure this tool is a great addition to my lifestyle and an incredible source of inspiration.
+We'll see how it pans out but I'm sure this tool is a great addition to my daily life and an inspiring force.
