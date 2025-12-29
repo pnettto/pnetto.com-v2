@@ -37,7 +37,9 @@ Coming back to Hawk, I'm quite happy to have a to-do list that gets out of my wa
 
 The application is still private (as of Dec 2025) but I'm thinking about releasing it as an extension on the Chrome Web Store, maybe even with a premium version for people who want to save their encrypted notes on the cloud. But we're still a ways to go for that to happen. Right now it's in alpha stage, many things need fixing or polishing.
 
-If you are interested in trying it, you can download the code here: <a href="https://github.com/pnettto/hawk">https://github.com/pnettto/hawk</a>, it's under the MIT license. Or if you just want to browse and see what Hawk feels like you can head to: <a href="https://hawk.pnettto.deno.net">https://hawk.pnettto.deno.net</a>.
+If you are interested in trying it, you can download the code here: <a href="https://github.com/pnettto/hawk">https://github.com/pnettto/hawk</a>, it's under the MIT license. Or if you just want to browse and see what Hawk feels like you can head to: <a href="https://hawk.pnettto.deno.net">https://hawk.pnettto.deno.net</a>. Or just interact with this frame:
+
+<iframe src="https://hawk.pnettto.deno.net" style="zoom: 75%"></iframe>
 
 Here's the feature list as of now:
 - New tab Chrome extension ready
