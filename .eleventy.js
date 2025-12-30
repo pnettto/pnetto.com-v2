@@ -1,7 +1,7 @@
 import "dotenv/config";
 import crypto from "crypto";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-import { generateImgTag } from "./src/design-system/src/js/utils/generateImgTag.js";
+import { generateImgTag } from "./design-system/src/js/utils/generateImgTag.js";
 import Prism from "prismjs";
 import loadLanguages from "prismjs/components/index.js";
 
@@ -10,8 +10,8 @@ export default async function (eleventyConfig) {
 
     // Copy built assets from the design-system submodule
     eleventyConfig.addPassthroughCopy({
-        "src/design-system/dist/css": "design-system/css",
-        "src/design-system/dist/js": "design-system/js",
+        "design-system/dist/css": "design-system/css",
+        "design-system/dist/js": "design-system/js",
     });
 
     eleventyConfig.addPassthroughCopy("src/assets");
