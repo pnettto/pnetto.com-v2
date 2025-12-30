@@ -116,7 +116,7 @@ eleventyConfig.addFilter("encrypt", (content, password) => {
 
 ### Code runner
 
-In the past days I have created my own code runner, something like Judge0, but way more lightweight. I will write about it soon. But here this shortcode prepares a code runner component that allows me to showcase actually running scripts in many languages. It's like so cool. You can see an example here: [https://pnetto.com/logs/2025-12/code-runner/](https://pnetto.com/logs/2025-12/code-runner/).
+In the past days I have created my own code runner, something like Judge0, but way more lightweight. I will write about it soon. But here this shortcode prepares a code runner component that allows me to showcase actually running scripts in many languages. It's like so cool. You can see an example [here](/logs/2025-12/code-runner/).
 
 {% code "optmizedImageTag", "javascript" %}
 eleventyConfig.addPairedShortcode(

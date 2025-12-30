@@ -3,8 +3,8 @@ pagination:
   data: collections
   size: 1
   alias: tag
+permalink: "logs/{{ tag }}/index.html"
 layout: layouts/base.njk
-permalink: "logs/category/{{ tag }}/index.html"
 containerClass: narrow
 ---
 
@@ -35,7 +35,7 @@ containerClass: narrow
       <div class="tags-list mini-tags">
         {% for tag in post.data.tags %}
           {% if tag != "post" %}
-            <a href="/logs/category/{{ tag | slug }}/" class="badge">
+            <a href="/logs/{{ tag | slug }}/" class="badge">
               {% if tag.match("^[0-9]{4}-[0-9]{2}") %}
                 {{ tag.split('-') | reverse | join('/') }}
               {% else %}
