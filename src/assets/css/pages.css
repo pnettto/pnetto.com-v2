@@ -1,4 +1,26 @@
 /* ==========================================================================
+   Post texts
+   ========================================================================== */
+
+@media (min-width: 1000px) {
+  .post-content iframe,
+  .post-content .code-container,
+  .post-content .code-container,
+  .post-content .plyr,
+  .post-content .optimized-image-tag {
+    width: calc(90vw - 2 * var(--sp-lg));
+    max-width: 70rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 1.5rem;
+  }
+
+  .post-content iframe {
+    max-width: 140rem; /* Zoom property affects this */
+  }
+}
+
+   /* ==========================================================================
    WELCOME PAGE (Homepage)
    ========================================================================== */
 

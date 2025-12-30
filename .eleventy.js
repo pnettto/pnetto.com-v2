@@ -1,7 +1,7 @@
 import "dotenv/config";
 import crypto from "crypto";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-import { generateImgTag } from "./src/_utils/generateImgTag.js";
+import { generateImgTag } from "./src/design-system/src/js/utils/generateImgTag.js";
 import Prism from "prismjs";
 import loadLanguages from "prismjs/components/index.js";
 
