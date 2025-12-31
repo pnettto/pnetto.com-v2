@@ -179,6 +179,11 @@ export default async function (eleventyConfig) {
         return generateImgTag(imageDataRaw, options);
     });
 
+    eleventyConfig.addShortcode("optmizedImageTagMd", (imageDataRaw, sizes) => {
+        const options = { sizes };
+        return generateImgTag(imageDataRaw, options);
+    });
+
     eleventyConfig.addPairedShortcode(
         "codeRunner",
         function (content, title, languageName, isEditable = false) {
