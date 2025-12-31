@@ -29,7 +29,7 @@ The suffix “Garden” was chosen thinking of Digital Gardens, spaces where peo
 
 ## The implementation
 
-I ended up in a week-long journey to create an environment that heavily relied on Docker and chose a AWS E2-micro instance to host it. Here is how it works:
+I ended up in a week-long journey to create an environment that heavily relied on Docker and chose a GCP E2-micro instance to host it. Here is how it works:
 
 1) [Demo Garden Website or External client] 
    - Requests a resource, maybe a static site, maybe an API endpoint
