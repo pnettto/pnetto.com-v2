@@ -6,7 +6,6 @@ tags:
     - tech
     - 2025-12
 ---
-##
 
 Today I played around with creating a code running environment for my website. I plan to share some Hello Worlds going forward (starting now?), so I thought it would be nice to showcase the scripts and their outputs. 
 
