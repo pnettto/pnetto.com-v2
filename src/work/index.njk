@@ -10,13 +10,15 @@ title: Work
   </p>
 </header>
 
-<div class="tags-list sticky-tags">
-  {%
-    set categories = ['Development', 'Education', 'Entrepreneurship', 'Pet Projects']
-  %}
-  {% for category in categories %}
-    <a href="#{{ category | slugify  }}" class="badge">{{ category }}</a>
-  {% endfor %}
+<div class="sticky-tags">
+  <div class="container is-loaded tags-list">
+    {%
+      set categories = ['Development', 'Education', 'Entrepreneurship', 'Pet Projects']
+    %}
+    {% for category in categories %}
+      <a href="#{{ category | slugify  }}" class="badge">{{ category }}</a>
+    {% endfor %}
+  </div>
 </div>
 
 <div class="work-container">
