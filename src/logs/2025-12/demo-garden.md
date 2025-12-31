@@ -45,7 +45,7 @@ I ended up in a week-long journey to create an environment that heavily relied o
 4) [Services]
    - These can be almost anything running inside a container. For example, I have a Deno app that executes arbitratry code in a sandboxed environment and returns the result (like Judge0 or Piston, but much more lightweight). This environment is also custom made, and the code is right [here](https://github.com/pnettto/code-executor).
 5) [Sub-Services]
-   - A service can depend on further containers, for example a worker or a database. This is showcased in my demo [Parallelism](http://demo-garden.pnetto.com/parallelism.html), which spaws a Go worker from a FastAPI app and reads from a Postgres database before returning).
+   - A service can depend on further containers, for example a worker or a database. This is showcased in my demo [Parallelism](http://demo-garden.pnetto.com/apps/parallelism.html), which spaws a Go worker from a FastAPI app and reads from a Postgres database before returning).
    - One cool thing is that the Lazy Loader will also clean up these dependencies after a set idle time, unless I specify they shouldn’t go down.
 6) [Response]
    - Finally, a response. The user smiles with joy and the containers get a well deserved rest.
