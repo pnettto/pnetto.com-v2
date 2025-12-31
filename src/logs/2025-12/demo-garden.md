@@ -59,6 +59,10 @@ At first I used python for the lazy loader and it tookaround 50Mb on its own, so
 
 I’m also quite happy with the CI/CD. I’ve been using a Github Actions to pre-build images outside of my VM to avoid strain on the poor machine, caching aggressively to cut down on runner time, and then copying over my project and starting docker via ssh. The whole process, from push to deployment takes one minute. ONE minute. Pretty good, I’m happy.
 
+## The dashboard
+
+I have also whipped up a dashboard for the Demo Garden real quick (thanks Flash 3) and I think I might use it to standardize the way I’ll share the demos. Maybe every demo will have a page where the visitor can see a description of what has been done on a sidebar and a built-in demo on the side displaying the final result. Like [this example](https://demo-garden.pnetto.com/apps/code-executor.html).
+
 ## Afterglow
 
 Creating this process has been super informative and a great opportunity to learn about Docker. Of course, I could very well just deploy these little services on Netlify or Fly.io and call it a day. But sometimes creating your own infrastructure offers insight that you’ll never going to get by pressing buttons on a pretty UI. I enjoy that too (hello Digital Ocean, I love you), but I’m trying to saying there’s absolutely some value to this more involved process.
@@ -70,9 +74,6 @@ At the moment I’m working on a way to containerize the “base OS” as well s
 Another feature I’m looking into is how to use git submodules for the services. I want to be able to deploy the services as standalone application some times, and it might be a good option to avoid the Demo Garden repo becoming bloated later.
 
 The code for the Demo Garden is available at [this repo](https://github.com/pnettto/demo-garden) if you want to take a look. Just know the code is unstable and changing, so it might cause some minor explosions in your terminal :)
-
-## The dashboard
-I have also whipped up a dashboard for the Demo Garden real quick (thanks Flash 3) and I think I might use it to standardize the way I’ll share the demos. Maybe every demo will have a page where the visitor can see a description of what has been done on a sidebar and a built-in demo on the side displaying the final result. Like [this example](https://demo-garden.pnetto.com/apps/code-executor.html).
 
 ## Wrapping up
 And with this I think I’m ready to slow down the pace of development of the platform itself and start adding actual projects to it. It’s an exciting prospect to have such a great way to display my learnings! 
