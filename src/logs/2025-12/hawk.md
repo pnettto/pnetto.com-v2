@@ -14,15 +14,14 @@ So I started looking for a to-do list app that was simple to use, beautiful, and
 <div class="video-wrapper">
     <video
         src="/assets/media/hawk_demo.mp4"
-        class="project-video"
+        class="video"
         autoplay
         muted
         loop
         playsinline
     >
-        <source src="movie.mp4" type="video/mp4" />
     </video>
-    <p class="caption">{{ screen.text }}</p>
+    <p class="caption">A quick demo</p>
 </div>
 
 I wanted to build something that felt very similar to the experience I had on my paper notebook. Something frictionless, that I could just throw text at and it would work, auto save, never complain. Want to remove or replace a task, switch time, mark as done, add a comment (on the task or on the day)? You got it. Copy and paste between hours or days, navigate the calendar, see what has happened, show a full day view, a work hours view. Everything is one key down away. I love shortcuts, so I bundled my favorite ones in it.
@@ -39,7 +38,7 @@ The application is still private (as of Dec 2025) but I'm thinking about releasi
 
 If you are interested in trying it, you can download the code here: <a href="https://github.com/pnettto/hawk">https://github.com/pnettto/hawk</a>, it's under the MIT license. Or if you just want to browse and see what Hawk feels like you can head to: <a href="https://hawk.pnettto.deno.net">https://hawk.pnettto.deno.net</a>. Or just interact with this frame:
 
-<iframe src="https://hawk.pnettto.deno.net" style="zoom: 75%; max-width: 93.3rem;"></iframe>
+<iframe src="https://hawk.pnettto.deno.net" style="zoom: 100%;"></iframe>
 
 Here's the feature list as of now:
 - New tab Chrome extension ready

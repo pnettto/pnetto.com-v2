@@ -15,7 +15,7 @@ It was an exciting time, there was a lot to look forward to and I wanted my prof
 
 So I set out to create a crafty design and publish a Next.js website. Next was all the rage back then and I was certainly happy to use a platform which allowed me to build static sites while exercising my React muscles. Here's a navigable frame:
 
-<iframe src="https://pedronetto-p980n7u1l-pedro-nettos-projects.vercel.app/work"></iframe>
+<iframe src="https://pedronetto-dev.vercel.app/bio"></iframe>
 
 It worked well! I got a few good job offers, including one from Lego! In the end went to work at [Icelandair](/work/icelandair), where I went on to lead the frontend team, and that taught me a whole lot. I like to think that this success had at least something to do with how I communicated my professional skills through the website.
 

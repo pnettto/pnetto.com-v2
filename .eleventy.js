@@ -3,6 +3,7 @@ import crypto from "crypto";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import { generateImgTag } from "./design-system/src/js/utils/generateImgTag.js";
 import Prism from "prismjs";
+import { parseHTML } from "linkedom";
 import loadLanguages from "prismjs/components/index.js";
 
 export default async function (eleventyConfig) {
@@ -241,6 +242,35 @@ export default async function (eleventyConfig) {
             </div>`;
         },
     );
+
+    eleventyConfig.addTransform("widenPostMedia", (content, outputPath) => {
+        if (!outputPath?.endsWith(".html")) return content;
+
+        const { document } = parseHTML(content);
+        const postContent = document.querySelector(".post-content");
+        if (!postContent) return content;
+
+        const selectors = [
+            "iframe",
+            ".code-container",
+            ".video-wrapper",
+            ".optimized-image-tag",
+        ];
+
+        selectors.forEach((selector) => {
+            const elements = postContent.querySelectorAll(selector);
+            elements.forEach((el) => {
+                if (el.parentElement.classList.contains("widen")) return;
+
+                const wrapper = document.createElement("div");
+                wrapper.className = "widen";
+                el.parentNode.insertBefore(wrapper, el);
+                wrapper.appendChild(el);
+            });
+        });
+
+        return document.toString();
+    });
 
     return {
         pathPrefix: process.env.PATH_PREFIX || "/",
