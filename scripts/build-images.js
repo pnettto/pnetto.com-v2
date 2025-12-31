@@ -60,17 +60,20 @@ async function getAlbumFrontMatter(albumDir) {
   const allowedDirs = ["work", "logs", "assets", "private-open", "photos"];
   const images = allFiles.filter((f) =>
     allowedDirs.some((dir) => f.startsWith(`src/${dir}`)) &&
-    /\.(jpg|jpeg|png|webp)$/i.test(f)
+    /\.(jpg|jpeg|png|webp|gif)$/i.test(f)
   );
 
   const tasks = images.map((imagePath) =>
     limit(async () => {
+      const isGif = /\.gif$/i.test(imagePath);
+
       const rawMetadata = await Image(imagePath, {
-        widths: [900, 1200, 1600, 1920],
-        formats: ["jpeg"],
+        widths: isGif ? [null] : [900, 1200, 1600, 1920],
+        formats: isGif ? ["gif"] : ["jpeg"],
         outputDir,
         urlPath: process.env.R2_URL ? `${process.env.R2_URL}/img/` : "/img",
-        sharpJpegOptions: {
+        sharpOptions: isGif ? { animated: true } : undefined,
+        sharpJpegOptions: isGif ? undefined : {
           quality: 80,
           progressive: true,
           mozjpeg: true,
@@ -80,7 +83,9 @@ async function getAlbumFrontMatter(albumDir) {
         filenameFormat: (_, src, width, format) => {
           const name = path.parse(src).name;
           const hash = djb2Hash(src);
-          return `${name}-${hash}-${width}w.${format}`;
+          return width
+            ? `${name}-${hash}-${width}w.${format}`
+            : `${name}-${hash}.${format}`;
         },
       });
 

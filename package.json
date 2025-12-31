@@ -11,7 +11,8 @@
     "watchPrivate": "chokidar \"src/private-open/**/*\" -c \"npm run compilePrivate\"",
     "startWithPrivate": "run-p watchPrivate start",
     "compileImages": "node scripts/build-images.js",
-    "r2": "node scripts/r2-manager.js"
+    "r2": "node scripts/r2-manager.js",
+    "imgSync": "npm run compileImages && npm run r2 sync"
   },
   "keywords": [],
   "author": "",
