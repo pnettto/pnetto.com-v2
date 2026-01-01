@@ -77,10 +77,4 @@ containerClass: welcome
     </div>
 </div>
 
-<script>
-    window.PHOTO_LIST = [];
-    fetch("/albumPhotos.json").then((e) => e.json()).then((e) =>
-        window.PHOTO_LIST = window.PHOTO_LIST.concat(e)
-    );
-</script>
 <script type="module" src="/assets/js/intro.js"></script>

@@ -1,8 +1,12 @@
-import { generateImgTag } from "./utils/generateImgTag.js";
+import { generateImgTag } from "/design-system/js/bundle.min.js";
 
 (function () {
-    if (!window.PHOTO_LIST) return;
-    const photos = window.PHOTO_LIST.slice(0);
+    window.PHOTO_LIST = [];
+    fetch("/albumPhotos.json").then((e) => e.json()).then((e) =>
+        window.PHOTO_LIST = window.PHOTO_LIST.concat(e)
+    );
+
+    const photos = [];
     function refreshPictures() {
         const randomPhotoEls = document.querySelectorAll(".random-photo");
 
@@ -34,6 +38,7 @@ import { generateImgTag } from "./utils/generateImgTag.js";
         const randomPhotoEls = document.querySelectorAll(
             ".random-photo",
         );
+
         randomPhotoEls.forEach((el) => {
             el.addEventListener("click", () => {
                 const fadeIns = el.closest(".random-photos").querySelectorAll(
