@@ -83,7 +83,7 @@ async function uploadFiles() {
     await Promise.all(files.map((file) =>
         limit(async () => {
             const relativePath = path.relative(LOCAL_IMG_DIR, file);
-            const r2Key = `img/${relativePath}`;
+            const r2Key = `pnetto-com/${relativePath}`;
 
             try {
                 if (!await needsUpload(r2Key, file)) {
@@ -121,68 +121,6 @@ async function uploadFiles() {
     }
 }
 
-async function flushBucket(force) {
-    if (!force) {
-        console.log("⚠️  This will delete ALL objects in the bucket!");
-        console.log(
-            `To flush, run with --force: npm run r2 flush --force`,
-        );
-        return;
-    }
-
-    console.log(`🗑️  Flushing R2 bucket: ${BUCKET_NAME}...`);
-
-    try {
-        let continuationToken;
-        let totalDeleted = 0;
-        const limit = pLimit(10);
-
-        do {
-            const listResponse = await client.send(
-                new ListObjectsV2Command({
-                    Bucket: BUCKET_NAME,
-                    ContinuationToken: continuationToken,
-                    MaxKeys: 1000,
-                }),
-            );
-
-            if (listResponse.Contents && listResponse.Contents.length > 0) {
-                const batches = [];
-                for (let i = 0; i < listResponse.Contents.length; i += 1000) {
-                    batches.push(listResponse.Contents.slice(i, i + 1000));
-                }
-
-                await Promise.all(batches.map((batch) =>
-                    limit(async () => {
-                        await client.send(
-                            new DeleteObjectsCommand({
-                                Bucket: BUCKET_NAME,
-                                Delete: {
-                                    Objects: batch.map((obj) => ({
-                                        Key: obj.Key,
-                                    })),
-                                    Quiet: true,
-                                },
-                            }),
-                        );
-                        totalDeleted += batch.length;
-                        console.log(`  🗑️  Deleted ${totalDeleted} objects...`);
-                    })
-                ));
-            }
-
-            continuationToken = listResponse.NextContinuationToken;
-        } while (continuationToken);
-
-        console.log(`✔ Bucket ${BUCKET_NAME} flushed successfully!`);
-        console.log(`  Total objects deleted: ${totalDeleted}`);
-    } catch (error) {
-        console.error("✗ Flush failed:", error.message);
-        console.error("Make sure the bucket exists and you have permissions.");
-        process.exit(1);
-    }
-}
-
 const command = process.argv[2];
 
 if (command === "sync") {
@@ -190,18 +128,11 @@ if (command === "sync") {
         console.error("❌ Upload failed:", error);
         process.exit(1);
     });
-} else if (command === "flush") {
-    const force = process.argv[3] === "--force";
-    flushBucket(force).catch((error) => {
-        console.error("❌ Flush failed:", error);
-        process.exit(1);
-    });
 } else {
-    console.log("Usage: node run r2 [sync|flush]");
+    console.log("Usage: node run r2 [sync]");
     console.log("");
     console.log("Commands:");
     console.log(
         "  sync          Upload images to R2 (skips unchanged files)",
     );
-    console.log("  flush --force   Delete all objects in the bucket");
 }

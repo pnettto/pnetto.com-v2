@@ -71,7 +71,7 @@ async function getAlbumFrontMatter(albumDir) {
         widths: isGif ? [null] : [900, 1200, 1600, 1920],
         formats: isGif ? ["gif"] : ["jpeg"],
         outputDir,
-        urlPath: process.env.R2_URL ? `${process.env.R2_URL}/img/` : "/img",
+        urlPath: `${process.env.R2_URL}/pnetto-com/`,
         sharpOptions: isGif ? { animated: true } : undefined,
         sharpJpegOptions: isGif ? undefined : {
           quality: 80,
