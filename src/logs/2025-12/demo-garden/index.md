@@ -62,7 +62,7 @@ This little system is, as far as I can see, really resource efficient. It runs o
 
 At first I used Python for the lazy loader and it took a whopping 60Mb on its own, so I switched to Go, a language I haven’t worked with before but now thanks to an LLM-enhanced learning approach, I could not only understand it much better but also to migrate my Python code into Go quickly.
 
-I’m also quite happy with the CI/CD experience. I’m using Github Actions to pre-build images outside of my tiny VM to avoid strain on the poor machine, caching aggressively to cut down on runner time, and then copying over my project and restart Docker via ssh. The whole process, from push to deployment takes one minute. ONE minute. Pretty good, I’m happy.
+I’m also quite happy with the CI/CD experience. I’m using Github Actions to pre-build images outside of my tiny VM to avoid strain on the poor machine, caching aggressively to cut down on runner time, and then copying over my project and restart Docker via ssh. The whole process, from push to deployment takes 40s. FORTY SECONDS. Pretty good, I’m happy.
 
 ## The dashboard
 
