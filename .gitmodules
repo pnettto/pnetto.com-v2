@@ -1,6 +1,0 @@
-[submodule "src/design-system"]
-	path = src/design-system
-	url = https://github.com/pnettto/design-system.git
-[submodule "design-system"]
-	path = design-system
-	url = https://github.com/pnettto/design-system.git
