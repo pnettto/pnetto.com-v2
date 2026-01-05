@@ -251,7 +251,6 @@ export default async function (eleventyConfig) {
 
         const selectors = [
             "iframe",
-            ".code-container",
             ".video-wrapper",
             ".optimized-image-tag",
         ];
