@@ -7,9 +7,7 @@ containerClass: narrow
 <section id="timeline" class="post-content">
 <h2 class="underlined">Timeline</h2>
 
-This is a collection of things that caught my attention or that I
-did/made. I don't necessarily go deep in all of them but it's nice to
-keep track.
+Things I've noticed, made, or explored.
 
 <div class="timeline">
 <div class="timeline-item">
