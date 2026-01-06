@@ -18,7 +18,9 @@ keep track.
 <div class="timeline-content">
 
 - Topics
-  - Google Cloud certifications (cloud architect)
+  - Google Cloud certifications
+  - Networking (firewalls, packet sniffing 👃)
+  -
 - Links
   - [https://addyosmani.com/blog/21-lessons/](https://addyosmani.com/blog/21-lessons/)
     Great text text by Addy Osmani on being a senior
@@ -29,6 +31,7 @@ keep track.
     SKills this week, as part of my internship.
   - [https://news.ycombinator.com/item?id=46488576](https://news.ycombinator.com/item?id=46488576)
     It was fun to read this Hacker News discussion about how AI tools have been bringing joy to many developers who are now feeling much more productive in their personal projects and learning. Of course, there's a lot of controversy, but personally I tend to agree with the ones who are having fun. I haven't learned this much about coding and tech architecture in a long time. LLMs not only provide me with interesting examples for specific cases, but can also explain the reasoning behind it, which is massive for fast learning. As for the quality of the outputs, I remember a wise person told me once: it's not about being perfect, it's about being better! We all still have got a brain to analyse the results and judge, haven't we? Meanwhile, another HN post showed a [sad chart](https://data.stackexchange.com/stackoverflow/query/1926661#graph) where it's clear that Stack Overflow, a previous favorite for coding Q&A and examples, is done and done.
+    - https://www.cs.cmu.edu/~pavlo/blog/2026/01/2025-databases-retrospective.html Andy Pavlo give his roundup. It caught my attention how Postgress, a technology I've used right at beginning of my career, is not only still going strong in 2025 but being seriously invested in by every major cloud vendor. Also, I didn't know Databricks had raised so much cash, it's crazy.
 
 </div>
 </div>
