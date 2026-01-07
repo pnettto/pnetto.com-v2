@@ -5,9 +5,17 @@ containerClass: narrow
 ---
 
 <section id="timeline" class="post-content">
-<h2 class="underlined">Timeline</h2>
+<h1 class="underlined">Pedro Netto</h1>
 
-Things I've noticed, made, or explored.
+Welcome! I'm a [web developer](/work#development) with a background in [teaching](/work#education) and [entrepreneurship](/work#entrepreneurship).
+
+Here you can read about my [background](/bio), explore my [work](/work), [photographs](/photos), and [notes](/logs).
+
+Below are some things I've noticed, made, or tried lately — have a look around and [get in touch](/contact) if you'd like!
+
+<br />
+
+<br />
 
 <div class="timeline">
 <div class="timeline-item">
@@ -20,6 +28,8 @@ Things I've noticed, made, or explored.
   - Networking (firewalls, packet sniffing 👃)
 - Artifacts
   - [A CLI command to explain CLI commands](https://gist.github.com/pnettto/112c74187c062a0e8af919c1be2c5357)
+
+    At the moment I'm learning a few CLI commands a day. With all the arguments flying around, I thought it would be cool to have a quick way to understand new flags and options, so I AIed a solution for this.
     {% code "explainer", "bash" %}
     # Usage: 
     export OPENAI_API_KEY=<api key>
