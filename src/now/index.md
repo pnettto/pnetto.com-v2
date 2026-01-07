@@ -18,6 +18,21 @@ Things I've noticed, made, or explored.
 - Topics
   - Google Cloud certifications
   - Networking (firewalls, packet sniffing 👃)
+- Artifacts
+  - [A CLI command to explain CLI commands](https://gist.github.com/pnettto/112c74187c062a0e8af919c1be2c5357)
+    {% code "explainer", "bash" %}
+    # Usage: 
+    export OPENAI_API_KEY=<api key>
+    $ explain <cli command> <options>
+    
+    # Example:
+    $ explain ping -c 3 pnetto.com
+
+    #Result:
+    ping sends network packets to the specified host to check 
+    connectivity. -c 3 sends exactly 3 packets then stops.
+    {% endcode%}
+
 - Links
   - [https://addyosmani.com/blog/21-lessons/](https://addyosmani.com/blog/21-lessons/)
     Great text text by Addy Osmani on being a senior engineer and his learnings after 14 years at Google. These are the parts that I realated to and/or will take with me: The engineer who truly understands the problem often finds that the elegant solution is simpler than anyone expected. / Being right is cheap. Getting to right together is the real work.  / The senior engineers I respect most have learned to trade cleverness for clarity, every time. / Your code doesn’t advocate for you. People do.  If no one can articulate your impact when you’re not in the room, your impact is effectively optional. / The act of making something legible [writing] to someone else makes it more legible to me. / Priceless and invisible is a dangerous combination for your career. / Your job isn’t forever, but your network is. Approach it with curiosity and generosity, not transactional hustle. / The fastest code is code that never runs. / Write - not for engagement, but for clarity. Build reusable primitives. Collect scar tissue into playbooks.
