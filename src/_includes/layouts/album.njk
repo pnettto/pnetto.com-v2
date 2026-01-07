@@ -4,12 +4,12 @@ layout: layouts/base.njk
 <div class="page-nav-header">
     <p><a href="/photos/">← all</a></p>
 
-    {% set nextAlbum = collections.photos | getNextCollectionItem(page) %}
-    {% if not nextAlbum %}
-        {% set nextAlbum = collections.photos | first %}
+    {% set prevAlbum = collections.photos | getPreviousCollectionItem(page) %}
+    {% if not prevAlbum %}
+        {% set prevAlbum = collections.photos | last %}
     {% endif %}
-    {% if nextAlbum %}
-        <p><a href="{{ nextAlbum.url }}">{{ nextAlbum.data.title }} →</a></p>
+    {% if prevAlbum %}
+        <p><a href="{{ prevAlbum.url }}">{{ prevAlbum.data.title }} →</a></p>
     {% endif %}
 </div>
 
@@ -49,20 +49,20 @@ layout: layouts/base.njk
 </div>
 
 <div class="page-nav-header">
-    {% set prevAlbum = collections.photos | getPreviousCollectionItem(page) %}
-    {% if not prevAlbum %}
-        {% set prevAlbum = collections.photos | last %}
-    {% endif %}
-    {% if prevAlbum %}
-        <p><a href="{{ prevAlbum.url }}">← {{ prevAlbum.data.title }}</a></p>
-    {% endif %}
-
     {% set nextAlbum = collections.photos | getNextCollectionItem(page) %}
     {% if not nextAlbum %}
         {% set nextAlbum = collections.photos | first %}
     {% endif %}
     {% if nextAlbum %}
-        <p><a href="{{ nextAlbum.url }}">{{ nextAlbum.data.title }} →</a></p>
+        <p><a href="{{ nextAlbum.url }}">← {{ nextAlbum.data.title }}</a></p>
+    {% endif %}
+
+    {% set prevAlbum = collections.photos | getPreviousCollectionItem(page) %}
+    {% if not prevAlbum %}
+        {% set prevAlbum = collections.photos | last %}
+    {% endif %}
+    {% if prevAlbum %}
+        <p><a href="{{ prevAlbum.url }}">{{ prevAlbum.data.title }} →</a></p>
     {% endif %}
 </div>
 
