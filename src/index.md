@@ -31,12 +31,16 @@ Below are some things I've noticed, made, or tried lately — have a look around
       - Docker, Kubernetes, GKE, Knative
       - Cloud Run / Cloud Run functions (serverless)
       - Prompt "engineering"
+    - Attended a two-day training for Google's [Agentic Development Kit](https://google.github.io/adk-docs/)
 
   - Links
     - [https://fulghum.io/self-hosting](https://fulghum.io/self-hosting)
       Fun read on self-hosting. Made me want to get one of those [Linux boxes](https://www.bee-link.com/products/beelink-me-mini-n150) to create my own cloud platform. Maybe?
     - [https://samim.ai/services/](https://samim.ai/services/)
       Bumped into this interesting AI consultancy which works through for a pragmatic, human approach instead of the usual tech coldness. A company I will definitely draw inspiration from when opening my own business in the future.
+    - [https://agentic-patterns.com/](https://agentic-patterns.com/)
+      "A curated catalogue of agentic AI patterns — real‑world tricks, workflows, and mini‑architectures that help autonomous or semi‑autonomous AI agents get useful work done in production."
+      
     </div>
   </div>
 
