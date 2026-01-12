@@ -28,12 +28,12 @@ Below are some things I've noticed, made, or tried lately — have a look around
     - Compute Engine, Networking and Scalability
     - Storage options / Storage classes 
     - Docker, Kubernetes, GKE, Knative
-    - Cloud Run / Cloud RUn functions (serverless)
+    - Cloud Run / Cloud Run functions (serverless)
     - Prompt "engineering"
 
 - Links
   - [https://fulghum.io/self-hosting](https://fulghum.io/self-hosting)
-    Fun read on self-hosting. Made me want to get one of those [Linux boxes](https://www.bee-link.com/products/beelink-me-mini-n150) to create my own cloud platform. Maybe?ß
+    Fun read on self-hosting. Made me want to get one of those [Linux boxes](https://www.bee-link.com/products/beelink-me-mini-n150) to create my own cloud platform. Maybe?
 
 </div>
 </div>
