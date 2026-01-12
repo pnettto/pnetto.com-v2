@@ -24,6 +24,27 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <div class="timeline-content">
 
 - Topics
+  - Google Cloud Platform
+    - Compute Engine, Networking and Scalability
+    - Storage options / Storage classes 
+    - Docker, Kubernetes, GKE, Knative
+    - Cloud Run / Cloud RUn functions (serverless)
+    - Prompt "engineering"
+
+- Links
+  - [https://fulghum.io/self-hosting](https://fulghum.io/self-hosting)
+    Fun read on self-hosting. Made me want to get one of those [Linux boxes](https://www.bee-link.com/products/beelink-me-mini-n150) to create my own cloud platform. Maybe?ß
+
+</div>
+</div>
+
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-year" id="2026-01-week-02">2026-01 / week 02</div>
+<a href="#2026-01-week-0"></a>
+<div class="timeline-content">
+
+- Topics
   - Google Cloud certifications
   - Networking (firewalls, packet sniffing 👃)
 - Artifacts
