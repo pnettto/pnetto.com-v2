@@ -154,7 +154,7 @@ timeline:
     text: >
       <p>
         Worked for
-        <a href="https://spiritlinux.com.br" target="_blank" rel="noopener">
+        <a href="https://spiritsec.com.br" target="_blank" rel="noopener">
           Spirit Linux
         </a>
         on the maintenance of Linux Servers, then as teacher at a
@@ -200,7 +200,7 @@ personalInterests:
   - title: Drawing & Painting
     text: >
       <p>
-        Admitedly, I’m the worse at drawing. To counter this small
+        Admittedly, I’m the worse at drawing. To counter this small
         issue, I love creating pictures that don’t require this skill,
         like creating patterns.
       </p>
