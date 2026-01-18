@@ -25,9 +25,10 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <div class="content">
 
 - Studies
+
   - GCP Professional Cloud Developer [certification path](https://partner.skills.google/paths/82)
     - Compute Engine, Networking and Scalability
-    - Storage options / Storage classes 
+    - Storage options / Storage classes
     - Docker, Kubernetes, GKE, Knative
     - Cloud Run / Cloud Run functions (serverless)
     - Prompt "engineering"
@@ -42,9 +43,10 @@ Below are some things I've noticed, made, or tried lately — have a look around
     "A curated catalogue of agentic AI patterns — real‑world tricks, workflows, and mini‑architectures that help autonomous or semi‑autonomous AI agents get useful work done in production."
   - [https://fly.io/blog/code-and-let-live/](https://fly.io/blog/code-and-let-live/)
     An introduction to "sprites", a new fly.io product. A sprite is a vm-like machine that becomes available almost instantly, has checkpoint/save capabilities, and go to sleep while keeping 100GB of disk space intact. On wake up, it becomes again available instantly. Finally it becomes available via SSL automatically. It's apparently geared towards using with code agents (so that they have a more realistic and comfortable environment than a sandbox). I've given it a try just now and it works pretty great! Might be a good tool to have in the toolbelt as I dive deeper into the agentic AI development world.
-    
-</div>
-</div>
+  - [https://www.caimito.net/en/blog/2025/12/07/the-recurring-dream-of-replacing-developers.html](https://www.caimito.net/en/blog/2025/12/07/the-recurring-dream-of-replacing-developers.html)
+  Great text by Stephan Schwab about how the AI craze is part of a longer running trend of a (understandable) wish to replace programmers, dating back to Neil Armstrong's first step on the moon. My favorite part: "Software development is thinking made tangible. The artifacts we create [...] are the visible outcome of invisible reasoning about complexity. You can’t shortcut that reasoning any more than you can shortcut the reasoning required to design a building or diagnose a medical condition. Better tools help. Experience helps. But someone must still think it through."
+  </div>
+  </div>
 
 <div class="item"> <div class="year" id="2026-01-week-02">2026-01 / week 02</div> <a href="#2026-01-week-02"></a>
 <div class="content">
@@ -53,25 +55,30 @@ Below are some things I've noticed, made, or tried lately — have a look around
   - Google Cloud certifications
   - Networking (firewalls, packet sniffing 👃)
 - Artifacts
+
   - [A CLI command to explain CLI commands](https://gist.github.com/pnettto/112c74187c062a0e8af919c1be2c5357)
 
     At the moment I'm learning a few CLI commands a day. With all the arguments flying around, I thought it would be cool to have a quick way to understand new flags and options, so I AIed a solution for this.
     {% code "explainer", "bash" %}
-    # Usage: 
+
+    # Usage:
+
     export OPENAI_API_KEY=<api key>
     $ explain <cli command> <options>
-    
+
     # Example:
+
     $ explain ping -c 3 pnetto.com
 
     #Result:
-    ping sends network packets to the specified host to check 
+    ping sends network packets to the specified host to check
     connectivity. -c 3 sends exactly 3 packets then stops.
     {% endcode%}
 
 - Links
+
   - [https://addyosmani.com/blog/21-lessons/](https://addyosmani.com/blog/21-lessons/)
-    Great text text by Addy Osmani on being a senior engineer and his learnings after 14 years at Google. These are the parts that I related to and/or will take with me: The engineer who truly understands the problem often finds that the elegant solution is simpler than anyone expected. / Being right is cheap. Getting to right together is the real work.  / The senior engineers I respect most have learned to trade cleverness for clarity, every time. / Your code doesn’t advocate for you. People do.  If no one can articulate your impact when you’re not in the room, your impact is effectively optional. / The act of making something legible [writing] to someone else makes it more legible to me. / Priceless and invisible is a dangerous combination for your career. / Your job isn’t forever, but your network is. Approach it with curiosity and generosity, not transactional hustle. / The fastest code is code that never runs. / Write - not for engagement, but for clarity. Build reusable primitives. Collect scar tissue into playbooks.
+    Great text text by Addy Osmani on being a senior engineer and his learnings after 14 years at Google. These are the parts that I related to and/or will take with me: The engineer who truly understands the problem often finds that the elegant solution is simpler than anyone expected. / Being right is cheap. Getting to right together is the real work. / The senior engineers I respect most have learned to trade cleverness for clarity, every time. / Your code doesn’t advocate for you. People do. If no one can articulate your impact when you’re not in the room, your impact is effectively optional. / The act of making something legible [writing] to someone else makes it more legible to me. / Priceless and invisible is a dangerous combination for your career. / Your job isn’t forever, but your network is. Approach it with curiosity and generosity, not transactional hustle. / The fastest code is code that never runs. / Write - not for engagement, but for clarity. Build reusable primitives. Collect scar tissue into playbooks.
 
   - [https://partner.skills.google/paths/77](https://partner.skills.google/paths/77)
     Will start this or a related path at Google
