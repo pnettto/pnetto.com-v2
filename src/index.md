@@ -24,10 +24,13 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <div class="content">
 
 - Studies
-
   - GCP Professional Cloud Developer [certification path](https://partner.skills.google/paths/82)
     - Micro-services architecture
-    - Logging: Latency, Errors, Saturation and Traffic
+    - Logging: Latency, Errors, Saturation and Traffic´
+
+- Links
+  - [https://www.caimito.net/en/blog/2025/12/07/the-recurring-dream-of-replacing-developers.html](https://www.caimito.net/en/blog/2025/12/07/the-recurring-dream-of-replacing-developers.html)
+  Great text by Stephan Schwab about how the AI craze is part of a longer running trend of a (understandable) wish to replace programmers, dating back to Neil Armstrong's first step on the moon. My favorite part: "Software development is thinking made tangible. The artifacts we create [...] are the visible outcome of invisible reasoning about complexity. You can’t shortcut that reasoning any more than you can shortcut the reasoning required to design a building or diagnose a medical condition. Better tools help. Experience helps. But someone must still think it through."
 
 </div>
 </div>
@@ -55,8 +58,6 @@ Below are some things I've noticed, made, or tried lately — have a look around
     "A curated catalogue of agentic AI patterns — real‑world tricks, workflows, and mini‑architectures that help autonomous or semi‑autonomous AI agents get useful work done in production."
   - [https://fly.io/blog/code-and-let-live/](https://fly.io/blog/code-and-let-live/)
     An introduction to "sprites", a new fly.io product. A sprite is a vm-like machine that becomes available almost instantly, has checkpoint/save capabilities, and go to sleep while keeping 100GB of disk space intact. On wake up, it becomes again available instantly. Finally it becomes available via SSL automatically. It's apparently geared towards using with code agents (so that they have a more realistic and comfortable environment than a sandbox). I've given it a try just now and it works pretty great! Might be a good tool to have in the toolbelt as I dive deeper into the agentic AI development world.
-  - [https://www.caimito.net/en/blog/2025/12/07/the-recurring-dream-of-replacing-developers.html](https://www.caimito.net/en/blog/2025/12/07/the-recurring-dream-of-replacing-developers.html)
-  Great text by Stephan Schwab about how the AI craze is part of a longer running trend of a (understandable) wish to replace programmers, dating back to Neil Armstrong's first step on the moon. My favorite part: "Software development is thinking made tangible. The artifacts we create [...] are the visible outcome of invisible reasoning about complexity. You can’t shortcut that reasoning any more than you can shortcut the reasoning required to design a building or diagnose a medical condition. Better tools help. Experience helps. But someone must still think it through."
 
 </div>
 </div>
