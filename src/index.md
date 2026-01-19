@@ -26,7 +26,10 @@ Below are some things I've noticed, made, or tried lately — have a look around
 - Studies
   - GCP Professional Cloud Developer [certification path](https://partner.skills.google/paths/82)
     - Micro-services architecture
-    - Logging: Latency, Errors, Saturation and Traffic´
+    - Logging: Latency, Errors, Saturation and Traffic
+
+- Artifacts
+  - Hawk got a [new version](https://github.com/pnettto/hawk). It now features a full-fledged Bear-like Note app (uses Tiptap as a editor), and a date range Report page. Design changes were also included to make it more mobile friendly and pleasant to look at :)
 
 - Links
   - [https://www.caimito.net/en/blog/2025/12/07/the-recurring-dream-of-replacing-developers.html](https://www.caimito.net/en/blog/2025/12/07/the-recurring-dream-of-replacing-developers.html)
@@ -70,7 +73,6 @@ Below are some things I've noticed, made, or tried lately — have a look around
   - Google Cloud certifications
   - Networking (firewalls, packet sniffing 👃)
 - Artifacts
-
   - [A CLI command to explain CLI commands](https://gist.github.com/pnettto/112c74187c062a0e8af919c1be2c5357)
 
     At the moment I'm learning a few CLI commands a day. With all the arguments flying around, I thought it would be cool to have a quick way to understand new flags and options, so I AIed a solution for this.
@@ -91,7 +93,6 @@ Below are some things I've noticed, made, or tried lately — have a look around
     {% endcode%}
 
 - Links
-
   - [https://addyosmani.com/blog/21-lessons/](https://addyosmani.com/blog/21-lessons/)
     Great text text by Addy Osmani on being a senior engineer and his learnings after 14 years at Google. These are the parts that I related to and/or will take with me: The engineer who truly understands the problem often finds that the elegant solution is simpler than anyone expected. / Being right is cheap. Getting to right together is the real work. / The senior engineers I respect most have learned to trade cleverness for clarity, every time. / Your code doesn’t advocate for you. People do. If no one can articulate your impact when you’re not in the room, your impact is effectively optional. / The act of making something legible [writing] to someone else makes it more legible to me. / Priceless and invisible is a dangerous combination for your career. / Your job isn’t forever, but your network is. Approach it with curiosity and generosity, not transactional hustle. / The fastest code is code that never runs. / Write - not for engagement, but for clarity. Build reusable primitives. Collect scar tissue into playbooks.
 
@@ -110,7 +111,6 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <div class="content">
 
 - Topics
-
   - Cloudflare Storage
   - Deployment pipelines on Github
   - Deno apps
@@ -120,7 +120,6 @@ Below are some things I've noticed, made, or tried lately — have a look around
   - Python `threading` module
 
 - Artifacts
-
   - Built [Spotify Client](https://demo-garden.pnetto.com/spotify), A way to visualize and browse my Spotify albums better
   - Built a CI/CD [pipeline](https://github.com/pnettto/design-system/blob/main/.github/workflows/cdn.yml) for my UI Kit which allows me to continuously publish improvements to "latest" and to version them with my [bump](https://github.com/pnettto/design-system/blob/main/bump.sh) script.
   - http://pnetto.store is my new Cloudflare powered CDN. This website's media assets and my homemade [UI Kit](https://pnettto.github.io/design-system/) are now hosted there (where?).
