@@ -18,10 +18,22 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <br />
 
 <div class="timeline">
-
-<!-- items start -->
+<!-- start items -->
 
 <div class="item"> <div class="year" id="now">Now</div> <a href="#now"></a> 
+<div class="content">
+
+- Studies
+
+  - GCP Professional Cloud Developer [certification path](https://partner.skills.google/paths/82)
+    - Micro-services architecture
+    - Logging: Latency, Errors, Saturation and Traffic
+
+</div>
+</div>
+<!-- end post -->
+
+<div class="item"> <div class="year" id="2026-01-week-03">2026-01 / week 003</div> <a href="#2026-01-week-03"></a>
 <div class="content">
 
 - Studies
@@ -45,8 +57,10 @@ Below are some things I've noticed, made, or tried lately — have a look around
     An introduction to "sprites", a new fly.io product. A sprite is a vm-like machine that becomes available almost instantly, has checkpoint/save capabilities, and go to sleep while keeping 100GB of disk space intact. On wake up, it becomes again available instantly. Finally it becomes available via SSL automatically. It's apparently geared towards using with code agents (so that they have a more realistic and comfortable environment than a sandbox). I've given it a try just now and it works pretty great! Might be a good tool to have in the toolbelt as I dive deeper into the agentic AI development world.
   - [https://www.caimito.net/en/blog/2025/12/07/the-recurring-dream-of-replacing-developers.html](https://www.caimito.net/en/blog/2025/12/07/the-recurring-dream-of-replacing-developers.html)
   Great text by Stephan Schwab about how the AI craze is part of a longer running trend of a (understandable) wish to replace programmers, dating back to Neil Armstrong's first step on the moon. My favorite part: "Software development is thinking made tangible. The artifacts we create [...] are the visible outcome of invisible reasoning about complexity. You can’t shortcut that reasoning any more than you can shortcut the reasoning required to design a building or diagnose a medical condition. Better tools help. Experience helps. But someone must still think it through."
-  </div>
-  </div>
+
+</div>
+</div>
+<!-- end post -->
 
 <div class="item"> <div class="year" id="2026-01-week-02">2026-01 / week 02</div> <a href="#2026-01-week-02"></a>
 <div class="content">
@@ -89,6 +103,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 
 </div>
 </div>
+<!-- end post -->
 
 <div class="item"><div class="year" id="2026-01-week-01">2026-01 / week 01</div> <a href="#2026-01-week-01"></a>
 <div class="content">
@@ -118,6 +133,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 
 </div>
 </div>
+<!-- end post -->
 
 <div class="item"> <div class="year" id="2025-12-week-52">2025-12 / week 52</div> <a href="#2025-12-week-52"></a>
 <div class="content">
@@ -132,8 +148,9 @@ Below are some things I've noticed, made, or tried lately — have a look around
 
 </div>
 </div>
-
-<!-- items end -->
+<!-- end post -->
 
 </div>
+<!-- end items -->
+
 </section>
