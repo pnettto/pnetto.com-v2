@@ -25,7 +25,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 
 - Studies
   - GCP Professional Cloud Developer [certification path](https://partner.skills.google/paths/82)
-    - Micro-services architecture
+    - Microservices architecture
     - Logging: Latency, Errors, Saturation and Traffic
 
 - Artifacts
