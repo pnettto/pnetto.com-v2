@@ -13,9 +13,7 @@ Here you can read about my [background](/bio), explore my [work](/work), [photog
 
 Below are some things I've noticed, made, or tried lately — have a look around and [get in touch](/contact) if you'd like!
 
-<br />
-
-<br />
+<br /> <br />
 
 <div class="timeline">
 <!-- start items -->
@@ -26,6 +24,8 @@ Below are some things I've noticed, made, or tried lately — have a look around
 - Studies
   - GCP Professional Cloud Developer [certification path](https://partner.skills.google/paths/82)
     - Microservices architecture
+      - Choreography vs Orchestration
+      - Pub/Sub, Eventarc, Workflows, Cloud Tasks, Cloud Scheduler
     - Logging: Latency, Errors, Saturation and Traffic
 
 - Artifacts
