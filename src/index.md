@@ -23,10 +23,13 @@ Below are some things I've noticed, made, or tried lately — have a look around
 
 - Studies
   - GCP Professional Cloud Developer [certification path](https://partner.skills.google/paths/82)
-    - Microservices architecture
-      - Choreography vs Orchestration
-      - Pub/Sub, Eventarc, Workflows, Cloud Tasks, Cloud Scheduler
-    - Logging: Latency, Errors, Saturation and Traffic
+    - Microservices architecture, Event-driven applications
+    - Pub/Sub, Eventarc, Workflows, Cloud Tasks, Cloud Scheduler
+    - Docker, Kubernetes, Buildpacks
+    - Artifact Registry, Cloud Build (GCP  CI/CD capabilities)
+    - Google Run & Run functions
+    - Choreography vs Orchestration
+    - Handling Latency, Errors, Saturation and Traffic
 
 - Artifacts
   - Hawk got a [new version](https://github.com/pnettto/hawk). It now features a full-fledged Bear-like Note app (uses Tiptap as a editor), and a date range Report page. Design changes were also included to make it more mobile friendly and pleasant to look at :)
@@ -38,6 +41,8 @@ Below are some things I've noticed, made, or tried lately — have a look around
   Text by Benj Edwards about his recent adventures with coding agents. The guy created 50 demos since november, many of which are really nice. It was reassuring to hear someone else (probably lots of us out there) also had a coding fun renaissance.Reminded me of my end-of-year sprint when I created Demo Garden, Code Executor, Hawk and this website.
   - [https://simonwillison.net/2025/Oct/7/vibe-engineering/](https://simonwillison.net/2025/Oct/7/vibe-engineering/)
   A post I arrived at following a link from Benj's text. It talks about the difference between vibe coding and professionally use coding agents, which it jokingly calls vibe engineering haha. My favorite part: "AI tools amplify existing expertise. The more skills and experience you have as a software engineer the faster and better the results you can get from working with LLMs and coding agents.". And the practices experienced professionals can leverage when coding with agents: automated testing, planning in advance, comprehensive documentation, good version control habits, having effective automation in place, a culture of code review, resource management, manual QA, research skills, ability to ship to a preview environment, an instinct for what can be outsourced, and a sense of estimation.
+  - [https://www.youtube.com/watch?v=iv-5mZ_9CPY](https://www.youtube.com/watch?v=iv-5mZ_9CPY)
+  Incredible video by Stephen Welch about how diffusion models generate images. Leaving aside the ethics of commercializing art work that mimics artistic styles (which I personally do not approve of), the science that goes into transforming text into high definition images is absolutely fascinating. Half of the maths he talks about (and brilliantly illustrates) went right over my head but still it was a great insight into how these things actually work.
 
 </div>
 </div>
