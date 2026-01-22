@@ -33,6 +33,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 
 - Artifacts
   - Hawk got a [new version](https://github.com/pnettto/hawk). It now features a full-fledged Bear-like Note app (uses Tiptap as a editor), and a date range Report page. Design changes were also included to make it more mobile friendly and pleasant to look at :)
+  - [Quick Guides](http://demo-garden.pnetto.com/quick-guides) is a way I found to get started quickly with new tools. There is a comprehensive [REFERENCE.md](https://github.com/pnettto/tech-guides/blob/master/REFERENCE.md) file which serves as a specification for how I want a coding agent to create a new guide. This way I just need to say "Based on the references file, create a new guide for tool X", and just like that there is a nice starting point with general information and coding examples.
 
 - Links
   - [https://www.caimito.net/en/blog/2025/12/07/the-recurring-dream-of-replacing-developers.html](https://www.caimito.net/en/blog/2025/12/07/the-recurring-dream-of-replacing-developers.html)
