@@ -22,6 +22,21 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <div class="content">
 
 - Studies
+  - GCP Leaning path [Build with Vertex AI: Deploy Agents with Agent Development Kit (ADK), MCP, and A2A](https://partner.skills.google/paths/3033)
+    - Agent Development Kit (ADK)
+    - Agent tools
+    - Multi-Agent Systems
+    - Agent Engine
+    - Model Context Protocol (MCP) Tools
+
+</div>
+</div>
+<!-- end post -->
+
+<div class="item"> <div class="year" id="2026-01-week-04">2026-01 / week 04</div> <a href="#2026-01-week-04"></a>
+<div class="content">
+
+- Studies
   - GCP Professional Cloud Developer [certification path](https://partner.skills.google/paths/82)
     - Microservices architecture, Event-driven applications
     - Pub/Sub, Eventarc, Workflows, Cloud Tasks, Cloud Scheduler
