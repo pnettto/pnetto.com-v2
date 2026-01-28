@@ -24,10 +24,12 @@ Below are some things I've noticed, made, or tried lately — have a look around
 - Studies
   - GCP Leaning path [Build with Vertex AI: Deploy Agents with Agent Development Kit (ADK), MCP, and A2A](https://partner.skills.google/paths/3033)
     - Agent Development Kit (ADK)
+    - Model Context Protocol (MCP) Tools
     - Agent tools
     - Multi-Agent Systems
-    - Agent Engine
-    - Model Context Protocol (MCP) Tools
+    - Deploy to Agent Engine
+    - Use remote agents with ADK and the A2A SDK
+    - Evaluate ADK agents using Vertex AI
 
 </div>
 </div>
