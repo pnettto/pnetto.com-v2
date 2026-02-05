@@ -22,6 +22,21 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <div class="content">
 
 - Studies
+  - GCP Leaning path [Building RAG Applications with Vertex AI](https://partner.skills.google/paths/2310)
+    - RAG Processes
+    - Embedding techniques/tooling
+    - Vector Search / Postgress/AlloyDB with pgvector / Firestore
+    - Document API & Embedding / Ranking API / Ground Checking API
+    - RAG pitfalls
+
+</div>
+</div>
+<!-- end post -->
+
+<div class="item"> <div class="year" id="2026-01-week-04">2026-01 / week 05</div> <a href="#2026-01-week-04"></a>
+<div class="content">
+
+- Studies
   - GCP Leaning path [Build with Vertex AI: Deploy Agents with Agent Development Kit (ADK), MCP, and A2A](https://partner.skills.google/paths/3033)
     - Agent Development Kit (ADK)
     - Model Context Protocol (MCP) Tools
