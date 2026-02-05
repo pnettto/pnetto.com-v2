@@ -45,6 +45,20 @@ Below are some things I've noticed, made, or tried lately — have a look around
     - Deploy to Agent Engine
     - Use remote agents with ADK and the A2A SDK
     - Evaluate ADK agents using Vertex AI
+    - Deploying AI applications (Vertex AI)
+  - GCP Professional Cloud Developer [certification path](https://partner.skills.google/paths/82): Focus on Cloud Run
+    - Resource model/hierarchy
+    - Container lifecycle
+    - Autoscaling
+    - Access control / IAM / Service accounts / Principle of least priviledge
+    - Secrets and environment variables
+    - Development and testing flows
+    - Deployment and Revisions
+    - Integration with other GCP services
+
+- Links
+  - [https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals](https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals) A take on making coding agents more reliable, when using existing external knowledge bases (like documentation), and agent evaluation.
+  - [https://www.theguardian.com/news/video/2026/jan/30/is-it-time-to-break-up-with-us-big-tech-the-latest](https://www.theguardian.com/news/video/2026/jan/30/is-it-time-to-break-up-with-us-big-tech-the-latest) A conversation about Europe's excessive reliance on American tech, in face of the latest political turmoil between the two powers.
 
 </div>
 </div>
