@@ -18,6 +18,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <div class="timeline">
 <!-- start items -->
 
+<!-- start post -->
 <div class="item"> <div class="year" id="now">Now</div> <a href="#now"></a> 
 <div class="content">
 
@@ -33,6 +34,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 </div>
 <!-- end post -->
 
+<!-- start post -->
 <div class="item"> <div class="year" id="2026-01-week-04">2026-01 / week 05</div> <a href="#2026-01-week-04"></a>
 <div class="content">
 
@@ -64,6 +66,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 </div>
 <!-- end post -->
 
+<!-- start post -->
 <div class="item"> <div class="year" id="2026-01-week-04">2026-01 / week 04</div> <a href="#2026-01-week-04"></a>
 <div class="content">
 
@@ -95,6 +98,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 </div>
 <!-- end post -->
 
+<!-- start post -->
 <div class="item"> <div class="year" id="2026-01-week-03">2026-01 / week 03</div> <a href="#2026-01-week-03"></a>
 <div class="content">
 
@@ -122,6 +126,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 </div>
 <!-- end post -->
 
+<!-- start post -->
 <div class="item"> <div class="year" id="2026-01-week-02">2026-01 / week 02</div> <a href="#2026-01-week-02"></a>
 <div class="content">
 
@@ -163,6 +168,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 </div>
 <!-- end post -->
 
+<!-- start post -->
 <div class="item"><div class="year" id="2026-01-week-01">2026-01 / week 01</div> <a href="#2026-01-week-01"></a>
 <div class="content">
 
@@ -191,6 +197,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 </div>
 <!-- end post -->
 
+<!-- start post -->
 <div class="item"> <div class="year" id="2025-12-week-52">2025-12 / week 52</div> <a href="#2025-12-week-52"></a>
 <div class="content">
 
