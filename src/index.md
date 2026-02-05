@@ -27,8 +27,9 @@ Below are some things I've noticed, made, or tried lately — have a look around
     - RAG Processes
     - Embedding techniques/tooling
     - Vector Search / Postgress/AlloyDB with pgvector / Firestore
-    - Document API & Embedding / Ranking API / Ground Checking API
+    - Document API & Embedding / Ranking API/Cross encoders / Ground Checking API
     - RAG pitfalls
+    - Embedding adapters
 
 </div>
 </div>
