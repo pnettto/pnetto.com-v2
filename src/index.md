@@ -30,7 +30,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
     - Document API & Embedding / Ranking API/Cross encoders / Ground Checking API
     - RAG pitfalls
     - Embedding adapters
-    - Hybrid search / Dense vs. Sparse embeddings / Vectorizers (TF-IDF, BM25, SPLADE)
+    - Hybrid search / Dense vs. Sparse embeddings / Vectorizers (TF-IDF, BM25, SPLADE) / Reciprocal Rank Fusion  (RFF)
 
 </div>
 </div>
