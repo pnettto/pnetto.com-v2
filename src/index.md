@@ -37,7 +37,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <!-- end post -->
 
 <!-- start post -->
-<div class="item"> <div class="year" id="2026-01-week-04">2026-01 / week 05</div> <a href="#2026-01-week-04"></a>
+<div class="item"> <div class="year" id="2026-01-week-04">2026-02 / week 05</div> <a href="#2026-02-week-05"></a>
 <div class="content">
 
 - Studies
