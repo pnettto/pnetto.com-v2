@@ -23,6 +23,20 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <div class="content">
 
 - Studies
+  - GCP Professional Cloud Developer [certification path](https://partner.skills.google/paths/82)
+
+- Links
+  - [https://siddhantkhare.com/writing/ai-fatigue-is-real](https://siddhantkhare.com/writing/ai-fatigue-is-real) A text about an aspect I haven't seen many write-ups about. Despite the clear AI-rewritten aesthetics in this piece (which is kind of annoying at this point, I'd prefer to read typos and funky phrasing than insipid, excessively wordy paragraphs), it does bring up important reflections on working with coding agents. I, for one, intend to keep the mental health aspect of my work in check and never take a step back in terms of quality of life. If I'm to use AI to increase productivity, great. But not at the expense of my wellbeing. It's possible, and this text has some good ideas to this end, namely timeboxing, taking time to do non-AI work and not expecting AI to produce perfect results.
+
+</div>
+</div>
+<!-- end post -->
+
+<!-- start post -->
+<div class="item"> <div class="year" id="2026-01-week-04">2026-02 / week 06</div> <a href="#2026-02-week-06"></a>
+<div class="content">
+
+- Studies
   - GCP Leaning path [Building RAG Applications with Vertex AI](https://partner.skills.google/paths/2310)
     - RAG Processes
     - Embedding techniques/tooling
