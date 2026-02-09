@@ -27,6 +27,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 
 - Links
   - [https://siddhantkhare.com/writing/ai-fatigue-is-real](https://siddhantkhare.com/writing/ai-fatigue-is-real) A text about an aspect I haven't seen many write-ups about. Despite the clear AI-rewritten aesthetics in this piece (which is kind of annoying at this point, I'd prefer to read typos and funky phrasing than insipid, excessively wordy paragraphs), it does bring up important reflections on working with coding agents. I, for one, intend to keep the mental health aspect of my work in check and never take a step back in terms of quality of life. If I'm to use AI to increase productivity, great. But not at the expense of my wellbeing. It's possible, and this text has some good ideas to this end, namely timeboxing, taking time to do non-AI work and not expecting AI to produce perfect results.
+  - [https://mitchellh.com/writing/my-ai-adoption-journey](https://mitchellh.com/writing/my-ai-adoption-journey) A Mitchell Hashimoto text about this personal journel with AI assisted coding. I thought it was refreshing to see someone this smart and successful detailing his learning journey on the topic and kind of reassuring I'm not too far off. I like how he approaches it in a balanced, grounded way, which I definitely resonate with.
 
 </div>
 </div>
