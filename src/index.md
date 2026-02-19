@@ -19,7 +19,28 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <!-- start items -->
 
 <!-- start post -->
-<div class="item"> <div class="year" id="now">Now</div> <a href="#now"></a> 
+<div class="item"> <div class="year" id="2026-01-week-08">Now</div> <a href="#2026-02-week-08"></a>
+<div class="content">
+
+- Studies
+  - GCP Governance
+  - Langfuse
+  - Event-based workflows
+
+- Cloud
+  - Created a event-based solution for auto canceling a project's billing in GCP when a treshold is reached. The flow is: 
+    `Budget alert -> Push to PubSub -> Eventarc Trigger -> Cloud Run Function -> Billing API -> Billing canceled`. 
+    IAM was the biggest pain point, as each service needs to have a suitable Service Account with the right permissions, but not I understand this properly!
+
+- Artifacts
+  - Created Evalgen, a tool to scrape a web pages and PDFs and generate questions that support customers might ask about them, along with expected answers and a broad Telecom category. The purpose is to synthesize data that might be used in agent evaluation with Langfuse, which is a next step. The solution is hosted on GCP Cloud Run, and uses Firestore for keeping the generated results. Aside from a web UI, it exposes the results via JSON through an API endpoint.
+
+</div>
+</div>
+<!-- end post -->
+
+<!-- start post -->
+<div class="item"> <div class="year" id="2026-01-week-07">2026-02 / week 07</div> <a href="#2026-02-week-07"></a>
 <div class="content">
 
 - Studies
@@ -34,7 +55,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <!-- end post -->
 
 <!-- start post -->
-<div class="item"> <div class="year" id="2026-01-week-04">2026-02 / week 06</div> <a href="#2026-02-week-06"></a>
+<div class="item"> <div class="year" id="2026-01-week-06">2026-02 / week 06</div> <a href="#2026-02-week-06"></a>
 <div class="content">
 
 - Studies
@@ -52,7 +73,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <!-- end post -->
 
 <!-- start post -->
-<div class="item"> <div class="year" id="2026-01-week-04">2026-02 / week 05</div> <a href="#2026-02-week-05"></a>
+<div class="item"> <div class="year" id="2026-01-week-05">2026-02 / week 05</div> <a href="#2026-02-week-05"></a>
 <div class="content">
 
 - Studies
