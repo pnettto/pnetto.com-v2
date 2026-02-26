@@ -25,6 +25,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 - Studies
   - GCP Governance
   - Langfuse
+  - Terraform
   - Event-based workflows
 
 - Artifacts
