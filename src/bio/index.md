@@ -6,20 +6,15 @@ header:
 intro:
   text: >
     <p>
-      I’m a Full Stack Web Developer with over a decade of experience in
-      the industry. I have worked as a freelancer, in NGOs, at great creative companies, 
-      ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>) during 4 years, taught and modeled the web development course at <a href="/education/vefskoli">Vefskóli</a> for over 3 years, and 
-      I have co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
-    </p>
-    <p>
-      My most recent work experience was to help
-      <a href="/work/icelandair">Icelandair</a>
-      create better publishing tools and kick-start a new website from scratch,
-      while being the lead front-end developer in the web team.
+      I'm a Full-Stack Web Developer with 10+ years of experience in the industry. I have worked for companies such as [Icelandair](https://pnetto.com/work/icelandair/) and [Kolibri](https://pnetto.com/work/kolibri/), ran my own web studio in Iceland (~[Brisa](https://pnetto.com/work/brisa)~), taught and developed the web development curriculum at ~[Vefskóli](https://pnetto.com/education/vefskoli)~, and co-founded a tourism startup in Vietnam (~[Conbeo](https://pnetto.com/work/conbeo)~).
     </p>
 
     <p>
-      Feel free to reach out via email: 
+      For the past 2 years, I have been building expertise in GenAI, cloud platforms, and data engineering. Now, I am looking for a role that bridges my software development and software architecture background with these newly acquired skills.
+    </p>
+
+    <p>
+      If you're looking to hire, feel free to reach out via email: 
       <a href="mailto:pedro@pnetto.com">pedro@pnetto.com</a>.
     </p>
 techSkills:
