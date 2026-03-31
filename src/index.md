@@ -40,20 +40,29 @@ techSkills:
       - Kafka
       - Databricks
       - ETL/ELT pipelines
-      - Dimensional modeling (Kimball)
+      - Dimensional modeling
   - title: AI
     items:
-      - ADK & LangChain
-      - RAG & vector search
+      - Multi-agent orchestration
+      - RAG pipelines
+      - LLM integration (Vertex AI, OpenAI API)
       - MCP (Model Context Protocol)
-      - Vertex AI
-      - Embeddings
+      - Vector databases & semantic search (ChromaDB, Firestore, pgvector)
+      - Agent observability & evaluation (e.g. Langfuse)
+      - End-to-end AI pipeline delivery
   - title: Infrastructure
     items:
       - Docker / Kubernetes (GKE)
       - CI/CD (GitHub Actions)
       - Linux / Apache / Nginx / TLS
       - Networking
+  - title: Back-end
+    items:
+      - Python / Django / API design
+      - Node.js ecosystem / Express / pm2
+      - PHP
+      - MySQL / Postgres / MongoDB
+      - DevOps familiarity
   - title: Front-end
     items:
       - NextJS/React expertise (incl. server components)
@@ -64,23 +73,12 @@ techSkills:
       - Headless CMS/GraphQL API fluency
       - Micro-service architecture (consumption)
       - Code review proficiency
-  - title: Back-end
-    items:
-      - Python / Django / API design
-      - Node.js ecosystem / Express / pm2
-      - PHP
-      - MySQL / Postgres / MongoDB
-      - DevOps familiarity
   - title: CMS
     items:
       - Content Stack
       - Wordpress / REST API / Custom Gutenberg Blocks
       - Prismic
       - Strapi
-  - title: Other
-    items:
-      - Can design things like this site and collaborate with designers quite well
-      - Good communication skills with non-technical people, about technical topics
 otherSkills:
   - title: Pragmatism
     text: I like to tackle problems in a systematic and predictable way, without inflating the solution unnecessarily.
