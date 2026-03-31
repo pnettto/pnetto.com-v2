@@ -10,7 +10,7 @@ intro:
     </p>
 
     <p>
-      My background spans leading small teams, building internal tooling, and establishing engineering practices — now applied to Python, SQL, GCP, event-driven architectures, and agent frameworks.
+      My background spans leading small teams, building both internal tooling and client-facing systems, and establishing engineering practices — now applied to Python, SQL, GCP, event-driven architectures, and agent frameworks.
     </p>
 
     <p>
@@ -54,8 +54,8 @@ techSkills:
     items:
       - Docker / Kubernetes (GKE)
       - CI/CD (GitHub Actions)
-      - Linux / Apache / Nginx / TLS
-      - Networking
+      - Linux admin and service configuration
+      - Networking literacy
   - title: Back-end
     items:
       - Python / Django / API design
