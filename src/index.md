@@ -25,7 +25,7 @@ techSkills:
       - SQL
       - TypeScript / JavaScript
       - Node.js
-      - Go
+      - Shell Script
   - title: Cloud
     items:
       - GCP (Cloud Run, GKE, Pub/Sub, Eventarc, Vertex AI, IAM)
