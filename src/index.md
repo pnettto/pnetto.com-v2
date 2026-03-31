@@ -81,11 +81,6 @@ techSkills:
     items:
       - Can design things like this site and collaborate with designers quite well
       - Good communication skills with non-technical people, about technical topics
-  - title: Currently studying
-    items:
-      - Code testing
-      - Micro-interactions
-      - Creative coding
 otherSkills:
   - title: Pragmatism
     text: I like to tackle problems in a systematic and predictable way, without inflating the solution unnecessarily.
