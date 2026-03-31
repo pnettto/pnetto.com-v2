@@ -2,7 +2,7 @@
 layout: layouts/bio.njk
 title: Bio
 header:
-  title: Pedro Netto
+  title: Bio
 intro:
   text: >
     <p>
@@ -16,7 +16,7 @@ intro:
     <p>
       Feel free to reach out via email:
       <a href="mailto:pedro@pnetto.com">pedro@pnetto.com</a>.
-      You can also <a href="/assets/pdf/Pedro_Netto_CV.pdf" target="_blank">download my CV</a>.
+      You can also download my <a href="/assets/pdf/cv.pdf" target="_blank">CV (PDF)</a>.
     </p>
 techSkills:
   - title: Languages
