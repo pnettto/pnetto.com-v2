@@ -100,7 +100,7 @@ timeline:
       <ul>
         <li>Data & AI Engineer (intern) at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a>, deployed to Telia</li>
         <li>Built RAG-powered chat assistants using ADK, integrating Confluence and Jira via MCP</li>
-        <li>Built Evalgen: web scraping → LLM processing → QA dataset → API, deployed on GCP Cloud Run</li>
+        <li>Built Evalgen: web scraping → LLM processing → QA evaluation dataset</li>
         <li>Developed observability tooling for agentic systems (session dashboard tracking token usage, latency, and cost)</li>
         <li>Completed GCP Professional Cloud Developer study path and Vertex AI / ADK / RAG training</li>
       </ul>
