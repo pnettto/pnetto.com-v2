@@ -6,7 +6,7 @@ header:
 intro:
   text: >
     <p>
-      Software engineer with 10+ years of experience, currently focused on data engineering and agentic AI at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> (deployed to Telia). I've worked for companies such as <a href="/work/icelandair">Icelandair</a> and <a href="/work/kolibri">Kolibri</a>, ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>), taught and developed the web development curriculum at <a href="/work/tskoli">Tækniskólinn</a>, and co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
+      Software engineer with 12+ years of experience, currently focused on data engineering and agentic AI at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> (deployed to Telia). I've worked for companies such as <a href="/work/icelandair">Icelandair</a> and <a href="/work/kolibri">Kolibri</a>, ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>), taught and developed the web development curriculum at <a href="/work/tskoli">Tækniskólinn</a>, and co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
     </p>
 
     <p>
@@ -21,17 +21,18 @@ intro:
 techSkills:
   - title: Languages
     items:
-      - Python (FastAPI, Pandas)
+      - Python (FastAPI, Django, Flask, Pandas)
       - SQL
       - TypeScript / JavaScript
-      - Node.js
+      - Node.js / Deno
+      - Go (basic)
       - Shell Script
   - title: Cloud
     items:
-      - GCP (Cloud Run, GKE, Pub/Sub, Eventarc, Vertex AI, IAM)
+      - GCP (Cloud Run, Compute Engine, GKE, Pub/Sub, Eventarc, Vertex AI, IAM, Cloud Build, Artifact Registry, Cloud Logging, Cloud Storage)
       - AWS (EC2, S3)
       - Azure
-      - Vercel / Digital Ocean / Netlify
+      - Vercel / Fly.io / Deno Deploy / Digital Ocean / Netlify
   - title: Data
     items:
       - Airflow
@@ -43,25 +44,30 @@ techSkills:
       - Dimensional modeling
   - title: AI
     items:
-      - Multi-agent orchestration
+      - Multi-agent orchestration (ADK, LangChain)
       - RAG pipelines
-      - LLM integration (Vertex AI, OpenAI API)
-      - MCP (Model Context Protocol)
+      - LLM integration (Vertex AI, OpenAI API, Gemini)
+      - MCP (Model Context Protocol) / A2A
       - Vector databases & semantic search (ChromaDB, Firestore, pgvector)
-      - Agent observability & evaluation (e.g. Langfuse)
+      - Prompt engineering
+      - Agent observability & evaluation (e.g. Langfuse, Cloud Logging)
       - End-to-end AI pipeline delivery
   - title: Infrastructure
     items:
       - Docker / Kubernetes (GKE)
-      - CI/CD (GitHub Actions)
+      - CI/CD (GitHub Actions, Cloud Build)
+      - Nginx / Caddy / Apache
       - Linux admin and service configuration
+      - Terraform (introductory)
       - Networking literacy
   - title: Back-end
     items:
-      - Python / Django / API design
+      - Python / FastAPI / Django / API design
       - Node.js ecosystem / Express / pm2
-      - PHP
-      - MySQL / Postgres / MongoDB
+      - Go
+      - REST APIs / GraphQL / WebSockets
+      - OAuth / JWT / auth patterns
+      - MySQL / Postgres / MongoDB / Redis
       - DevOps familiarity
   - title: Front-end
     items:
@@ -70,6 +76,7 @@ techSkills:
       - Interface Development & UX awareness
       - SEO, Performance Optimization, & Security Best Practices
       - Build tooling/Continuous Integration
+      - Web Components
       - Headless CMS/GraphQL API fluency
       - Micro-service architecture (consumption)
       - Code review proficiency
@@ -92,6 +99,10 @@ otherSkills:
     text: I redesigned a Web Development curriculum — 40 modules, 3 cohorts, ~75% job placement rate. More about that <a href="/work/tskoli/">here</a>.
   - title: Entrepreneur
     text: I co-founded 2 companies. Making ideas become reality is a challenging and exciting concept to me.
+  - title: Cross-cultural collaboration
+    text: Worked across 4 countries (Brazil, Iceland, Vietnam, Sweden) with international teams, clients, and stakeholders.
+  - title: Technical writing
+    text: Documentation habits — learning guides, internal references, project READMEs, and technical blog posts.
   - title: Languages
     text: Portuguese (native) · English (fluent) · Spanish (advanced) · Icelandic, Danish, Swedish (basic).
 timeline:
@@ -102,6 +113,9 @@ timeline:
         <li>Built RAG-powered chat assistants using ADK, integrating Confluence and Jira via MCP</li>
         <li>Built Evalgen: web scraping → LLM processing → QA evaluation dataset</li>
         <li>Developed observability tooling for agentic systems (session dashboard tracking token usage, latency, and cost)</li>
+        <li>Designed event-driven GCP billing automation: Budget Alert → Pub/Sub → Eventarc → Cloud Run Function → Billing API</li>
+        <li>Delivered MCP-enabled chatbot prototype in 1 day, unblocking a project stalled for weeks</li>
+        <li>Worked alongside data engineers on Spark-based pipelines (Arcus) and on-prem Kubernetes clusters</li>
         <li>Completed GCP Professional Cloud Developer study path and Vertex AI / ADK / RAG training</li>
       </ul>
   - title: 2024
@@ -110,6 +124,7 @@ timeline:
         <li>Took a half-year sabbatical to travel through Costa Rica, Panama, Brazil, Tanzania, New Zealand, Thailand, Denmark and Sweden.</li>
         <li>Developed <a href="https://visitmaca.com" target="_blank">MACA</a>'s and <a href="https://teiahhospitality.com" target="_blank">Teiah</a>'s website</li>
         <li>Started studying Data Analysis at <a href="https://hyperisland.se" target="_blank">Hyper Island</a>.</li>
+        <li>Built <a href="/work/instant-graph-maker">Instant Graph Maker</a>, an LLM-powered chart creator using Python, Streamlit, OpenAI API, and ChromaDB (Hyper Island capstone).</li>
       </ul>
   - title: 2022 - 2024
     text: >
@@ -130,7 +145,7 @@ timeline:
           Kolibri
         </a>, creating beautiful things like this website for the  <a href="https://listasafn.is" target="_blank" rel="noopener">
         National Gallery of Iceland
-        </a> on the Next.js stack.
+        </a> on the Next.js stack. Built a custom search integration for an external data source where no off-the-shelf solution existed.
       </p>
   - title: 2018 - 2021
     text: >
@@ -152,7 +167,11 @@ timeline:
   - title: 2014 - 2018
     text: >
       <p>
-        Founded Brisa, my web studio, where I created sites such as
+        Founded <a href="/work/brisa">Brisa</a>, my web studio, with ~10 associates
+        (developers, designers, photographers, illustrators). Delivered 15+ projects
+        for clients including the Icelandic Ministry of Education, Lýsi, and Kaffitár,
+        plus international clients <a href="/work/unmind">Unmind</a> (UK) and CoPlus (DK).
+        Other projects include
         <a href="https://listfyriralla.is" target="_blank" rel="noopener">
           List Fyrir Alla
         </a>,
