@@ -132,7 +132,7 @@ timeline:
         Lead front-end developer at 
         <a href="https://icelandair.is" target="_blank" rel="noopener">
           Icelandair
-        </a>. Led a team of 4 delivering a new airline portal from scratch within a microservices ecosystem, serving tens of thousands of daily visits.
+        </a>. Led a team of 4 developing a new airline portal, serving tens of thousands of daily visits.
       </p>
       <p>
         Created onboarding documentation that reduced ramp-up time for new developers. Built CMS tools that gave the content team publishing independence, removing an engineering bottleneck.
