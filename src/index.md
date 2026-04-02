@@ -10,11 +10,11 @@ intro:
     </p>
 
     <p>
-      My background spans leading small teams, building both internal tooling and client-facing systems, and establishing engineering practices — now applied to Python, SQL, GCP, event-driven architectures, and agent frameworks.
+      My background spans leading small teams, building end-to-end client-facing systems, and establishing engineering practices. Now expanding my Python, SQL, data transformation, cloud development, event-driven architectures, and agentic AI frameworks skills. 
     </p>
 
     <p>
-      Feel free to reach out via email:
+      I'm currently looking for a new team to join! Feel free to reach out via email:
       <a href="mailto:pedro@pnetto.com">pedro@pnetto.com</a>.
       You can also <a href="/assets/pdf/Pedro_Netto_CV.pdf" target="_blank">download my CV</a>.
     </p>
@@ -25,61 +25,59 @@ techSkills:
       - SQL
       - TypeScript / JavaScript
       - Node.js / Deno
-      - Go (basic)
       - Shell Script
+      - Go (reading)
   - title: Cloud
     items:
       - GCP (Cloud Run, Compute Engine, GKE, Pub/Sub, Eventarc, Vertex AI, IAM, Cloud Build, Artifact Registry, Cloud Logging, Cloud Storage)
       - AWS (EC2, S3)
-      - Azure
+      - Azure/Fabric fundamentals
       - Vercel / Fly.io / Deno Deploy / Digital Ocean / Netlify
   - title: Data
     items:
       - Airflow
+      - Kafka
+      - PySpark
+      - Databricks
       - Snowflake
       - dbt
-      - Kafka
-      - Databricks
       - ETL/ELT pipelines
-      - Dimensional modeling
+      - Dimensional modeling literacy
   - title: AI
     items:
-      - Multi-agent orchestration (ADK, LangChain)
+      - Multi-agent orchestration
       - RAG pipelines
-      - LLM integration (Vertex AI, OpenAI API, Gemini)
+      - LLM integration (Vertex AI, OpenAI, Anthropic)
       - MCP (Model Context Protocol) / A2A
       - Vector databases & semantic search (ChromaDB, Firestore, pgvector)
       - Prompt engineering
-      - Agent observability & evaluation (e.g. Langfuse, Cloud Logging)
-      - End-to-end AI pipeline delivery
+      - Agent observability & evaluation (Langfuse, Vertex AI, Cloud Logging)
   - title: Infrastructure
     items:
       - Docker / Kubernetes (GKE)
-      - CI/CD (GitHub Actions, Cloud Build)
+      - CI/CD (GitHub Actions, GCP Cloud Build)
       - Nginx / Caddy / Apache
       - Linux admin and service configuration
-      - Terraform (introductory)
       - Networking literacy
   - title: Back-end
     items:
-      - Python / FastAPI / Django / API design
-      - Node.js ecosystem / Express / pm2
-      - Go
+      - Python / FastAPI / Flask / Django
+      - API design
       - REST APIs / GraphQL / WebSockets
-      - OAuth / JWT / auth patterns
+      - Node.js ecosystem / Express
+      - OAuth / auth patterns
       - MySQL / Postgres / MongoDB / Redis
-      - DevOps familiarity
+      - Micro-service architecture
+      - DevOps fluency
   - title: Front-end
     items:
-      - NextJS/React expertise (incl. server components)
+      - NextJS/React expertise
       - Typescript proficiency
       - Interface Development & UX awareness
       - SEO, Performance Optimization, & Security Best Practices
       - Build tooling/Continuous Integration
       - Web Components
       - Headless CMS/GraphQL API fluency
-      - Micro-service architecture (consumption)
-      - Code review proficiency
   - title: CMS
     items:
       - Content Stack
@@ -222,40 +220,5 @@ timeline:
         </a>
         in a range of positions, organized EESL, a student-led series
         of conferences about Open Source Software.
-      </p>
-personalInterests:
-  - title: Music
-    text: >
-      <p>
-        I play the guitar since my teenage years and have been looking
-        for a band to join lately. Wanna jam? :)
-      </p>
-  - title: Photography
-    text: >
-      <p>
-        Early in 2020 I bought a Fujifilm X-T20 and have been having a
-        fantastic time capturing some of the beautiful things I see
-        around.
-      </p>
-      <p>
-        Check my pics on the
-        <a href="/photos">photos</a> section!
-      </p>
-  - title: Drawing & Painting
-    text: >
-      <p>
-        Admittedly, I’m the worse at drawing. To counter this small
-        issue, I love creating pictures that don’t require this skill,
-        like creating patterns.
-      </p>
-      <p>
-        I’ve been experimenting with pencil, pen, watercolor and
-        digital creation.
-      </p>
-  - title: Philosophy
-    text: >
-      <p>
-        The questions with answers can amaze, but the ones without any
-        make you stare into the void and wonder: why? 🔮
       </p>
 ---

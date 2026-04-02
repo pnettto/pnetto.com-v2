@@ -113,15 +113,3 @@ containerClass: narrow
     </div>
 </section>
 
-<a id="{{ "Personal Interests" | slugify }}" class="anchor"></a>
-<section id="personal-interests" class="bio-section">
-    <h2 class="underlined">Some personal interests</h2>
-    <div class="skills-grid">
-        {% for interest in personalInterests %}
-            <div class="skill-group">
-                <h3>{{ interest.title }}</h3>
-                <div class="interest-text">{{ interest.text | safe }}</div>
-            </div>
-        {% endfor %}
-    </div>
-</section>
