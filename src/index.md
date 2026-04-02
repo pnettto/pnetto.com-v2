@@ -96,7 +96,7 @@ otherSkills:
   - title: Educator
     text: I redesigned a Web Development curriculum — 40 modules, 3 cohorts, ~75% job placement rate. More about that <a href="/work/tskoli/">here</a>.
   - title: Entrepreneur
-    text: I co-founded 2 companies. Making ideas become reality is a challenging and exciting concept to me.
+    text: I co-founded 2 companies. Making ideas become reality is deeply rewarding to me.
   - title: Cross-cultural collaboration
     text: Worked across 4 countries (Brazil, Iceland, Vietnam, Sweden) with international teams, clients, and stakeholders.
   - title: Technical writing
