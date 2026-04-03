@@ -23,12 +23,18 @@ Below are some things I've noticed, made, or tried lately — have a look around
   - Langfuse
   - Terraform
   - Event-based workflows
+  - RAG pipeline design & ADK multi-agent orchestration
+  - MCP (Model Context Protocol)
+  - Prompt engineering & session context management
 
 - Artifacts
   - Created Evalgen, a tool to scrape a web pages and PDFs and generate questions that support customers might ask about them, along with expected answers and a broad Telecom category. The purpose is to synthesize data that might be used in agent evaluation with Langfuse, which is a next step. The solution is hosted on GCP Cloud Run, and uses Firestore for keeping the generated results. Aside from a web UI, it exposes the results via JSON through an API endpoint.
   - Created a event-based solution for auto canceling a project's billing in GCP when a spending treshold is reached. The flow is: 
   `Budget alert -> Push to PubSub -> Eventarc Trigger -> Cloud Run Function -> Billing API -> Billing canceled`. 
   IAM was the biggest pain point, as each service needs to have a suitable Service Account with the right permissions, but not I understand this properly!
+  - Helping develop RAG-powered chat assistants for Telia using ADK, capable of handling product information retrieval, real-time support from internal knowledge bases (Confluence, Jira), and support ticket creation.
+  - Developed an alternative GCP Logging integration for Langfuse, giving the team visibility into agentic system behavior alongside the existing observability setup.
+  - Built MCP-enabled applications that expose tools and context to LLMs in a structured, composable way.
 
 </div>
 </div>
