@@ -6,7 +6,7 @@ header:
 intro:
   text: >
     <p>
-      Software engineer with 12+ years of experience, currently focused on data engineering and agentic AI at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> (deployed to Telia). I've worked for companies such as <a href="/work/icelandair">Icelandair</a> and <a href="/work/kolibri">Kolibri</a>, ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>), taught and developed the web development curriculum at <a href="/work/tskoli">Tækniskólinn</a>, and co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
+      Software engineer with 10+ years of experience, currently focused on data engineering and agentic AI at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> (deployed to Telia). I've worked for companies such as <a href="/work/icelandair">Icelandair</a> and <a href="/work/kolibri">Kolibri</a>, ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>), taught and developed the web development curriculum at <a href="/work/tskoli">Tækniskólinn</a>, and co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
     </p>
 
     <p>
