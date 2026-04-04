@@ -134,6 +134,18 @@ containerClass: narrow
             </section>
         {% endif %}
 
+        {% if detailsSection %}
+            <section class="details-section">
+                <h3>{{ detailsSection.title }}</h3>
+                {% for part in detailsSection.parts %}
+                    <div class="details-part">
+                        <h4>{{ part.title }}</h4>
+                        <div>{{ part.text | safe }}</div>
+                    </div>
+                {% endfor %}
+            </section>
+        {% endif %}
+
         {% if content | length > 0 %}
             <div class="project-main-content">
                 {{ content | safe }}
