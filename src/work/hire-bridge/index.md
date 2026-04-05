@@ -7,7 +7,7 @@ categories:
 slug: hire-bridge
 title: Hire Bridge
 role: Author
-url: https://github.com/pnettto/hire-bridge
+url: Not public (yet)
 coverImage: cover-3.png
 screensSection:
   - media: cover-3.png
