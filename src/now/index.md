@@ -7,7 +7,11 @@ containerClass: narrow
 <section id="timeline" class="post-content">
 <h1 class="underlined">Now</h1>
 
-Below are some things I've noticed, made, or tried lately — have a look around and [get in touch](/contact) if you'd like!
+Below are some things I've noticed, made, or tried lately — have a look around and [get in touch](/contact) if you'd like.
+
+Also, I'm currently looking for a new team to join! Feel free to reach out via email: <a href="mailto:pedro@pnetto.com">pedro@pnetto.com</a>.
+You can also <a href="/assets/pdf/Pedro_Netto_CV.pdf" target="_blank">download my CV</a>.
+</p>
 
 <br />
 
@@ -17,6 +21,8 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <!-- start post -->
 <div class="item"> <div class="year" id="2026-01-week-08">Now</div> <a href="#2026-02-week-08"></a>
 <div class="content">
+
+- Officially started a job search! You can <a href="/assets/pdf/Pedro_Netto_CV.pdf" target="_blank">download my CV</a> here.
 
 - Studies
   - GCP Governance
