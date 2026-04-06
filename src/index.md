@@ -96,13 +96,13 @@ otherSkills:
   - title: Educator
     text: I redesigned a Web Development curriculum — 40 modules, 3 cohorts, ~75% job placement rate. More about that <a href="/work/tskoli/">here</a>.
   - title: Entrepreneur
-    text: I co-founded 2 companies. Making ideas become reality is deeply rewarding to me.
+    text: I co-founded 2 companies. Bringing ideas to life is deeply rewarding, and I carry an entrepreneurial mindset into every role I take on.
   - title: Cross-cultural collaboration
     text: Worked across 4 countries (Brazil, Iceland, Vietnam, Sweden) with international teams, clients, and stakeholders.
   - title: Technical writing
     text: Documentation habits — learning guides, internal references, project READMEs, and technical blog posts.
   - title: Languages
-    text: Portuguese (native) · English (fluent) · Spanish (advanced) · Icelandic, Danish, Swedish (basic).
+    text: Portuguese (native) / English (fluent) / Spanish (advanced) / Icelandic, Danish, Swedish (basic)
 timeline:
   - title: 2025 – 2026
     text: >
