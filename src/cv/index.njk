@@ -5,17 +5,20 @@ permalink: /cv/
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="1; url=/assets/pdf/Pedro_Netto_CV.pdf">
+  <meta http-equiv="refresh" content="2; url=/assets/pdf/Pedro_Netto_CV.pdf">
   <title>CV – Pedro Netto</title>
   <script
-    defer
     src="https://cloud.umami.is/script.js"
     data-website-id="6bee7ceb-6636-4498-9524-5e21d4b48fd2"
+    data-auto-track="false"
   ></script>
   <script>
-    setTimeout(function() {
-      window.location.href = "/assets/pdf/Pedro_Netto_CV.pdf";
-    }, 300);
+    window.addEventListener('load', function() {
+      umami.track(function(props) { return Object.assign({}, props, { url: '/cv' }); });
+      setTimeout(function() {
+        window.location.href = "/assets/pdf/Pedro_Netto_CV.pdf";
+      }, 500);
+    });
   </script>
 </head>
 <body>
