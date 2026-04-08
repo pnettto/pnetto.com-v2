@@ -6,7 +6,7 @@ header:
 intro:
   text: >
     <p>
-      Software engineer with 10+ years of experience, currently focused on data engineering and agentic AI at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> (deployed to Telia). I've worked for companies such as <a href="/work/icelandair">Icelandair</a> and <a href="/work/kolibri">Kolibri</a>, ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>), taught and developed the web development curriculum at <a href="/work/tskoli">Tækniskólinn</a>, and co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
+      Software engineer with 10+ years of experience, currently focused on agentic AI at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> (deployed to Telia). I've worked for companies such as <a href="/work/icelandair">Icelandair</a> and <a href="/work/kolibri">Kolibri</a>, ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>), taught and developed the web development curriculum at <a href="/work/tskoli">Tækniskólinn</a>, and co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
     </p>
 
     <p>
@@ -107,14 +107,16 @@ timeline:
   - title: 2025 – 2026
     text: >
       <ul>
-        <li>Data & AI Engineer (intern) at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a>, deployed to Telia</li>
-        <li>Built RAG-powered chat assistants using ADK, integrating Confluence and Jira via MCP</li>
-        <li>Built Evalgen: web scraping → LLM processing → QA evaluation dataset</li>
-        <li>Developed observability tooling for agentic systems (session dashboard tracking token usage, latency, and cost)</li>
-        <li>Designed event-driven GCP billing automation: Budget Alert → Pub/Sub → Eventarc → Cloud Run Function → Billing API</li>
-        <li>Delivered MCP-enabled chatbot prototype in 1 day, unblocking a project stalled for weeks</li>
-        <li>Worked alongside data engineers on Spark-based pipelines (Arcus) and on-prem Kubernetes clusters</li>
-        <li>Completed GCP Professional Cloud Developer study path and Vertex AI / ADK / RAG training</li>
+        <li>Agentic AI Engineer internship at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> (client: Telia)</li>
+        <ul>
+          <li>Built RAG-powered chat assistants using ADK, integrating Confluence and Jira via MCP</li>
+          <li>Built Evalgen: web scraping → LLM processing → QA evaluation dataset</li>
+          <li>Developed observability tooling for agentic systems (session dashboard tracking token usage, latency, and cost)</li>
+          <li>Designed event-driven GCP billing automation: Budget Alert → Pub/Sub → Eventarc → Cloud Run Function → Billing API</li>
+          <li>Delivered MCP-enabled chatbot prototype in 1 day, unblocking a project stalled for weeks</li>
+          <li>Worked alongside data engineers on Spark-based pipelines (Arcus) and on-prem Kubernetes clusters</li>
+          <li>Completed GCP Professional Cloud Developer study path and Vertex AI / ADK / RAG training</li>
+        </ul>
       </ul>
   - title: 2024
     text: >
