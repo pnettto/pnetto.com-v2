@@ -14,7 +14,7 @@ intro:
     </p>
 
     <p>
-      I'm currently looking for a new team to join! Feel free to reach out via email:
+      Feel free to reach out via email:
       <a href="mailto:pedro@pnetto.com">pedro@pnetto.com</a>.
       You can also <a href="/assets/pdf/Pedro_Netto_CV.pdf" target="_blank">download my CV</a>.
     </p>
