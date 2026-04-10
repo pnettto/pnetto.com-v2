@@ -10,7 +10,7 @@ intro:
     </p>
 
     <p>
-      My background spans leading small teams, building end-to-end client-facing systems, and establishing engineering practices. Now expanding my Python, SQL, data transformation, cloud development, event-driven architectures, and agentic AI frameworks skills. 
+      My background spans leading small teams, building end-to-end client-facing systems, and establishing engineering practices. Now expanding my skills in agentic AI frameworks, cloud development, event-driven architectures and data transformation. 
     </p>
 
     <p>
