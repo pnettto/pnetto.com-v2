@@ -6,15 +6,15 @@ header:
 intro:
   text: >
     <p>
-      Software engineer with 15 years of experience, currently focused on Agentic AI at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> (deployed to Telia). I've worked for companies such as <a href="/work/icelandair">Icelandair</a> and <a href="/work/kolibri">Kolibri</a>, ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>), taught and developed the web development curriculum at <a href="/work/tskoli">Tækniskólinn</a>, and co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
+      Software engineer with 15 years of experience, currently focused on Agentic AI at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> (deployed to Telia). I've worked for companies such as <a href="/work/icelandair">Icelandair</a> and <a href="/work/kolibri">Kolibri</a>, ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>), developed the web development curriculum at <a href="/work/tskoli">Tækniskólinn</a>, and co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
     </p>
 
     <p>
-      My background spans leading small teams (lead dev at Icelandair), coordinating cross-team end-to-end initiatives (founder at Brisa), and setting engineering standards.
+      My main professional trait is a passion for clarity and efficiency. I strive to communicate explicitly, automate and document often, push to reduce noise, and write code that's simple to read. Beyond engineering, my background includes leading small teams and coordinating cross-team end-to-end initiatives.
     </p>
 
     <p>
-    I’m always curious and eager to learn. Current tech stack: Python, Node.js, SQL/Postgres, Docker, ADK, Google Cloud Platform, and <a href="https://pnetto.com/#tech-skills">many more</a>. I’m always curious and eager to learn something new!
+    I’m always curious and eager to learn! My current tech stack includes: Python, Node.js, SQL/Postgres, Docker, ADK/Langchain, Google Cloud Platform and ELT (Kafka/Airflow/Spark/dbt/Snowflake). See more <a href="https://pnetto.com/#tech-skills">here</a>.
     </p>
 
     <p>
@@ -41,12 +41,10 @@ techSkills:
     items:
       - Airflow
       - Kafka
-      - PySpark
-      - Databricks
-      - Snowflake
+      - Spark
       - dbt
-      - ETL/ELT pipelines
-      - Dimensional modeling literacy
+      - Snowflake
+      - Dimensional modeling
   - title: AI
     items:
       - Multi-agent orchestration
