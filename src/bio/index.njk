@@ -1,0 +1,40 @@
+---
+permalink: /cv/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="2; url=/">
+  <title>CV – Pedro Netto</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #111;
+      color: #aaa;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a { color: #ccc; }
+  </style>
+  <script
+    src="https://cloud.umami.is/script.js"
+    data-website-id="6bee7ceb-6636-4498-9524-5e21d4b48fd2"
+    data-auto-track="false"
+  ></script>
+  <script>
+    window.addEventListener('load', function() {
+      umami.track(function(props) { return Object.assign({}, props, { url: '/bio' }); });
+      setTimeout(function() {
+        window.location.href = "/";
+      }, 500);
+    });
+  </script>
+</head>
+<body>
+  <p><a href="/">Click here</a> if you don't get redirected automatically.</p>
+</body>
+</html>
