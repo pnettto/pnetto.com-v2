@@ -37,7 +37,7 @@ techSkills:
       - AWS (EC2, S3)
       - Azure/Fabric fundamentals
       - Vercel / Fly.io / Deno Deploy / Digital Ocean / Netlify
-  - title: Data Engineering (familiar)
+  - title: Data Engineering
     items:
       - Airflow
       - Kafka
