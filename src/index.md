@@ -10,7 +10,16 @@ intro:
     </p>
 
     <p>
-      My background spans leading small teams, building end-to-end client-facing systems, and establishing engineering practices. Now expanding my skills in agentic AI frameworks, cloud development, event-driven architectures and data transformation. 
+      I’m passionate about clarity and efficiency. I communicate explicitly, automate and document often, push to eliminate noise, and write code that's simple to read and easy to hand off.
+    </p>
+    </p>
+
+    <p>
+      My background spans leading small teams (lead dev at Icelandair), coordinating cross-team end-to-end initiatives (founder at Brisa), and setting engineering standards.
+    </p>
+
+    <p>
+    I’m always curious and eager to learn. Current tech stack: Python, Node.js, SQL/Postgres, Docker, ADK, Google Cloud Platform, and <a href="https://pnetto.com/#tech-skills">many more</a>. I’m always curious and eager to learn something new!
     </p>
 
     <p>
