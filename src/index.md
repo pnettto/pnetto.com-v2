@@ -10,11 +10,6 @@ intro:
     </p>
 
     <p>
-      I’m passionate about clarity and efficiency. I communicate explicitly, automate and document often, push to eliminate noise, and write code that's simple to read and easy to hand off.
-    </p>
-    </p>
-
-    <p>
       My background spans leading small teams (lead dev at Icelandair), coordinating cross-team end-to-end initiatives (founder at Brisa), and setting engineering standards.
     </p>
 
