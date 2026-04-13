@@ -24,6 +24,8 @@ You can also <a href="/assets/pdf/Pedro_Netto_CV.pdf" target="_blank">download m
 
 - Officially started a job search! You can <a href="/assets/pdf/Pedro_Netto_CV.pdf" target="_blank">download my CV</a> here.
 
+- Delivered a guest lecture at Hyper Island to the current Data Analysis cohort on Agentic AI and new modes of data visualization.
+
 - Studies
   - GCP Governance
   - Langfuse
