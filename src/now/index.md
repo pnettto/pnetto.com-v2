@@ -28,6 +28,7 @@ You can also <a href="/assets/pdf/Pedro_Netto_CV.pdf" target="_blank">download m
 
 - Studies
   - GCP Governance
+  - LangGraph, Pydantic AI
   - Langfuse
   - Terraform
   - Event-based workflows
@@ -36,6 +37,7 @@ You can also <a href="/assets/pdf/Pedro_Netto_CV.pdf" target="_blank">download m
   - Prompt engineering & session context management
 
 - Artifacts
+  - Created <a href="/work/hire-bridge/">Hire Bridge</a>, a platform to manage my recently started job search. It involves 3 services: a frontend, a backend and a queue management system for loosely coupled long-running requests. <a href="/assets/pdf/Pedro_Netto_CV.pdf" target="_blank">Download my CV</a> :) 
   - Created Evalgen, a tool to scrape a web pages and PDFs and generate questions that support customers might ask about them, along with expected answers and a broad Telecom category. The purpose is to synthesize data that might be used in agent evaluation with Langfuse, which is a next step. The solution is hosted on GCP Cloud Run, and uses Firestore for keeping the generated results. Aside from a web UI, it exposes the results via JSON through an API endpoint.
   - Created a event-based solution for auto canceling a project's billing in GCP when a spending treshold is reached. The flow is: 
   `Budget alert -> Push to PubSub -> Eventarc Trigger -> Cloud Run Function -> Billing API -> Billing canceled`. 
