@@ -35,6 +35,8 @@ You can also <a href="/cv" target="_blank">download my CV</a>.
   - Created <a href="/work/hire-bridge/">Hire Bridge</a>, a platform to manage my recently started job search. It involves 3 services: a frontend, a backend, and a queue management system for loosely coupled long-running requests. It's full of useful features that are super helpful in the complex task of finding a good placement fit. Btw while you're here, <a href="/cv" target="_blank">download my CV</a> :) 
   - Created a demo that showcases my ELT knowledge. It listens to a Wikipedia event stream, then uses Airflow to orchestrate a periodic chain of transformations, including storing the raw events with Kafka (bronze layer), creating the Silver and Gold layers with dbt, and saving all that data in Snowflake along the way. Finally, the Gold dataset is consumed in Google Looker. Screenshots and details coming soon.
 
+- Links
+  - [This video](https://www.youtube.com/watch?v=mtiOK2QG9Q0) by Sabrina Kopecki (IBM) talks about what serious agentic development should account for, in 7 points. I thought it was beautifully laid out, and explained with striking clarity and sobriety. It made me want to create exercises for each skill to showcase that I'm a trustworthy developer in the field, so I'll create a repo for that soon.
 </div>
 </div>
 <!-- end post -->
