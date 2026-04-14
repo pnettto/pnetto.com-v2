@@ -27,8 +27,24 @@ You can also <a href="/cv" target="_blank">download my CV</a>.
 - Delivered a guest lecture at Hyper Island to the current Data Analysis cohort on Agentic AI and new modes of data visualization.
 
 - Studies
-  - GCP Governance
   - LangGraph, Pydantic AI
+  - Celery/ On prems distributed queue management
+
+- Artifacts
+  - Created a <a href="/cv" target="_blank">new CV</a>. To me, one of the important things about looking for a job is the reflection period you need to go through. Who are you, professionally? What do you bring to the table and what do you need in your career? This document has been instrumental in defining an updated, more accurate narrative about me and where I'm pointing towards.
+  - Created <a href="/work/hire-bridge/">Hire Bridge</a>, a platform to manage my recently started job search. It involves 3 services: a frontend, a backend, and a queue management system for loosely coupled long-running requests. It's full of useful features that are super helpful in the complex task of finding a good placement fit. Btw while you're here, <a href="/cv" target="_blank">download my CV</a> :) 
+  - Created a demo that showcases my ELT knowledge. It listens to a Wikipedia event stream, then uses Airflow to orchestrate a periodic chain of transformations, including storing the raw events with Kafka (bronze layer), creating the Silver and Gold layers with dbt, and saving all that data in Snowflake along the way. Finally, the Gold dataset is consumed in Google Looker. Screenshots and details coming soon.
+
+</div>
+</div>
+<!-- end post -->
+
+<!-- start post -->
+<div class="item"> <div class="year" id="2026-01-week-08">2026-03...04 / weeks 08...15</div> <a href="#2026-02-week-08"></a>
+<div class="content">
+
+- Studies
+  - GCP Governance
   - Langfuse
   - Terraform
   - Event-based workflows
@@ -37,9 +53,6 @@ You can also <a href="/cv" target="_blank">download my CV</a>.
   - Prompt engineering & session context management
 
 - Artifacts
-  - Created a <a href="/cv" target="_blank">new CV</a>. To me, one of the important things about looking for a job is the reflection period you need to go through. Who are you, professionally? What do you bring to the table and what do you need in your career? This document has been instrumental in defining an updated, more accurate narrative about me and where I'm pointing towards.
-  - Created <a href="/work/hire-bridge/">Hire Bridge</a>, a platform to manage my recently started job search. It involves 3 services: a frontend, a backend, and a queue management system for loosely coupled long-running requests. It's full of useful features that are super helpful in the complex task of finding a good placement fit. Btw while you're here, <a href="/cv" target="_blank">download my CV</a> :) 
-  - Created a demo that showcases my ELT knowledge. It listens to a Wikipedia event stream, then uses Airflow to orchestrate a periodic chain of transformations, including storing the raw events with Kafka (bronze layer), creating the Silver and Gold layers with dbt, and saving all that data in Snowflake along the way. Finally, the Gold dataset is consumed in Google Looker. Screenshots and details coming soon.
   - Created Evalgen, a tool to scrape a web pages and PDFs and generate questions that support customers might ask about them, along with expected answers and a broad Telecom category. The purpose is to synthesize data that might be used in agent evaluation with Langfuse, which is a next step. The solution is hosted on GCP Cloud Run, and uses Firestore for keeping the generated results. Aside from a web UI, it exposes the results via JSON through an API endpoint.
   - Created a event-based solution for auto canceling a project's billing in GCP when a spending treshold is reached. The flow is: 
   `Budget alert -> Push to PubSub -> Eventarc Trigger -> Cloud Run Function -> Billing API -> Billing canceled`. 
