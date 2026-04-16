@@ -37,6 +37,7 @@ You can also <a href="/cv" target="_blank">download my CV</a>.
 
 - Links
   - [This video](https://www.youtube.com/watch?v=mtiOK2QG9Q0) by Sabrina Kopecki (IBM) talks about what serious agentic development should account for, in 7 points. I thought it was beautifully laid out, and explained with striking clarity and sobriety. It made me want to create exercises for each skill to showcase that I'm a trustworthy developer in the field, so I'll create a repo for that soon.
+  
 </div>
 </div>
 <!-- end post -->
