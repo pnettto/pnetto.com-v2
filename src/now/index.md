@@ -29,6 +29,7 @@ You can also <a href="/cv" target="_blank">download my CV</a>.
 - Studies
   - LangGraph, Pydantic AI
   - Celery/ On prems distributed queue management
+  - Promtail/Loki/Prometheus/Grafana/Phoenix Observability stack
 
 - Artifacts
   - Created a <a href="/cv" target="_blank">new CV</a>. To me, one of the important things about looking for a job is the reflection period you need to go through. Who are you, professionally? What do you bring to the table and what do you need in your career? This document has been instrumental in defining an updated, more accurate narrative about me and where I'm pointing towards.
