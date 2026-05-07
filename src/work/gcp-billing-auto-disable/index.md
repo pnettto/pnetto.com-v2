@@ -24,7 +24,7 @@ introSection:
     </ul>
 backstorySection:
   text: >
-    <p>Built during my internship at Capgemini to protect personal and client GCP projects from unexpected cost spikes. Cloud billing alerts are useful for visibility, but they don't stop charges — this pipeline closes that gap.</p>
+    <p>Built during my work time at Capgemini to protect personal and client GCP projects from unexpected cost spikes. Cloud billing alerts are useful for visibility, but they don't stop charges — this pipeline closes that gap.</p>
 
     <p>The flow: a budget threshold triggers a GCP Budget Alert, which publishes a message to a Pub/Sub topic. Eventarc picks up that message and triggers a Cloud Run Function, which calls the Billing API to disable billing on the project.</p>
 

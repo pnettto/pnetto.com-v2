@@ -20,7 +20,7 @@ It’s a ritual that belongs to any developer’s daily life and it might sound 
 
 Some days, those hello worlds evolve into my own applications. I will change them up, or create an analogous product, or just get inspired and create something unrelated. It’s often too small to tell anyone about it, but most times it ends up adding some knowledge or some skill to my bucket.
 
-And as I started getting in touch with more and more technologies at Capgemini, where I’m doing an internship, I caught myself wanting to document the process of trying all these new things.
+And as I started getting in touch with more and more technologies at Capgemini, I caught myself wanting to document the process of trying all these new things.
 
 ## Ideation
 

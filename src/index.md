@@ -109,7 +109,7 @@ timeline:
   - title: 2025 – 2026
     text: >
       <ul>
-        <li>Agentic AI Engineer internship at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> (client: Telia)</li>
+        <li>Agentic AI Engineer work at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> (client: Telia)</li>
         <ul>
           <li>Built RAG-powered chat assistants using ADK, integrating Confluence and Jira via MCP</li>
           <li>Built Evalgen: web scraping → LLM processing → QA evaluation dataset</li>

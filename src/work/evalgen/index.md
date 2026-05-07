@@ -27,7 +27,7 @@ screensSection:
     text: The Evalgen interface
 backstorySection:
   text: >
-    <p>Built during my internship at Capgemini/Telia, where the team needed evaluation data for an AI support assistant. The challenge: the assistant was being trained on a knowledge base of product documentation, but there was no structured dataset of questions a real customer might ask — which made evaluation difficult.</p>
+    <p>Built during my work time at Capgemini/Telia, where the team needed evaluation data for an AI support assistant. The challenge: the assistant was being trained on a knowledge base of product documentation, but there was no structured dataset of questions a real customer might ask — which made evaluation difficult.</p>
 
     <p>Evalgen solves this by turning any web page or PDF into a set of plausible Q&A pairs, tagged with a broad support category. The outputs can feed directly into an evaluation framework like Langfuse to measure how well an agent handles different query types.</p>
 

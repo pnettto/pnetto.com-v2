@@ -25,7 +25,7 @@ introSection:
     </ul>
 backstorySection:
   text: >
-    <p>During my internship at Capgemini, I constantly came across new tools and frameworks and wanted a personal archive of clear intros I could return to. Most documentation is comprehensive but not fast to absorb. I wanted the opposite: something that gives you the mental model and a few real examples, then points you elsewhere for depth.</p>
+    <p>During my time at Capgemini, I constantly came across new tools and frameworks and wanted a personal archive of clear intros I could return to. Most documentation is comprehensive but not fast to absorb. I wanted the opposite: something that gives you the mental model and a few real examples, then points you elsewhere for depth.</p>
 
     <p>The solution was a AGENTS.md file that tells a coding agent exactly how to structure a new guide: start with a one-sentence description, lay out the mental model, define key terms, show a minimal getting-started example, give four real-world company use cases, then link out. That prompt is then run against any technology I want to add.</p>
 
