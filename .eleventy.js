@@ -18,9 +18,6 @@ export default async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/.nojekyll");
     eleventyConfig.addPassthroughCopy("src/**/*.mp4");
-    eleventyConfig.addPassthroughCopy({
-        "src/_data/globalAlbumPhotos.json": "albumPhotos.json",
-    });
 
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
