@@ -31,15 +31,15 @@ You can also <a href="/cv" target="_blank">download my CV</a>.
   - Celery/ On prems distributed queue management
   - Promtail/Loki/Prometheus/Grafana/Phoenix Observability stack
   - End-to-end testing / Pytest / Playwright
+  - Using stategist/architect/builder/reviewer agents with Opus
 
 - Artifacts
   - Low key launched my first solo-full-fledged-real-world-ready product in a long time: <a href="https://opendoors.work" target="_blank">OpenDoors.work</a>. It's a platform that helps people organize their job search effort using AI as an assistant (full write-up coming soon). Right now beta testers are using the system and providing me with feedback, and the development pace is incredible. Really exciting stuff. Go sign-up for the waiting list! :)
   - Created a <a href="/cv" target="_blank">new CV</a>. To me, one of the important things about looking for a job is the reflection period you need to go through. Who are you, professionally? What do you bring to the table and what do you need in your career? This document has been instrumental in defining an updated, more accurate narrative about me and where I'm pointing towards.
-  - Created <a href="/work/hire-bridge/">Hire Bridge</a>, a platform to manage my recently started job search. It involves 3 services: a frontend, a backend, and a queue management system for loosely coupled long-running requests. It's full of useful features that are super helpful in the complex task of finding a good placement fit. Btw while you're here, <a href="/cv" target="_blank">download my CV</a> :) 
-  - Created a demo that showcases my ELT knowledge. It listens to a Wikipedia event stream, then uses Airflow to orchestrate a periodic chain of transformations, including storing the raw events with Kafka (bronze layer), creating the Silver and Gold layers with dbt, and saving all that data in Snowflake along the way. Finally, the Gold dataset is consumed in Google Looker. Screenshots and details coming soon.
+  - Created a demo that showcases my ELT knowledge. It listens to a Wikipedia event stream, then uses Airflow to orchestrate a periodic chain of transformations, including storing the raw events with Kafka (bronze layer), creating the Silver and Gold layers with dbt, and saving all that data in Snowflake along the way. Finally, the Gold dataset is consumed in Google Looker.
 
 - Links
-  - [This video](https://www.youtube.com/watch?v=mtiOK2QG9Q0) by Sabrina Kopecki (IBM) talks about what serious agentic development should account for, in 7 points. I thought it was beautifully laid out, and explained with striking clarity and sobriety. It made me want to create exercises for each skill to showcase that I'm a trustworthy developer in the field, so I'll create a repo for that soon.
+  - [This video](https://www.youtube.com/watch?v=mtiOK2QG9Q0) by Sabrina Kopecki (IBM) talks about what serious agentic development should account for, in 7 points. I thought it was beautifully laid out, and explained with striking clarity.
   
 </div>
 </div>
