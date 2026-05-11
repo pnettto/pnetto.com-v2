@@ -46,7 +46,7 @@ You can also <a href="/cv" target="_blank">download my CV</a>.
 <!-- end post -->
 
 <!-- start post -->
-<div class="item"> <div class="year" id="2026-01-week-08">2026-03...04 / weeks 08...15</div> <a href="#2026-02-week-08"></a>
+<div class="item"> <div class="year" id="2026-01-week-08">2026-03 to 2026-04 / weeks 08 to 15</div> <a href="#2026-02-week-08"></a>
 <div class="content">
 
 - Studies
