@@ -8,9 +8,6 @@ containerClass: narrow
 <h1 class="underlined">Now</h1>
 
 Below are some things I've noticed, made, or tried lately — have a look around and [get in touch](/contact) if you'd like.
-
-Also, I'm currently looking for a new team to join! Feel free to reach out via email: <a href="mailto:pedro@pnetto.com">pedro@pnetto.com</a>.
-You can also <a href="/cv" target="_blank">download my CV</a>.
 </p>
 
 <br />
@@ -20,6 +17,18 @@ You can also <a href="/cv" target="_blank">download my CV</a>.
 
 <!-- start post -->
 <div class="item"> <div class="year" id="2026-01-week-08">Now</div> <a href="#2026-02-week-08"></a>
+<div class="content">
+
+- Signed with <a href="https://redeploy.com" target="_blank">Redeploy</a> to work as an AI Engineer from September. Exciting times ahead! 🎉
+- Developing <a href="https://opendoors.work" target="_blank">OpenDoors</a> further
+- Traveling in Brazil
+
+</div>
+</div>
+<!-- end post -->
+
+<!-- start post -->
+<div class="item"> <div class="year" id="2026-01-week-08">Week 15 - Week 20</div> <a href="#2026-02-week-08"></a>
 <div class="content">
 
 - Officially started a job search! You can <a href="/cv" target="_blank">download my CV</a> here.
@@ -46,7 +55,7 @@ You can also <a href="/cv" target="_blank">download my CV</a>.
 <!-- end post -->
 
 <!-- start post -->
-<div class="item"> <div class="year" id="2026-01-week-08">2026-03 to 2026-04 / weeks 08 to 15</div> <a href="#2026-02-week-08"></a>
+<div class="item"> <div class="year" id="2026-01-week-08">Week 08 - Week 15</div> <a href="#2026-02-week-08"></a>
 <div class="content">
 
 - Studies
