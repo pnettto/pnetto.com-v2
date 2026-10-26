@@ -14,13 +14,6 @@ shortDescription: >
 introSection:
   title: What is it?
   text: >
-    <ul>
-      <li>Every story from the last 24h on one page, sorted by points</li>
-      <li>Hides stories under 5 points, so new posts don't drown out the rest</li>
-      <li>Looks like the normal HN front page, with a link back to the original order</li>
-    </ul>
-backstorySection:
-  text: >
     <p>The HN front page mixes points with age, so a great story from this morning can already be gone by the afternoon. I wanted a simple "what was big today" view instead, so this extension pulls everything from the last day and sorts it by points.</p>
 
     <p>The code is on GitHub: <a href="https://github.com/pnettto/HN-rank" target="_blank">github.com/pnettto/HN-rank</a>.</p>
