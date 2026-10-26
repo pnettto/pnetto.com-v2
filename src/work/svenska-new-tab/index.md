@@ -2,8 +2,7 @@
 layout: layouts/work.njk
 order: 10
 featured: true
-categories:
-  - pet-projects
+categories: []
 slug: svenska-new-tab
 title: Svenska New Tab
 role: Author
