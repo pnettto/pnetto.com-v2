@@ -8,6 +8,10 @@ slug: hn-rank
 title: "HN: Today by Points"
 role: Author
 url: https://github.com/pnettto/HN-rank
+coverImage: cover.png
+screensSection:
+  - media: cover.png
+    text: The front page with the last 24h ranked by points
 type: Chrome extension for Hacker News
 shortDescription: >
   <p>A small Chrome extension that replaces the Hacker News front page with every story posted in the last 24 hours, ranked by points.</p>
