@@ -2,8 +2,7 @@
 layout: layouts/work.njk
 order: 1
 featured: true
-categories:
-  - pet-projects
+categories: []
 slug: hn-rank
 title: "HN: Today by Points"
 role: Author

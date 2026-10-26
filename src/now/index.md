@@ -16,7 +16,20 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <!-- start items -->
 
 <!-- start post -->
-<div class="item"> <div class="year" id="2026-01-week-08">Now</div> <a href="#2026-02-week-08"></a>
+<div class="item"> <div class="year" id="2026-week-44">Now</div> <a href="#2026-week-44"></a>
+<div class="content">
+
+- Focusing on my new job at <a href="https://redeploy.com" target="_blank">Redeploy</a>, where I'm an AI Engineering Consultant and learning a lot about KYC and the banking sector.
+- Created a few new pet projects: [Kulturbiblioteket Vinyl Finder](/work/kh-vinyls/) and [HN Skin](/work/hn-skin/)
+- Working on a Spotify player called Crate that helps users focus on listening to full albums rather than hopping between tracks. Also building a beautiful companion TV app that teaches users about their music while decorating the living room. Links soon!
+- Jailbroke my old Kindle to display my photos as a slideshow instead of letting it collect dust :)
+
+</div>
+</div>
+<!-- end post -->
+
+<!-- start post -->
+<div class="item"> <div class="year" id="2026-week-21">Week 21</div> <a href="#2026-week-21"></a>
 <div class="content">
 
 - Signed with <a href="https://redeploy.com" target="_blank">Redeploy</a> to work as an AI Engineer from September. Exciting times ahead! 🎉
@@ -28,7 +41,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 <!-- end post -->
 
 <!-- start post -->
-<div class="item"> <div class="year" id="2026-01-week-08">Week 15 - Week 20</div> <a href="#2026-02-week-08"></a>
+<div class="item"> <div class="year" id="2026-04-week-15">Week 15 - Week 20</div> <a href="#2026-04-week-15"></a>
 <div class="content">
 
 - Officially started a job search! You can <a href="/cv" target="_blank">download my CV</a> here.

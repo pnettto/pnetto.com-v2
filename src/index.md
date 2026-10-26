@@ -6,11 +6,7 @@ header:
 intro:
   text: >
     <p>
-      Software engineer with 15 years of experience, currently focused on Agentic AI at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> (deployed to Telia). I've worked for companies such as <a href="/work/icelandair">Icelandair</a> and <a href="/work/kolibri">Kolibri</a>, ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>), developed the web development curriculum at <a href="/work/tskoli">Tækniskólinn</a>, and co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
-    </p>
-
-    <p>
-    I’m always curious and eager to learn! My current tech stack includes: Python, Node.js, SQL/Postgres, Docker, ADK/Langchain, Google Cloud Platform and ELT (Kafka/Airflow/Spark/dbt/Snowflake).
+      Software engineer with 15 years of experience, currently working as an AI Engineering Consultant at <a href="https://www.redeploy.com/" target="_blank">Redeploy</a>. I've worked for companies such as <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a>, <a href="/work/icelandair">Icelandair</a> and <a href="/work/kolibri">Kolibri</a>, ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>), developed the web development curriculum at <a href="/work/tskoli">Tækniskólinn</a>, and co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
     </p>
 
     <p>
@@ -100,6 +96,12 @@ otherSkills:
   - title: Languages
     text: Portuguese (native) / English (fluent) / Spanish (advanced) / Icelandic, Danish, Swedish (basic)
 timeline:
+  - title: 2026 – Present
+    text: >
+      <ul>
+        <li>AI Engineer at <a href="https://www.redeploy.com/" target="_blank">Redeploy</a>, Currently building AI-powered applications in the banking sector, specifically in KYC</li>
+        <li>Concluded Data Analysis studies at <a href="https://hyperisland.se" target="_blank">Hyper Island</a></li>
+      </ul>
   - title: 2025 – 2026
     text: >
       <ul>
@@ -108,8 +110,6 @@ timeline:
           <li>Built RAG-powered chat assistants using ADK, integrating Confluence and Jira via MCP</li>
           <li>Built Evalgen: web scraping → LLM processing → QA evaluation dataset</li>
           <li>Developed observability tooling for agentic systems (session dashboard tracking token usage, latency, and cost)</li>
-          <li>Designed event-driven GCP billing automation: Budget Alert → Pub/Sub → Eventarc → Cloud Run Function → Billing API</li>
-          <li>Delivered MCP-enabled chatbot prototype in 1 day, unblocking a project stalled for weeks</li>
           <li>Worked alongside data engineers on Spark-based pipelines (Arcus) and on-prem Kubernetes clusters</li>
           <li>Completed GCP Professional Cloud Developer study path and Vertex AI / ADK / RAG training</li>
         </ul>
@@ -117,10 +117,10 @@ timeline:
   - title: 2024
     text: >
       <ul>
-        <li>Took a half-year sabbatical to travel through Costa Rica, Panama, Brazil, Tanzania, New Zealand, Thailand, Denmark and Sweden.</li>
+        <li>Took a half-year sabbatical to travel through Costa Rica, Panama, Brazil, Tanzania, New Zealand, Thailand, Denmark and Sweden</li>
         <li>Developed <a href="https://visitmaca.com" target="_blank">MACA</a>'s and <a href="https://teiahhospitality.com" target="_blank">Teiah</a>'s website</li>
-        <li>Started studying Data Analysis at <a href="https://hyperisland.se" target="_blank">Hyper Island</a>.</li>
-        <li>Built <a href="/work/instant-graph-maker">Instant Graph Maker</a>, an LLM-powered chart creator using Python, Streamlit, OpenAI API, and ChromaDB (Hyper Island capstone).</li>
+        <li>Started studying Data Analysis at <a href="https://hyperisland.se" target="_blank">Hyper Island</a></li>
+        <li>Built <a href="/work/instant-graph-maker">Instant Graph Maker</a>, an LLM-powered chart creator using Python, Streamlit, OpenAI API, and ChromaDB (Hyper Island capstone)</li>
       </ul>
   - title: 2022 - 2024
     text: >
