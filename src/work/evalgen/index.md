@@ -1,6 +1,6 @@
 ---
 layout: layouts/work.njk
-order: 2
+order: 7
 featured: true
 categories:
   - pet-projects
