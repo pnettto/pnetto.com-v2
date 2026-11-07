@@ -2,7 +2,6 @@ import "dotenv/config";
 import fs from "fs/promises";
 import { existsSync, mkdirSync } from "fs";
 import path from "path";
-import matter from "gray-matter";
 import Image from "@11ty/eleventy-img";
 import pLimit from "p-limit";
 
@@ -39,15 +38,6 @@ function djb2Hash(text) {
   return (hash >>> 0).toString(16);
 }
 
-async function getAlbumFrontMatter(albumDir) {
-  const files = (await fs.readdir(albumDir)).filter((f) => f.endsWith(".md"));
-  if (files.length !== 1) throw new Error(`Expected 1 md file in ${albumDir}`);
-
-  const content = await fs.readFile(path.join(albumDir, files[0]), "utf-8");
-  const { data } = matter(content);
-  return data;
-}
-
 /* -------------------------
    Main
 -------------------------- */
@@ -57,7 +47,7 @@ async function getAlbumFrontMatter(albumDir) {
   const outputDir = path.join(import.meta.dirname, "../compiled/img");
 
   const allFiles = await getFilesRecursive(imageRoot);
-  const allowedDirs = ["work", "logs", "assets", "private-open", "photos"];
+  const allowedDirs = ["work", "logs", "assets", "private-open"];
   const images = allFiles.filter((f) =>
     allowedDirs.some((dir) => f.startsWith(`src/${dir}`)) &&
     /\.(jpg|jpeg|png|webp|gif)$/i.test(f)
@@ -94,15 +84,6 @@ async function getAlbumFrontMatter(albumDir) {
         images: stripOutputPath(rawMetadata),
       };
 
-      if (imagePath.includes("/photos/")) {
-        const albumDir = path.dirname(imagePath);
-        const albumData = await getAlbumFrontMatter(albumDir);
-        imageData.album = {
-          title: albumData.title,
-          slug: path.basename(albumDir),
-          path: albumDir.replace(/^src/, ""),
-        };
-      }
       return imageData;
     })
   );
@@ -111,13 +92,7 @@ async function getAlbumFrontMatter(albumDir) {
 
   if (!existsSync("src/_data")) mkdirSync("src/_data", { recursive: true });
 
-  await Promise.all([
-    fs.writeFile("src/_data/globalAllPhotos.json", JSON.stringify(output)),
-    fs.writeFile(
-      "src/_data/globalAlbumPhotos.json",
-      JSON.stringify(output.filter((p) => !!p.album)),
-    ),
-  ]);
+  await fs.writeFile("src/_data/globalAllPhotos.json", JSON.stringify(output));
 
   console.log(`✔ Processed ${output.length} images`);
 })();

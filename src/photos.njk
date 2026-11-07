@@ -1,0 +1,52 @@
+---
+pagination:
+  data: albums
+  size: 1
+  alias: album
+albums:
+  - ""
+  - compositons
+  - cph
+  - early-spring
+  - fuzzfest-24
+  - gouache
+  - hokarangen
+  - kottlasjon
+  - langsjon
+  - nackareservatet
+  - orvalho
+  - posters
+  - ragsved
+  - snowy-kungsholmen
+  - unsplash
+  - vinterviken
+  - winter-lights
+permalink: "/photos/{% if album %}{{ album }}/{% endif %}"
+eleventyExcludeFromCollections: true
+---
+{%- set target = "https://photos.pnetto.com/" + (album + "/" if album else "") -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url={{ target }}">
+  <link rel="canonical" href="{{ target }}">
+  <title>Photos – Pedro Netto</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #111;
+      color: #aaa;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    a { color: #ccc; }
+  </style>
+</head>
+<body>
+  <p>Photos moved to <a href="{{ target }}">photos.pnetto.com</a>.</p>
+</body>
+</html>
