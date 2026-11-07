@@ -16,7 +16,117 @@ intro:
     <p>
       Feel free to <a href="/contact">reach out</a>!
     </p>
+extraHeadScripts: <script defer src="/assets/js/journey.js"></script>
+status:
+  - label: Now
+    text: AI Engineering Consultant at Redeploy
+  - label: Building
+    text: Crate, a Spotify player for full albums
+  - label: Based in
+    text: Stockholm
+places:
+  - title: OpenDoors
+    url: /work/opendoors/
+    image: opendoors/dashboard.png
+    text: An AI job search assistant I built on my own. 40 beta testers used it in their job searches.
+    tag: My own product
+  - title: Capgemini / Telia
+    url: /logs/learnings-from-my-internship/
+    image: evalgen/cover.png
+    text: Building AI assistants for Telia, and what I learned along the way.
+    tag: AI in a large company
+  - title: Tækniskólinn
+    url: /work/tskoli/
+    image: tskoli/cover.png
+    text: The web development course I rebuilt from scratch, with about 75% job placement.
+    tag: Teaching
+  - title: Brisa
+    url: /work/brisa/
+    image: brisa/cover.png
+    text: The web studio I ran in Iceland, with clients like the Ministry of Education and Lýsi.
+    tag: My first company
+journey:
+  - place: Brazil
+    years: 2007–2013
+    items:
+      - B.Tech in Computer Networks
+      - Organised EESL, student conferences about open source
+      - Linux servers at Spirit Linux, then teaching at Recode
+      - Fivecom, then two years of freelancing
+  - place: Iceland
+    years: 2013–2022
+    items:
+      - "Locatify: Goldworm, an app for kids to make interactive books"
+      - Founded Brisa, 15+ projects in four years
+      - Rebuilt the web development course at Tækniskólinn
+      - "Kolibri: the National Gallery of Iceland website"
+  - place: Vietnam
+    years: 2018–2020
+    items:
+      - Co-founded Conbeo, a tourism marketplace
+      - 2 investors, 50 partner agencies, 300+ tours
+      - Strategy, UX and front-end
+  - place: Denmark
+    years: 2022–2024
+    items:
+      - Lead front-end developer at Icelandair, in Copenhagen
+      - Led a team of 4 on a new airline portal
+      - CMS tools that gave the content team independence
+  - place: Sweden
+    years: 2024–now
+    items:
+      - Data Analysis at Hyper Island
+      - Agentic AI at Capgemini, for Telia
+      - OpenDoors, my own AI product
+      - AI Engineering Consultant at Redeploy
+recently:
+  - date: Now
+    live: true
+    text: Building Crate, a Spotify player that helps you listen to full albums, plus a TV companion app.
+  - date: Oct 2026
+    text: Wrapped up <a href="/work/opendoors/">OpenDoors</a>. It stays online as a test system anyone can try.
+  - date: Sep 2026
+    text: Started at Redeploy as an AI Engineering Consultant.
+  - date: "2026"
+    text: Made <a href="/work/kh-vinyls/">Kulturbiblioteket Vinyl Finder</a> and <a href="/work/hn-skin/">HN Skin</a>.
+  - date: Mar 2026
+    text: Wrote about <a href="/logs/learnings-from-my-internship/">what I learned at Capgemini/Telia</a>.
+offTheClock:
+  photo:
+    title: Photography
+    text: A hobby since 2020. Albums on photos.pnetto.com ↗
+    url: https://photos.pnetto.com
+    src: https://pnetto.store/pnetto-com/DSCF9096-64e5dac3-900w.jpeg
+    srcset: https://pnetto.store/pnetto-com/DSCF9096-64e5dac3-900w.jpeg 900w, https://pnetto.store/pnetto-com/DSCF9096-64e5dac3-1200w.jpeg 1200w
+  items:
+    - title: Music
+      text: Building Crate for listening to full albums, and a finder for the vinyl at Kulturbiblioteket.
+    - title: Travel
+      text: A half-year sabbatical in 2024 through Costa Rica, Panama, Brazil, Tanzania, New Zealand, Thailand, Denmark and Sweden.
+    - title: Meditation
+      text: I wrote <a href="/logs/a-practical-guide-to-meditation/">a practical guide</a> to it.
+    - title: Languages
+      text: Portuguese (native), English (fluent), Spanish (advanced), Icelandic, Danish, Swedish (basic).
 techSkills:
+  - title: AI
+    items:
+      - Multi-agent orchestration
+      - RAG pipelines
+      - LLM integration (Vertex AI, OpenAI, Anthropic)
+      - MCP (Model Context Protocol) / A2A
+      - Vector databases & semantic search (ChromaDB, Firestore, pgvector)
+      - Prompt engineering
+      - Agent observability & evaluation (Langfuse, Vertex AI, Cloud Logging)
+  - title: Back-end
+    items:
+      - Python / FastAPI / Flask / Django
+      - API design
+      - REST APIs / GraphQL / WebSockets
+      - Node.js ecosystem / Express
+      - OAuth / auth patterns
+      - MySQL / Postgres / MongoDB / Redis
+      - Micro-service architecture
+      - DevOps fluency
   - title: Languages
     items:
       - Python (FastAPI, Django, Flask, Pandas)
@@ -31,6 +141,13 @@ techSkills:
       - AWS (EC2, S3)
       - Azure/Fabric fundamentals
       - Vercel / Fly.io / Deno Deploy / Digital Ocean / Netlify
+  - title: Infrastructure
+    items:
+      - Docker / Kubernetes (GKE)
+      - CI/CD (GitHub Actions, GCP Cloud Build)
+      - Nginx / Caddy / Apache
+      - Linux admin and service configuration
+      - Networking literacy
   - title: Data Engineering
     items:
       - Airflow
@@ -39,32 +156,6 @@ techSkills:
       - dbt
       - Snowflake
       - Dimensional modeling
-  - title: AI
-    items:
-      - Multi-agent orchestration
-      - RAG pipelines
-      - LLM integration (Vertex AI, OpenAI, Anthropic)
-      - MCP (Model Context Protocol) / A2A
-      - Vector databases & semantic search (ChromaDB, Firestore, pgvector)
-      - Prompt engineering
-      - Agent observability & evaluation (Langfuse, Vertex AI, Cloud Logging)
-  - title: Infrastructure
-    items:
-      - Docker / Kubernetes (GKE)
-      - CI/CD (GitHub Actions, GCP Cloud Build)
-      - Nginx / Caddy / Apache
-      - Linux admin and service configuration
-      - Networking literacy
-  - title: Back-end
-    items:
-      - Python / FastAPI / Flask / Django
-      - API design
-      - REST APIs / GraphQL / WebSockets
-      - Node.js ecosystem / Express
-      - OAuth / auth patterns
-      - MySQL / Postgres / MongoDB / Redis
-      - Micro-service architecture
-      - DevOps fluency
   - title: Front-end
     items:
       - NextJS/React expertise
@@ -97,10 +188,9 @@ otherSkills:
     text: Worked across 4 countries (Brazil, Iceland, Vietnam, Sweden) with international teams, clients, and stakeholders.
   - title: Technical writing
     text: Documentation habits — learning guides, internal references, project READMEs, and technical blog posts.
-  - title: Languages
-    text: Portuguese (native) / English (fluent) / Spanish (advanced) / Icelandic, Danish, Swedish (basic)
 timeline:
   - title: 2026 – Present
+    summary: AI Engineer at Redeploy, KYC in banking
     text: >
       <ul>
         <li>AI Engineer at <a href="https://www.redeploy.com/" target="_blank">Redeploy</a> (client: banking, KYC)</li>
@@ -114,6 +204,7 @@ timeline:
         <li>Concluded Data Analysis studies at <a href="https://hyperisland.se" target="_blank">Hyper Island</a></li>
       </ul>
   - title: 2025 – 2026
+    summary: Agentic AI at Capgemini Sweden, for Telia
     text: >
       <ul>
         <li>Agentic AI Engineer work at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a> (client: Telia)</li>
@@ -126,6 +217,7 @@ timeline:
         </ul>
       </ul>
   - title: 2024
+    summary: Sabbatical, Hyper Island, Instant Graph Maker
     text: >
       <ul>
         <li>Took a half-year sabbatical to travel through Costa Rica, Panama, Brazil, Tanzania, New Zealand, Thailand, Denmark and Sweden</li>
@@ -134,6 +226,7 @@ timeline:
         <li>Built <a href="/work/instant-graph-maker">Instant Graph Maker</a>, an LLM-powered chart creator using Python, Streamlit, OpenAI API, and ChromaDB (Hyper Island capstone)</li>
       </ul>
   - title: 2022 - 2024
+    summary: Lead front-end developer at Icelandair
     text: >
       <p>
         Lead front-end developer at 
@@ -145,6 +238,7 @@ timeline:
         Created onboarding documentation that reduced ramp-up time for new developers. Built CMS tools that gave the content team publishing independence, removing an engineering bottleneck.
       </p>
   - title: 2021 - 2022
+    summary: Front-end developer at Kolibri
     text: >
       <p>
         Front-end developer at 
@@ -155,6 +249,7 @@ timeline:
         </a> on the Next.js stack. Built a custom search integration for an external data source where no off-the-shelf solution existed.
       </p>
   - title: 2018 - 2021
+    summary: Teaching at Tækniskólinn, co-founding Conbeo
     text: >
       <p>
         Course developer & instructor at
@@ -172,6 +267,7 @@ timeline:
         </a>.
       </p>
   - title: 2014 - 2018
+    summary: Founded Brisa, my web studio
     text: >
       <p>
         Founded <a href="/work/brisa">Brisa</a>, my web studio, with ~10 associates
@@ -189,6 +285,7 @@ timeline:
         <a href="/work">many others</a>.
       </p>
   - title: 2013 - 2014
+    summary: Moved to Iceland, Locatify
     text: >
       <p>
         Moved to Iceland, to work at
@@ -202,6 +299,7 @@ timeline:
         I also coded features for their indoor positioning system.
       </p>
   - title: 2009 - 2013
+    summary: Linux, teaching, Fivecom, freelancing
     text: >
       <p>
         Worked for
@@ -221,6 +319,7 @@ timeline:
         stage lasted for 2 years before I moved out of Brazil.
       </p>
   - title: 2007 - 2009
+    summary: B.Tech, AIESEC, open source conferences
     text: >
       <p>
         Earned my B.Tech. degree in Computer Networks, worked with

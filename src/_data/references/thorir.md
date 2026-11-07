@@ -1,7 +1,9 @@
 ---
 order: 1
 referer: Þórir Ólafsson
-companyName: Digital Development Diretor
+companyName: Icelandair
+role: Digital Development Director
+featured: true
 companyLink: https://icelandair.is
 size: large
 ---

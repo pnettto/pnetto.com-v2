@@ -10,12 +10,22 @@ containerClass: narrow
 <a id="{{ "Start" | slugify }}" class="anchor"></a>
 <div class="bio-intro">
     <div class="intro-text">{{ intro.text | safe }}</div>
+
+    <div class="now-strip">
+        {% for item in status %}
+            <div class="now-item">
+                {% if loop.first %}<i class="now-dot" aria-hidden="true"></i>{% endif %}
+                <span class="now-label">{{ item.label }}</span>
+                <span>{{ item.text }}</span>
+            </div>
+        {% endfor %}
+    </div>
 </div>
 
 <div class="sticky-tags">
     <div class="container narrow is-loaded tags-list">
         {%
-            set categories = ['Start', 'Tech Skills', 'Other Skills', 'Timeline', 'References', 'Personal Interests']
+            set categories = ['Places to start', 'Along the way', 'Recently', 'Timeline', 'References', 'Toolbox', 'Other Skills', 'Off the clock']
         %}
         {% for category in categories %}
             <a href="#{{ category | slugify  }}" class="badge">{{
@@ -25,14 +35,180 @@ containerClass: narrow
     </div>
 </div>
 
-<a id="{{ "Tech Skills" | slugify }}" class="anchor"></a>
-<section id="tech-skills" class="bio-section">
-    <h2 class="underlined" class="anchor">Tech Skills</h2>
-    <div class="skills-grid">
-        {% for group in techSkills %}
-            <div class="skill-group">
-                <h3>{{ group.title }}</h3>
+<a id="{{ "Places to start" | slugify }}" class="anchor"></a>
+<section class="bio-section">
+    <h2 class="underlined section-title">
+        Places to start
+        <small>or browse <a href="/work/">all work</a></small>
+    </h2>
+    <div class="places-grid">
+        {% for place in places %}
+            <a href="{{ place.url }}" class="place-card">
+                {% set image = globalAllPhotos | matchPhotosource(place.image) %}
+                <div class="place-card-image">
+                    {% optmizedImageTag image, { sizes: "(min-width: 900px) 220px, (min-width: 600px) 45vw, 90vw", aspectRatio: '6 / 4' } %}
+                </div>
+                <strong>{{ place.title }}</strong>
+                <span class="place-card-text">{{ place.text }}</span>
+                <span class="place-card-tag">{{ place.tag }}</span>
+            </a>
+        {% endfor %}
+    </div>
+</section>
+
+<a id="{{ "Along the way" | slugify }}" class="anchor"></a>
+<section class="bio-section">
+    <h2 class="underlined">Along the way</h2>
+    <div class="journey">
+        <div class="journey-route" role="tablist" aria-label="Places">
+            {% for stop in journey %}
+                <button
+                    class="journey-stop"
+                    role="tab"
+                    id="journey-tab-{{ loop.index }}"
+                    aria-controls="journey-panel-{{ loop.index }}"
+                    aria-selected="{{ 'true' if loop.first else 'false' }}"
+                    tabindex="{{ '0' if loop.first else '-1' }}"
+                >
+                    <i aria-hidden="true">{{ loop.index }}</i>
+                    <strong>{{ stop.place }}</strong>
+                    <span>{{ stop.years }}</span>
+                </button>
+            {% endfor %}
+        </div>
+        {% for stop in journey %}
+            <div
+                class="journey-panel"
+                role="tabpanel"
+                id="journey-panel-{{ loop.index }}"
+                aria-labelledby="journey-tab-{{ loop.index }}"
+                {% if not loop.first %}hidden{% endif %}
+            >
+                <div>
+                    <h3>{{ stop.place }}</h3>
+                    <span class="journey-years">{{ stop.years }}</span>
+                </div>
                 <ul>
+                    {% for item in stop.items %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<a id="{{ "Recently" | slugify }}" class="anchor"></a>
+<section class="bio-section">
+    <h2 class="underlined section-title">
+        Recently
+        <small><a href="/now/">more on the Now page</a></small>
+    </h2>
+    <div class="feed">
+        {% for entry in recently %}
+            <div class="feed-item">
+                <span class="feed-date{% if entry.live %} is-live{% endif %}">{{ entry.date }}</span>
+                <p>{{ entry.text | safe }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<a id="{{ "Timeline" | slugify }}" class="anchor"></a>
+<section class="bio-section">
+    <h2 class="underlined">Timeline</h2>
+    <div class="timeline-rows">
+        {% for item in timeline %}
+            <details class="timeline-row">
+                <summary>
+                    <span class="year">{{ item.title }}</span>
+                    <span class="timeline-summary">{{ item.summary }}</span>
+                    <span class="timeline-more">read more</span>
+                </summary>
+                <div class="content">{{ item.text | safe }}</div>
+            </details>
+        {% endfor %}
+    </div>
+</section>
+
+<a id="{{ "References" | slugify }}" class="anchor"></a>
+<section class="bio-section">
+    <h2 class="underlined">References</h2>
+    {% set sortedReferences = references | sort(attribute='data.order') %}
+    <div class="featured-references">
+        {% for ref in sortedReferences %}
+            {% if ref.data.featured %}
+                <div class="featured-reference">
+                    <blockquote class="reference-quote">
+                        {{ ref.content | safe }}
+                    </blockquote>
+                    <cite class="reference-author">
+                        <strong>{{ ref.data.referer }}</strong>
+                        <span class="reference-company">
+                            {{ ref.data.role }},
+                            <a
+                                href="{{ ref.data.companyLink }}"
+                                target="_blank"
+                                rel="noopener"
+                            >{{ ref.data.companyName }}</a>
+                        </span>
+                    </cite>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="carousel-wrapper">
+        <button
+            class="carousel-arrow nav-arrow prev"
+            aria-label="Previous slide"
+        >
+            ◀
+        </button>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                {% for ref in sortedReferences %}
+                    {% if not ref.data.featured %}
+                        <div class="carousel-card {{ ref.data.size }}">
+                            <div class="carousel-scroll-area">
+                                <blockquote class="reference-quote">
+                                    {{ ref.content | safe }}
+                                </blockquote>
+                                <cite class="reference-author">
+                                    <strong>{{ ref.data.referer }}</strong>
+                                    {% if ref.data.companyName %}
+                                        <span class="reference-company">
+                                            {% if ref.data.companyLink %}
+                                                <a
+                                                    href="{{ ref.data.companyLink }}"
+                                                    target="_blank"
+                                                    rel="noopener"
+                                                >{{ ref.data.companyName }}</a>
+                                            {% else %}
+                                                {{ ref.data.companyName }}
+                                            {% endif %}
+                                        </span>
+                                    {% endif %}
+                                </cite>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <button class="carousel-arrow nav-arrow next" aria-label="Next slide">
+            ▶
+        </button>
+    </div>
+</section>
+
+<a id="{{ "Toolbox" | slugify }}" class="anchor"></a>
+<section class="bio-section">
+    <h2 class="underlined">Toolbox</h2>
+    <div class="toolbox">
+        {% for group in techSkills %}
+            <div class="toolbox-group">
+                <h3>{{ group.title }}</h3>
+                <ul class="toolbox-tags">
                     {% for item in group.items %}
                         <li>{{ item }}</li>
                     {% endfor %}
@@ -43,9 +219,9 @@ containerClass: narrow
 </section>
 
 <a id="{{ "Other Skills" | slugify }}" class="anchor"></a>
-<section id="other-skills" class="bio-section">
+<section class="bio-section">
     <h2 class="underlined">Other Skills</h2>
-    <div class="skills-grid">
+    <div class="other-skills">
         {% for skill in otherSkills %}
             <div class="skill-group">
                 <h3>{{ skill.title }}</h3>
@@ -55,61 +231,51 @@ containerClass: narrow
     </div>
 </section>
 
-<a id="{{ "Timeline" | slugify }}" class="anchor"></a>
-<section id="timeline" class="bio-section">
-    <h2 class="underlined">Timeline</h2>
-    <div class="timeline">
-        {% for item in timeline %}
-            <div class="item">
-                <div class="year">{{ item.title }}</div>
-                <div class="content">{{ item.text | safe }}</div>
-            </div>
-        {% endfor %}
-    </div>
-</section>
-
-<a id="{{ "References" | slugify }}" class="anchor"></a>
-<section id="references" class="bio-section">
-    <h2 class="underlined">References</h2>
-    <div class="carousel-wrapper">
-        <button
-            class="carousel-arrow nav-arrow prev"
-            aria-label="Previous slide"
+<a id="{{ "Off the clock" | slugify }}" class="anchor"></a>
+<section class="bio-section">
+    <h2 class="underlined">Off the clock</h2>
+    <div class="off-the-clock">
+        <a
+            href="{{ offTheClock.photo.url }}"
+            class="off-photo"
+            target="_blank"
+            rel="noopener"
         >
-            ◀
-        </button>
-        <div class="carousel-container">
-            <div class="carousel-track">
-                {% for ref in references | sort(attribute='data.order') %}
-                    <div class="carousel-card {{ ref.data.size }}">
-                        <div class="carousel-scroll-area">
-                            <blockquote class="reference-quote">
-                                {{ ref.content | safe }}
-                            </blockquote>
-                            <cite class="reference-author">
-                                <strong>{{ ref.data.referer }}</strong>
-                                {% if ref.data.companyName %}
-                                    <span class="reference-company">
-                                        {% if ref.data.companyLink %}
-                                            <a
-                                                href="{{ ref.data.companyLink }}"
-                                                target="_blank"
-                                                rel="noopener"
-                                            >{{ ref.data.companyName }}</a>
-                                        {% else %}
-                                            {{ ref.data.companyName }}
-                                        {% endif %}
-                                    </span>
-                                {% endif %}
-                            </cite>
-                        </div>
-                    </div>
-                {% endfor %}
+            <img
+                src="{{ offTheClock.photo.src }}"
+                srcset="{{ offTheClock.photo.srcset }}"
+                sizes="(min-width: 900px) 480px, 90vw"
+                alt=""
+                loading="lazy"
+                decoding="async"
+            />
+            <div class="off-photo-caption">
+                <strong>{{ offTheClock.photo.title }}</strong>
+                <span>{{ offTheClock.photo.text }}</span>
             </div>
+        </a>
+        <div class="off-list">
+            {% for item in offTheClock.items %}
+                <div class="off-item">
+                    <strong>{{ item.title }}</strong>
+                    <p>{{ item.text | safe }}</p>
+                </div>
+            {% endfor %}
         </div>
-        <button class="carousel-arrow nav-arrow next" aria-label="Next slide">
-            ▶
-        </button>
     </div>
 </section>
 
+<section id="say-hi" class="bio-section">
+    <div class="say-hi">
+        <div>
+            <h2>Say hi</h2>
+            <p>I'm always up for a conversation about past projects and potential collaborations.</p>
+        </div>
+        <ul>
+            <li><span>Email</span><span class="say-hi-email">pedro@pnetto.com</span></li>
+            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/pedronetto/" target="_blank" rel="noopener">@pedronetto</a></li>
+            <li><span>GitHub</span><a href="https://github.com/pnettto" target="_blank" rel="noopener">@pnettto</a></li>
+            <li><span>CV</span><a href="/cv">Download PDF</a></li>
+        </ul>
+    </div>
+</section>

@@ -1,7 +1,9 @@
 ---
 order: 2
 referer: Óskar Völundarson
-companyName: Content Architect
+companyName: Icelandair
+role: Content Architect
+featured: true
 companyLink: http://icelandair.is
 size: large
 ---

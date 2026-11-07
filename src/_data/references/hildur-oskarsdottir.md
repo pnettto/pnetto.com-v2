@@ -1,7 +1,9 @@
 ---
 order: 2
 referer: Hildur Óskarsdóttir
-companyName: Project Manager
+companyName: Icelandair
+role: Project Manager
+featured: true
 companyLink: http://icelandair.is
 size: large
 ---
