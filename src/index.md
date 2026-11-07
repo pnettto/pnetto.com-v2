@@ -10,6 +10,10 @@ intro:
     </p>
 
     <p>
+      At the moment I'm part of a team working in a complex enterprise environment, figuring out the right problems to solve, finding solutions that fit the constraints, and building with coding agents in a structured and predictable way.
+    </p>
+
+    <p>
       Feel free to <a href="/contact">reach out</a>!
     </p>
 techSkills:
@@ -99,7 +103,14 @@ timeline:
   - title: 2026 – Present
     text: >
       <ul>
-        <li>AI Engineer at <a href="https://www.redeploy.com/" target="_blank">Redeploy</a>, Currently building AI-powered applications in the banking sector, specifically in KYC</li>
+        <li>AI Engineer at <a href="https://www.redeploy.com/" target="_blank">Redeploy</a> (client: banking, KYC)</li>
+        <ul>
+          <li>Building AI-powered applications in a complex enterprise environment</li>
+          <li>Navigating enterprise infrastructure and its requirements</li>
+          <li>Contributing to architecture descriptions</li>
+          <li>Presenting demos to diverse audiences</li>
+          <li>Working in a structured way with coding agents</li>
+        </ul>
         <li>Concluded Data Analysis studies at <a href="https://hyperisland.se" target="_blank">Hyper Island</a></li>
       </ul>
   - title: 2025 – 2026
