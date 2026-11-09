@@ -8,30 +8,31 @@ slug: hawk
 title: Hawk
 role: Author
 url: https://hawk.pnettto.deno.net/
-coverImage: cover.png
-type: To-do list Chrome extension
+coverImage: tasks.png
+type: New tab journal, notepad and file store
 shortDescription: >
-  Stay on top of your daily schedule with every new tab. Quickly check what is next what has happened recently, add notes for every task, or a daily note. Keep track of your mood. All without ever hitting a save button.
+  A daily workspace in every new tab: a task list for the day, a notepad organized by tags, and a place for files, synced across devices and saved automatically.
 introSection:
   title: What is it?
   text: >
     <ul>
-      <li>Keep track of daily tasks</li>
-      <li>Quickly change the order, remove tasks or add comments for each task</li>
-      <li>Add daily notes in markdown format (handles code snippets, images, and lists for example)</li>
-      <li>Everything is auto saved</li>
+      <li>A task list for each day</li>
+      <li>A notepad where notes are grouped by #tags</li>
+      <li>An editor with checklists, tables, images and video</li>
+      <li>A Files tab for uploads and media from notes</li>
+      <li>Sync across devices, with version history and no save button</li>
     </ul>
 screensSection:
-  - media: demo.mp4
+  - media: hawk-demo.mp4
     text: A quick demo.
-  - media: 1.png
-    text: The main interface. Pretty sleek and non distracting.
-  - media: 2.png
-    text: A comment box is reveal for each task when clicking the speech ballon.
-  - media: 3.png
-    text: A notes box sits discretely under the day's tasks. It accepts markdown auto-saves.
-  - media: 4.png
-    text: Shortcuts allow advanced manipulation of the interface and access to other features.
+  - media: tasks.png
+    text: A day's tasks.
+  - media: notepad.png
+    text: The Notepad, with notes grouped by tags. Day notes from the Journal appear here too.
+  - media: table.png
+    text: Notes can hold checklists, tables, images and video.
+  - media: files.png
+    text: The Files tab, grouped by day.
 backstorySection:
   text: >
     <p>I love to use a notebook to organize my day. It makes me more productive to know what I need to do by having a quick look and it offloads things I'd otherwise have to remember, to the paper. But it can be a little annoying having to have the notebook on me to check what I need to next or add something to the list, so having it in the computer and the phone at the same time was something I wished for.</p>

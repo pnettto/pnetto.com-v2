@@ -4,3 +4,6 @@ public/
 .env
 src/private-open
 compiled/
+# Playwright MCP test artifacts
+.playwright-mcp/
+.claude/
