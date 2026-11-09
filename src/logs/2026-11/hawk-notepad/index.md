@@ -7,7 +7,7 @@ tags:
     - 2026-11
 ---
 
-[Hawk](/logs/hawk/) started as a new tab to-do list with a slot for each hour of the day and a short note underneath. This update turns it into a small daily workspace: a task list, a notepad and a place for files, all in the same tab and synced across devices.
+[Hawk](/work/hawk/) started as a new tab to-do list with a slot for each hour of the day and a short note underneath. This update turns it into a small daily workspace: a task list, a notepad and a place for files, all in the same tab and synced across devices.
 
 The task list is now looser. Instead of fixed hours, each day is a plain list where some tasks have a time and others don't, which is closer to how a day actually goes.
 
