@@ -47,6 +47,9 @@ containerClass: narrow
         --plyr-menu-border-color: var(--bg-color);
         --plyr-tooltip-background: var(--accent-color);
         --plyr-tooltip-color: var(--accent-color);
+        --plyr-audio-controls-background: var(--bg-alt);
+        --plyr-audio-control-color: var(--text);
+        --plyr-audio-control-color-hover: var(--text-head);
     }
 </style>
 <script
@@ -68,6 +71,22 @@ containerClass: narrow
                     "mute",
                     "settings",
                     "fullscreen",
+                ],
+                settings: ["speed"],
+                speed: { selected: 1, options: [0.5, 1, 1.5, 2] },
+            })
+        );
+
+        Array.from(document.querySelectorAll(".audio")).map((audio) =>
+            new Plyr(audio, {
+                controls: [
+                    "play",
+                    "progress",
+                    "current-time",
+                    "duration",
+                    "mute",
+                    "volume",
+                    "settings",
                 ],
                 settings: ["speed"],
                 speed: { selected: 1, options: [0.5, 1, 1.5, 2] },
