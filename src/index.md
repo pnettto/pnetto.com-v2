@@ -81,8 +81,8 @@ offTheClock:
     title: Photography
     text: Taking pictures has become a major hobby for me in the past years. You can check some of them at photos.pnetto.com
     url: https://photos.pnetto.com
-    src: https://pnetto.store/pnetto-com/DSCF9096-64e5dac3-900w.jpeg
-    srcset: https://pnetto.store/pnetto-com/DSCF9096-64e5dac3-900w.jpeg 900w, https://pnetto.store/pnetto-com/DSCF9096-64e5dac3-1200w.jpeg 1200w
+    src: https://cdn.pnetto.store/pnetto-com/DSCF9096-64e5dac3-900w.jpeg
+    srcset: https://cdn.pnetto.store/pnetto-com/DSCF9096-64e5dac3-900w.jpeg 900w, https://cdn.pnetto.store/pnetto-com/DSCF9096-64e5dac3-1200w.jpeg 1200w
   items:
     - title: Music
       text: I love playing the guitar, composing in Ableton Live, and cultivating my album collection.
