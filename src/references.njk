@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+title: References
+permalink: /references/
+containerClass: narrow
+---
+
+<header class="page-header">
+    <h1>References</h1>
+    <p>What people I've worked with have said about working with me.</p>
+</header>
+
+<div class="references-list">
+    {% for ref in references | sort(attribute='data.order') %}
+        <figure class="reference-card">
+            <blockquote>{{ ref.content | safe }}</blockquote>
+            <figcaption>
+                <strong>{{ ref.data.referer }}</strong>
+                {% if ref.data.companyName %}
+                    <span>
+                        {% if ref.data.role %}{{ ref.data.role }}, {% endif %}
+                        {% if ref.data.companyLink %}<a href="{{ ref.data.companyLink }}" target="_blank" rel="noopener">{{ ref.data.companyName }}</a>{% else %}{{ ref.data.companyName }}{% endif %}
+                    </span>
+                {% endif %}
+            </figcaption>
+        </figure>
+    {% endfor %}
+</div>
+
+<p><a href="/#references">← Back to Bio</a></p>

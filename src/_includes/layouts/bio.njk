@@ -11,21 +11,21 @@ containerClass: narrow
 <div class="bio-intro">
     <div class="intro-text">{{ intro.text | safe }}</div>
 
-    <div class="now-strip">
-        {% for item in status %}
-            <div class="now-item">
-                {% if loop.first %}<i class="now-dot" aria-hidden="true"></i>{% endif %}
-                <span class="now-label">{{ item.label }}</span>
-                <span>{{ item.text }}</span>
-            </div>
-        {% endfor %}
+    <div id="get-in-touch" class="say-hi">
+        <h2>Reach out</h2>
+        <ul>
+            <li><span>Email</span><span class="say-hi-email">pedro@pnetto.com</span></li>
+            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/pedronetto/" target="_blank" rel="noopener">@pedronetto</a></li>
+            <li><span>GitHub</span><a href="https://github.com/pnettto" target="_blank" rel="noopener">@pnettto</a></li>
+            <li><span>CV</span><a href="/cv">Download PDF</a></li>
+        </ul>
     </div>
 </div>
 
 <div class="sticky-tags">
     <div class="container narrow is-loaded tags-list">
         {%
-            set categories = ['Places to start', 'Along the way', 'Recently', 'Timeline', 'References', 'Toolbox', 'Other Skills', 'Off the clock']
+            set categories = ['Selected work', 'My journey', 'Recently', 'Timeline', 'References', 'Toolbox', 'Other Skills', 'Beyond work']
         %}
         {% for category in categories %}
             <a href="#{{ category | slugify  }}" class="badge">{{
@@ -35,11 +35,11 @@ containerClass: narrow
     </div>
 </div>
 
-<a id="{{ "Places to start" | slugify }}" class="anchor"></a>
+<a id="{{ "Selected work" | slugify }}" class="anchor"></a>
 <section class="bio-section">
     <h2 class="underlined section-title">
-        Places to start
-        <small>or browse <a href="/work/">all work</a></small>
+        Selected work
+        <small><a href="/work/">All work</a></small>
     </h2>
     <div class="places-grid">
         {% for place in places %}
@@ -50,15 +50,14 @@ containerClass: narrow
                 </div>
                 <strong>{{ place.title }}</strong>
                 <span class="place-card-text">{{ place.text }}</span>
-                <span class="place-card-tag">{{ place.tag }}</span>
             </a>
         {% endfor %}
     </div>
 </section>
 
-<a id="{{ "Along the way" | slugify }}" class="anchor"></a>
+<a id="{{ "My journey" | slugify }}" class="anchor"></a>
 <section class="bio-section">
-    <h2 class="underlined">Along the way</h2>
+    <h2 class="underlined">My journey</h2>
     <div class="journey">
         <div class="journey-route" role="tablist" aria-label="Places">
             {% for stop in journey %}
@@ -70,7 +69,7 @@ containerClass: narrow
                     aria-selected="{{ 'true' if loop.first else 'false' }}"
                     tabindex="{{ '0' if loop.first else '-1' }}"
                 >
-                    <i aria-hidden="true">{{ loop.index }}</i>
+                    <i aria-hidden="true">{{ (journey | length) - loop.index0 }}</i>
                     <strong>{{ stop.place }}</strong>
                     <span>{{ stop.years }}</span>
                 </button>
@@ -102,7 +101,7 @@ containerClass: narrow
 <section class="bio-section">
     <h2 class="underlined section-title">
         Recently
-        <small><a href="/now/">more on the Now page</a></small>
+        <small><a href="/now/">See more</a></small>
     </h2>
     <div class="feed">
         {% for entry in recently %}
@@ -133,72 +132,18 @@ containerClass: narrow
 
 <a id="{{ "References" | slugify }}" class="anchor"></a>
 <section class="bio-section">
-    <h2 class="underlined">References</h2>
-    {% set sortedReferences = references | sort(attribute='data.order') %}
-    <div class="featured-references">
-        {% for ref in sortedReferences %}
-            {% if ref.data.featured %}
-                <div class="featured-reference">
-                    <blockquote class="reference-quote">
-                        {{ ref.content | safe }}
-                    </blockquote>
-                    <cite class="reference-author">
-                        <strong>{{ ref.data.referer }}</strong>
-                        <span class="reference-company">
-                            {{ ref.data.role }},
-                            <a
-                                href="{{ ref.data.companyLink }}"
-                                target="_blank"
-                                rel="noopener"
-                            >{{ ref.data.companyName }}</a>
-                        </span>
-                    </cite>
-                </div>
-            {% endif %}
-        {% endfor %}
-    </div>
-    <div class="carousel-wrapper">
-        <button
-            class="carousel-arrow nav-arrow prev"
-            aria-label="Previous slide"
-        >
-            ◀
-        </button>
-        <div class="carousel-container">
-            <div class="carousel-track">
-                {% for ref in sortedReferences %}
-                    {% if not ref.data.featured %}
-                        <div class="carousel-card {{ ref.data.size }}">
-                            <div class="carousel-scroll-area">
-                                <blockquote class="reference-quote">
-                                    {{ ref.content | safe }}
-                                </blockquote>
-                                <cite class="reference-author">
-                                    <strong>{{ ref.data.referer }}</strong>
-                                    {% if ref.data.companyName %}
-                                        <span class="reference-company">
-                                            {% if ref.data.companyLink %}
-                                                <a
-                                                    href="{{ ref.data.companyLink }}"
-                                                    target="_blank"
-                                                    rel="noopener"
-                                                >{{ ref.data.companyName }}</a>
-                                            {% else %}
-                                                {{ ref.data.companyName }}
-                                            {% endif %}
-                                        </span>
-                                    {% endif %}
-                                </cite>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        <button class="carousel-arrow nav-arrow next" aria-label="Next slide">
-            ▶
-        </button>
-    </div>
+    <h2 class="underlined section-title">
+        References
+        <small><a href="/references/">See all</a></small>
+    </h2>
+    {% set ref = (references | sort(attribute='data.order') | first) %}
+    <figure class="reference-spotlight">
+        <blockquote>{{ ref.content | safe }}</blockquote>
+        <figcaption>
+            <strong>{{ ref.data.referer }}</strong>
+            <span>{{ ref.data.role }}, <a href="{{ ref.data.companyLink }}" target="_blank" rel="noopener">{{ ref.data.companyName }}</a></span>
+        </figcaption>
+    </figure>
 </section>
 
 <a id="{{ "Toolbox" | slugify }}" class="anchor"></a>
@@ -231,9 +176,9 @@ containerClass: narrow
     </div>
 </section>
 
-<a id="{{ "Off the clock" | slugify }}" class="anchor"></a>
+<a id="{{ "Beyond work" | slugify }}" class="anchor"></a>
 <section class="bio-section">
-    <h2 class="underlined">Off the clock</h2>
+    <h2 class="underlined">Beyond work</h2>
     <div class="off-the-clock">
         <a
             href="{{ offTheClock.photo.url }}"
@@ -262,20 +207,5 @@ containerClass: narrow
                 </div>
             {% endfor %}
         </div>
-    </div>
-</section>
-
-<section id="say-hi" class="bio-section">
-    <div class="say-hi">
-        <div>
-            <h2>Say hi</h2>
-            <p>I'm always up for a conversation about past projects and potential collaborations.</p>
-        </div>
-        <ul>
-            <li><span>Email</span><span class="say-hi-email">pedro@pnetto.com</span></li>
-            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/pedronetto/" target="_blank" rel="noopener">@pedronetto</a></li>
-            <li><span>GitHub</span><a href="https://github.com/pnettto" target="_blank" rel="noopener">@pnettto</a></li>
-            <li><span>CV</span><a href="/cv">Download PDF</a></li>
-        </ul>
     </div>
 </section>

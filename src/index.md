@@ -6,72 +6,31 @@ header:
 intro:
   text: >
     <p>
-      Software engineer with 15 years of experience, currently working as an AI Engineering Consultant at <a href="https://www.redeploy.com/" target="_blank">Redeploy</a>. I've worked for companies such as <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini Sweden</a>, <a href="/work/icelandair">Icelandair</a> and <a href="/work/kolibri">Kolibri</a>, ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>), developed the web development curriculum at <a href="/work/tskoli">Tækniskólinn</a>, and co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
+      I'm a software engineer with 15 years of experience, currently working as an AI Engineering Consultant at <a href="https://www.redeploy.com/" target="_blank">Redeploy</a> (Stockholm, Sweden).
     </p>
 
     <p>
-      At the moment I'm part of a team working in a complex enterprise environment, figuring out the right problems to solve, finding solutions that fit the constraints, and building with coding agents in a structured and predictable way.
-    </p>
-
-    <p>
-      Feel free to <a href="/contact">reach out</a>!
+      In the past I've worked for <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini/Telia Sweden</a>, <a href="/work/icelandair">Icelandair</a>, and <a href="/work/kolibri">Kolibri</a>, ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>), developed the web development curriculum at <a href="/work/tskoli">Tækniskólinn</a>, and co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
     </p>
 extraHeadScripts: <script defer src="/assets/js/journey.js"></script>
-status:
-  - label: Now
-    text: AI Engineering Consultant at Redeploy
-  - label: Building
-    text: Crate, a Spotify player for full albums
-  - label: Based in
-    text: Stockholm
 places:
   - title: OpenDoors
     url: /work/opendoors/
     image: opendoors/dashboard.png
     text: An AI job search assistant I built on my own. 40 beta testers used it in their job searches.
-    tag: My own product
   - title: Capgemini / Telia
     url: /logs/learnings-from-my-internship/
     image: evalgen/cover.png
     text: Building AI assistants for Telia, and what I learned along the way.
-    tag: AI in a large company
   - title: Tækniskólinn
     url: /work/tskoli/
     image: tskoli/cover.png
     text: The web development course I rebuilt from scratch, with about 75% job placement.
-    tag: Teaching
   - title: Brisa
     url: /work/brisa/
     image: brisa/cover.png
     text: The web studio I ran in Iceland, with clients like the Ministry of Education and Lýsi.
-    tag: My first company
 journey:
-  - place: Brazil
-    years: 2007–2013
-    items:
-      - B.Tech in Computer Networks
-      - Organised EESL, student conferences about open source
-      - Linux servers at Spirit Linux, then teaching at Recode
-      - Fivecom, then two years of freelancing
-  - place: Iceland
-    years: 2013–2022
-    items:
-      - "Locatify: Goldworm, an app for kids to make interactive books"
-      - Founded Brisa, 15+ projects in four years
-      - Rebuilt the web development course at Tækniskólinn
-      - "Kolibri: the National Gallery of Iceland website"
-  - place: Vietnam
-    years: 2018–2020
-    items:
-      - Co-founded Conbeo, a tourism marketplace
-      - 2 investors, 50 partner agencies, 300+ tours
-      - Strategy, UX and front-end
-  - place: Denmark
-    years: 2022–2024
-    items:
-      - Lead front-end developer at Icelandair, in Copenhagen
-      - Led a team of 4 on a new airline portal
-      - CMS tools that gave the content team independence
   - place: Sweden
     years: 2024–now
     items:
@@ -79,6 +38,32 @@ journey:
       - Agentic AI at Capgemini, for Telia
       - OpenDoors, my own AI product
       - AI Engineering Consultant at Redeploy
+  - place: Denmark
+    years: 2022–2024
+    items:
+      - Lead front-end developer at Icelandair, in Copenhagen
+      - Led a team of 4 on a new airline portal
+      - CMS tools that gave the content team independence
+  - place: Vietnam
+    years: 2018–2020
+    items:
+      - Co-founded Conbeo, a tourism marketplace
+      - 2 investors, 50 partner agencies, 300+ tours
+      - Strategy, UX and front-end
+  - place: Iceland
+    years: 2013–2022
+    items:
+      - "Locatify: Goldworm, an app for kids to make interactive books"
+      - Founded Brisa, 15+ projects in four years
+      - Rebuilt the web development course at Tækniskólinn
+      - "Kolibri: the National Gallery of Iceland website"
+  - place: Brazil
+    years: 2007–2013
+    items:
+      - B.Tech in Computer Networks
+      - Organised EESL, student conferences about open source
+      - Linux servers at Spirit Linux, then teaching at Recode
+      - Fivecom, then two years of freelancing
 recently:
   - date: Now
     live: true
@@ -94,15 +79,15 @@ recently:
 offTheClock:
   photo:
     title: Photography
-    text: A hobby since 2020. Albums on photos.pnetto.com ↗
+    text: Taking pictures has become a major hobby for me in the past years. You can check some of them at photos.pnetto.com
     url: https://photos.pnetto.com
     src: https://pnetto.store/pnetto-com/DSCF9096-64e5dac3-900w.jpeg
     srcset: https://pnetto.store/pnetto-com/DSCF9096-64e5dac3-900w.jpeg 900w, https://pnetto.store/pnetto-com/DSCF9096-64e5dac3-1200w.jpeg 1200w
   items:
     - title: Music
-      text: Building Crate for listening to full albums, and a finder for the vinyl at Kulturbiblioteket.
+      text: I love playing the guitar, composing in Ableton Live, and cultivating my album collection.
     - title: Travel
-      text: A half-year sabbatical in 2024 through Costa Rica, Panama, Brazil, Tanzania, New Zealand, Thailand, Denmark and Sweden.
+      text: I've lived in 4 countries and traveled to around 35! In 2024 I took a half-year sabbatical to travel through Costa Rica, Panama, Brazil, Tanzania, New Zealand and Thailand.
     - title: Meditation
       text: I wrote <a href="/logs/a-practical-guide-to-meditation/">a practical guide</a> to it.
     - title: Languages
