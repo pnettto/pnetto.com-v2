@@ -24,6 +24,7 @@ Below are some things I've noticed, made, or tried lately — have a look around
 - Working on a Spotify player called Crate that helps users focus on listening to full albums rather than hopping between tracks. Also building a beautiful companion TV app that teaches users about their music while decorating the living room. Links soon!
 - Jailbroke my old Kindle to display my photos as a slideshow instead of letting it collect dust :)
 - More recent projects:
+  - [pi extensions](https://github.com/pnettto/pi-extensions): my setup for the pi coding agent: file explorer and git panels, a status footer, permission gates, and a custom Gondolin micro-VM sandbox.
   - [Review Comments](https://github.com/pnettto/review-comments): a Chrome extension to comment on anything on a page, then copy it to the next AI iteration, very useful!
   - [YouTube Channel Sorter](https://github.com/pnettto/youtube-channel-sorter): a Chrome extension that lets you sort a channel's videos by different parameters within any period. Great for finding actually interesting material in a channel you just found.
   - [Clarity](https://github.com/pnettto/clarity): a macOS app that rewrites any selected text with a local AI model. Just a quickc experiment on making local AI apps, but the results are not as great as frontier models, even if this use case is rather simple.
