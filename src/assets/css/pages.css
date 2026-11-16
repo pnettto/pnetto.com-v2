@@ -529,22 +529,21 @@
 
 .journey-place .eyebrow { color: var(--ink-muted); }
 
-.journey-row ul {
+.journey-highlights {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
   gap: 0.3rem;
   color: var(--ink-2);
-  align-self: end;
 }
 
-.journey-row li {
+.journey-highlights li {
   position: relative;
   padding-left: 1.1rem;
 }
 
-.journey-row li::before {
+.journey-highlights li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -552,6 +551,44 @@
   width: 0.5rem;
   height: 1px;
   background: var(--gold);
+}
+
+.journey-body {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+/* Timeline periods folded under each place */
+.journey-body .timeline-rows:empty { display: none; }
+
+.journey-body .timeline-rows {
+  border-top: 1px dashed var(--rule-soft);
+}
+
+.journey-body .timeline-row:last-child { border-bottom: 0; }
+
+.journey-body .timeline-row summary {
+  grid-template-columns: 1fr auto;
+  padding: 0.7rem 0;
+}
+
+.journey-body .timeline-row .year { grid-column: 1 / -1; }
+
+.journey-body .timeline-summary { font-size: var(--fs-sm); }
+
+.journey-body .timeline-more { width: 1.6rem; height: 1.6rem; }
+
+.journey-body .timeline-row .content {
+  padding-left: 0;
+  padding-right: 0;
+  font-size: var(--fs-sm);
+}
+
+@media (min-width: 800px) {
+  .journey-body .timeline-row summary { grid-template-columns: 8.5rem 1fr auto; }
+  .journey-body .timeline-row .year { grid-column: auto; }
+  .journey-body .timeline-row .content { padding-left: calc(8.5rem + var(--sp-md)); }
 }
 
 /* --------------------------------------------------------------------------

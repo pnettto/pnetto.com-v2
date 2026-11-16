@@ -169,6 +169,7 @@ otherSkills:
     text: Documentation habits — learning guides, internal references, project READMEs, and technical blog posts.
 timeline:
   - title: 2026 – Present
+    place: Sweden
     summary: AI Engineer at Redeploy, KYC in banking
     text: >
       <ul>
@@ -183,6 +184,7 @@ timeline:
         <li>Concluded Data Analysis studies at <a href="https://hyperisland.se" target="_blank">Hyper Island</a></li>
       </ul>
   - title: 2025 – 2026
+    place: Sweden
     summary: Agentic AI at Capgemini Sweden, for Telia
     text: >
       <ul>
@@ -196,6 +198,7 @@ timeline:
         </ul>
       </ul>
   - title: 2024
+    place: Sweden
     summary: Sabbatical, Hyper Island, Instant Graph Maker
     text: >
       <ul>
@@ -205,6 +208,7 @@ timeline:
         <li>Built <a href="/work/instant-graph-maker">Instant Graph Maker</a>, an LLM-powered chart creator using Python, Streamlit, OpenAI API, and ChromaDB (Hyper Island capstone)</li>
       </ul>
   - title: 2022 - 2024
+    place: Denmark
     summary: Lead front-end developer at Icelandair
     text: >
       <p>
@@ -217,6 +221,7 @@ timeline:
         Created onboarding documentation that reduced ramp-up time for new developers. Built CMS tools that gave the content team publishing independence, removing an engineering bottleneck.
       </p>
   - title: 2021 - 2022
+    place: Iceland
     summary: Front-end developer at Kolibri
     text: >
       <p>
@@ -228,6 +233,7 @@ timeline:
         </a> on the Next.js stack. Built a custom search integration for an external data source where no off-the-shelf solution existed.
       </p>
   - title: 2018 - 2021
+    place: Iceland
     summary: Teaching at Tækniskólinn, co-founding Conbeo
     text: >
       <p>
@@ -246,6 +252,7 @@ timeline:
         </a>.
       </p>
   - title: 2014 - 2018
+    place: Iceland
     summary: Founded Brisa, my web studio
     text: >
       <p>
@@ -264,6 +271,7 @@ timeline:
         <a href="/work">many others</a>.
       </p>
   - title: 2013 - 2014
+    place: Iceland
     summary: Moved to Iceland, Locatify
     text: >
       <p>
@@ -278,6 +286,7 @@ timeline:
         I also coded features for their indoor positioning system.
       </p>
   - title: 2009 - 2013
+    place: Brazil
     summary: Linux, teaching, Fivecom, freelancing
     text: >
       <p>
@@ -298,6 +307,7 @@ timeline:
         stage lasted for 2 years before I moved out of Brazil.
       </p>
   - title: 2007 - 2009
+    place: Brazil
     summary: B.Tech, AIESEC, open source conferences
     text: >
       <p>

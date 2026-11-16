@@ -9,7 +9,7 @@ containerClass: wide
    Hero: split intro + featured visual (Reverb's "Latest article")
    ------------------------------------------------------------------ #}
 {%
-    set categories = ['Latest', 'Selected work', 'Logs', 'My journey', 'Timeline', 'References', 'Toolbox', 'Other Skills']
+    set categories = ['Latest', 'Selected work', 'Logs', 'My journey', 'References', 'Toolbox', 'Other Skills']
 %}
 <a id="{{ "Start" | slugify }}" class="anchor"></a>
 <section class="hero">
@@ -132,7 +132,7 @@ containerClass: wide
 <section class="bio-section split">
     <div class="split-aside">
         <h2 class="section-title">My Journey</h2>
-        <p>Five countries, fifteen-odd years. Each move came with a new kind of work.</p>
+        <p>Five countries, fifteen-odd years. Open a period for the details.</p>
         <a href="/cv" class="link-strong">Download my CV</a>
     </div>
     <ol class="journey-list">
@@ -142,36 +142,34 @@ containerClass: wide
                     <span class="eyebrow">{{ stop.years }}</span>
                     <h3>{{ stop.place }}</h3>
                 </div>
-                <ul>
-                    {% for item in stop.items %}
-                        <li>{{ item }}</li>
+                <div class="journey-body">
+                    <ul class="journey-highlights">
+                        {% for item in stop.items %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% set periods = [] %}
+                    {% for item in timeline %}
+                        {% if item.place == stop.place %}{{ "" if periods.push(item) }}{% endif %}
                     {% endfor %}
-                </ul>
+                    {% if periods.length %}
+                    <div class="timeline-rows">
+                        {% for item in periods %}
+                                <details class="timeline-row">
+                                    <summary>
+                                        <span class="year">{{ item.title }}</span>
+                                        <span class="timeline-summary">{{ item.summary }}</span>
+                                        <span class="timeline-more" aria-hidden="true"></span>
+                                    </summary>
+                                    <div class="content">{{ item.text | safe }}</div>
+                                </details>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
             </li>
         {% endfor %}
     </ol>
-</section>
-
-{# ------------------------------------------------------------------
-   Timeline: folded rows
-   ------------------------------------------------------------------ #}
-<a id="{{ "Timeline" | slugify }}" class="anchor"></a>
-<section class="bio-section">
-    <header class="section-head">
-        <h2 class="section-title">Timeline</h2>
-    </header>
-    <div class="timeline-rows">
-        {% for item in timeline %}
-            <details class="timeline-row">
-                <summary>
-                    <span class="year">{{ item.title }}</span>
-                    <span class="timeline-summary">{{ item.summary }}</span>
-                    <span class="timeline-more" aria-hidden="true"></span>
-                </summary>
-                <div class="content">{{ item.text | safe }}</div>
-            </details>
-        {% endfor %}
-    </div>
 </section>
 
 {# ------------------------------------------------------------------
