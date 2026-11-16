@@ -3,6 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="color-scheme" content="dark">
+        <script>
+            // Always dark: the design system's theme code reads this on load
+            try { localStorage.setItem("theme", "dark"); } catch (e) {}
+            document.documentElement.setAttribute("data-theme", "dark");
+        </script>
         <title>Pedro Netto - {{ title }}</title>
         <meta
             name="description"
@@ -103,16 +109,6 @@
                                 >Contact</a>
                             </li>
                         </ul>
-                        <div class="theme-switch-wrapper">
-                            <label
-                                class="theme-switch"
-                                for="theme-toggle"
-                                aria-label="Toggle Dark/Light Mode"
-                            >
-                                <input type="checkbox" id="theme-toggle" />
-                                <div class="slider"></div>
-                            </label>
-                        </div>
                     </nav>
                 </div>
             </header>
