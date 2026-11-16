@@ -7,3 +7,10 @@ compiled/
 # Playwright MCP test artifacts
 .playwright-mcp/
 .claude/
+
+# Playwright
+.playwright-mcp/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/

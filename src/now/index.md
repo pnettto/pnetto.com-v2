@@ -23,6 +23,14 @@ Below are some things I've noticed, made, or tried lately — have a look around
 - Created a few new pet projects: [Kulturbiblioteket Vinyl Finder](/work/kh-vinyls/) and [HN Skin](/work/hn-skin/)
 - Working on a Spotify player called Crate that helps users focus on listening to full albums rather than hopping between tracks. Also building a beautiful companion TV app that teaches users about their music while decorating the living room. Links soon!
 - Jailbroke my old Kindle to display my photos as a slideshow instead of letting it collect dust :)
+- More recent projects:
+  - [Review Comments](https://github.com/pnettto/review-comments): a Chrome extension to comment on anything on a page, then copy it to the next AI iteration, very useful!
+  - [YouTube Channel Sorter](https://github.com/pnettto/youtube-channel-sorter): a Chrome extension that lets you sort a channel's videos by different parameters within any period. Great for finding actually interesting material in a channel you just found.
+  - [Clarity](https://github.com/pnettto/clarity): a macOS app that rewrites any selected text with a local AI model. Just a quickc experiment on making local AI apps, but the results are not as great as frontier models, even if this use case is rather simple.
+  - [EPUB Reader](https://github.com/pnettto/epubreader): a minimal browser book reader with highlights, notes and Google Drive sync. Hopefully this will replace my Apple Books one day.
+  - [Pingo](https://pingo.pnetto.store): a tiny URL shortener on Cloudflare Workers, with per-app API keys, running entirely on the free tier.
+  - [Here](https://github.com/pnettto/here): a slow generative journey of light, music and words for your living room :)
+  - [Still](https://github.com/pnettto/still): a meditation and focus (generative) music maker that grew out of Here, with ready-made moments, moods, field recordings and MP3 export.
 
 </div>
 </div>
