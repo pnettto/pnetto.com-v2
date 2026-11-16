@@ -20,18 +20,22 @@ intro:
 extraHeadScripts: <script defer src="/assets/js/journey.js"></script><script defer src="/assets/js/bio-nav.js"></script>
 places:
   - title: OpenDoors
+    tag: AI product
     url: /work/opendoors/
     image: opendoors/dashboard.png
     text: An AI job search assistant I built on my own. 40 beta testers used it in their job searches.
   - title: Capgemini / Telia
+    tag: Consulting
     url: /logs/learnings-from-my-internship/
     image: evalgen/cover.png
     text: Building AI assistants for Telia, and what I learned along the way.
   - title: Tækniskólinn
+    tag: Teaching
     url: /work/tskoli/
     image: tskoli/cover.png
     text: The web development course I rebuilt from scratch, with about 75% job placement.
   - title: Brisa
+    tag: Studio
     url: /work/brisa/
     image: brisa/cover.png
     text: The web studio I ran in Iceland, with clients like the Ministry of Education and Lýsi.
