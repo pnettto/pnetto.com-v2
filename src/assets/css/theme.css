@@ -640,3 +640,16 @@ article > p:first-child a,
 pre[class*="language-"] {
   border-radius: var(--radius-lg);
 }
+
+/* Embedded pages in posts: give iframes a real height (default is 150px) */
+.post-content iframe {
+  display: block;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--rule-soft);
+  background: var(--surface);
+}
+
+@media (min-width: 600px) {
+  .post-content iframe { aspect-ratio: 16 / 10; }
+}
