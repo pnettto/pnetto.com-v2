@@ -84,10 +84,10 @@ recently:
       <a href="https://github.com/pnettto/epubreader" target="_blank">EPUB Reader</a>, <a href="https://github.com/pnettto/still" target="_blank">Still</a>
       and <a href="/now/">more</a>.
   - date: Oct 2026
-    text: Wrapped up <a href="/work/opendoors/">OpenDoors</a>. It stays online as a test system anyone can try.
+    text: Wrapped up <a href="/work/opendoors/">OpenDoors</a>. It's available online as a test system anyone can try.
   - date: Sep 2026
     text: Started at Redeploy as an AI Engineering Consultant.
-  - date: "2026"
+  - date: Aug 2026
     text: Made <a href="/work/kh-vinyls/">Kulturbiblioteket Vinyl Finder</a> and <a href="/work/hn-skin/">HN Skin</a>.
   - date: Mar 2026
     text: Wrote about <a href="/logs/learnings-from-my-internship/">what I learned at Capgemini/Telia</a>.
@@ -121,7 +121,18 @@ techSkills:
       - Go (reading)
   - title: Cloud
     items:
-      - GCP (Cloud Run, Compute Engine, GKE, Pub/Sub, Eventarc, Vertex AI, IAM, Cloud Build, Artifact Registry, Cloud Logging, Cloud Storage)
+      - GCP
+      - Cloud Run
+      - Compute Engine
+      - GKE
+      - Pub/Sub
+      - Eventarc
+      - Vertex AI
+      - IAM
+      - Cloud Build
+      - Artifact Registry
+      - Cloud Logging
+      - Cloud Storage
       - AWS (EC2, S3)
       - Azure/Fabric fundamentals
       - Vercel / Fly.io / Deno Deploy / Digital Ocean / Netlify

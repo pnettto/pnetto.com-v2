@@ -299,18 +299,6 @@
 
 .now-main .now-more { margin: 0; }
 
-.live-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--gold);
-  animation: bio-pulse 2.2s ease-out infinite;
-}
-
-@keyframes bio-pulse {
-  0% { box-shadow: 0 0 0 0 hsl(41 38% 56% / 0.5); }
-  70%, 100% { box-shadow: 0 0 0 9px transparent; }
-}
 
 .now-feed {
   list-style: none;
@@ -527,7 +515,7 @@
   margin: 0.35rem 0 0;
 }
 
-.journey-place .eyebrow { color: var(--ink-muted); }
+
 
 .journey-highlights {
   list-style: none;
@@ -619,7 +607,7 @@
   border-top: 1px solid var(--rule);
 }
 
-.toolbox-group .eyebrow { margin-bottom: 1rem; color: var(--ink-muted); }
+.toolbox-group .eyebrow { margin-bottom: 1rem; }
 
 .toolbox-tags {
   list-style: none;

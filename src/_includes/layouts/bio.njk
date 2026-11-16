@@ -25,7 +25,6 @@ containerClass: wide
         </p>
     </div>
     <nav class="quick-menu-home" aria-label="On this page">
-        <span class="eyebrow">On this page</span>
         <ol>
             {% for category in categories %}
                 <li>
@@ -57,7 +56,7 @@ containerClass: wide
 <section class="bio-section band band-orange now-band">
     {% set live = recently | first %}
     <div class="now-main">
-        <span class="eyebrow"><i class="live-dot" aria-hidden="true"></i>{{ live.date }}</span>
+        <span class="eyebrow">{{ live.date }}</span>
         <h2 class="band-title">{{ live.title | safe }}</h2>
         <p>{{ live.text | safe }}</p>
         <p class="now-more"><a href="/now/" class="link-strong">See what else I'm up to</a></p>
