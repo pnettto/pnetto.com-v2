@@ -24,7 +24,7 @@ containerClass: wide
     {% set heroImage = globalAllPhotos | matchPhotosource(hero.image) %}
     <a href="{{ hero.url }}" class="hero-visual">
         {% optmizedImageTag heroImage, { sizes: "(min-width: 900px) 45vw, 90vw", aspectRatio: '6 / 4' } %}
-        <span class="pill">{{ hero.label }}</span>
+        <span class="hero-caption">{{ hero.label }}</span>
     </a>
 </section>
 
@@ -81,19 +81,14 @@ containerClass: wide
                 {% set image = globalAllPhotos | matchPhotosource(place.image) %}
                 <div class="place-card-image">
                     {% optmizedImageTag image, { sizes: "(min-width: 900px) 280px, (min-width: 600px) 45vw, 90vw", aspectRatio: '6 / 4' } %}
-                    {% if place.tag %}<span class="pill">{{ place.tag }}</span>{% endif %}
+                    
                 </div>
+                {% if place.tag %}<span class="eyebrow place-card-tag">{{ place.tag }}</span>{% endif %}
                 <div class="place-card-head">
                     <strong>{{ place.title }}</strong>
                     {% if place.years %}<span class="place-card-years">{{ place.years }}</span>{% endif %}
                 </div>
                 <span class="place-card-text">{{ place.text }}</span>
-                <span class="place-card-go">
-                    <i class="round-btn" aria-hidden="true">
-                        <svg viewBox="0 0 16 16" width="14" height="14"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </i>
-                    <span>Read the case</span>
-                </span>
             </a>
         {% endfor %}
     </div>
@@ -177,8 +172,7 @@ containerClass: wide
 <section class="bio-section band band-lilac">
     {% set ref = (references | sort(attribute='data.order') | first) %}
     <figure class="reference-spotlight">
-        <span class="eyebrow">Kind words</span>
-        <blockquote>{{ ref.content | safe }}</blockquote>
+                <blockquote>{{ ref.content | safe }}</blockquote>
         <figcaption>
             <strong>{{ ref.data.referer }}</strong>
             <span>{{ ref.data.role }}, <a href="{{ ref.data.companyLink }}" target="_blank" rel="noopener">{{ ref.data.companyName }}</a></span>
