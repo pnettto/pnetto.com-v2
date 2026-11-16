@@ -40,10 +40,10 @@ journey:
     years: 2024–now
     items:
       - AI Engineering Consultant at <a href="https://www.redeploy.com/" target="_blank">Redeploy</a>, building AI applications for KYC in banking
-      - Agentic AI at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini</a> for Telia, with RAG assistants over Confluence and Jira (via MCP), <a href="/work/evalgen/">Evalgen</a> and observability tooling for agents
+      - Agentic AI at <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini</a> for Telia, RAG assistants over Confluence and Jira (via MCP), <a href="/work/evalgen/">Evalgen</a> and observability tooling for agents
       - <a href="/work/opendoors/">OpenDoors</a>, my own AI job search assistant, used by 40 beta testers
       - Data Analysis at <a href="https://hyperisland.se" target="_blank">Hyper Island</a>, with <a href="/work/instant-graph-maker">Instant Graph Maker</a> as my capstone project
-      - A half-year sabbatical across 8 countries, plus websites for <a href="https://visitmaca.com" target="_blank">MACA</a> and <a href="https://teiahhospitality.com" target="_blank">Teiah</a>
+      - A half-year sabbatical across 8 countries
   - place: Denmark
     years: 2022–2024
     items:
@@ -60,7 +60,7 @@ journey:
     years: 2017–2022
     items:
       - Front-end developer at <a href="/work/kolibri">Kolibri</a>, building the <a href="https://listasafn.is" target="_blank">National Gallery of Iceland</a> website on Next.js
-      - Rebuilt the web development course at <a href="/work/tskoli">Tækniskólinn</a>, with 40 modules, 3 cohorts and about 75% job placement
+      - Taught and re-designed the web development course at <a href="/work/tskoli">Tækniskólinn</a>, with 40 modules, 3 cohorts and about 75% job placement
   - place: Iceland
     years: 2013–2017
     items:
@@ -70,9 +70,10 @@ journey:
     years: 2007–2013
     items:
       - B.Tech in Computer Networks, plus work with <a href="https://aiesec.org" target="_blank">AIESEC</a>
+      - Developer at <a href="https://fivecom.com.br" target="_blank">Fivecom</a>
+      - Two years of freelancing
       - Organised EESL, a series of student conferences about open source
-      - Linux servers at Spirit Linux, then teaching at <a href="https://recode.org.br/" target="_blank">Recode</a>
-      - Developer at <a href="https://fivecom.com.br" target="_blank">Fivecom</a>, then two years of freelancing
+      - Managed Linux servers at Spirit Linux, then taught at <a href="https://recode.org.br/" target="_blank">Recode</a>
 recently:
   - date: Now
     live: true
