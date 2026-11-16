@@ -2,7 +2,12 @@
 layout: layouts/bio.njk
 title: Bio
 header:
-  title: Pedro Netto
+  eyebrow: AI Engineering Consultant · Stockholm
+  title: Pedro <em>Netto</em>
+hero:
+  image: opendoors/dashboard.png
+  url: /work/opendoors/
+  label: Latest project · OpenDoors
 intro:
   text: >
     <p>
@@ -67,6 +72,7 @@ journey:
 recently:
   - date: Now
     live: true
+    title: Settling in at <em>Redeploy</em>
     text: >
       Settling in at Redeploy and building Crate, a Spotify player for listening to full albums, with a TV companion app.
       On the side, a handful of small tools: <a href="https://github.com/pnettto/review-comments" target="_blank">Review Comments</a>,

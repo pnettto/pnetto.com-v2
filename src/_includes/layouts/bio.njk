@@ -1,30 +1,37 @@
 ---
 layout: layouts/base.njk
-containerClass: narrow
+containerClass: wide
 ---
 
 <div class="bio">
-<header class="page-header">
-    <h1>{{ header.title }}</h1>
-</header>
 
+{# ------------------------------------------------------------------
+   Hero: split intro + featured visual (Reverb's "Latest article")
+   ------------------------------------------------------------------ #}
 <a id="{{ "Start" | slugify }}" class="anchor"></a>
-<div class="bio-intro">
-    <div class="intro-text">
-        {{ intro.text | safe }}
-        <ul id="get-in-touch" class="say-hi">
-            <li><span>Email:</span> <span class="say-hi-email">pedro@pnetto.com</span></li>
-            <li><span>LinkedIn:</span> <a href="https://www.linkedin.com/in/pedronetto/" target="_blank" rel="noopener">@pedronetto</a></li>
-            <li><span>GitHub:</span> <a href="https://github.com/pnettto" target="_blank" rel="noopener">@pnettto</a></li>
-            <li><span>CV:</span> <a href="/cv">Download PDF</a></li>
-        </ul>
+<section class="hero">
+    <div class="hero-text">
+        <span class="eyebrow">{{ header.eyebrow }}</span>
+        <h1>{{ header.title | safe }}</h1>
+        <div class="hero-lead">
+            {{ intro.text | safe }}
+        </div>
+        <p class="hero-links">
+            <a href="/cv" class="link-strong">Read my CV</a>
+            <a href="#get-in-touch" class="link-strong">Get in touch</a>
+        </p>
     </div>
-</div>
+    {% set heroImage = globalAllPhotos | matchPhotosource(hero.image) %}
+    <a href="{{ hero.url }}" class="hero-visual">
+        {% optmizedImageTag heroImage, { sizes: "(min-width: 900px) 45vw, 90vw", aspectRatio: '6 / 4' } %}
+        <span class="pill">{{ hero.label }}</span>
+    </a>
+</section>
 
 <div class="sticky-tags">
-    <div class="container narrow is-loaded tags-list">
+    <div class="container is-loaded tags-list">
         {%
-            set categories = ['Selected work', 'My journey', 'Latest', 'Timeline', 'References', 'Toolbox', 'Other Skills']
+            set categories = ['Latest', 'Selected work', 'Logs', 'My journey', 'Timeline', 'References', 'Toolbox', 'Other Skills']
         %}
         {% for category in categories %}
             <a href="#{{ category | slugify  }}" class="badge">{{
@@ -34,94 +41,128 @@ containerClass: narrow
     </div>
 </div>
 
+{# ------------------------------------------------------------------
+   Now: full-bleed colour band (Reverb's "New pack")
+   ------------------------------------------------------------------ #}
+<a id="{{ "Latest" | slugify }}" class="anchor"></a>
+<section class="bio-section band band-orange now-band">
+    {% set live = recently | first %}
+    <div class="now-main">
+        <span class="eyebrow"><i class="live-dot" aria-hidden="true"></i>{{ live.date }}</span>
+        <h2 class="band-title">{{ live.title | safe }}</h2>
+        <p>{{ live.text | safe }}</p>
+        <p class="now-more"><a href="/now/" class="link-strong">See what else I'm up to</a></p>
+    </div>
+    <ol class="now-feed">
+        {% for entry in recently %}
+            {% if not loop.first %}
+                <li>
+                    <span class="now-date">{{ entry.date }}</span>
+                    <p>{{ entry.text | safe }}</p>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+</section>
+
+{# ------------------------------------------------------------------
+   Selected work: pastel cards (Reverb's "Featured packs")
+   ------------------------------------------------------------------ #}
 <a id="{{ "Selected work" | slugify }}" class="anchor"></a>
 <section class="bio-section">
-    <h2 class="underlined section-title">
-        Selected work
-        <small><a href="/work/">All work</a></small>
-    </h2>
+    <header class="section-head">
+        <h2 class="section-title">Selected Work</h2>
+        <a href="/work/" class="link-strong">All work</a>
+    </header>
     <div class="places-grid">
+        {% set tints = ['blue', 'green', 'yellow', 'peach', 'cream', 'cyan', 'lilac', 'grey'] %}
         {% for place in places %}
-            <a href="{{ place.url }}" class="place-card">
+            <a href="{{ place.url }}" class="place-card tint-{{ tints[loop.index0 % tints.length] }}">
                 {% set image = globalAllPhotos | matchPhotosource(place.image) %}
                 <div class="place-card-image">
-                    {% optmizedImageTag image, { sizes: "(min-width: 900px) 220px, (min-width: 600px) 45vw, 90vw", aspectRatio: '6 / 4' } %}
+                    {% optmizedImageTag image, { sizes: "(min-width: 900px) 280px, (min-width: 600px) 45vw, 90vw", aspectRatio: '6 / 4' } %}
+                    {% if place.tag %}<span class="pill">{{ place.tag }}</span>{% endif %}
                 </div>
-                <strong>{{ place.title }}</strong>
+                <div class="place-card-head">
+                    <strong>{{ place.title }}</strong>
+                    {% if place.years %}<span class="place-card-years">{{ place.years }}</span>{% endif %}
+                </div>
                 <span class="place-card-text">{{ place.text }}</span>
+                <span class="place-card-go">
+                    <i class="round-btn" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" width="14" height="14"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </i>
+                    <span>Read the case</span>
+                </span>
             </a>
         {% endfor %}
     </div>
 </section>
 
+{# ------------------------------------------------------------------
+   Logs: dark band with outlined cards (Reverb's "Featured articles")
+   ------------------------------------------------------------------ #}
+<a id="{{ "Logs" | slugify }}" class="anchor"></a>
+<section class="bio-section band band-dark">
+    <header class="section-head">
+        <h2 class="section-title">From the Logs</h2>
+        <a href="/logs/" class="link-strong">All logs</a>
+    </header>
+    <div class="log-grid">
+        {% for post in collections.logs | reverse %}
+            {% if loop.index <= 4 %}
+                <a href="{{ post.url }}" class="log-card">
+                    <time datetime="{{ post.date | isoDate }}">{{ post.date | postDate }}</time>
+                    <h3>{{ post.data.title }}</h3>
+                    <p>{{ post.content | excerpt(140) }}</p>
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+{# ------------------------------------------------------------------
+   Journey: sticky title + ruled rows (Reverb's "Remake projects")
+   ------------------------------------------------------------------ #}
 <a id="{{ "My journey" | slugify }}" class="anchor"></a>
-<section class="bio-section">
-    <h2 class="underlined">My journey</h2>
-    <div class="journey">
-        <div class="journey-route" role="tablist" aria-label="Places">
-            {% for stop in journey %}
-                <button
-                    class="journey-stop"
-                    role="tab"
-                    id="journey-tab-{{ loop.index }}"
-                    aria-controls="journey-panel-{{ loop.index }}"
-                    aria-selected="{{ 'true' if loop.first else 'false' }}"
-                    tabindex="{{ '0' if loop.first else '-1' }}"
-                >
-                    <i aria-hidden="true">{{ (journey | length) - loop.index0 }}</i>
-                    <strong>{{ stop.place }}</strong>
-                    <span>{{ stop.years }}</span>
-                </button>
-            {% endfor %}
-        </div>
+<section class="bio-section split">
+    <div class="split-aside">
+        <h2 class="section-title">My Journey</h2>
+        <p>Five countries, fifteen-odd years. Each move came with a new kind of work.</p>
+        <a href="/cv" class="link-strong">Download my CV</a>
+    </div>
+    <ol class="journey-list">
         {% for stop in journey %}
-            <div
-                class="journey-panel"
-                role="tabpanel"
-                id="journey-panel-{{ loop.index }}"
-                aria-labelledby="journey-tab-{{ loop.index }}"
-                {% if not loop.first %}hidden{% endif %}
-            >
-                <div>
+            <li class="journey-row">
+                <div class="journey-place">
+                    <span class="eyebrow">{{ stop.years }}</span>
                     <h3>{{ stop.place }}</h3>
-                    <span class="journey-years">{{ stop.years }}</span>
                 </div>
                 <ul>
                     {% for item in stop.items %}
                         <li>{{ item }}</li>
                     {% endfor %}
                 </ul>
-            </div>
+            </li>
         {% endfor %}
-    </div>
+    </ol>
 </section>
 
-<a id="{{ "Latest" | slugify }}" class="anchor"></a>
-<section class="bio-section">
-    <h2 class="underlined section-title">
-        Latest
-        <small><a href="/now/">See more</a></small>
-    </h2>
-    <div class="feed">
-        {% for entry in recently %}
-            <div class="feed-item">
-                <span class="feed-date{% if entry.live %} is-live{% endif %}">{{ entry.date }}</span>
-                <p>{{ entry.text | safe }}</p>
-            </div>
-        {% endfor %}
-    </div>
-</section>
-
+{# ------------------------------------------------------------------
+   Timeline: folded rows
+   ------------------------------------------------------------------ #}
 <a id="{{ "Timeline" | slugify }}" class="anchor"></a>
 <section class="bio-section">
-    <h2 class="underlined">Timeline</h2>
+    <header class="section-head">
+        <h2 class="section-title">Timeline</h2>
+    </header>
     <div class="timeline-rows">
         {% for item in timeline %}
             <details class="timeline-row">
                 <summary>
                     <span class="year">{{ item.title }}</span>
                     <span class="timeline-summary">{{ item.summary }}</span>
-                    <span class="timeline-more">read more</span>
+                    <span class="timeline-more" aria-hidden="true"></span>
                 </summary>
                 <div class="content">{{ item.text | safe }}</div>
             </details>
@@ -129,29 +170,35 @@ containerClass: narrow
     </div>
 </section>
 
+{# ------------------------------------------------------------------
+   References: lilac band with a big serif quote
+   ------------------------------------------------------------------ #}
 <a id="{{ "References" | slugify }}" class="anchor"></a>
-<section class="bio-section">
-    <h2 class="underlined section-title">
-        References
-        <small><a href="/references/">See all</a></small>
-    </h2>
+<section class="bio-section band band-lilac">
     {% set ref = (references | sort(attribute='data.order') | first) %}
     <figure class="reference-spotlight">
+        <span class="eyebrow">Kind words</span>
         <blockquote>{{ ref.content | safe }}</blockquote>
         <figcaption>
             <strong>{{ ref.data.referer }}</strong>
             <span>{{ ref.data.role }}, <a href="{{ ref.data.companyLink }}" target="_blank" rel="noopener">{{ ref.data.companyName }}</a></span>
         </figcaption>
+        <a href="/references/" class="link-strong">Read all references</a>
     </figure>
 </section>
 
+{# ------------------------------------------------------------------
+   Toolbox
+   ------------------------------------------------------------------ #}
 <a id="{{ "Toolbox" | slugify }}" class="anchor"></a>
 <section class="bio-section">
-    <h2 class="underlined">Toolbox</h2>
+    <header class="section-head">
+        <h2 class="section-title">Toolbox</h2>
+    </header>
     <div class="toolbox">
         {% for group in techSkills %}
             <div class="toolbox-group">
-                <h3>{{ group.title }}</h3>
+                <h3 class="eyebrow">{{ group.title }}</h3>
                 <ul class="toolbox-tags">
                     {% for item in group.items %}
                         <li>{{ item }}</li>
@@ -162,9 +209,14 @@ containerClass: narrow
     </div>
 </section>
 
+{# ------------------------------------------------------------------
+   Other skills
+   ------------------------------------------------------------------ #}
 <a id="{{ "Other Skills" | slugify }}" class="anchor"></a>
 <section class="bio-section">
-    <h2 class="underlined">Other Skills</h2>
+    <header class="section-head">
+        <h2 class="section-title">Other Skills</h2>
+    </header>
     <div class="other-skills">
         {% for skill in otherSkills %}
             <div class="skill-group">
@@ -174,4 +226,6 @@ containerClass: narrow
         {% endfor %}
     </div>
 </section>
+
+<a id="get-in-touch" class="anchor"></a>
 </div>

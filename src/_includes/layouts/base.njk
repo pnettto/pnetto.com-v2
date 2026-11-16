@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="color-scheme" content="dark">
+        <meta name="color-scheme" content="light">
         <script>
-            // Always dark: the design system's theme code reads this on load
-            try { localStorage.setItem("theme", "dark"); } catch (e) {}
-            document.documentElement.setAttribute("data-theme", "dark");
+            // Always light: the design system's theme code reads this on load
+            try { localStorage.setItem("theme", "light"); } catch (e) {}
+            document.documentElement.setAttribute("data-theme", "light");
         </script>
         <title>Pedro Netto - {{ title }}</title>
         <meta
@@ -15,10 +15,11 @@
             content="{{ description | default("Pedro Netto's website") + ' - ' + title }}"
         >
         <link rel="icon" type="image/png" href="/assets/images/logo.png">
-        <link rel="preconnect" href="https://use.typekit.net" crossorigin>
-        <link rel="preconnect" href="https://p.typekit.net" crossorigin>
-        <link rel="stylesheet" href="https://use.typekit.net/pmu6sig.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap">
         <link rel="stylesheet" href="/design-system/css/bundle.min.css">
+        <link rel="stylesheet" href="/assets/css/theme.css">
         <link rel="stylesheet" href="/assets/css/pages.css">
         {{ extraHeadScripts | safe }}
     </head>
@@ -48,10 +49,9 @@
                             fill-opacity="0.9"
                         />
                     </svg>
+                    <span class="logo-name">Pedro Netto</span>
                 </a>
-                <div
-                    style="display: flex; align-items: center; gap: var(--space-md)"
-                >
+                <div class="header-nav">
                     <button
                         class="burger-menu"
                         aria-label="Toggle Menu"
@@ -111,12 +111,73 @@
                         </ul>
                     </nav>
                 </div>
+                <a href="/contact/" class="header-cta">Say hello</a>
             </header>
 
             <main>
                 {{ content | safe }}
             </main>
         </div>
+
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-hello">
+                    <div>
+                        <h2>Say hello</h2>
+                        <p>
+                            I'm always up for a conversation about
+                            <strong>past projects</strong> and
+                            <strong>potential collaborations</strong>.
+                            Drop me a line, it lands straight in my inbox.
+                        </p>
+                    </div>
+                    <div class="footer-mail">
+                        <span class="footer-mail-address">pedro@pnetto.com</span>
+                        <a class="footer-mail-button" href="mailto:pedro@pnetto.com">Write to me</a>
+                    </div>
+                </div>
+
+                <div class="footer-columns">
+                    <div>
+                        <h3 class="eyebrow">Me</h3>
+                        <ul>
+                            <li><a href="/">Bio</a></li>
+                            <li><a href="/cv">CV</a></li>
+                            <li><a href="/now/">Now</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="eyebrow">Work</h3>
+                        <ul>
+                            <li><a href="/work/#development">Development</a></li>
+                            <li><a href="/work/#education">Education</a></li>
+                            <li><a href="/work/#pet-projects">Pet projects</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="eyebrow">Writing</h3>
+                        <ul>
+                            <li><a href="/logs/">Logs</a></li>
+                            <li><a href="/references/">References</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="eyebrow">Elsewhere</h3>
+                        <ul>
+                            <li><a href="https://github.com/pnettto" target="_blank" rel="noopener">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/pedronetto/" target="_blank" rel="noopener">LinkedIn</a></li>
+                            <li><a href="https://mastodon.world/@pnetto" target="_blank" rel="noopener">Mastodon</a></li>
+                            <li><a href="https://unsplash.com/@pnettto" target="_blank" rel="noopener">Unsplash</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <span>© {% year %} Pedro Netto</span>
+                    <span>Stockholm, Sweden</span>
+                </div>
+            </div>
+        </footer>
 
         <script type="module" src="/design-system/js/bundle.min.js"></script>
         <script

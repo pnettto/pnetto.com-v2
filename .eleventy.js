@@ -32,6 +32,20 @@ export default async function (eleventyConfig) {
 
     eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
 
+    eleventyConfig.addShortcode("year", () => String(new Date().getFullYear()));
+
+    // Plain-text teaser from rendered HTML (first paragraph-ish)
+    eleventyConfig.addFilter("excerpt", (html = "", length = 150) => {
+        const text = String(html)
+            .replace(/<(pre|code|figure|script|style)[\s\S]*?<\/\1>/gi, " ")
+            .replace(/<h[1-6][\s\S]*?<\/h[1-6]>/gi, " ")
+            .replace(/<[^>]+>/g, " ")
+            .replace(/\s+/g, " ")
+            .trim();
+        if (text.length <= length) return text;
+        return text.slice(0, text.lastIndexOf(" ", length)) + "…";
+    });
+
     eleventyConfig.addFilter("isVideo", (value) => value.includes(".mp4"));
 
     eleventyConfig.addFilter("postDate", (dateObj) => {
