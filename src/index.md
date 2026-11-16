@@ -57,10 +57,13 @@ journey:
       - 2 investors, 50 partner agencies, 300+ tours
       - Strategy, UX and front-end
   - place: Iceland
-    years: 2013–2022
+    years: 2017–2022
     items:
       - Front-end developer at <a href="/work/kolibri">Kolibri</a>, building the <a href="https://listasafn.is" target="_blank">National Gallery of Iceland</a> website on Next.js
       - Rebuilt the web development course at <a href="/work/tskoli">Tækniskólinn</a>, with 40 modules, 3 cohorts and about 75% job placement
+  - place: Iceland
+    years: 2013–2017
+    items:
       - Founded <a href="/work/brisa">Brisa</a>, my web studio, with 15+ projects for clients like the Ministry of Education, <a href="/work/lysi-life">Lýsi</a> and <a href="/work/unmind">Unmind</a>
       - Developed Goldworm at <a href="https://locatify.com" target="_blank">Locatify</a>, an app for kids to make their own interactive books
   - place: Brazil
