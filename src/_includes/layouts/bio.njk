@@ -21,11 +21,6 @@ containerClass: wide
             <a href="#get-in-touch" class="link-strong">Get in touch</a>
         </p>
     </div>
-    {% set heroImage = globalAllPhotos | matchPhotosource(hero.image) %}
-    <a href="{{ hero.url }}" class="hero-visual">
-        {% optmizedImageTag heroImage, { sizes: "(min-width: 900px) 45vw, 90vw", aspectRatio: '6 / 4' } %}
-        <span class="hero-caption">{{ hero.label }}</span>
-    </a>
 </section>
 
 <div class="sticky-tags">

@@ -4,10 +4,6 @@ title: Bio
 header:
   eyebrow: AI Engineering Consultant · Stockholm
   title: Pedro Netto
-hero:
-  image: opendoors/dashboard.png
-  url: /work/opendoors/
-  label: Latest project · OpenDoors
 intro:
   text: >
     <p>
