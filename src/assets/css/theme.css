@@ -734,10 +734,10 @@ pre[class*="language-"] {
 /* Subpages: a small shape behind the page title */
 .page-split > .split-aside::before,
 .now-page #timeline::before {
-  width: 11rem;
+  width: 14rem;
   aspect-ratio: 85 / 84;
-  top: -2.5rem;
-  left: -3.5rem;
+  top: 3.5rem;
+  left: -4rem;
   rotate: -20deg;
   --shape-opacity: 0.07;
 }
