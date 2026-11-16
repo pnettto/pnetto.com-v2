@@ -8,6 +8,9 @@ containerClass: wide
 {# ------------------------------------------------------------------
    Hero: split intro + featured visual (Reverb's "Latest article")
    ------------------------------------------------------------------ #}
+{%
+    set categories = ['Latest', 'Selected work', 'Logs', 'My journey', 'Timeline', 'References', 'Toolbox', 'Other Skills']
+%}
 <a id="{{ "Start" | slugify }}" class="anchor"></a>
 <section class="hero">
     <div class="hero-text">
@@ -21,13 +24,24 @@ containerClass: wide
             <a href="#get-in-touch" class="link-strong">Get in touch</a>
         </p>
     </div>
+    <nav class="quick-menu-home" aria-label="On this page">
+        <span class="eyebrow">On this page</span>
+        <ol>
+            {% for category in categories %}
+                <li>
+                    <a href="#{{ category | slugify }}">
+                        <span class="qm-num">{{ "0" if loop.index < 10 }}{{ loop.index }}</span>
+                        <span class="qm-label">{{ category }}</span>
+                        <span class="qm-arrow" aria-hidden="true">→</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ol>
+    </nav>
 </section>
 
 <div class="sticky-tags">
     <div class="container is-loaded tags-list">
-        {%
-            set categories = ['Latest', 'Selected work', 'Logs', 'My journey', 'Timeline', 'References', 'Toolbox', 'Other Skills']
-        %}
         {% for category in categories %}
             <a href="#{{ category | slugify  }}" class="badge">{{
                 category
