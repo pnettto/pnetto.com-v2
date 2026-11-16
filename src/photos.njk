@@ -24,7 +24,7 @@ albums:
 permalink: "/photos/{% if album %}{{ album }}/{% endif %}"
 eleventyExcludeFromCollections: true
 ---
-{%- set target = "https://photos.pnetto.com/" + (album + "/" if album else "") -%}
+{%- set target = "https://photos.pnetto.store/" + (album + "/" if album else "") -%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +47,6 @@ eleventyExcludeFromCollections: true
   </style>
 </head>
 <body>
-  <p>Photos moved to <a href="{{ target }}">photos.pnetto.com</a>.</p>
+  <p>Photos moved to <a href="{{ target }}">photos.pnetto.store</a>.</p>
 </body>
 </html>

@@ -35,7 +35,7 @@ The problem is that I haven't had a place where I enjoyed publishing. Well now t
 
 So if you're here and you're reading this, I'm very surprised indeed. You're not me, and yet you are still here, really incredible stuff. Welcome, though! Always happy to [make friends](/contact).
 
-The [photos section](https://photos.pnetto.com) is also a mechanism I came up with to support my photography hobby. I thought that, if I did have a beautiful place to post photos, I would be more inclined to actually do something with all those hours going over Lightroom tutorials :)
+The [photos section](https://photos.pnetto.store) is also a mechanism I came up with to support my photography hobby. I thought that, if I did have a beautiful place to post photos, I would be more inclined to actually do something with all those hours going over Lightroom tutorials :)
 
 But alright, to the implementation.
 
