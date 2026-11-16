@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 title: Now
-containerClass: narrow
+containerClass: now-page
 ---
 
 <section id="timeline" class="post-content">

@@ -756,3 +756,227 @@ details[open].see-more-container::details-content {
   margin: 0 auto;
   margin-top: var(--sp-3xl);
 }
+
+/* ==========================================================================
+   SUBPAGES - same patterns as the home page
+   ========================================================================== */
+
+/* Sticky title on the left, ruled content on the right (like My Journey) */
+.page-split {
+  display: grid;
+  gap: var(--sp-xl) clamp(2rem, 6vw, 6rem);
+}
+
+@media (min-width: 900px) {
+  .page-split { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); }
+  .page-split > .split-aside { position: sticky; top: 2rem; align-self: start; }
+}
+
+.page-split > .page-header { margin: 0; }
+
+.page-split > .page-header p {
+  font-size: var(--fs-md);
+  color: var(--ink-muted);
+  max-width: 26rem;
+}
+
+/* Logs: ruled rows with a gold date */
+.page-split .post-list {
+  margin: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.page-split .post-item {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.page-split .post-item-header {
+  flex-direction: column-reverse;
+  gap: 0.4rem;
+}
+
+.page-split .post-item .post-meta {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.page-split .post-item a.post-title {
+  font-size: var(--fs-lg);
+}
+
+.page-split .post-item a.post-title:hover { color: var(--gold); text-decoration: none; }
+
+/* Contact: label / value rows */
+.contact-rows {
+  border-top: 1px solid var(--rule);
+}
+
+.contact-rows p {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  align-items: baseline;
+  margin: 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: var(--fs-lg);
+}
+
+.contact-rows .row-label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.contact-rows a { color: var(--text-head); }
+.contact-rows a:hover { color: var(--gold); }
+
+/* References */
+.page-split .references-list { margin: 0; }
+
+@media (min-width: 700px) and (max-width: 1099px) {
+  .page-split .references-list { columns: 1; }
+}
+
+.reference-card {
+  padding: 1.4rem;
+  border-color: var(--rule-soft);
+}
+
+.reference-card figcaption strong { color: var(--text-head); }
+
+/* Now: intro on the left, dated rows on the right */
+.container.now-page #timeline {
+  display: grid;
+  gap: var(--sp-xl) clamp(2rem, 6vw, 6rem);
+  margin: 0;
+}
+
+.now-page #timeline > br { display: none; }
+
+.now-page #timeline > h1 {
+  margin: 0 0 var(--sp-sm);
+  border: 0;
+  padding: 0;
+}
+
+.now-page #timeline > p {
+  color: var(--ink-muted);
+  max-width: 26rem;
+}
+
+@media (min-width: 900px) {
+  .container.now-page #timeline {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(2rem, 6vw, 6rem);
+    row-gap: 0;
+  }
+
+  .now-page #timeline > h1,
+  .now-page #timeline > p { grid-column: 1; }
+
+  .now-page #timeline > p { align-self: start; }
+
+  .now-page #timeline > .timeline {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+  }
+}
+
+.now-page .timeline {
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.now-page .timeline::before,
+.now-page .timeline .item::before { display: none; }
+
+.now-page .timeline .item {
+  display: grid;
+  gap: 0.5rem var(--sp-lg);
+  margin: 0;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (min-width: 700px) {
+  .now-page .timeline .item { grid-template-columns: 10rem 1fr; }
+}
+
+.now-page .timeline .item > a:empty { display: none; }
+
+.now-page .timeline .year {
+  margin: 0;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 2.2;
+}
+
+.now-page .timeline .content > :first-child { margin-top: 0; }
+.now-page .timeline .content > :last-child { margin-bottom: 0; }
+
+.now-page .timeline .content ul { padding-left: 1.1rem; }
+
+/* Work: section headings and filters like the home sections */
+.work-container .project-category > h2.underlined {
+  margin-bottom: clamp(1.75rem, 4vw, 3rem);
+}
+
+.page-header + .sticky-tags {
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: var(--sp-xl);
+}
+
+.sticky-tags .tags-list { padding-inline: 0; }
+
+/* Post: gold date above the title, back link as a quiet label */
+.post-content + .tags-list,
+article > .tags-list { gap: 0.4rem; }
+
+article .page-header .post-meta {
+  margin: 0 0 0.75rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+article > p:first-child,
+.page-nav-header p {
+  font-size: var(--fs-sm);
+  margin-bottom: var(--sp-lg);
+}
+
+/* Project page: meta as a ruled strip */
+.project-header h1 { margin-top: 0; }
+
+.project-meta {
+  gap: 0.5rem 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.project-meta-item strong {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-right: 0.35rem;
+}
+
+.project-nav {
+  gap: var(--sp-md);
+  padding-top: var(--sp-md);
+  border-top: 1px solid var(--rule);
+}

@@ -7,12 +7,11 @@ containerClass: narrow
     <p><a href="/logs/">← back</a></p>
 
     <header class="page-header">
+        <div class="post-meta">
+            <time datetime="{{ date | postDate }}">{{ date | postDate }}</time>
+        </div>
         <h1>{{ title }}</h1>
     </header>
-
-    <div class="post-meta">
-        <time datetime="{{ date | postDate }}">{{ date | postDate }}</time>
-    </div>
 
     <div class="post-content">
         {{ content | safe }}
