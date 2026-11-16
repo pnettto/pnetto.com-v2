@@ -12,7 +12,7 @@ intro:
     <p>
       In the past I've worked for <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini/Telia Sweden</a>, <a href="/work/icelandair">Icelandair</a>, and <a href="/work/kolibri">Kolibri</a>, ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>), developed the web development curriculum at <a href="/work/tskoli">Tækniskólinn</a>, and co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
     </p>
-extraHeadScripts: <script defer src="/assets/js/journey.js"></script>
+extraHeadScripts: <script defer src="/assets/js/journey.js"></script><script defer src="/assets/js/bio-nav.js"></script>
 places:
   - title: OpenDoors
     url: /work/opendoors/
@@ -67,7 +67,11 @@ journey:
 recently:
   - date: Now
     live: true
-    text: Building Crate, a Spotify player that helps you listen to full albums, plus a TV companion app.
+    text: >
+      Settling in at Redeploy and building Crate, a Spotify player for listening to full albums, with a TV companion app.
+      On the side, a handful of small tools: <a href="https://github.com/pnettto/review-comments" target="_blank">Review Comments</a>,
+      <a href="https://github.com/pnettto/epubreader" target="_blank">EPUB Reader</a>, <a href="https://github.com/pnettto/still" target="_blank">Still</a>
+      and <a href="/now/">more</a>.
   - date: Oct 2026
     text: Wrapped up <a href="/work/opendoors/">OpenDoors</a>. It stays online as a test system anyone can try.
   - date: Sep 2026
@@ -76,22 +80,6 @@ recently:
     text: Made <a href="/work/kh-vinyls/">Kulturbiblioteket Vinyl Finder</a> and <a href="/work/hn-skin/">HN Skin</a>.
   - date: Mar 2026
     text: Wrote about <a href="/logs/learnings-from-my-internship/">what I learned at Capgemini/Telia</a>.
-offTheClock:
-  photo:
-    title: Photography
-    text: Taking pictures has become a major hobby for me in the past years. You can check some of them at photos.pnetto.com
-    url: https://photos.pnetto.com
-    src: https://cdn.pnetto.store/pnetto-com/DSCF9096-64e5dac3-900w.jpeg
-    srcset: https://cdn.pnetto.store/pnetto-com/DSCF9096-64e5dac3-900w.jpeg 900w, https://cdn.pnetto.store/pnetto-com/DSCF9096-64e5dac3-1200w.jpeg 1200w
-  items:
-    - title: Music
-      text: I love playing the guitar, composing in Ableton Live, and cultivating my album collection.
-    - title: Travel
-      text: I've lived in 4 countries and traveled to around 35! In 2024 I took a half-year sabbatical to travel through Costa Rica, Panama, Brazil, Tanzania, New Zealand and Thailand.
-    - title: Meditation
-      text: I wrote <a href="/logs/a-practical-guide-to-meditation/">a practical guide</a> to it.
-    - title: Languages
-      text: Portuguese (native), English (fluent), Spanish (advanced), Icelandic, Danish, Swedish (basic).
 techSkills:
   - title: AI
     items:

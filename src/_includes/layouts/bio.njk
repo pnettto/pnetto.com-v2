@@ -3,21 +3,20 @@ layout: layouts/base.njk
 containerClass: narrow
 ---
 
+<div class="bio">
 <header class="page-header">
     <h1>{{ header.title }}</h1>
 </header>
 
 <a id="{{ "Start" | slugify }}" class="anchor"></a>
 <div class="bio-intro">
-    <div class="intro-text">{{ intro.text | safe }}</div>
-
-    <div id="get-in-touch" class="say-hi">
-        <h2>Reach out</h2>
-        <ul>
-            <li><span>Email</span><span class="say-hi-email">pedro@pnetto.com</span></li>
-            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/pedronetto/" target="_blank" rel="noopener">@pedronetto</a></li>
-            <li><span>GitHub</span><a href="https://github.com/pnettto" target="_blank" rel="noopener">@pnettto</a></li>
-            <li><span>CV</span><a href="/cv">Download PDF</a></li>
+    <div class="intro-text">
+        {{ intro.text | safe }}
+        <ul id="get-in-touch" class="say-hi">
+            <li><span>Email:</span> <span class="say-hi-email">pedro@pnetto.com</span></li>
+            <li><span>LinkedIn:</span> <a href="https://www.linkedin.com/in/pedronetto/" target="_blank" rel="noopener">@pedronetto</a></li>
+            <li><span>GitHub:</span> <a href="https://github.com/pnettto" target="_blank" rel="noopener">@pnettto</a></li>
+            <li><span>CV:</span> <a href="/cv">Download PDF</a></li>
         </ul>
     </div>
 </div>
@@ -25,7 +24,7 @@ containerClass: narrow
 <div class="sticky-tags">
     <div class="container narrow is-loaded tags-list">
         {%
-            set categories = ['Selected work', 'My journey', 'Recently', 'Timeline', 'References', 'Toolbox', 'Other Skills', 'Beyond work']
+            set categories = ['Selected work', 'My journey', 'Latest', 'Timeline', 'References', 'Toolbox', 'Other Skills']
         %}
         {% for category in categories %}
             <a href="#{{ category | slugify  }}" class="badge">{{
@@ -97,10 +96,10 @@ containerClass: narrow
     </div>
 </section>
 
-<a id="{{ "Recently" | slugify }}" class="anchor"></a>
+<a id="{{ "Latest" | slugify }}" class="anchor"></a>
 <section class="bio-section">
     <h2 class="underlined section-title">
-        Recently
+        Latest
         <small><a href="/now/">See more</a></small>
     </h2>
     <div class="feed">
@@ -175,37 +174,4 @@ containerClass: narrow
         {% endfor %}
     </div>
 </section>
-
-<a id="{{ "Beyond work" | slugify }}" class="anchor"></a>
-<section class="bio-section">
-    <h2 class="underlined">Beyond work</h2>
-    <div class="off-the-clock">
-        <a
-            href="{{ offTheClock.photo.url }}"
-            class="off-photo"
-            target="_blank"
-            rel="noopener"
-        >
-            <img
-                src="{{ offTheClock.photo.src }}"
-                srcset="{{ offTheClock.photo.srcset }}"
-                sizes="(min-width: 900px) 480px, 90vw"
-                alt=""
-                loading="lazy"
-                decoding="async"
-            />
-            <div class="off-photo-caption">
-                <strong>{{ offTheClock.photo.title }}</strong>
-                <span>{{ offTheClock.photo.text }}</span>
-            </div>
-        </a>
-        <div class="off-list">
-            {% for item in offTheClock.items %}
-                <div class="off-item">
-                    <strong>{{ item.title }}</strong>
-                    <p>{{ item.text | safe }}</p>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
+</div>
