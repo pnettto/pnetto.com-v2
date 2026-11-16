@@ -161,7 +161,7 @@
 .qm-arrow {
   color: var(--gold);
   opacity: 0;
-  transform: translateX(-6px);
+  transform: translateY(-6px);
   transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
 
