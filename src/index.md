@@ -20,21 +20,21 @@ places:
     url: /work/opendoors/
     image: opendoors/dashboard.png
     text: An AI job search assistant I built on my own. 40 beta testers used it in their job searches.
-  - title: Capgemini / Telia
-    tag: Consulting
-    url: /logs/learnings-from-my-internship/
-    image: evalgen/cover.png
-    text: Building AI assistants for Telia, and what I learned along the way.
+  - title: Icelandair
+    tag: Lead front-end
+    url: /work/icelandair/
+    image: icelandair/2.png
+    text: Leading a front-end team of 4 in Copenhagen, building a new airline portal and CMS tools for the content team.
   - title: Tækniskólinn
     tag: Teaching
     url: /work/tskoli/
     image: tskoli/cover.png
     text: The web development course I rebuilt from scratch, with about 75% job placement.
-  - title: Brisa
-    tag: Studio
-    url: /work/brisa/
-    image: brisa/cover.png
-    text: The web studio I ran in Iceland, with clients like the Ministry of Education and Lýsi.
+  - title: Kolibri
+    tag: Front-end
+    url: /work/kolibri/
+    image: kolibri/4.png
+    text: Building polished Next.js sites with clients and designers, including the National Gallery of Iceland website.
 journey:
   - place: Sweden
     years: 2024–now
