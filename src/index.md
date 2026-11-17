@@ -13,7 +13,7 @@ intro:
     <p>
       In the past I've worked for <a href="https://www.capgemini.com/se-en/about-us/" target="_blank">Capgemini/Telia Sweden</a>, <a href="/work/icelandair">Icelandair</a>, and <a href="/work/kolibri">Kolibri</a>, ran my own web studio in Iceland (<a href="/work/brisa">Brisa</a>), developed the web development curriculum at <a href="/work/tskoli">Tækniskólinn</a>, and co-founded a tourism startup in Vietnam (<a href="/work/conbeo">Conbeo</a>).
     </p>
-extraHeadScripts: <script defer src="/assets/js/journey.js"></script><script defer src="/assets/js/bio-nav.js"></script>
+extraHeadScripts: <script defer src="/assets/js/bio-nav.js"></script>
 places:
   - title: OpenDoors
     tag: AI product
