@@ -78,20 +78,6 @@
   text-decoration-color: var(--gold);
 }
 
-/* Shared section header: big serif title + link on the right */
-.section-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--sp-md);
-  flex-wrap: wrap;
-  margin-bottom: clamp(1.75rem, 4vw, 3.25rem);
-}
-
-.section-title {
-  margin: 0;
-}
-
 .bio-section {
   margin-bottom: clamp(4rem, 9vw, 7rem);
   scroll-margin-top: 4rem;
@@ -758,32 +744,6 @@
   justify-content: space-between;
 }
 
-.see-more-container {
-  margin-top: var(--sp-xl);
-  interpolate-size: allow-keywords;
-}
-
-.see-more-container summary {
-  cursor: pointer;
-  font-weight: bold;
-  margin-bottom: var(--sp-md);
-  color: var(--text);
-}
-
-.see-more-container summary:hover {
-  text-decoration: underline;
-}
-
-details.see-more-container::details-content {
-  height: 0;
-  overflow: hidden;
-  transition: height 240ms var(--ease), content-visibility 240ms var(--ease) allow-discrete;
-}
-
-details[open].see-more-container::details-content {
-  height: auto;
-}
-
 .backstory-section {
   margin: 0 auto;
   margin-top: var(--sp-3xl);
@@ -792,25 +752,6 @@ details[open].see-more-container::details-content {
 /* ==========================================================================
    SUBPAGES - same patterns as the home page
    ========================================================================== */
-
-/* Sticky title on the left, ruled content on the right (like My Journey) */
-.page-split {
-  display: grid;
-  gap: var(--sp-xl) clamp(2rem, 6vw, 6rem);
-}
-
-@media (min-width: 900px) {
-  .page-split { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); }
-  .page-split > .split-aside { position: sticky; top: 2rem; align-self: start; }
-}
-
-.page-split > .page-header { margin: 0; }
-
-.page-split > .page-header p {
-  font-size: var(--fs-md);
-  color: var(--ink-muted);
-  max-width: 26rem;
-}
 
 /* Logs: ruled rows with a gold date */
 .page-split .post-list {

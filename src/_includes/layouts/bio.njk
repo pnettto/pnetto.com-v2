@@ -53,7 +53,7 @@ containerClass: wide
    Now: full-bleed colour band (Reverb's "New pack")
    ------------------------------------------------------------------ #}
 <a id="{{ "Latest" | slugify }}" class="anchor"></a>
-<section class="bio-section band band-orange now-band">
+<section class="bio-section band now-band">
     {% set live = recently | first %}
     <div class="now-main">
         <span class="eyebrow">{{ live.date }}</span>
@@ -154,7 +154,7 @@ containerClass: wide
    References: lilac band with a big serif quote
    ------------------------------------------------------------------ #}
 <a id="{{ "References" | slugify }}" class="anchor"></a>
-<section class="bio-section band band-lilac">
+<section class="bio-section band band-quote">
     {% set ref = (references | sort(attribute='data.order') | first) %}
     <figure class="reference-spotlight">
                 <blockquote>{{ ref.content | safe }}</blockquote>
