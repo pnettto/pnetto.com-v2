@@ -888,6 +888,7 @@ details[open].see-more-container::details-content {
 /* Now: intro on the left, dated rows on the right */
 .container.now-page #timeline {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--sp-xl) clamp(2rem, 6vw, 6rem);
   margin: 0;
 }
@@ -907,7 +908,7 @@ details[open].see-more-container::details-content {
 
 @media (min-width: 900px) {
   .container.now-page #timeline {
-    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    grid-template-columns: minmax(0, 3fr) minmax(0, 8fr);
     grid-template-rows: auto 1fr;
     column-gap: clamp(2rem, 6vw, 6rem);
     row-gap: 0;
@@ -934,6 +935,7 @@ details[open].see-more-container::details-content {
 
 .now-page .timeline .item {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.5rem var(--sp-lg);
   margin: 0;
   padding: 1.5rem 0;
@@ -941,7 +943,7 @@ details[open].see-more-container::details-content {
 }
 
 @media (min-width: 700px) {
-  .now-page .timeline .item { grid-template-columns: 10rem 1fr; }
+  .now-page .timeline .item { grid-template-columns: 8rem 1fr; }
 }
 
 .now-page .timeline .item > a:empty { display: none; }

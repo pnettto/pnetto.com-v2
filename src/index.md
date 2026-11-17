@@ -64,7 +64,7 @@ journey:
   - place: Iceland
     years: 2013–2017
     items:
-      - Founded <a href="/work/brisa">Brisa</a>, my web studio, with 15+ projects for clients like the Ministry of Education, <a href="/work/lysi-life">Lýsi</a> and <a href="/work/unmind">Unmind</a>
+      - Founded <a href="/work/brisa">Brisa</a>, my web studio, with 15+ projects for clients like the <a href="/work/biophilia/">Ministry of Education</a>, <a href="/work/lysi-life">Lýsi</a> and <a href="/work/unmind">Unmind</a>
       - Developed Goldworm at <a href="https://locatify.com" target="_blank">Locatify</a>, an app for kids to make their own interactive books
   - place: Brazil
     years: 2007–2013
