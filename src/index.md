@@ -96,27 +96,47 @@ techSkills:
     items:
       - Multi-agent orchestration
       - RAG pipelines
-      - LLM integration (Vertex AI, OpenAI, Anthropic)
-      - MCP (Model Context Protocol) / A2A
-      - Vector databases & semantic search (ChromaDB, Firestore, pgvector)
+      - LLM integration
+      - Vertex AI
+      - OpenAI
+      - Anthropic
+      - MCP (Model Context Protocol)
+      - A2A
+      - Vector databases
+      - Semantic search
+      - ChromaDB
+      - Firestore
+      - pgvector
       - Prompt engineering
-      - Agent observability & evaluation (Langfuse, Vertex AI, Cloud Logging)
+      - Agent observability
+      - Agent evaluation
+      - Langfuse
   - title: Back-end
     items:
-      - Python / FastAPI / Flask / Django
+      - FastAPI
+      - Flask
+      - Django
+      - Express
       - API design
-      - REST APIs / GraphQL / WebSockets
-      - Node.js ecosystem / Express
-      - OAuth / auth patterns
-      - MySQL / Postgres / MongoDB / Redis
+      - REST APIs
+      - GraphQL
+      - WebSockets
+      - OAuth
+      - Auth patterns
+      - MySQL
+      - Postgres
+      - MongoDB
+      - Redis
       - Micro-service architecture
       - DevOps fluency
   - title: Languages
     items:
-      - Python (FastAPI, Django, Flask, Pandas)
+      - Python
       - SQL
-      - TypeScript / JavaScript
-      - Node.js / Deno
+      - TypeScript
+      - JavaScript
+      - Node.js
+      - Deno
       - Shell Script
       - Go (reading)
   - title: Cloud
@@ -127,20 +147,30 @@ techSkills:
       - GKE
       - Pub/Sub
       - Eventarc
-      - Vertex AI
       - IAM
       - Cloud Build
       - Artifact Registry
       - Cloud Logging
       - Cloud Storage
-      - AWS (EC2, S3)
-      - Azure/Fabric fundamentals
-      - Vercel / Fly.io / Deno Deploy / Digital Ocean / Netlify
+      - AWS
+      - EC2
+      - S3
+      - Azure (fundamentals)
+      - Fabric (fundamentals)
+      - Vercel
+      - Fly.io
+      - Deno Deploy
+      - Digital Ocean
+      - Netlify
   - title: Infrastructure
     items:
-      - Docker / Kubernetes (GKE)
-      - CI/CD (GitHub Actions, GCP Cloud Build)
-      - Nginx / Caddy / Apache
+      - Docker
+      - Kubernetes
+      - CI/CD
+      - GitHub Actions
+      - Nginx
+      - Caddy
+      - Apache
       - Linux admin and service configuration
       - Networking literacy
   - title: Data Engineering
@@ -150,38 +180,43 @@ techSkills:
       - Spark
       - dbt
       - Snowflake
+      - Pandas
       - Dimensional modeling
   - title: Front-end
     items:
-      - NextJS/React expertise
-      - Typescript proficiency
-      - Interface Development & UX awareness
-      - SEO, Performance Optimization, & Security Best Practices
-      - Build tooling/Continuous Integration
+      - Next.js
+      - React
       - Web Components
-      - Headless CMS/GraphQL API fluency
+      - Interface development
+      - UX awareness
+      - SEO
+      - Performance optimization
+      - Security best practices
+      - Build tooling
+      - Headless CMS
   - title: CMS
     items:
-      - Content Stack
-      - Wordpress / REST API / Custom Gutenberg Blocks
+      - Contentstack
+      - WordPress
+      - Custom Gutenberg blocks
       - Prismic
       - Strapi
 otherSkills:
   - title: Pragmatism
-    text: I like to tackle problems in a systematic and predictable way, without inflating the solution unnecessarily.
+    text: I like to tackle problems in a systematic and predictable way, without overcomplicating the solution.
   - title: Adaptability
-    text: Thanks to extensive experience across web, cloud, data, and AI, I'm able to pick up new technologies on demand.
+    text: Thanks to my extensive experience across web, cloud, data, and AI, I can quickly pick up new technologies as needed.
   - title: Thoughtfulness
-    text: I often raise discussions and ideas about projects and work environment in order to improve them.
+    text: I often bring up ideas and start discussions about projects and the work environment to help improve them.
   - title: Empathy
-    text: I have an easy time stepping into other people’s shoes, which helps with being understanding and solving a wide variety of issues.
+    text: I find it easy to put myself in other people’s shoes, which helps me be understanding and solve a wide variety of issues.
   - title: Educator
-    text: I redesigned a Web Development curriculum — 40 modules, 3 cohorts, ~75% job placement rate. More about that <a href="/work/tskoli/">here</a>.
+    text: 'I redesigned a Web Development curriculum: 40 modules, 3 cohorts, and a ~75% job placement rate. More about that <a href="/work/tskoli/">here</a>.'
   - title: Entrepreneur
     text: I co-founded 2 companies. Bringing ideas to life is deeply rewarding, and I carry an entrepreneurial mindset into every role I take on.
   - title: Cross-cultural collaboration
-    text: Worked across 4 countries (Brazil, Iceland, Vietnam, Sweden) with international teams, clients, and stakeholders.
+    text: Worked across 4 countries (Brazil, Iceland, Vietnam, and Sweden) with international teams, clients, and stakeholders.
   - title: Technical writing
-    text: Documentation habits — learning guides, internal references, project READMEs, and technical blog posts.
+    text: 'Documentation habits: learning guides, internal references, project READMEs, and technical blog posts.'
 
 ---

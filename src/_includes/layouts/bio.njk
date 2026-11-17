@@ -9,7 +9,7 @@ containerClass: wide
    Hero: split intro + featured visual (Reverb's "Latest article")
    ------------------------------------------------------------------ #}
 {%
-    set categories = ['Latest', 'Selected work', 'Logs', 'My journey', 'References', 'Toolbox', 'Other Skills']
+    set categories = ['Latest', 'Selected work', 'Logs', 'My journey', 'References', 'Toolbox', 'Soft Skills']
 %}
 <a id="{{ "Start" | slugify }}" class="anchor"></a>
 <section class="hero">
@@ -189,12 +189,12 @@ containerClass: wide
 </section>
 
 {# ------------------------------------------------------------------
-   Other skills
+   Soft skills
    ------------------------------------------------------------------ #}
-<a id="{{ "Other Skills" | slugify }}" class="anchor"></a>
+<a id="{{ "Soft Skills" | slugify }}" class="anchor"></a>
 <section class="bio-section">
     <header class="section-head">
-        <h2 class="section-title">Other Skills</h2>
+        <h2 class="section-title">Soft Skills</h2>
     </header>
     <div class="other-skills">
         {% for skill in otherSkills %}
